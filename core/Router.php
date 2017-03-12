@@ -15,11 +15,14 @@ class Router {
 
     public function loadController($name)
     {
-        $file = ROOT.DS.'controller'.DS.ucfirst($name).'.php';
-        include($file);
-        if (!isset($this->Controller))
+        if($name != "Favicon.ico")
         {
-            return ($this->Controller = new $name());
+          $file = ROOT.DS.'controller'.DS.ucfirst($name).'.php';
+          require_once($file);
+          if (!isset($this->Controller))
+          {
+              return ($this->Controller = new $name());
+          }
         }
     }
     ////////////// PASSER LOAD CONTROLLER EN STATIC
