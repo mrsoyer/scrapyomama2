@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+  <title>busy.io: Schedule Instagram Posts and Post to Instagram From Your Computer</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" />
+    <script type="text/javascript" src="../cdn.busy.io/assets/jquery-1.11.1.min.js"></script>
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="css/jquery.reject.css"/>
+    <link rel="stylesheet" href="css/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="css/jquery-ui.structure.min.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+
+    <script type="text/javascript" src="../cdn.busy.io/assets/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../cdn.busy.io/assets/jquery.unveil.js"></script>
+    <script type="text/javascript" src="../cdn.busy.io/assets/jquery.reject.js"></script>
+    <script type="text/javascript" src="../cdn.busy.io/assets/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" type="text/javascript" id="dropboxjs" data-app-key="n5tzpsjzn7f0exh"></script>    
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="js/moment.js"></script>    
+    <script type="text/javascript" src="js/dropzone.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    
+    <script>
+      $(function() { $.reject({reject:{msie:8}}); });
+    </script>    <script>
+          
+    var _rollbarConfig = {
+        accessToken: "459903e56a6a48e9af41ccd147edf5b6",
+        captureUncaught: true,
+        ignoredMessages: ["(unknown): Script error"],        
+        captureUnhandledRejections: false,
+        payload: {
+            environment: "production",
+            person: {
+              id: 0,
+              username: '',
+            }
+        }
+    };
+    // Rollbar Snippet
+    !function(r){function e(t){if(o[t])return o[t].exports;var n=o[t]={exports:{},id:t,loaded:!1};return r[t].call(n.exports,n,n.exports,e),n.loaded=!0,n.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var t=o(1).Rollbar,n=o(2);_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://d37gvrvc0wt4s1.cloudfront.net/js/v1.9/rollbar.min.js";var a=t.init(window,_rollbarConfig),i=n(a,_rollbarConfig);a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,i)},function(r,e){"use strict";function o(r){return function(){try{return r.apply(this,arguments)}catch(e){try{console.error("[Rollbar]: Internal error",e)}catch(o){}}}}function t(r,e,o){window._rollbarWrappedError&&(o[4]||(o[4]=window._rollbarWrappedError),o[5]||(o[5]=window._rollbarWrappedError._rollbarContext),window._rollbarWrappedError=null),r.uncaughtError.apply(r,o),e&&e.apply(window,o)}function n(r){var e=function(){var e=Array.prototype.slice.call(arguments,0);t(r,r._rollbarOldOnError,e)};return e.belongsToShim=!0,e}function a(r){this.shimId=++c,this.notifier=null,this.parentShim=r,this._rollbarOldOnError=null}function i(r){var e=a;return o(function(){if(this.notifier)return this.notifier[r].apply(this.notifier,arguments);var o=this,t="scope"===r;t&&(o=new e(this));var n=Array.prototype.slice.call(arguments,0),a={shim:o,method:r,args:n,ts:new Date};return window._rollbarShimQueue.push(a),t?o:void 0})}function l(r,e){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){var o=e.addEventListener;e.addEventListener=function(e,t,n){o.call(this,e,r.wrap(t),n)};var t=e.removeEventListener;e.removeEventListener=function(r,e,o){t.call(this,r,e&&e._wrapped?e._wrapped:e,o)}}}var c=0;a.init=function(r,e){var t=e.globalAlias||"Rollbar";if("object"==typeof r[t])return r[t];r._rollbarShimQueue=[],r._rollbarWrappedError=null,e=e||{};var i=new a;return o(function(){if(i.configure(e),e.captureUncaught){i._rollbarOldOnError=r.onerror,r.onerror=n(i);var o,a,c="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(o=0;o<c.length;++o)a=c[o],r[a]&&r[a].prototype&&l(i,r[a].prototype)}return e.captureUnhandledRejections&&(i._unhandledRejectionHandler=function(r){var e=r.reason,o=r.promise,t=r.detail;!e&&t&&(e=t.reason,o=t.promise),i.unhandledRejection(e,o)},r.addEventListener("unhandledrejection",i._unhandledRejectionHandler)),r[t]=i,i})()},a.prototype.loadFull=function(r,e,t,n,a){var i=function(){var e;if(void 0===r._rollbarPayloadQueue){var o,t,n,i;for(e=new Error("rollbar.js did not load");o=r._rollbarShimQueue.shift();)for(n=o.args,i=0;i<n.length;++i)if(t=n[i],"function"==typeof t){t(e);break}}"function"==typeof a&&a(e)},l=!1,c=e.createElement("script"),d=e.getElementsByTagName("script")[0],p=d.parentNode;c.crossOrigin="",c.src=n.rollbarJsUrl,c.async=!t,c.onload=c.onreadystatechange=o(function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){c.onload=c.onreadystatechange=null;try{p.removeChild(c)}catch(r){}l=!0,i()}}),p.insertBefore(c,d)},a.prototype.wrap=function(r,e){try{var o;if(o="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._wrapped){r._wrapped=function(){try{return r.apply(this,arguments)}catch(e){throw e._rollbarContext=o()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e,e}},r._wrapped._isWrap=!0;for(var t in r)r.hasOwnProperty(t)&&(r._wrapped[t]=r[t])}return r._wrapped}catch(n){return r}};for(var d="log,debug,info,warn,warning,error,critical,global,configure,scope,uncaughtError,unhandledRejection".split(","),p=0;p<d.length;++p)a.prototype[d[p]]=i(d[p]);r.exports={Rollbar:a,_rollbarWindowOnError:t}},function(r,e){"use strict";r.exports=function(r,e){return function(o){if(!o&&!window._rollbarInitialized){var t=window.RollbarNotifier,n=e||{},a=n.globalAlias||"Rollbar",i=window.Rollbar.init(n,r);i._processShimQueue(window._rollbarShimQueue||[]),window[a]=i,window._rollbarInitialized=!0,t.processPayloads()}}}}]);
+    // End Rollbar Snippet
+    </script>
+
+
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','//connect.facebook.net/en_US/fbevents.js');    
+    fbq('init', '1068108176535063');
+    fbq('track', "PageView");
+    </script>
+    
+    <script src="http://platform.twitter.com/oct.js" type="text/javascript"></script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');    
+      ga('create', 'UA-77354814-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+    <meta name="google-site-verification" content="zcykI0fqNUQzyj7GdJeRfuoT0uoCnGrlaZT7s8jlHTQ" />
+    </head> <!-- public_layout -->
+
+<body class="detail-page-background">
+  
+  
+  <div id="container">
+  
+  	<div class="frontpage-menu navbar" style="background-color:#000;max-width:100%;">
+      <div class="navbar-header">      
+        <a class="navbar-brand" href="index.html"><img class="app-logo" src="../cdn.busy.io/assets/logo.png"/></a>    
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>    
+    </div>
+
+    <div class="navbar-collapse collapse navbar-responsive-collapse">    
+        <ul class="nav navbar-nav">
+
+            <li class="">
+                <a href="features.html">FEATURES</a>
+            </li>
+          
+            <li class="">
+                <a href="pricing.html">PRICING</a>
+            </li>
+    
+            <li class="">
+                <a href="pricing/agency.html">AGENCIES</a>
+            </li>
+
+            <li class="">
+                <a href="how.html">HOW IT WORKS</a>
+            </li>
+
+            <li class="active">
+                <a href="faq.html">FAQ</a>
+            </li>
+    
+            <li class="">
+                <a href="contact.html">CONTACT</a>
+            </li>
+    
+        </ul>
+    
+        <div id="login-button-panel" style="float:right;margin-right:0px;">
+            <a id="agency-login-btn" href="agency.html" class="btn btn-sm btn-success">Agency Login</a>
+            <a id="regular-login-btn" href="login.html" class="btn btn-sm btn-warning">Login</a>
+        </div>
+    
+    </div>
+
+  	</div>
+    
+    <div class="detail-page-container">  
+      <div class="detail-page-feature" style="padding-top:20px;">
+    	  <h1>FAQ</h1>
+
+<br><br>
+<input type="text" class="form-control" name="search" id="search" value="" placeholder="Enter a search term..." onkeyup="search();"/>
+
+<br><br>
+
+
+
+  <div id="answer-9" class="answer-block">
+    <a name="9"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">Can I also post to Twitter and Facebook?</h4>
+    <div class="answer" id="answer-9-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      Yes! You can share your posts on Twitter as well (with the correct link to Instagram, and the image visible on the Twitter timeline) — we are working on Facebook, but that's coming very soon we hope.
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-8" class="answer-block">
+    <a name="8"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">Do you support posting hashtags as first comment?</h4>
+    <div class="answer" id="answer-8-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      YES! We finally do. Make sure you understand Instagram's policies and guidelines around hashtags and comments. Never post a wall of hashtags thinking this will go by unnoticed over time. Instagram currently has a hard limit of around 30 hashtags, but they want to reduce it dramatically to just four hashtags total (this includes the photo caption and your comments). As a third-party, we are already required to abide by this rule, while the app itself still allows for 30 hashtags.
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-5" class="answer-block">
+    <a name="5"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">I have trouble verifying the account, what can I do?</h4>
+    <div class="answer" id="answer-5-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      It can be tricky sometimes, but here's the general outline of what you should be doing:<br><br>Schedule a post and make it so that it'll post right away. It will take about 1-2 minutes for our system to pick up your post and send it to the machines. Now, this may work straight away and all is good.<br><br>If not (that's the more likely variant), our machine will fail verification. Instagram sees a new device trying to use your account and stops us right there. That's good (for you) — but also means it needs a little more work.<br><br>Now, you take your device and log in to Instagram (log out and log in again!) — if everything works, you should now see a screen that informs you about this new device and asks you if that was you. You have to click "IT WAS ME", since our devices are authorized by you now. <br><br>And that's it, it should work now. Go back to BUSY and re-schedule that same post. It may just go through this time.<br><br>If not, drop us a note in the contact form below or to: help@busy.io and we usually deal with it very quickly.
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-16" class="answer-block">
+    <a name="16"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">Why are we limited to just 4 hashtags?</h4>
+    <div class="answer" id="answer-16-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      Since June 2016, Instagram requires all third-party suppliers to abide by the 4-hashtag rule. This includes hashtags used in your comments as well as the photo caption. They have introduced this to reduce hashtag spam. Now the confusion here is the fact that the app itself will still allow for 30 hashtags to be used. Why are we limited to just four?<br><hr>In case you are interested, here is the <a href="https://www.instagram.com/developer/endpoints/comments/#post_media_comments" target="_blank">official Instagram developer documentation</a>, which says:<br><br><strong>Create a comment on a media object with the following rules:</strong><br><ul><br><li>The total length of the comment cannot exceed 300 characters.</li><br><li>The comment cannot contain more than 4 hashtags.</li><br><li>The comment cannot contain more than 1 URL.</li><br><li>The comment cannot consist of all capital letters</li></ul><hr><br>Since we're working with some of the very largest agencies, we can't risk getting shut down using other ways to work around that limitation. In fact, also in June 2016, Instagram made true on their threat to shut down the majority of applications using their old API (<a href="http://uk.businessinsider.com/instagram-made-a-change-that-stopped-lots-of-third-party-apps-from-working-2016-6" target="_blank">read more here</a>). This even included access for major apps like Flipboard, IFTTT and many others.<br><br><h4>Why are they suddenly so strict about this?</h4>At the end of the day, Instagram does not want anyone to use "posts" as free advertising. We suspect they have a two-step approach to shut this behaviour down as follows:<br><br><strong>Step 1</strong> is to differentiate all accounts into so-called consumer and business profiles (many will do this in hopes of preferential treatment). <br><br><strong>Step 2</strong> is to direct-market to (and monitor) the business profiles to get them to purchase actual advertising through Instagram and Facebook's Ad Manager. As of right now, Instagram isn't making a single dollar from any of the people using services like ours. They only make money from consumers scrolling through their feeds and consuming ads. So this has become their primary mission — monetize the non-consumers.<br><br>Now, what's so annoying is how they are communicating those limitations. Publicly, there isn't much information on the 4-hashtag limit (there is if you want to spend some time searching for it), but to third-party suppliers, they are pushing this without mercy at the moment.<br><br>The app still supports up to 30 hashtags, but when the time is right, they'll start enforcing this in the app as well. It's just that every time they do something as drastic as that, it'll generate a massive outcry. What's already starting to happen in the background is that not all of those 30 hashtags are actually driving traffic to your account. To a real person, those 30 hashtags mean nothing, they are purely annoying. And Instagram wants to get rid of this but at the same time not cause a massive chaos. 
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-13" class="answer-block">
+    <a name="13"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">Do you have special offers for charities, NPO, military or other similar organisations?</h4>
+    <div class="answer" id="answer-13-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      Unfortunately not at the moment. We can always throw in a few extra credits here and there, no problem at all. But since almost all of our lower-tier accounts (non-agency accounts) are not running at a profit (not even at cost), we would end up paying you for offering discounts. While that would be great and supporting your efforts, it would put us out of business by tomorrow. We're trying to work something out, stay tuned.
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-11" class="answer-block">
+    <a name="11"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">Do you support Instagrams new Portrait/Landscape modes?</h4>
+    <div class="answer" id="answer-11-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      Yes, we absolutely do. Just keep in mind that Instagram still has limits. For instance, a full-screen iPhone 6 screenshot in portrait will get cut at the top and at the bottom. We don't do this, it's cropped by Instagram during posting.
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-19" class="answer-block">
+    <a name="19"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">Can you call me back and explain everything to me?</h4>
+    <div class="answer" id="answer-19-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      Unfortunately not. We have trimmed everything down to the absolute minimum so that we can offer those prices (and even there, our lower two pricing tiers do not make a profit at this point). Send us a quick e-mail, it'll surely solve all the problems and questions you have on your mind. And you'll have everything in print then, you can easily share this with other co-workers and should you ever move into a different job position, your successor will have it all right there in those hand-over e-mails. We want to make the best of everyone's time, and self-service with dedicated e-mail support has helped us achieve this.
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-18" class="answer-block">
+    <a name="18"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">Can I stop by for a meeting?</h4>
+    <div class="answer" id="answer-18-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      Sorry, the only way we can afford to run this service next to our other products is to keep everything as self-service as humanly possible. Meetings cost a lot of money, and we usually clear up any problems by e-mail much faster, and much more cost-effective for everyone involved.
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-17" class="answer-block">
+    <a name="17"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">Are you a real company?</h4>
+    <div class="answer" id="answer-17-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      Yes. Unlike others, we are registered with the UK Companies House (08259865) and work out of the beautiful Islington in London. 
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-14" class="answer-block">
+    <a name="14"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">Do you have special pricing for agencies?</h4>
+    <div class="answer" id="answer-14-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      Yes! Just go here and tell us a bit about you: <a href="pricing/agency.html">Agency Pricing</a>
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-12" class="answer-block">
+    <a name="12"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">What is tracking, or analytics?</h4>
+    <div class="answer" id="answer-12-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      With tracking, we're storing an hourly update of the number of likes/comments your posts get. This data is accessible on a monthly overview as well where you will be able to understand your performance better. Instagram is showing the same numbers for each one of your posts, but once the post drifts off your timeline, there is no real option for exporting the data or use it for understanding and reporting your performance. <br><br>We are working hard on improving our tracking currently, hoping to add more analytics in the very near future.
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-10" class="answer-block">
+    <a name="10"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">I cannot afford your pricing</h4>
+    <div class="answer" id="answer-10-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      Well, let's take a look at your account and we'll see what we can do. Drop us a line with your account to: help@busy.io and we will evaluate the situation. Keep in mind that this service is tailored to professionals. Our prices are merely a tiny fraction of what agencies are charging their clients.
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-7" class="answer-block">
+    <a name="7"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">Do you support animated GIFs?</h4>
+    <div class="answer" id="answer-7-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      Sadly, no. Instagram doesn't either, they only allow photos and video at this time. But you can try this and then come back to us with your MP4 files: <a href="https://cloudconvert.com/gif-to-mp4" target="_blank">Convert GIF to MP4</a>
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-6" class="answer-block">
+    <a name="6"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">Do you support video?</h4>
+    <div class="answer" id="answer-6-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      Yes! As long as the video meets Instagram's specifications (longer than 3 seconds, shorter than 15 seconds among other things), we do support video very well.
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-4" class="answer-block">
+    <a name="4"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">I keep getting an e-mail that says "Invalid Password"?</h4>
+    <div class="answer" id="answer-4-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      Please make sure that your password is exactly the same as the one you use with Instagram. You can test it out on the web, simply login at: <a href="http://www.instagram.com/">http://www.instagram.com/</a> and see if the password works there.<br><br>If you mistyped your password and now can't get into BUSY anymore, drop a quick note in the CONTACT US form on the bottom right of the screen, or send an e-mail to: help@busy.io and it will be fixed quickly.
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-3" class="answer-block">
+    <a name="3"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">Will Instagram block my account?</h4>
+    <div class="answer" id="answer-3-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      No, most likely not (nobody ever knows, so, legally, we can't say 100% no). <br><br>If it helps — we haven't had a single case of a blocked account, and we're running some very large accounts for some very large agencies. The main reason why an account gets disabled or blocked are shady third party tools, or community reports. If you use a lot of nudity, explicit content or other sensitive material, your posts may not go through — and eventually, your account may get auto-banned. This also happens frequently to almost all accounts trying to boost their follower numbers through shady third-party services. If you purchase followers, your account will get blocked. Simple as that.<br><br>Unlike other services, we use the official Instagram app, an official Instagram supported phone and simply automate the task of uploading the photo on the phone and typing the text. Our robots log you in, does all the work a real person usually does, and then logs you out again. It's all done on an actual phone, no simulators, no magic. To keep the data secure, this happens through automated processes controlling these phones, not underpaid interns.
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+
+  <div id="answer-2" class="answer-block">
+    <a name="2"></a>    <br><br>
+    <h4 style="background-color:#333;color:#fafafa;padding:8px;border-radius:5px;border:1px solid #ddd;">I want to cancel, how?</h4>
+    <div class="answer" id="answer-2-body" style="margin-bottom:20px;font-size:14px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;padding-left:5px;padding-right:5px;padding-top:10px;">
+      Send us an e-mail at: help@busy.io and we will get this sorted out. If you weren't happy with the service, we'll get your most recent payment refunded — no questions asked. Just tell us and it will be done.
+    </div>
+    <input class="tags" type="hidden" value=""/>
+  </div>
+
+
+<br><br><br><br>
+
+<script>
+  function search() {
+    var q = $("#search").val().toLowerCase().trim();
+    if (q.length>2) {
+      $(".answer").each(function(i,d) {
+        var answerId = $(d).attr("id");
+        answerId = answerId.replace("answer-", "")
+        answerId = answerId.replace("-body", "");
+        var eligible = false;
+        var bodyText = $(d).html().toLowerCase();
+        var titleText = $(d).parent().children("h4").html().toLowerCase();
+        var tags = $(d).parent().children(".tags").html().toLowerCase();        
+        if (bodyText.indexOf(q)>-1) eligible = true;
+        if (titleText.indexOf(q)>-1) eligible = true;
+        if (tags.indexOf(q)>-1) eligible = true;
+        if (eligible) {
+          $("#answer-"+answerId).fadeIn();
+        } else {
+          $("#answer-"+answerId).fadeOut();          
+        }
+      });
+    } else {
+      $(".answer-block").show();
+    }
+  }
+</script>
+      </div>  
+    </div>
+    
+  </div>
+  
+<!-- begin olark code -->
+<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+0:+new Date};a.P=function(u){
+a.p[u]=new Date-a.p[0]};function s(){
+a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+b.contentWindow[g].open()}catch(w){
+c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('2630-857-10-7125');/*]]>*/</script><noscript><a href="https://www.olark.com/site/2630-857-10-7125/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+<!-- end olark code -->
+
+</body>
+
+</html>

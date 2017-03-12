@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+  <title>busy.io: Schedule Snapchat Posts and Post to Snapchat From Your Computer</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" />
+    <script type="text/javascript" src="../cdn.busy.io/assets/jquery-1.11.1.min.js"></script>
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="css/jquery.reject.css"/>
+    <link rel="stylesheet" href="css/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="css/jquery-ui.structure.min.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+
+    <script type="text/javascript" src="../cdn.busy.io/assets/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../cdn.busy.io/assets/jquery.unveil.js"></script>
+    <script type="text/javascript" src="../cdn.busy.io/assets/jquery.reject.js"></script>
+    <script type="text/javascript" src="../cdn.busy.io/assets/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" type="text/javascript" id="dropboxjs" data-app-key="n5tzpsjzn7f0exh"></script>    
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="js/moment.js"></script>    
+    <script type="text/javascript" src="js/dropzone.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    
+    <script>
+      $(function() { $.reject({reject:{msie:8}}); });
+    </script>    <script>
+          
+    var _rollbarConfig = {
+        accessToken: "459903e56a6a48e9af41ccd147edf5b6",
+        captureUncaught: true,
+        ignoredMessages: ["(unknown): Script error"],        
+        captureUnhandledRejections: false,
+        payload: {
+            environment: "production",
+            person: {
+              id: 0,
+              username: '',
+            }
+        }
+    };
+    // Rollbar Snippet
+    !function(r){function e(t){if(o[t])return o[t].exports;var n=o[t]={exports:{},id:t,loaded:!1};return r[t].call(n.exports,n,n.exports,e),n.loaded=!0,n.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var t=o(1).Rollbar,n=o(2);_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://d37gvrvc0wt4s1.cloudfront.net/js/v1.9/rollbar.min.js";var a=t.init(window,_rollbarConfig),i=n(a,_rollbarConfig);a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,i)},function(r,e){"use strict";function o(r){return function(){try{return r.apply(this,arguments)}catch(e){try{console.error("[Rollbar]: Internal error",e)}catch(o){}}}}function t(r,e,o){window._rollbarWrappedError&&(o[4]||(o[4]=window._rollbarWrappedError),o[5]||(o[5]=window._rollbarWrappedError._rollbarContext),window._rollbarWrappedError=null),r.uncaughtError.apply(r,o),e&&e.apply(window,o)}function n(r){var e=function(){var e=Array.prototype.slice.call(arguments,0);t(r,r._rollbarOldOnError,e)};return e.belongsToShim=!0,e}function a(r){this.shimId=++c,this.notifier=null,this.parentShim=r,this._rollbarOldOnError=null}function i(r){var e=a;return o(function(){if(this.notifier)return this.notifier[r].apply(this.notifier,arguments);var o=this,t="scope"===r;t&&(o=new e(this));var n=Array.prototype.slice.call(arguments,0),a={shim:o,method:r,args:n,ts:new Date};return window._rollbarShimQueue.push(a),t?o:void 0})}function l(r,e){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){var o=e.addEventListener;e.addEventListener=function(e,t,n){o.call(this,e,r.wrap(t),n)};var t=e.removeEventListener;e.removeEventListener=function(r,e,o){t.call(this,r,e&&e._wrapped?e._wrapped:e,o)}}}var c=0;a.init=function(r,e){var t=e.globalAlias||"Rollbar";if("object"==typeof r[t])return r[t];r._rollbarShimQueue=[],r._rollbarWrappedError=null,e=e||{};var i=new a;return o(function(){if(i.configure(e),e.captureUncaught){i._rollbarOldOnError=r.onerror,r.onerror=n(i);var o,a,c="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(o=0;o<c.length;++o)a=c[o],r[a]&&r[a].prototype&&l(i,r[a].prototype)}return e.captureUnhandledRejections&&(i._unhandledRejectionHandler=function(r){var e=r.reason,o=r.promise,t=r.detail;!e&&t&&(e=t.reason,o=t.promise),i.unhandledRejection(e,o)},r.addEventListener("unhandledrejection",i._unhandledRejectionHandler)),r[t]=i,i})()},a.prototype.loadFull=function(r,e,t,n,a){var i=function(){var e;if(void 0===r._rollbarPayloadQueue){var o,t,n,i;for(e=new Error("rollbar.js did not load");o=r._rollbarShimQueue.shift();)for(n=o.args,i=0;i<n.length;++i)if(t=n[i],"function"==typeof t){t(e);break}}"function"==typeof a&&a(e)},l=!1,c=e.createElement("script"),d=e.getElementsByTagName("script")[0],p=d.parentNode;c.crossOrigin="",c.src=n.rollbarJsUrl,c.async=!t,c.onload=c.onreadystatechange=o(function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){c.onload=c.onreadystatechange=null;try{p.removeChild(c)}catch(r){}l=!0,i()}}),p.insertBefore(c,d)},a.prototype.wrap=function(r,e){try{var o;if(o="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._wrapped){r._wrapped=function(){try{return r.apply(this,arguments)}catch(e){throw e._rollbarContext=o()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e,e}},r._wrapped._isWrap=!0;for(var t in r)r.hasOwnProperty(t)&&(r._wrapped[t]=r[t])}return r._wrapped}catch(n){return r}};for(var d="log,debug,info,warn,warning,error,critical,global,configure,scope,uncaughtError,unhandledRejection".split(","),p=0;p<d.length;++p)a.prototype[d[p]]=i(d[p]);r.exports={Rollbar:a,_rollbarWindowOnError:t}},function(r,e){"use strict";r.exports=function(r,e){return function(o){if(!o&&!window._rollbarInitialized){var t=window.RollbarNotifier,n=e||{},a=n.globalAlias||"Rollbar",i=window.Rollbar.init(n,r);i._processShimQueue(window._rollbarShimQueue||[]),window[a]=i,window._rollbarInitialized=!0,t.processPayloads()}}}}]);
+    // End Rollbar Snippet
+    </script>
+
+
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','//connect.facebook.net/en_US/fbevents.js');    
+    fbq('init', '1068108176535063');
+    fbq('track', "PageView");
+    </script>
+    
+    <script src="http://platform.twitter.com/oct.js" type="text/javascript"></script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');    
+      ga('create', 'UA-77354814-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+    <meta name="google-site-verification" content="zcykI0fqNUQzyj7GdJeRfuoT0uoCnGrlaZT7s8jlHTQ" />
+    </head> <!-- welcome_layout -->
+
+<body class="frontpage-background">
+
+	<div class="frontpage-menu navbar" style="background-color:transparent;">
+    <div class="navbar-header">      
+        <a class="navbar-brand" href="index.html"><img class="app-logo" src="assets/logo.png"/></a>    
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>    
+    </div>
+
+    <div class="navbar-collapse collapse navbar-responsive-collapse">    
+        <ul class="nav navbar-nav">
+
+            <li class="">
+                <a href="#features.html">FEATURES</a>
+            </li>
+          
+            <li class="">
+                <a href="pricing.html">PRICING</a>
+            </li>
+    
+            <li class="">
+                <a href="#pricing/agency.html">AGENCIES</a>
+            </li>
+
+            <li class="">
+                <a href="#how.html">HOW IT WORKS</a>
+            </li>
+
+            <li class="">
+                <a href="#faq.html">FAQ</a>
+            </li>
+    
+            <li class="">
+                <a href="#contact.html">CONTACT</a>
+            </li>
+    
+        </ul>
+    
+        <div id="login-button-panel" style="float:right;margin-right:0px;">
+            <a id="agency-login-btn" href="agency.html" class="btn btn-sm btn-success">Agency Login</a>
+            <a id="regular-login-btn" href="login.html" class="btn btn-sm btn-warning">Login</a>
+        </div>
+    
+    </div>
+	</div>
+  
+  
+  <div class="frontpage-container hide-frontpage-image">
+  
+  
+    <div class="frontpage-feature">
+  	  <script src='https://www.google.com/recaptcha/api.js'></script>
+
+<script>
+function checkAccountFirst() {  
+  
+  var u = $("#username").val();
+  var p = $("#password").val();
+  
+  if (u.indexOf("@")>-1) {
+    alert("Did you just enter an e-mail address? This won't work! We need your Snapchat username, not your e-mail address. Read the instructions please.");
+    return;
+  }
+  
+  var proceed = true;
+  if (u.trim().length == 0) { proceed = false; $("#username-empty").fadeIn(); return; }
+  if (p.trim().length == 0) { proceed = false; $("#password-empty").fadeIn(); return; }
+  if (proceed) {
+    $("#signup-form-container").fadeOut();
+    $("#please-wait").fadeIn();    
+    $.post("/signup/account_verification", {username:u} , function(response) {
+      if (response == "OK") {
+        $("#sign-up-form").submit();
+      } else {
+        $("#please-wait").hide();
+        $("#signup-form-container").show();
+        $("#Snapchat-link").attr("href", "https://www.Snapchat.com/" + $("#username").val());
+        $("#username-invalid").fadeIn();
+      }
+    });
+  } 
+}
+function typingInUsername() { 
+  $("#username-empty").hide(); $("#username-invalid").hide(); 
+}
+function cleanUsername() {
+  var u = $("#username").val();
+  if (u.indexOf("/")>-1) {
+    u = u.replace('http://Snapchat.com/', "");
+    u = u.replace('https://Snapchat.com/', "");
+    u = u.replace('http://www.Snapchat.com/', "");
+    u = u.replace('https://www.Snapchat.com/', "");
+    u = u.replace("/", "");
+    u = u.replace("'", "");
+    u = u.replace('"', "");
+    $("#username").val(u);
+  }  
+}
+function typingInPassword() { $("#password-empty").hide(); }
+</script>
+  
+<div class="box-signup" style="margin-top:40px !important;">
+
+  <div id="please-wait" style="display:none;margin-top:10px;text-align: center;">
+    <div style="margin-bottom:15px;padding:5px;"><i class="fa fa-2x fa-circle-o-notch fa-spin"></i></div>
+    We're checking your account &mdash; only takes a second
+  </div>
+
+  <div id="signup-form-container">
+
+  <h4 style="color:#333;text-align: center; margin-bottom:20px;">It only takes a second, let's get started</h1>
+
+  <form id="sign-up-form" class="form-horizontal" action="/signup" method="post">
+  <fieldset>
+    
+      <div style="font-size:13px;color:#555;margin-bottom:20px;border-top:1px dotted #aaa;padding-top:15px;">
+      Please sign up with your <span style="font-weight:bold;color:#e500a0;">existing Snapchat username and password</span>. We need this to act on your behalf
+      when posting to Snapchat (only with your approval of course).
+      </div>
+
+      <label for="inputEmail" class="control-label" style="margin-bottom:5px;">Your Snapchat Username</label><br>
+      <div class="">
+            <input type="username" onkeyup="cleanUsername();" onkeydown="typingInUsername();" name="username" class="form-control" id="username" placeholder="Username (do not use your e-mail)" value="">
+
+      </div>
+      <br>
+      <label for="inputPassword" class="control-label" style="margin-bottom:5px;">Your Snapchat Password</label><br>
+      <div class="">
+          <input type="password" onkeydown="typingInPassword();" name="password" class="form-control" id="password" placeholder="Password (the one you use on Snapchat)">
+      </div>
+
+      <br>
+      
+      <div id="password-empty" class="alert alert-danger" style="display:none;margin-top:15px;">
+          <strong>Oh snap!</strong> Password cannot be empty. Try again.
+      </div>
+
+      
+
+      <div id="username-empty" class="alert alert-danger" style="display:none;margin-top:15px;">
+          <strong>Oh wait!</strong> Username cannot be empty.
+      </div>
+
+      <div id="username-invalid" class="alert alert-danger" style="display:none;margin-top:15px;">
+          This username doesn't exist on Snapchat!<br>
+          You can <a target="_blank" id="Snapchat-link" href="https://www.Snapchat.com/"><strong>double-check this here</strong></a>
+      </div>
+      
+
+      <div id="captcha-error" class="alert alert-danger" style="display:none;margin-top:15px;">
+          <strong>Try again!</strong> You need to solve the captcha below.
+      </div>
+      
+
+
+      <br>
+      
+      <div class="g-recaptcha" data-sitekey="6LfFHx0TAAAAALdsA1FInrF5fQdR9Hkkv5OhbfWd" style="margin-bottom:15px;"></div>      
+
+      <div style="font-size:11px;color:#888;">
+        By signing up, you agree to our <a href="privacy.html"><strong>privacy policy</strong></a> and <a href="tos.html"><strong>terms of service.</strong></a>
+      </div>
+      
+      <br>
+      
+  </fieldset>
+
+  </form>
+
+  <button id="submit-button" class="btn btn-primary" onclick="checkAccountFirst();">Go to Dashboard</button>
+  
+  </div>
+
+</div>
+    </div>
+  
+  </div>
+
+  
+
+
+
+
+</body>
+
+</html>

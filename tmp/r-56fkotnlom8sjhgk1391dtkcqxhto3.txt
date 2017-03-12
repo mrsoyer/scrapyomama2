@@ -1,0 +1,18 @@
+{
+    "_shoot": {
+        "prepar": {
+            "domid": "58bb1761bd966f3300e0217b",
+            "peopleid": "58bad42abd966f3300db1ed4",
+            "fromAddress": "3s2tj-mailbox-og9vw@nouveaumessage04.ovh",
+            "toName": null,
+            "toAdress": "josecortes@sfr.fr",
+            "proxy": "213.184.113.100:80"
+        },
+        "shoot": "ok"
+    },
+    "_id": {
+        "$oid": "58bb1761bd966f3300e0217b"
+    },
+    "note": 0,
+    "lastsend": 1489234390
+}

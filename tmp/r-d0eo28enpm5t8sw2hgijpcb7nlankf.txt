@@ -1,0 +1,30 @@
+{
+    "_shoot": {
+        "prepar": {
+            "fromName": "Sophie",
+            "fromAddress": "crqmj-mailbox-zi0d9@nouveaumessage31.ovh",
+            "toName": null,
+            "toAdress": "hpresse@sfr.fr",
+            "subject": "Sujet",
+            "htmlMessage": "message",
+            "textMessage": "message",
+            "proxy": "109.73.79.185:80"
+        },
+        "shoot": "ok"
+    },
+    "_query": [
+        "Shoot",
+        "preparDom",
+        [],
+        [],
+        [
+            "_print",
+            "_async"
+        ]
+    ],
+    "_id": {
+        "$oid": "58bb1761bd966f3300e0213e"
+    },
+    "note": 0,
+    "lastsend": 1489103127
+}

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "pecee/tinder-sdk": "^1.2"
+    }
+}

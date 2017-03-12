@@ -1,0 +1,30 @@
+{
+    "_shoot": {
+        "prepar": {
+            "fromName": "Sophie",
+            "fromAddress": "0w9qd@rencontresplanscul.com",
+            "toName": null,
+            "toAdress": "roger.vallais@free.fr",
+            "subject": "Sujet",
+            "htmlMessage": "message",
+            "textMessage": "message",
+            "proxy": "165.231.83.204:80"
+        },
+        "shoot": "ok"
+    },
+    "_query": [
+        "Shoot",
+        "preparDom",
+        [],
+        [],
+        [
+            "_print",
+            "_async"
+        ]
+    ],
+    "_id": {
+        "$oid": "58bb1761bd966f3300e02144"
+    },
+    "note": 0,
+    "lastsend": 1489103129
+}

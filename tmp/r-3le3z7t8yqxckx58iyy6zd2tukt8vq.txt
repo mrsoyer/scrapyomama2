@@ -1,0 +1,18 @@
+{
+    "_shoot": {
+        "prepar": {
+            "domid": "58bb1761bd966f3300e0213f",
+            "peopleid": "58bad46dbd966f3300db27e3",
+            "fromAddress": "qn4s2-mailbox-pj08h@domaine-name-15.ovh",
+            "toName": null,
+            "toAdress": "mrsoyer@me.com",
+            "proxy": "188.214.15.200:80"
+        },
+        "shoot": "ok"
+    },
+    "_id": {
+        "$oid": "58bb1761bd966f3300e0213f"
+    },
+    "note": 0,
+    "lastsend": 1489155827
+}

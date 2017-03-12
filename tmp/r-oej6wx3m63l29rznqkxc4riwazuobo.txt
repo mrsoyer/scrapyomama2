@@ -1,0 +1,30 @@
+{
+    "_shoot": {
+        "prepar": {
+            "fromName": "Sophie",
+            "fromAddress": "4znyx-mailbox-lwp0h@domaine-name-07.ovh",
+            "toName": null,
+            "toAdress": "roger.vallais@free.fr",
+            "subject": "Sujet",
+            "htmlMessage": "message",
+            "textMessage": "message",
+            "proxy": "196.196.220.171:80"
+        },
+        "shoot": "ok"
+    },
+    "_query": [
+        "Shoot",
+        "preparDom",
+        [],
+        [],
+        [
+            "_print",
+            "_async"
+        ]
+    ],
+    "_id": {
+        "$oid": "58bb1761bd966f3300e02142"
+    },
+    "note": 0,
+    "lastsend": 1489103128
+}

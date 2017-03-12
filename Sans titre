@@ -1,0 +1,14 @@
+
+
+//select tout les domaine1
+execute chaque domaine en tache de fond
+selection de la fiche du domaine
+
+recherche people note 5 - 1JOUr sinon
+recherche people note 4 - 2JOUr sinon
+
+...
+sinon on recherche une fiche dans people
+
+on envoie
+on met a jour le dom

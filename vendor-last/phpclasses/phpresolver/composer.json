@@ -1,0 +1,6 @@
+{
+	"autoload":
+	{
+		"classmap": ["DNS.php", "rrcompat.php"]
+	}
+}

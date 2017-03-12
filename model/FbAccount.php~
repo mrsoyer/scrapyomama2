@@ -1,0 +1,6 @@
+<?php
+
+class FbAccount extends Model
+{
+    $table = 'fb_accounts';
+}

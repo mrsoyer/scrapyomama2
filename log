@@ -1,0 +1,22 @@
+Getting proxy -> 195.154.19.219:80
+Getting proxy -> 62.4.13.161:80
+Getting proxy -> 62.4.11.71:80
+-----RESULT------
+
+ token errors: 0
+ proxy errors: 0
+ email errors: 139
+ succes      : 41
+------------------
+Getting proxy -> 195.154.19.219:80
+Getting proxy -> 195.154.19.219:80
+Getting proxy -> 62.4.13.161:80
+Getting proxy -> 62.4.11.71:80
+-----RESULT------
+
+ token errors: 0
+ proxy errors: 0
+ email errors: 22
+ succes      : 8
+------------------
+Getting proxy -> 195.154.19.219:80
