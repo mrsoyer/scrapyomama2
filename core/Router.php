@@ -16,7 +16,7 @@ class Router {
     public function loadController($name)
     {
         $file = ROOT.DS.'controller'.DS.ucfirst($name).'.php';
-        require_once($file);
+        include($file);
         if (!isset($this->Controller))
         {
             return ($this->Controller = new $name());
