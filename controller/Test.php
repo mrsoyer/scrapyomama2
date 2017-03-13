@@ -18,17 +18,13 @@ class Test extends Controller
 //____________________________________________________________________________||
 //-----------------------------------------------------------------------------*
     ';
-    $client = new MongoDB\Client("mongodb://sym:adty5M-cj@ds111570-a0.mlab.com:11570,ds111570-a1.mlab.com:11570/sym?replicaSet=rs-ds111570");
-$collection = $client->sym->beers;
 
-$result = $collection->insertOne( [ 'name' => 'Hinterland', 'brewery' => 'BrewDog' ] );
+    $this->loadModel('M');
+    $updateResult = $this->M->hello();
 
-echo "Inserted with Object ID '{$result->getInsertedId()}'";
 
-    }
 
-    public function sayHello($params)
-    {
-        echo ("Les paramertres sont : ". $params[0]. " et ".$params[1]);
+
+    var_dump($updateResult);
     }
 }

@@ -30,6 +30,8 @@ class Model
         {
             die($e->getMessage());
         }*/
+        $client = new MongoDB\Client("mongodb://sym:adty5M-cj@ds111570-a0.mlab.com:11570,ds111570-a1.mlab.com:11570/sym?replicaSet=rs-ds111570");
+        $this->db = $client->sym;
     }
 
     public function query($query)
@@ -105,7 +107,7 @@ class Model
                 if (!is_numeric($k))
                     $req .= $k. ' ' .'\''.$v.'\''. ' AND ';
                 else
-                    $req .= $v. ' AND ';                    
+                    $req .= $v. ' AND ';
             }
             $req = substr($req, 0, -5); // to verify
         }
@@ -275,7 +277,7 @@ class Model
         if (isset($this->id))
             $this->id = null;
     }
-    
+
     public function update($params)
     {
         $req = 'UPDATE '.$this->table.' SET ';
@@ -290,7 +292,7 @@ class Model
             if (!is_numeric($k))
                 $req .= $k. ' ' .'\''.$v.'\''. ' AND ';
             else
-                $req .= $v. ' AND ';                    
+                $req .= $v. ' AND ';
         }
         $req = substr($req, 0, -5);
         if ($this->debug == true)
@@ -326,7 +328,7 @@ class Model
         $req = substr($req, 0, -2);
             /**********************
             *********************** TO DO: conditions and wherein
-            ********************************************/       
+            ********************************************/
         if (!empty($params['conditions']))
         {
             $req .= ' WHERE ';
@@ -344,10 +346,10 @@ class Model
                             $req .= $val . ', ';
                         }
                         $req = substr($req, 0, -2);
-                        $req .= ')';                        
+                        $req .= ')';
                     }
                     else
-                        $req .= $v. ' AND ';                    
+                        $req .= $v. ' AND ';
                 }
             }
             $req = substr($req, 0, -5);
@@ -359,21 +361,3 @@ class Model
         $pre->execute($params['fields']);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

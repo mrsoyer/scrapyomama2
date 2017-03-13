@@ -47,6 +47,7 @@ feature
 
     private function shema($sym)
     {
+      $reponse = "";
       foreach($sym as $k=>$v)
         if(count($v) > 1)
         {
@@ -228,7 +229,7 @@ feature
           print_r($v['request']);
           unset($v['_print']);
           flush();
-          ob_flush();
+          //ob_flush();
         }
         if(isset($v['query']) || $v['request']['_query'])                     /////////////////////////
         {
