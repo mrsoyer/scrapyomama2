@@ -56,6 +56,7 @@ class Shoot extends Controller
     {
       $time = time();
       $this->loadModel('Domain');
+      $this->loadModel('Logs');
 
       $Domain = $this->Domain->domDetail($idDom[0]);
       $people = $this->people($Domain,$idDom[1]);
@@ -70,6 +71,8 @@ class Shoot extends Controller
       $this->updateDomain($nextSend,$people,$Domain,$shoot);
       $return = $this->preparReturn($Domain,$people,$shoot);
       print_r($return);
+      $return['insert'] = time();
+      $this->Logs->insert($return);
       if($shoot == "ok")
       {
         if(($sleep = 60-(time()-$time)) > 0)
