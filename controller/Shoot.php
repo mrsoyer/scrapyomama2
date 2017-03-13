@@ -63,7 +63,7 @@ class Shoot extends Controller
         $note[note] = $people['note'];
 
       $nextSend = $this->nextSend($note[note]);
-      $this->updateDomain($nextSend,$people,$Domain);
+      $this->updateDomain($nextSend,$people,$Domain,$shoot);
       $return = $this->preparReturn($Domain,$people,$shoot);
       print_r($return);
       if($shoot == "ok")
@@ -103,14 +103,14 @@ class Shoot extends Controller
       $nextSend = time();
       foreach($PeopleList as $k0 => $v0)
       {
-          if($v0[nextSend] > $nextSend)
+          if($v0[nextSend] < $nextSend)
           {
             $nextSend = $v0[nextSend];
             $people = $v0;
           }
 
       }
-      $people['id'] = '58bad34fc2ef162f4b4b4d24';
+
       if(isset($people))
         $people = $this->People->peopleDetail($people['id']);
       else
@@ -166,17 +166,17 @@ class Shoot extends Controller
     {
       if(!isset($people['BackNote']))
       {
-        $note[backnote] = $people['note']-1;
+        $note[BackNote] = $people['note']-1;
         $note[note] = $people['note'];
       }
       else{
         if($people['BackNote'] == 0)
         {
-          $note[backnote] = $people['note']-1;
+          $note[BackNote] = $people['note']-1;
           $note[note] = $people['note']-1;
         }
         else {
-          $note[backnote] = $people['BackNote']-1;
+          $note[BackNote] = $people['BackNote']-1;
           $note[note] = $people['note'];
         }
       }
@@ -216,9 +216,9 @@ class Shoot extends Controller
 
       $set['$set'][lastsend] = time();
 
-      if($people['status'] == 'new')
+      if($people['status'] == 'new' && $shoot == "ok")
         $set['$set'][people] = [$peopleExport];
-      else if($people['status'] == 'add')
+      else if($people['status'] == 'add' && $shoot == "ok")
         $set['$addToSet'][people] = $peopleExport;
       else {
         $query['people.id'] = $people[_id]['$oid'];

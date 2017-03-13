@@ -11,7 +11,7 @@ class People extends Model
 				[
 					'$set'=> [
 						note=> $note['note'],
-						BackNote=> $note['backnote'],
+						BackNote=> $note['BackNote'],
 						lastsend=> time(),
 						domain=> $Domain
 					],
