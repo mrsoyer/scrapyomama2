@@ -45,7 +45,11 @@ class Shoot extends Controller
           $i++;
         }
       }
-      $boom = $async->sync($shoot);
+      if(count($shoot) > 0)
+      {
+        print_r($shoot);
+        $boom = $async->sync($shoot);
+      }
     }
 
     public function shootDom($idDom)
@@ -220,7 +224,7 @@ class Shoot extends Controller
         $set['$set'][people] = [$peopleExport];
       else if($people['status'] == 'add' && $shoot == "ok")
         $set['$addToSet'][people] = $peopleExport;
-      else {
+      else if($people['status'] == 'update'){
         $query['people.id'] = $people[_id]['$oid'];
         $set['$set']['people.$.nextSend'] = $nextSend;
       }

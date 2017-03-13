@@ -35,6 +35,7 @@ class Domain extends Model
 
 	public function updateDomain($idDomain,$set,$query)
 	{
+
 		$collection = $this->db->Domain;
 		$query['_id'] = new MongoDB\BSON\ObjectID($idDomain);
     $q = $collection->updateOne($query,$set);
