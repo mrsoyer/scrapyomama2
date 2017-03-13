@@ -41,7 +41,7 @@ class Shoot extends Controller
         $diff =   strtotime("-".$minutes." minutes", time())-$v['lastsend'];
         if($diff > 0 && $i < $params[0])
         {
-          $shoot[]= [Shoot,shootDom,[$v[_id]['$oid']],[],[$params[1]]];
+          $shoot[]= [Shoot,shootDom,[$v[_id]['$oid'],$i],[],[$params[1]]];
           $i++;
         }
       }
@@ -58,7 +58,7 @@ class Shoot extends Controller
       $this->loadModel('Domain');
 
       $Domain = $this->Domain->domDetail($idDom[0]);
-      $people = $this->people($Domain);
+      $people = $this->people($Domain,$idDom[1]);
       $shoot = $this->sendMail($Domain,$people);
       if($shoot == "ok")
         $note = $this->updatePeople($people,$Domain);
@@ -72,12 +72,13 @@ class Shoot extends Controller
       print_r($return);
       if($shoot == "ok")
       {
-        sleep(30-(time()-$time));
-        $this->shootDom($idDom);
+        if(($sleep = 60-(time()-$time)) > 0)
+          sleep($sleep);
+        $this->shootDom([$idDom[0],0]);
       }
     }
 
-    private function people($Domain)
+    private function people($Domain,$sleep)
     {
       $this->loadModel('People');
       $people = array();
@@ -89,6 +90,7 @@ class Shoot extends Controller
 
       if(count($people) == 0)
       {
+        sleep($sleep);
         $people = $this->People->findPeople();
         if(isset($Domain[people]))
           $status = 'add';

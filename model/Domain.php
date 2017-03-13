@@ -40,12 +40,4 @@ class Domain extends Model
 		$query['_id'] = new MongoDB\BSON\ObjectID($idDomain);
     $q = $collection->updateOne($query,$set);
 	}
-	/*
-	$api = $this->newsym('Api');
-	$e = $api->V1([
-		_coll => 'Domain',
-		_id => $idDomain,
-		_p => $p
-	]);
-	*/
 }
