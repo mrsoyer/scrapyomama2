@@ -51,7 +51,65 @@ class Shoot extends Controller
         $boom = $async->sync($shoot);
       }
     }
+    public function logs()
+    {
+      $this->loadModel('Logs');
 
+      $count = $this->count();
+      $i = $count;
+      $lastlogs[_id]['$oid'] = "";
+      $w = 0;
+      while(1)
+      {
+        $logs = $this->Logs->log();
+
+        foreach($logs as $k=>$v)
+        {
+          if(!isset($lastlogs[$k]))
+          {
+            if($v['shoot'] == 'ok' && $w == 1)
+            {
+              sleep(1);
+              $i++;
+            }
+
+
+            $v['SendLast24h'] = $i;
+            print_r($v);
+          }
+        }
+        $w = 1;
+        $lastlogs = $logs;
+
+      }
+    }
+
+    public function logss()
+    {
+      $this->loadModel('Logs');
+
+      $count = $this->count();
+      $i = $count;
+      $lastlogs[_id]['$oid'] = "";
+      $w = 0;
+
+        $logs = $this->Logs->log();
+
+
+
+
+        $logs['SendLast24h'] = $i;
+
+        $w = 1;
+        $lastlogs = $logs;
+        print_r(json_encode($logs));
+
+    }
+    public function count()
+    {
+      $this->loadModel('People');
+      return($this->People->count());
+    }
     public function shootDom($idDom)
     {
       $time = time();

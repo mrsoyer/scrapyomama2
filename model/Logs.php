@@ -8,22 +8,24 @@ class Logs extends Model
 	{
 		$collection = $this->db->Logs;
     $collection->insertOne($e);
-		$collection->deleteMany(['insert' =>  [$lt => strtotime("-1 day")]]);
+		$collection->deleteMany(['insert' =>  ['$lt' => strtotime("-1 day")]]);
 	}
 
-	public function domDetail($_id)
+	public function log()
 	{
-		$collection = $this->db->Domain;
-		$query = $collection->findOne(['_id' => new MongoDB\BSON\ObjectID($_id)]);
-		$result = json_decode(json_encode($query),true);
-		return($result);
-	}
+		$collection = $this->db->Logs;
+		$cursor = $collection->find(
+		    [],
+		    [
+		        'limit' => 1000,
+		        'sort' => ['insert' => -1],
+		    ]
+		);
 
-	public function updateDomain($idDomain,$set,$query)
-	{
-
-		$collection = $this->db->Domain;
-		$query['_id'] = new MongoDB\BSON\ObjectID($idDomain);
-    $q = $collection->updateOne($query,$set);
-	}
+		foreach ($cursor as $document) {
+			 $document = json_decode(json_encode($document),true);
+			 $result[$document['_id']['$oid']] = $document;
+			}
+			return($result);
+		}
 }

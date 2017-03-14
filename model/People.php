@@ -20,6 +20,18 @@ class People extends Model
 		);
 	}
 
+	public function count()
+	{
+		$collection = $this->db->People;
+    $query = $collection->find(['lastsend' => ['$gt' => strtotime("-1 day")]]);
+		foreach ($query as $document) {
+   			$result[] = $document;
+		}
+	//	$result = json_decode(json_encode($query),true);
+		$count = count($result);
+		return($count);
+	}
+
 	public function findPeople()
 	{
 		$collection = $this->db->People;

@@ -52,20 +52,6 @@ class Track extends Controller
     {
       $async = $this->newsym('Async');
 
-
-      $upDomOk[0]= [Api,V1,[
-        _coll => 'Domain',
-        _q => [
-          '_id' => 'ObjectId("'.$e[1].'")',
-          'people._id' => 'ObjectId("'.$e[2].'")'
-        ],
-        _p => [
-          '$set'=> [
-            'people.$.note'=> $note,
-            'people.$.BackNote'=> $note
-          ]
-        ]
-      ],[],[]];
       $upDomOk[1]= [Api,V1,[
         _coll => 'People',
         _id => $e[2],
