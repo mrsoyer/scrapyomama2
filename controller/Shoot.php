@@ -68,14 +68,19 @@ class Shoot extends Controller
           if(!isset($lastlogs[$k]))
           {
             if($v['shoot'] == 'ok' && $w == 1)
-            {
-              sleep(1);
               $i++;
-            }
-
-
-            $v['SendLast24h'] = $i;
+            $lastlogs[] = $v;
+          }
+        }
+        $j=$i - count($lastlogs);
+        foreach($lastlogs as $k=>$v)
+        {
+          if($j < 60 + $i - count($lastlogs))
+          {
+            $v['SendLast24h'] = $j;
             print_r($v);
+            $j++;
+            sleep(1);
           }
         }
         $w = 1;
@@ -84,27 +89,7 @@ class Shoot extends Controller
       }
     }
 
-    public function logss()
-    {
-      $this->loadModel('Logs');
 
-      $count = $this->count();
-      $i = $count;
-      $lastlogs[_id]['$oid'] = "";
-      $w = 0;
-
-        $logs = $this->Logs->log();
-
-
-
-
-        $logs['SendLast24h'] = $i;
-
-        $w = 1;
-        $lastlogs = $logs;
-        print_r(json_encode($logs));
-
-    }
     public function count()
     {
       $this->loadModel('People');
@@ -135,7 +120,7 @@ class Shoot extends Controller
       {
         if(($sleep = 60-(time()-$time)) > 0)
           sleep($sleep);
-        $this->shootDom([$idDom[0],0]);
+        $this->shootDom([$idDom[0],$idDom[1]]);
       }
     }
 
@@ -151,8 +136,8 @@ class Shoot extends Controller
 
       if(count($people) == 0)
       {
-        sleep($sleep);
-        $people = $this->People->findPeople();
+
+        $people = $this->People->findPeople($sleep,$Domain);
         if(isset($Domain[people]))
           $status = 'add';
         else

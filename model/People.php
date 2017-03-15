@@ -12,8 +12,7 @@ class People extends Model
 					'$set'=> [
 						note=> $note['note'],
 						BackNote=> $note['BackNote'],
-						lastsend=> time(),
-						domain=> $Domain
+						lastsend=> time()
 					],
 					'$inc' => [count => 1]
 				]
@@ -32,15 +31,25 @@ class People extends Model
 		return($count);
 	}
 
-	public function findPeople()
+	public function findPeople($sleep,$Domain)
 	{
 		$collection = $this->db->People;
-			$query = $collection->find([domain => ['$exists' => false], 'note' => ['$gt' => 0]],['limit' => 1000]);
+			$query = $collection->find([domain => ['$exists' => false], 'note' => ['$gt' => 0]],['limit' => $sleep]);
 			foreach ($query as $document) {
-	   			$result[] = $document;
+	   			$result = $document;
 			}
 			$result = json_decode(json_encode($result),true);
-			$result= $result[rand(0,count($result))];
+
+			$DomExport[id] = $Domain[_id]['$oid'];
+      $DomExport[domain] = $Domain[domain];
+			$updateResult = $collection->updateOne(
+			    ['_id' => new MongoDB\BSON\ObjectID($result[_id]['$oid'])],
+					[
+						'$set'=> [
+							domain=> $DomExport
+						]
+					]
+			);
 			return($result);
 	}
 
