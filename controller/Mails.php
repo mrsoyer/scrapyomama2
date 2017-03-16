@@ -1,7 +1,7 @@
 <?php
-require dirname(dirname(__FILE__))."/vendor/phpclasses/smtpclass/email_message.php";
-require dirname(dirname(__FILE__))."/vendor/phpclasses/smtpclass/smtp.php";
-require dirname(dirname(__FILE__))."/vendor/phpclasses/smtpclass/smtp_message.php";
+require dirname(dirname(__FILE__))."/phpclasses/smtpclass/email_message.php";
+require dirname(dirname(__FILE__))."/phpclasses/smtpclass/smtp.php";
+require dirname(dirname(__FILE__))."/phpclasses/smtpclass/smtp_message.php";
 class Mails extends Controller
 {
     public $name = 'cards';
@@ -70,8 +70,8 @@ class Mails extends Controller
         'fromName' => $message['name'],
         'fromAddress' => $e['fromAddress'],
         'toName' => $e['toName'],
-        //'toAdress' => $e['toAdress'],
-        'toAdress' => "garciathomas@gmail.com",
+        'toAdress' => $e['toAdress'],
+        //'toAdress' => "garciathomas@gmail.com",
         'subject' => $message['subject'],
         'htmlMessage' => $message['htmlMessage'],
         'textMessage' => $message['textMessage'],
