@@ -8,6 +8,8 @@ class Test extends Controller
     {
       mail('garciathomas@gmail.com', 'Mon Sujet', "message");
     //phpinfo();
+    echo "coucou";
+    die();
       for ($i = 1; $i <= 5; ++$i) {
           $pid = pcntl_fork();
 
