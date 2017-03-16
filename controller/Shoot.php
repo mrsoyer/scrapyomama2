@@ -42,7 +42,7 @@ class Shoot extends Controller
       foreach($dom as $k=>$v)
       {
 
-        $minutes = (6+(($v['note']*$v['note']*$v['note'])/2));
+        $minutes = (60+(($v['note']*$v['note']*$v['note'])/2));
         $diff =   strtotime("-".$minutes." minutes", $_SERVER['REQUEST_TIME'])-$v['lastsend'];
         if($diff > 0 && $i < $e[0])
         {
@@ -233,8 +233,8 @@ class Shoot extends Controller
         'peopleid' =>$people['_id']['$oid'],
         'fromAddress' => $Domain['account'][rand(0,4)],
         'toName' => $people['firstname'],
-//        'toAdress' => $people['email'],
-        'toAdress' => "garciathomas@gmail.com",
+        'toAdress' => $people['email'],
+//        'toAdress' => "garciathomas@gmail.com",
         'proxy' => $Domain['proxy']
       ];
       //print_r($Prepar);
