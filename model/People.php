@@ -35,7 +35,7 @@ class People extends Model
 	public function count()
 	{
 		$collection = $this->db->People;
-    $query = $collection->find(['lastsend' => ['$gt' => strtotime("-1 day",$_SERVER['REQUEST_TIME'])]]);
+    $query = $collection->find(['lastsend' => ['$gt' => strtotime("-5 hours",$_SERVER['REQUEST_TIME'])]]);
 		foreach ($query as $document) {
    			$result[] = $document;
 		}

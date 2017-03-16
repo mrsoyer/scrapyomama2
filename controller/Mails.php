@@ -1,5 +1,7 @@
 <?php
-
+require dirname(dirname(__FILE__))."/vendor/phpclasses/smtpclass/email_message.php";
+require dirname(dirname(__FILE__))."/vendor/phpclasses/smtpclass/smtp.php";
+require dirname(dirname(__FILE__))."/vendor/phpclasses/smtpclass/smtp_message.php";
 class Mails extends Controller
 {
     public $name = 'cards';
@@ -43,6 +45,7 @@ class Mails extends Controller
 
     public function smtpOvh($e)
     {
+      //print_r(dirname(dirname(__FILE__))."/vendor/phpclasses/smtpclass/smtp_message.php");
 
       /*
       $this->smtpOvh([
@@ -56,31 +59,31 @@ class Mails extends Controller
         proxy => "109.73.79.145:80"
       ])
       */
-      $put = $_POST['json'];
+      //$put = $_POST['json'];
       //print_r($put);
-	    $e = json_decode($put,true);
+	  //  $e = json_decode($put,true);
       //print_r($e);
       $kit = $this->newsym('Kit');
       $message = $kit->findKit($e);
 
       $shoot = $this->smtp([
-        fromName => $message[name],
-        fromAddress => $e[fromAddress],
-        toName => $e[toName],
-        toAdress => $e[toAdress],
-        subject => $message[subject],
-        htmlMessage => $message[htmlMessage],
-        textMessage => $message[textMessage],
-        proxy => $e[proxy],
-        smtpHost => "ssl0.ovh.net",
-        smtpPort => 587,
-        smtpUser => $e[fromAddress],
-        smtpPassword => "tomylyjon"
+        'fromName' => $message['name'],
+        'fromAddress' => $e['fromAddress'],
+        'toName' => $e['toName'],
+        'toAdress' => $e['toAdress'],
+        'subject' => $message['subject'],
+        'htmlMessage' => $message['htmlMessage'],
+        'textMessage' => $message['textMessage'],
+        'proxy' => $e['proxy'],
+        'smtpHost' => "ssl0.ovh.net",
+        'smtpPort' => 587,
+        'smtpUser' => $e['fromAddress'],
+        'smtpPassword' => "tomylyjon"
       ]);
       //if(isset($put))
-            print_r($shoot);
+            
       //else
-      //  return $shoot;
+        return $shoot;
     }
 
 

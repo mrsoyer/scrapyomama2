@@ -6,6 +6,7 @@ class Test extends Controller
 
     public function index($e)
     {
+    print_r($_SERVER);
       for ($i = 1; $i <= 5; ++$i) {
           $pid = pcntl_fork();
 
@@ -21,4 +22,6 @@ class Test extends Controller
           echo "Child $status completed\n";
       }
     }
+
+
 }
