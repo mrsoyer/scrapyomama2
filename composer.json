@@ -1,11 +1,23 @@
 {
 
   "require" : {
-     "php": ">=7.0.0"
+    "silex/silex": "^1.3",
+    "monolog/monolog": "^1.4",
+    "twig/twig": "^1.8",
+    "symfony/twig-bridge": "^2",
+    "alrik11es/cowsayphp": "^1.2",
+    "jenssegers/mongodb": "^3.2",
+    "mongodb/mongodb": "^1.1",
+    "doctrine/mongodb": "dev-master",
+    "doctrine/mongodb-odm": "dev-master",
+    "doctrine/mongodb-odm-bundle": "dev-master",
+    "alcaeus/mongo-php-adapter": "dev-master",
+    "ext-mongodb": ">=1.1.2"
   },
   "require-dev": {
-    "heroku/heroku-buildpack-php": "*"
-
+    "heroku/heroku-buildpack-php": "*",
+    "mailin-api/mailin-api-php": "^1.0",
+  	"phpclasses/smtpclass": ">=1.0.3"
 
   }
 }
