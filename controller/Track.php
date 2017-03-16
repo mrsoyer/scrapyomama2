@@ -23,19 +23,21 @@ class Track extends Controller
     public function link($e)
     {
         $people = $this->findPeople($e[2]);
-        if($people[BackNote]<5)
+        if($people['BackNote']<5)
           $this->updatePeople($e,$people,5);
         $mailinfo = json_decode(file_get_contents(dirname(dirname(__FILE__))."/kit/".$e[0].'.json'),'true');
         header('location: '.$mailinfo['link']);
+        die();
 
     }
     public function img($e)
     {
         $people = $this->findPeople($e[2]);
-        if(($people[BackNote]<4 && $people[note]<4) || $people[note]<4 )
+        if(($people['BackNote']<4 && $people['note']<4) || $people['note']<4 )
           $this->updatePeople($e,$people,4);
         //$mailinfo = json_decode(file_get_contents(dirname(dirname(__FILE__))."/kit/".$e[0].'.json'),'true');
         header('location: http://trck.me/429217/');
+        die();
         //http://trck.me/429217/
     }
 
@@ -43,8 +45,8 @@ class Track extends Controller
     {
       $api = $this->newsym('Api');
       $people = $api->V1([
-        _coll => 'People',
-        _id => $e,
+        '_coll' => 'People',
+        '_id' => $e,
       ]);
       return($people);
     }
@@ -52,13 +54,13 @@ class Track extends Controller
     {
       $async = $this->newsym('Async');
 
-      $upDomOk[1]= [Api,V1,[
-        _coll => 'People',
-        _id => $e[2],
-        _p => [
+      $upDomOk[1]= ['Api','V1',[
+        '_coll' => 'People',
+        '_id' => $e[2],
+        '_p' => [
           '$set'=> [
-            note=> $note,
-            BackNote=> $note,
+            'note'=> $note,
+            'BackNote'=> $note,
           ]
         ]
       ],[],[]];

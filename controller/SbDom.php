@@ -2,54 +2,90 @@
 
 class SbDom extends Controller
 {
-
-    public function sk($e)
+  public function atej($ee)
+  {
+    $this->loadModel('Domain');
+    $this->Domain->atej();
+  }
+    public function sk($ee)
     {
       $sym = $this->newsym("Api");
+      $async = $this->newsym("Async");
       $ovh = $this->newsym("OvhApi");
       $dom = $sym->V1([
         _coll => Domain,
         _q => [account => ['$exists' => false]],
-        _sup => '&sk='.$e[0].'&l=1'
+        _sup => '&sk='.$ee[0].'&l=1'
       ]);
       if(count($dom) == 0)die();
-      // on liste les mail du domaine
-      //$dom[0] = $dom[1];
+
       print_r($dom);
-      $listmail = $ovh->listMail($dom[0][domain]);
-      print('ok');
+      $listmail = $async->sync([['OvhApi','listMail',$dom[0][domain],[],[_sync]]]);
+      $listmail = $listmail[0]['request'];
+      print_r($listmail);
+      //$listmail = $ovh->listMail($dom[0][domain]);
+
+
+      $i=0;
       foreach($listmail as $k=>$v)
       {
-        if($k < 10)
+        if($i < 5)
         {
-          $ovh->deleteMail($dom[0][domain],$v);
-          sleep(1);
+          try {
+              $delete = $ovh->deleteMail($dom[0][domain],$v);
+              print_r($delete);
+              $i++;
+              sleep(1);
+          } catch (Exception $e) {
+              $delete = "error";
+          }
+
         }
       }
-      $listmail = $ovh->listMail($dom[0][domain]);
+      print_r("\n delete : $i \n");
 
-      $i = 0;
-      while($i < 5)
+      if($i == 5)
       {
-        $ovh->createMail($dom[0][domain],$this->t());
-        sleep(1);
-        $i++;
+        $j = 0;
+        $error = 0;
+        while($j < 5 && $error < 5)
+        {
+          $name = $this->t();
+          try {
+            print_r($ovh->createMail($dom[0][domain],$name));
+            $listmailadd[] = $name."@".$dom[0][domain];
+            sleep(1);
+            $j++;
+
+          }catch (Exception $e) {
+              $error++;
+          }
+        }
       }
 
-      $listmail = $ovh->listMail($dom[0][domain]);
-      foreach($listmail as $k=>$v)
+      print_r("\n FileCreate : $i \n");
+
+      if($i == 5 && $j == 5)
       {
-        $account[]=[mail => $v.'@'.$dom[0][domain]];
+        $sym->V1([
+          _coll => Domain,
+          _p => ['$set' => [account => $listmailadd]],
+          _id => $dom[0][_id]['$oid']
+        ]);
+        print("\n ---domsauv : ".$dom[0][_id]['$oid']." \n");
+        $this->sk($ee);
       }
-      $sym->V1([
-        _coll => Domain,
-        _p => ['$set' => [account => $account]],
-        _id => $dom[0][_id]['$oid']
-      ]);
+      else{
+        print("\n ---doms error : ".$dom[0][_id]['$oid']." \n");
+        $ee[0] = $ee[0]+1;
+        $this->sk(($ee));
+      }
+
+
       // on suprime les Mails
       // on cree 5 boite mail
       // on update sur mlab
-      $this->sk($e);
+
     }
 
     public function addPeople()

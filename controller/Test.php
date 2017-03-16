@@ -6,44 +6,19 @@ class Test extends Controller
 
     public function index($e)
     {
-      echo '<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load(\'current\', {\'packages\':[\'corechart\']});
-      google.charts.setOnLoadCallback(drawChart);
+      for ($i = 1; $i <= 5; ++$i) {
+          $pid = pcntl_fork();
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          [\'Year\', \'Sales\', \'Expenses\'],
-          [\'2013\',  1000,      400],
-          [\'2014\',  1170,      460],
-          [\'2015\',  660,       1120],
-          [\'2016\',  1030,      540]
-        ]);
-
-        var options = {
-          title: \'Company Performance\',
-          hAxis: {title: \'Year\',  titleTextStyle: {color: \'#333\'}},
-          vAxis: {minValue: 0}
-        };
-
-        var chart = new google.visualization.AreaChart(document.getElementById(\'chart_div\'));
-        chart.draw(data, options);
+          if (!$pid) {
+              sleep($i);
+              print "In child $i\n";
+              exit($i);
+          }
       }
-    </script>
-  </head>
-  <body>
-    <div id="chart_div" style="width: 100%; height: 500px;"></div>
-  </body>
-</html>';
 
-    $this->loadModel('M');
-    $updateResult = $this->M->hello();
-
-
-
-
-    var_dump($updateResult);
+      while (pcntl_waitpid(0, $status) != -1) {
+          $status = pcntl_wexitstatus($status);
+          echo "Child $status completed\n";
+      }
     }
 }

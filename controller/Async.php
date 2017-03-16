@@ -56,31 +56,31 @@ feature
             $option = array();
             foreach($v[4] as $k1=>$v1)
             {
-              if($v1 == '_sync')$option[_sync] = true;
-              if($v1 == '_print')$option[_print] = true;
-              if($v1 == '_back')$option[_back] = true;
-              if($v1 == '_async')$option[_async] = true;
+              if($v1 == '_sync')$option['_sync'] = true;
+              if($v1 == '_print')$option['_print'] = true;
+              if($v1 == '_back')$option['_back'] = true;
+              if($v1 == '_async')$option['_async'] = true;
             }
           }
-          if(isset($option[_sync]))
+          if(isset($option['_sync']))
           {
             $reponse[$k]['code']=$this->prepar($v[0],$v[1],$v[2],'_sync');
-            if(isset($option[_print]))$reponse[$k]['_print'] = true;
+            if(isset($option['_print']))$reponse[$k]['_print'] = true;
             if(isset($v[3]))$reponse[$k]['query']=$v[3];
           }
-          else if(isset($option[_back]))
+          else if(isset($option['_back']))
           {
             $this->prepar($v[0],$v[1],$v[2],'_back');
-            $reponse[$k][back]=true;
+            $reponse[$k]['back']=true;
           }
-          else if(isset($option[_async])){
+          else if(isset($option['_async'])){
             $reponse[$k]['code']=$this->prepar($v[0],$v[1],$v[2],'_async');
-            if(isset($option[_print]))$reponse[$k]['_print'] = true;
+            if(isset($option['_print']))$reponse[$k]['_print'] = true;
             if(isset($v[3]))$reponse[$k]['query']=$v[3];
 
           }else{
             $reponse[$k]['request'] = $this->runClassSync($v[0],$v[1],$v[2]);
-            if(isset($option[_print])) print_r($reponse[$k]['request']);
+            if(isset($option['_print'])) print_r($reponse[$k]['request']);
             if(isset($v[3]) || $reponse[$k]['_request'][0]['_query'])                     /////////////////////////
             {
               $q1 = array(); $q2 = array();
@@ -94,7 +94,7 @@ feature
                $qu[$kt][2]['_request'] = $reponse[$k]['request'];
              }
 
-              $reponse[$k][query] = $this->sync($qu);
+              $reponse[$k]['query'] = $this->sync($qu);
             }
           }
 

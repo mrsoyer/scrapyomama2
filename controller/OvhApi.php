@@ -51,7 +51,7 @@ class OvhApi extends Controller
     {
       $ovh = $this->ovhapi();
       $result = $ovh->get('/email/domain/'.$dom.'/account');
-      print_r( $result );
+      //print_r( $result );
       return($result);
     }
 
@@ -59,7 +59,7 @@ class OvhApi extends Controller
     {
       $ovh = $this->ovhapi();
       $result = $ovh->delete('/email/domain/'.$dom.'/account/'.$account);
-      print_r( $result );
+      //print_r( $result );
       return($result);
     }
 
@@ -72,7 +72,7 @@ class OvhApi extends Controller
           'password' => 'tomylyjon', // Required: Account password (type: password)
       ));
 
-      print_r( $result );
+      //print_r( $result );
       return($result);
     }
 }

@@ -18,16 +18,19 @@ class Shoot extends Controller
 //____________________________________________________________________________||
 //-----------------------------------------------------------------------------*
 
-// modif : lorsque lon a shoute on modifie la note sur people et on update nextSend le people sur dom
-//         on ne recherche plus par dom mais par nextSend
-// on va modifier class track
-// pour add people on rajoute une regle pour ne pas ajouter le meme
+// modif : if domaine et people nexiste pas selectione un domaine que l on update immediatement
+//          on selectione une liste e1 de profil on update immediatement les nouveaux
+//          on shoot si ok on update le profil on reprograme un envoie
+//          si pas ok ou count 0 on update le dom on reprograme le dom
+
     ';
     }
 
-    public function shootM($params)
+    public function shootM($e)
     {
-      if(!isset($params[1])) $params[1] = "";
+      if(!isset($e[0])) $e[0] = 1;
+      if(!isset($e[1])) $e[1] = 5;
+      if(!isset($e[2])) $e[2] = "";
       $async = $this->newsym('Async');
       $this->loadModel('Domain');
       echo "---Start--- \n";
@@ -35,13 +38,14 @@ class Shoot extends Controller
       $dom = $this->Domain->selectDom();
       echo "---RUN--- \n";
       $i = 0;
+      $shoot= array();
       foreach($dom as $k=>$v)
       {
-        $minutes = (5+(($v['note']*$v['note']*$v['note'])/2));
-        $diff =   strtotime("-".$minutes." minutes", time())-$v['lastsend'];
-        if($diff > 0 && $i < $params[0])
+        $minutes = (60+(($v['note']*$v['note']*$v['note'])/2));
+        $diff =   strtotime("-".$minutes." minutes", $_SERVER['REQUEST_TIME'])-$v['lastsend'];
+        if($diff > 0 && $i < $e[0])
         {
-          $shoot[]= [Shoot,shootDom,[$v[_id]['$oid'],$i],[],[$params[1]]];
+          $shoot[]= ['Shoot','shootDom',[$v['_id']['$oid'],$e[1]],[],[$e[2]]];
           $i++;
         }
       }
@@ -95,91 +99,141 @@ class Shoot extends Controller
       $this->loadModel('People');
       return($this->People->count());
     }
-    public function shootDom($idDom)
+    public function shootDom($e)
     {
-      $time = time();
+      $time = $_SERVER['REQUEST_TIME'];
       $this->loadModel('Domain');
-      $this->loadModel('Logs');
 
-      $Domain = $this->Domain->domDetail($idDom[0]);
-      $people = $this->people($Domain,$idDom[1]);
-      $shoot = $this->sendMail($Domain,$people);
-      if($shoot == "ok")
-        $note = $this->updatePeople($people,$Domain);
+      $Domain = $this->Domain->domDetail($e[0]);
+      $this->Domain->updateDomain($Domain['_id']['$oid']);
+      $allPeoples = $this->people($Domain,$e[1]);
+      $peoples = $allPeoples['peoples'];
+      $status = $allPeoples['status'];
+      unset($allPeoples);
+      unset($Domain['people']);
+      $shoot = 1;
+      $i = 0;
 
-      if(!isset($note))
-        $note[note] = $people['note'];
-
-      $nextSend = $this->nextSend($note[note]);
-      $this->updateDomain($nextSend,$people,$Domain,$shoot);
-      $return = $this->preparReturn($Domain,$people,$shoot);
-      print_r($return);
-      $return['insert'] = time();
-      $this->Logs->insert($return);
-      if($shoot == "ok")
+      foreach($peoples as $k=>$v)
       {
-        if(($sleep = 60-(time()-$time)) > 0)
-          sleep($sleep);
-        $this->shootDom([$idDom[0],$idDom[1]]);
+        if($shoot == 1)
+        {
+          $shoot = $this->sendPeople($v,$Domain);
+          sleep(1);
+          $i++;
+        }
+
+        if($shoot == 0 && $v['status'] == 'new')
+            $this->deleteDomToPeople($v['_id']['$oid']);
+        else if($shoot == 1 && $v['status'] == 'new')
+        {
+          $p['id'] = $v['_id']['$oid'];
+          $p['nextSend'] = $v['nextSend'];
+          if($status == "set")
+            $set['$set']['people'][] = $p;
+          else
+            $set['$addToSet']['people']['$each'][] = $p;
+
+          unset($p);
+        }else if($v['status'] == 'up')
+          $set['$set']['people.'.$v['k'].'.nextSend'] = $v['nextSend'];
+
+        unset($peoples[$k]);
       }
+
+      if($shoot == 0 && $i == 1)
+        $set['$set']['note'] = $Domain['note']+1;
+
+      $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
     }
 
-    private function people($Domain,$sleep)
+    private function people($Domain,$nb)
     {
       $this->loadModel('People');
-      $people = array();
-      if(isset($Domain[people]))
+      $peoples = array();
+      $status = 'set';
+      if(isset($Domain['people']))
       {
-        $people = $this->selectPeople($Domain[people]);
-        $status = 'update';
+        $peoples_nb = $this->selectPeople($Domain['people'],$nb);
+        $peoples = $peoples_nb['peoples'];
+        $nb = $peoples_nb['nb'];
+        unset($peoples_nb);
+        $status = 'addToSet';
       }
 
-      if(count($people) == 0)
+      if($nb != 0)
       {
-
-        $people = $this->People->findPeople($sleep,$Domain);
-        if(isset($Domain[people]))
-          $status = 'add';
-        else
-          $status = 'new';
+        $result = $this->People->findPeople($nb,$Domain);
+        foreach($result as $k=>$v)
+        {
+          $nextSend = $this->nextSend($v['note']);
+          $preparPeople = $v;
+          $preparPeople['status'] = 'new';
+          $preparPeople['nextSend'] = $nextSend;
+          $peoples[] = $preparPeople;
+          unset($preparPeople);
+          unset($nextSend);
+        }
       }
-      if(count($people) != 0)
-        $people['status'] = $status;
-
-      return($people);
+      $return['status'] = $status;
+      $return['peoples'] = $peoples;
+      return($return);
     }
 
-    public function selectPeople($PeopleList)
+    public function selectPeople($PeopleList,$nb)
     {
       $this->loadModel('People');
-      $nextSend = time();
+      $nextSend = $_SERVER['REQUEST_TIME'];
+      $peoples = array();
       foreach($PeopleList as $k0 => $v0)
       {
-          if($v0[nextSend] < $nextSend)
-          {
-            $nextSend = $v0[nextSend];
-            $people = $v0;
-          }
+        if($v0['nextSend'] < $nextSend && $nb != 0)
+        {
+          unset($v0['nextSend']);
+          $preparPeople = $this->People->peopleDetail($v0['id']);
+          $preparPeople['k'] = $k0;
+          $preparPeople['nextSend'] = $this->nextSend($preparPeople['note']);
+          $preparPeople['status'] = 'up';
+          $peoples[] = $preparPeople;
+          unset($preparPeople);
+          $nb--;
+        }
 
       }
+      $return['peoples'] = $peoples;
+      $return['nb'] = $nb;
+      return($return);
+    }
 
-      if(isset($people))
-        $people = $this->People->peopleDetail($people['id']);
+    private function sendPeople($people,$Domain)
+    {
+      $this->loadModel('People');
+      $this->loadModel('Logs');
+
+      $shoot = $this->sendMail($Domain,$people);
+      if($shoot == "ok")
+        $this->updatePeople($people);
+
+      $return = $this->preparReturn($Domain,$people,$shoot);
+      print_r($return);
+      $return['insert'] = $_SERVER['REQUEST_TIME'];
+      $this->Logs->insert($return);
+
+      if($shoot == "ok")
+        return(1);
       else
-        $people = array();
-
-      return($people);
+        return(0);
     }
 
     private function sendMail($Domain,$people)
     {
       $Prepar = [
-        domid =>$Domain[_id]['$oid'],
-        peopleid =>$people[_id],
-        fromAddress => $Domain[account][rand(0,count($Domain[account])-1)][mail],
-        toName => $people[firstname],
-        toAdress => $people[email],
-        proxy => $Domain[proxy]
+        'domid' =>$Domain['_id']['$oid'],
+        'peopleid' =>$people['_id']['$oid'],
+        'fromAddress' => $Domain['account'][rand(0,4)],
+        'toName' => $people['firstname'],
+        'toAdress' => $people['email'],
+        'proxy' => $Domain['proxy']
       ];
       //print_r($Prepar);
       $shoot = $this->smtpOvhInner($Prepar);
@@ -200,36 +254,29 @@ class Shoot extends Controller
       return($results);
     }
 
-    private function updatePeople($people,$Domain)
+    private function updatePeople($people)
     {
       $this->loadModel('People');
-
       $note = $this->calculNote($people);
-
-      $DomExport[id] = $Domain[_id]['$oid'];
-      $DomExport[domain] = $Domain[domain];
-
-      $this->People->updatePeople($people,$note,$DomExport);
-
-      return($note);
+      $this->People->updatePeople($people['_id']['$oid'],$note);
     }
 
     private function calculNote($people)
     {
       if(!isset($people['BackNote']))
       {
-        $note[BackNote] = $people['note']-1;
-        $note[note] = $people['note'];
+        $note['BackNote'] = $people['note']-1;
+        $note['note'] = $people['note'];
       }
       else{
         if($people['BackNote'] == 0)
         {
-          $note[BackNote] = $people['note']-1;
-          $note[note] = $people['note']-1;
+          $note['BackNote'] = $people['note']-1;
+          $note['note'] = $people['note']-1;
         }
         else {
-          $note[BackNote] = $people['BackNote']-1;
-          $note[note] = $people['note'];
+          $note['BackNote'] = $people['BackNote']-1;
+          $note['note'] = $people['note'];
         }
       }
         return($note);
@@ -238,46 +285,24 @@ class Shoot extends Controller
     private function nextSend($note)
     {
         $day = 6-$note;
-        return(strtotime("+".$day." day", time()));
+        return(strtotime("+".$day." day", $_SERVER['REQUEST_TIME']));
     }
 
 
     private function preparReturn($Domain,$people,$shoot)
     {
-      $return[idDomain]=$Domain[_id]['$oid'];
-      $return[idPeople]=$people[_id]['$oid'];
-      $return[to]=$people[email];
-      $return[dom]=$Domain[domain];
-      $return[shoot]=$shoot;
+      $return['idDomain']=$Domain['_id']['$oid'];
+      $return['idPeople']=$people['_id']['$oid'];
+      $return['to']=$people['email'];
+      $return['dom']=$Domain['domain'];
+      $return['shoot']=$shoot;
       return($return);
     }
 
-    private function updateDomain($nextSend,$people,$Domain,$shoot)
+    private function deleteDomToPeople($idPeople)
     {
-      $this->loadModel('Domain');
-
-      $peopleExport[id] = $people[_id]['$oid'];
-      $peopleExport[email] = $people[email];
-      $peopleExport[nextSend] = $nextSend;
-
-      $query = array();
-      if($shoot == "ok")
-        $set['$set'][note] = 0;
-      else
-        $set['$set'][note] = $Domain[note]+1;
-
-      $set['$set'][lastsend] = time();
-
-      if($people['status'] == 'new' && $shoot == "ok")
-        $set['$set'][people] = [$peopleExport];
-      else if($people['status'] == 'add' && $shoot == "ok")
-        $set['$addToSet'][people] = $peopleExport;
-      else if($people['status'] == 'update'){
-        $query['people.id'] = $people[_id]['$oid'];
-        $set['$set']['people.$.nextSend'] = $nextSend;
-      }
-
-      $this->Domain->updateDomain($Domain['_id']['$oid'],$set,$query);
+      $this->loadModel('People');
+      $this->People->deleteDomToPeople($idPeople);
     }
 
 }
