@@ -6,11 +6,11 @@
  *
  */
  function spinnage($text){
- 
+
         if(!preg_match("/{/si", $text)) {
- 
+
         return $text;
- 
+
          }
                 else {
         preg_match_all("/\{([^{}]*)\}/si", $text, $matches);
@@ -23,7 +23,7 @@
         }
 return  spinnage($text);
         }
- 
+
 }
 
  $pseudo = $_REQUEST['pseudo'];
@@ -33,28 +33,29 @@ return  spinnage($text);
  $age = $_REQUEST['age'];
   $id = $_REQUEST['id'];
   $proxy = explode(":",$_REQUEST['proxy']);
-  
+
 
 
 	require("email_message.php");
 	require("smtp_message.php");
 	require("smtp.php");
 	/* Uncomment when using SASL authentication mechanisms */
-	
+
 
 	require("sasl/sasl.php");
 	/**/
 
-	$from_name=$pseudo;
-	$from_address=$smtp;                                              $sender_line=__LINE__;
+	$from_name="coucou";
+	$from_address="coucou@lkpg.fr";
+  $smtp=  $from_address;                                           $sender_line=__LINE__;
 	$reply_name=$from_name;
 	$reply_address=$smtp;
 	$reply_address=$smtp;
-	$error_delivery_name=$pseudo;
+	$error_delivery_name=$from_name;
 	$error_delivery_address=$smtp;
 	$to_name=explode("@",$to);
-	$to_name=$to_name[0];
-	$to_address=$to;                                                $recipient_line=__LINE__;
+	$to_name="garciathomas@gmail.com";
+	$to_address="garciathomas@gmail.com";                                                $recipient_line=__LINE__;
 	$subject=spinnage("{Salut toi,|Hey,|Coucou,|Bonjour Jeune Homme| Hello :),|Salut Salut|Holla :)}");;
 	//$message="Hello ".strtok($to_name," ").",\n\nThis message is just to let you know that your SMTP e-mail sending class is working as expected.\n\nThank you,\n$from_name";
 
@@ -195,8 +196,8 @@ return  spinnage($text);
  */
 	$related_parts=array(
 		$alternative_part,
-		
-		
+
+
 	);
 	$email_message->AddRelatedMultipart($related_parts);
 
@@ -204,7 +205,7 @@ return  spinnage($text);
  *  One or more additional parts may be added as attachments.
  *  In this case a file part is added from data provided directly from this script.
  */
-	
+
 
 /*
  *  The message is now ready to be assembled and sent.
