@@ -24,7 +24,7 @@
                 "ext-hash": "*",
                 "ext-mongodb": "^1.2.0",
                 "mongodb/mongodb": "^1.0.1",
-                "php": "^5.6 || ^7.0"
+                "php": "^7.0"
             },
             "provide": {
                 "ext-mongo": "1.6.14"
