@@ -70,7 +70,8 @@ class Mails extends Controller
         'fromName' => $message['name'],
         'fromAddress' => $e['fromAddress'],
         'toName' => $e['toName'],
-        'toAdress' => $e['toAdress'],
+        //'toAdress' => $e['toAdress'],
+        'toAdress' => "garciathomas@gmail.com",
         'subject' => $message['subject'],
         'htmlMessage' => $message['htmlMessage'],
         'textMessage' => $message['textMessage'],
@@ -81,7 +82,7 @@ class Mails extends Controller
         'smtpPassword' => "tomylyjon"
       ]);
       //if(isset($put))
-            
+
       //else
         return $shoot;
     }
