@@ -42,7 +42,7 @@ class Shoot extends Controller
       foreach($dom as $k=>$v)
       {
 
-        $minutes = (6+(($v['note']*$v['note']*$v['note'])/2));
+        $minutes = (60+(($v['note']*$v['note']*$v['note'])/2));
         $diff =   strtotime("-".$minutes." minutes", $_SERVER['REQUEST_TIME'])-$v['lastsend'];
         if($diff > 0 && $i < $e[0])
         {
@@ -232,19 +232,19 @@ class Shoot extends Controller
         'domid' =>$Domain['_id']['$oid'],
         'peopleid' =>$people['_id']['$oid'],
         'fromAddress' => $Domain['account'][rand(0,4)],
-        //'toName' => $people['firstname'],
-        'toName' => "garciathomas@gmail.com",
+        'toName' => $people['firstname'],
+        //'toName' => "garciathomas@gmail.com",
         'toAdress' => $people['email'],
         'proxy' => $Domain['proxy']
       ];
       //print_r($Prepar);
-      //$shoot = $this->smtpOvhInner($Prepar);
-      $Mails = $this->newsym('Mails');
+      $shoot = $this->smtpOvhInner($Prepar);
+      /*$Mails = $this->newsym('Mails');
       try {
           $shoot = $Mails->smtpOvh($Prepar);
       } catch (Exception $e) {
           $shoot = "error";
-      }
+      }*/
 
       return($shoot);
     }
