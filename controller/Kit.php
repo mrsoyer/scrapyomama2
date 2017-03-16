@@ -49,7 +49,7 @@ class Kit extends Controller
           $arg = "".$fileArray[0]."/".$params['domid'].'/'.$params[peopleid].'/';
           $link = $dest."Track/link/".$arg;
           $mailHtml = str_replace("{{link}}", $link,$mailHtml);
-          $mailHtml .="<img src=".$dest.'img/'.$arg." width='1px' height='1px'>";
+          $mailHtml .="<img src=".$dest.'Track/img/'.$arg." width='1px' height='1px'>";
 
           $message[name] = $mailinfo['name'];
           $message[subject] = $mailinfo['sujet'];
