@@ -232,9 +232,9 @@ class Shoot extends Controller
         'domid' =>$Domain['_id']['$oid'],
         'peopleid' =>$people['_id']['$oid'],
         'fromAddress' => $Domain['account'][rand(0,4)],
-        //'toName' => $people['firstname'],
-        'toName' => "garciathomas@gmail.com",
-        'toAdress' => $people['email'],
+        'toName' => $people['firstname'],
+//        'toAdress' => $people['email'],
+        'toAdress' => "garciathomas@gmail.com",
         'proxy' => $Domain['proxy']
       ];
       //print_r($Prepar);
