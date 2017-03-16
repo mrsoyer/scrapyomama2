@@ -6,7 +6,8 @@ class Test extends Controller
 
     public function index($e)
     {
-    phpinfo();
+      mail('garciathomas@gmail.com', 'Mon Sujet', "message");
+    //phpinfo();
       for ($i = 1; $i <= 5; ++$i) {
           $pid = pcntl_fork();
 
