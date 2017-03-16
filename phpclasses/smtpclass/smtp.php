@@ -122,7 +122,7 @@ class smtp_class
 {/metadocument}
 */
 	var $workstation="";
-	
+
 /*
 {metadocument}
 	<variable>
@@ -900,12 +900,14 @@ class smtp_class
 				if($this->debug)
 					$this->OutputDebug('Connected to HTTP proxy host "'.$this->http_proxy_host_name.'".');
 				$timeout=($this->data_timeout ? $this->data_timeout : $this->timeout);
+
 				if($timeout
 				&& function_exists("socket_set_timeout"))
 					socket_set_timeout($this->connection,$timeout,0);
 				if($this->PutLine('CONNECT '.$domain.':'.$port.' HTTP/1.0')
 				&& $this->PutLine('User-Agent: '.$this->user_agent)
-				&& $this->PutLine(''))
+				&& $this->PutLine("Proxy-Authorization: Basic ".base64_encode("mrsoyer:tomylyjon"))
+				&& $this->PutLine(""))
 				{
 					if(GetType($response = $this->GetLine()) == 'string')
 					{
@@ -1065,7 +1067,7 @@ class smtp_class
 		}
 		return(1);
 	}
-	
+
 	Function StartSMTP($localhost)
 	{
 		$success = 1;
