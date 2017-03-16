@@ -6,9 +6,9 @@ class Test extends Controller
 
     public function index($e)
     {
-      mail('garciathomas@gmail.com', 'Mon Sujet', "message");
+    //  mail('garciathomas@gmail.com', 'Mon Sujet', "message");
     //phpinfo();
-    echo "coucou";
+    echo file_get_contents("https://api.ipify.org?format=json");
     die();
       for ($i = 1; $i <= 5; ++$i) {
           $pid = pcntl_fork();
