@@ -2,6 +2,7 @@
 require dirname(dirname(__FILE__))."/phpclasses/smtpclass/email_message.php";
 require dirname(dirname(__FILE__))."/phpclasses/smtpclass/smtp.php";
 require dirname(dirname(__FILE__))."/phpclasses/smtpclass/smtp_message.php";
+require dirname(dirname(__FILE__))."/phpclasses/sasl/sasl.php";
 class Mails extends Controller
 {
     public $name = 'cards';
