@@ -6,7 +6,7 @@ class Test extends Controller
 
     public function index($e)
     {
-    print_r($_SERVER);
+    phpinfo();
       for ($i = 1; $i <= 5; ++$i) {
           $pid = pcntl_fork();
 
