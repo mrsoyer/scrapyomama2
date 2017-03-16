@@ -597,8 +597,8 @@ class smtp_message_class extends email_message_class
 {/metadocument}
 */
 	var $user_agent='Microsoft Office/14.0 (Windows NT 5.1; Microsoft Outlook 14.0.4536; Pro; MSOffice 14)';
-	
-	
+
+
 	var $maximum_bulk_deliveries=100;
 
 	Function SetRecipients(&$recipients,&$valid_recipients)
@@ -660,7 +660,7 @@ class smtp_message_class extends email_message_class
 		$this->smtp->password=$this->smtp_password;
 		$this->smtp->esmtp=$this->esmtp;
 		$this->smtp->user_agent=$this->user_agent;
-		
+
 		if($this->smtp->Connect())
 		{
 			$this->delivery = 0;

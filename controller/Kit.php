@@ -45,7 +45,7 @@ class Kit extends Controller
             $mailinfo['message'] = str_replace("{{".$key."}}", $value,$mailinfo['message']);
             $mailinfo['sujet'] = str_replace("{{".$key."}}", $value,$mailinfo['sujet']);
           }
-          $dest = "http://sym-env.mp2mswstzy.us-east-1.elasticbeanstalk.com/";
+          $dest = "http://scrapyomama.herokuapp.com/";
           $arg = "".$fileArray[0]."/".$params['domid'].'/'.$params[peopleid].'/';
           $link = $dest."Track/link/".$arg;
           $mailHtml = str_replace("{{link}}", $link,$mailHtml);

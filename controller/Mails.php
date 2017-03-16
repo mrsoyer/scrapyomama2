@@ -193,6 +193,9 @@ class Mails extends Controller
      $rand = [1,2,3,4,5,6,7];
      shuffle($rand);
 
+
+
+
      foreach($rand as $key => $num)
      {
      //	if($num == 0 && $mailhtml['type'] == 0)
