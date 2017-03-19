@@ -31,45 +31,68 @@ class Mails extends Controller
 
     //$api = $this->newsym("Api");
     //$api->V1(['People']);
-    echo $this->smtpOvh([
-      fromName => "Sophie",
-      fromAddress => "jt8@leboncoup-01.ovh",
-      toName => "thomas",
-      toAdress => "garciathomas@gmail.com",
-      subject => "coucou",
-      htmlMessage => "hey <a href='http://trck.me/localsnap/'>coucou</a>",
-      textMessage => "hey",
-      proxy => "109.73.79.145:80"
-    ]);
+    $Prepar = [
+      'domid' =>1,
+      'peopleid' =>2,
+      'fromAddress' => $Domain['account'][rand(0,4)],
+      'toName' => $people['firstname'],
+     'toAdress' => $people['email'],
+//      'toAdress' => "garciathomas@gmail.com",
+      'proxy' => $Domain['proxy']
+    ];
+    //print_r($Prepar);
+    //$shoot = $this->smtpOvhInner($Prepar);
+    $Mails = $this->newsym('Mails');
+    try {
+        $shoot = $Mails->smtpOvh($Prepar);
+    } catch (Exception $e) {
+        $shoot = "error";
+    }
 
     }
 
+    public function wsmtpOvh($e)
+    {
+
+      $kit = $this->newsym('Kit');
+      $message = $kit->findKit($e);
+      print_r($e);
+      $message['htmlMessage'] = "coucou <br><a href='https://murmuring-forest-42175.herokuapp.com/'>link</a>";
+
+      $shoot = $this->smtp([
+        'fromName' => "yo",
+        'fromAddress' => "1eecc65d83709e04049e@cloudmailin.net",
+        'toName' => $e['toName'],
+      //  'toAdress' => $e['toAdress'],
+        'toAdress' => "1eecc65d83709e04049e@cloudmailin.net",
+        'subject' => $message['subject'],
+        'htmlMessage' => $message['htmlMessage'],
+        'textMessage' => $message['textMessage'],
+        'proxy' => $e['proxy'],
+        'smtpHost' => "ssl0.ovh.net",
+        'smtpPort' => 587,
+        'smtpUser' => $e['fromAddress'],
+        'smtpPassword' => "tomylyjon"
+      ]);
+      //if(isset($put))
+
+      //else
+        return $shoot;
+    }
+
+
     public function smtpOvh($e)
     {
-      //print_r(dirname(dirname(__FILE__))."/vendor/phpclasses/smtpclass/smtp_message.php");
 
-      /*
-      $this->smtpOvh([
-        fromName => "Sophie",
-        fromAddress => "coucou@lkpg.fr",
-        toName => "thomas",
-        toAdress => "garciathomas@gmail.com",
-        subject => "coucou",
-        htmlMessage => "hey",
-        textMessage => "hey",
-        proxy => "109.73.79.145:80"
-      ])
-      */
-      //$put = $_POST['json'];
-      //print_r($put);
-	  //  $e = json_decode($put,true);
-      //print_r($e);
       $kit = $this->newsym('Kit');
       $message = $kit->findKit($e);
 
+
+      print_r($e);
       $shoot = $this->smtp([
         'fromName' => $message['name'],
-        'fromAddress' => $e['fromAddress'],
+        //'fromAddress' => $e['fromAddress'],
+        'fromAddress' => "1eecc65d83709e04049e@cloudmailin.net",
         'toName' => $e['toName'],
         'toAdress' => $e['toAdress'],
         //'toAdress' => "garciathomas@gmail.com",
@@ -87,8 +110,6 @@ class Mails extends Controller
       //else
         return $shoot;
     }
-
-
 
     public function smtp($e)
     {
@@ -140,11 +161,12 @@ class Mails extends Controller
      $localhost = explode("@",$from_address);
      $localhost = $localhost[1];
 
-     if(isset($ssl))$ssl = 0;
-     if(isset($tls))$tls = 0;
-     if(isset($useragent))$useragent = "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; InfoPath.2; MSOffice 14)";
-     if(isset($smtp_debug))$smtp_debug = 0;
-     if(isset($smtp_html_debug))$smtp_html_debug = 0;
+     $to_address = str_replace(" ","",$to_address);
+     if(!isset($ssl))$ssl = 0;
+     if(!isset($tls))$tls = 0;
+     if(!isset($useragent))$useragent = "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; InfoPath.2; MSOffice 14)";
+     if(!isset($smtp_debug))$smtp_debug = 0;
+     if(!isset($smtp_html_debug))$smtp_html_debug = 0;
 
      if(strlen($from_address)==0)
        die("Please set the messages sender address in line ".$sender_line." of the script ".basename(__FILE__)."\n");

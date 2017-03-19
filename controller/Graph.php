@@ -1,6 +1,6 @@
 <?php
 
-class Cards extends Controller
+class Graph extends Controller
 {
     public $name = 'cards';
 
@@ -20,7 +20,7 @@ class Cards extends Controller
     ';
     }
 
-    public function sayHello($e)
+    public function sayHello($params)
     {
         echo ("Les paramertres sont : ". $params[0]. " et ".$params[1]);
     }

@@ -32,6 +32,14 @@ class People extends Model
 		);
 	}
 
+	public function deletePeople($idPeople)
+	{
+		$collection = $this->db->People;
+		$updateResult = $collection->deleteOne(
+		    ['_id' => new MongoDB\BSON\ObjectID($idPeople)]
+		);
+	}
+
 	public function count()
 	{
 		$collection = $this->db->People;

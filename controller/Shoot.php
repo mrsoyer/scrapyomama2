@@ -4,6 +4,7 @@ class Shoot extends Controller
 {
     public $name = 'cards';
 
+
     public function index($e)
     {
       echo '
@@ -112,21 +113,26 @@ class Shoot extends Controller
       $status = $allPeoples['status'];
       unset($allPeoples);
       unset($Domain['people']);
-      $shoot = 1;
+      $shoot = "ok";
       $i = 0;
 
       foreach($peoples as $k=>$v)
       {
-        if($shoot == 1)
+        if($shoot == "ok")
         {
           $shoot = $this->sendPeople($v,$Domain);
           sleep(1);
           $i++;
         }
 
-        if($shoot == 0 && $v['status'] == 'new')
+        if($shoot != "ok" && $v['status'] == 'new')
+        {
+          if($shoot == 'it were not specified any valid recipients')
+            $this->deletePeople($v['_id']['$oid']);
+          else
             $this->deleteDomToPeople($v['_id']['$oid']);
-        else if($shoot == 1 && $v['status'] == 'new')
+        }
+        else if($shoot == "ok" && $v['status'] == 'new')
         {
           $p['id'] = $v['_id']['$oid'];
           $p['nextSend'] = $v['nextSend'];
@@ -220,10 +226,8 @@ class Shoot extends Controller
       $return['insert'] = $_SERVER['REQUEST_TIME'];
       $this->Logs->insert($return);
 
-      if($shoot == "ok")
-        return(1);
-      else
-        return(0);
+        return($shoot);
+
     }
 
     private function sendMail($Domain,$people)
@@ -312,6 +316,11 @@ class Shoot extends Controller
     {
       $this->loadModel('People');
       $this->People->deleteDomToPeople($idPeople);
+    }
+    private function deletePeople($idPeople)
+    {
+      $this->loadModel('People');
+      $this->People->deletePeople($idPeople);
     }
 
 }
