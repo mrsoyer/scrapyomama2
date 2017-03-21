@@ -47,30 +47,5 @@ class Track extends Controller
         //http://trck.me/429217/
     }
 
-    public function findPeople($e)
-    {
-      $api = $this->newsym('Api');
-      $people = $api->V1([
-        '_coll' => 'People',
-        '_id' => $e,
-      ]);
-      return($people);
-    }
-    public function updatePeople($e,$people,$note)
-    {
-      $async = $this->newsym('Async');
-
-      $upDomOk[1]= ['Api','V1',[
-        '_coll' => 'People',
-        '_id' => $e[2],
-        '_p' => [
-          '$set'=> [
-            'note'=> $note,
-            'BackNote'=> $note,
-          ]
-        ]
-      ],[],[]];
-
-      $result = $async->sync($upDomOk);
-    }
+  
 }

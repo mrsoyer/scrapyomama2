@@ -48,7 +48,7 @@ class Router {
 
     public function executeHttpAction()
     {
-        print_r($this->Controller);
+
         $action = $this->action;
         $this->Controller->$action($this->params);
     }

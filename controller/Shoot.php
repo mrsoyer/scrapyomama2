@@ -215,16 +215,16 @@ class Shoot extends Controller
     private function sendPeople($people,$Domain)
     {
       $this->loadModel('People');
-      $this->loadModel('Logs');
+      //$this->loadModel('Logs');
 
       $shoot = $this->sendMail($Domain,$people);
       if($shoot == "ok")
         $this->updatePeople($people);
 
       $return = $this->preparReturn($Domain,$people,$shoot);
-      print_r($return);
+    //  print_r($return);
       $return['insert'] = $_SERVER['REQUEST_TIME'];
-      $this->Logs->insert($return);
+    //  $this->Logs->insert($return);
 
         return($shoot);
 
