@@ -27,58 +27,8 @@ class Mails extends Controller
   //  ';
 
 
-  //  echo $_SERVER['SERVER_ADDR'];
-
-    //$api = $this->newsym("Api");
-    //$api->V1(['People']);
-    $Prepar = [
-      'domid' =>1,
-      'peopleid' =>2,
-      'fromAddress' => $Domain['account'][rand(0,4)],
-      'toName' => $people['firstname'],
-     'toAdress' => $people['email'],
-//      'toAdress' => "garciathomas@gmail.com",
-      'proxy' => $Domain['proxy']
-    ];
-    //print_r($Prepar);
-    //$shoot = $this->smtpOvhInner($Prepar);
-    $Mails = $this->newsym('Mails');
-    try {
-        $shoot = $Mails->smtpOvh($Prepar);
-    } catch (Exception $e) {
-        $shoot = "error";
     }
 
-    }
-
-    public function wsmtpOvh($e)
-    {
-
-      $kit = $this->newsym('Kit');
-      $message = $kit->findKit($e);
-      print_r($e);
-      $message['htmlMessage'] = "coucou <br><a href='https://murmuring-forest-42175.herokuapp.com/'>link</a>";
-
-      $shoot = $this->smtp([
-        'fromName' => "yo",
-        'fromAddress' => "1eecc65d83709e04049e@cloudmailin.net",
-        'toName' => $e['toName'],
-      //  'toAdress' => $e['toAdress'],
-        'toAdress' => "1eecc65d83709e04049e@cloudmailin.net",
-        'subject' => $message['subject'],
-        'htmlMessage' => $message['htmlMessage'],
-        'textMessage' => $message['textMessage'],
-        'proxy' => $e['proxy'],
-        'smtpHost' => "ssl0.ovh.net",
-        'smtpPort' => 587,
-        'smtpUser' => $e['fromAddress'],
-        'smtpPassword' => "tomylyjon"
-      ]);
-      //if(isset($put))
-
-      //else
-        return $shoot;
-    }
 
 
     public function smtpOvh($e)
@@ -94,8 +44,8 @@ class Mails extends Controller
         //'fromAddress' => $e['fromAddress'],
         'fromAddress' => "1eecc65d83709e04049e@cloudmailin.net",
         'toName' => $e['toName'],
-        'toAdress' => $e['toAdress'],
-      //  'toAdress' => "garciathomas@gmail.com",
+      //  'toAdress' => $e['toAdress'],
+        'toAdress' => "garciathomas@gmail.com",
         'subject' => $message['subject'],
         'htmlMessage' => $message['htmlMessage'],
         'textMessage' => $message['textMessage'],
@@ -108,6 +58,33 @@ class Mails extends Controller
       //if(isset($put))
 
       //else
+        return $shoot;
+    }
+
+    public function smtpOvhBulk($e)
+    {
+
+
+
+
+      print_r($e);
+      
+      $shoot = $this->smtp([
+        'fromName' => $e['fromName'],
+        'fromAddress' => $e['fromAddress'],
+        'toName' => $e['toName'],
+      //  'toAdress' => $e['toAdress'],
+        'toAdress' => "garciathomas@gmail.com",
+        'subject' => $e['subject'],
+        'htmlMessage' => $e['htmlMessage'],
+        'textMessage' => $e['textMessage'],
+        'proxy' => $e['proxy'],
+        'smtpHost' => "ssl0.ovh.net",
+        'smtpPort' => 587,
+        'smtpUser' => $e['smtpUser'],
+        'smtpPassword' => "tomylyjon"
+      ]);
+
         return $shoot;
     }
 
@@ -136,8 +113,8 @@ class Mails extends Controller
       ])
       */
 
-     $from_name= $e[fromName];
-     $from_address=$e[fromAddress];                                              $sender_line=__LINE__;
+     $from_name= $e['fromName'];
+     $from_address=$e['fromAddress'];                                              $sender_line=__LINE__;
      $to_name=$e['toName'];
      $to_address=$e['toAdress'];                                                $recipient_line=__LINE__;
      $subject= 	$e['subject'];
