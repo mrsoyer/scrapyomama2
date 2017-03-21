@@ -44,8 +44,8 @@ class Mails extends Controller
         //'fromAddress' => $e['fromAddress'],
         'fromAddress' => "1eecc65d83709e04049e@cloudmailin.net",
         'toName' => $e['toName'],
-      //  'toAdress' => $e['toAdress'],
-        'toAdress' => "garciathomas@gmail.com",
+        'toAdress' => $e['toAdress'],
+      //  'toAdress' => "garciathomas@gmail.com",
         'subject' => $message['subject'],
         'htmlMessage' => $message['htmlMessage'],
         'textMessage' => $message['textMessage'],
@@ -68,7 +68,7 @@ class Mails extends Controller
 
 
       print_r($e);
-      
+
       $shoot = $this->smtp([
         'fromName' => $e['fromName'],
         'fromAddress' => $e['fromAddress'],

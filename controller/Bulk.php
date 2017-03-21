@@ -264,9 +264,9 @@ class Bulk extends Controller
 
       $dest = $camp['link'];
       $arg = "".$camp['campName']."/".$Prepar['domid'].'/'.$Prepar['peopleid'].'/';
-      $link = $dest."Trck/link/".$arg;
+      $link = $dest."/Trck/link/".$arg;
       $mailHtml = str_replace("{{link}}", $link,$mailHtml);
-      $mailHtml .="<img src=".$dest.'Trck/img/'.$arg." width='1px' height='1px'>";
+      $mailHtml .="<img src=".$dest.'/Trck/img/'.$arg." width='1px' height='1px'>";
       return($mailHtml);
     }
     public function smtpOvhInner($eo)

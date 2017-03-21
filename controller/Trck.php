@@ -29,8 +29,6 @@ class Trck extends Controller
         if($people['BackNote']<5)
           $this->People->updatePeopleNote($e[2],5);
 
-
-
     }
     public function img($e)
     {
@@ -39,7 +37,7 @@ class Trck extends Controller
         if(($people['BackNote']<4 && $people['note']<=4) || $people['note']<4 )
           $this->People->updatePeopleNote($e[2],4);
 
-        
+
     }
 
 
