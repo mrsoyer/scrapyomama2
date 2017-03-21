@@ -22,9 +22,13 @@ class Track extends Controller
 
     public function link($e)
     {
-        $people = $this->findPeople($e[2]);
+
+        //$people = $this->findPeople($e[2]);
+        $this->loadModel('People');
+        $people = $this->People->peopleDetail($e[2]);
         if($people['BackNote']<5)
-          $this->updatePeople($e,$people,5);
+          $this->People->updatePeopleNote($e[2],5);
+
         $mailinfo = json_decode(file_get_contents(dirname(dirname(__FILE__))."/kit/".$e[0].'.json'),'true');
         header('location: '.$mailinfo['link']);
         die();
@@ -32,9 +36,11 @@ class Track extends Controller
     }
     public function img($e)
     {
-        $people = $this->findPeople($e[2]);
-        if(($people['BackNote']<4 && $people['note']<4) || $people['note']<4 )
-          $this->updatePeople($e,$people,4);
+      $this->loadModel('People');
+      $people = $this->People->peopleDetail($e[2]);
+        if(($people['BackNote']<4 && $people['note']<=4) || $people['note']<4 )
+          $this->People->updatePeopleNote($e[2],4);
+
         //$mailinfo = json_decode(file_get_contents(dirname(dirname(__FILE__))."/kit/".$e[0].'.json'),'true');
         header('location: http://trck.me/429217/');
         die();

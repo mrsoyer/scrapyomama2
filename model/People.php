@@ -19,6 +19,20 @@ class People extends Model
 		);
 	}
 
+	public function updatePeopleNote($idPeople,$note)
+	{
+		$collection = $this->db->People;
+		$updateResult = $collection->updateOne(
+		    ['_id' => new MongoDB\BSON\ObjectID($idPeople)],
+				[
+					'$set'=> [
+						'note'=> $note,
+						'BackNote'=> $note
+					]
+				]
+		);
+	}
+
 	public function deleteDomToPeople($idPeople)
 	{
 		$collection = $this->db->People;
