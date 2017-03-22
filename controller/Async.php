@@ -2,6 +2,7 @@
 
 class Async extends Controller
 {
+  
 
     public function index($e)
     {
