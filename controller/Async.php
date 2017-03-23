@@ -2,7 +2,7 @@
 
 class Async extends Controller
 {
-  
+
 
     public function index($e)
     {
@@ -72,6 +72,7 @@ feature
           else if(isset($option['_back']))
           {
             $this->prepar($v[0],$v[1],$v[2],'_back');
+            print_r($reponse);
             $reponse[$k]['back']=true;
           }
           else if(isset($option['_async'])){
