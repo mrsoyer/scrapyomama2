@@ -9,9 +9,7 @@ class ComposerStaticInit04fb34e52e38b02599391bb8fca59c92
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
-        'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
-        '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
         '3a37ebac017bc098e9a86b35401e7a68' => __DIR__ . '/..' . '/mongodb/mongodb/src/functions.php',
         '06dd8487319ccd8403765f5b8c9f2d61' => __DIR__ . '/..' . '/alcaeus/mongo-php-adapter/lib/Mongo/functions.php',
     );
@@ -19,31 +17,14 @@ class ComposerStaticInit04fb34e52e38b02599391bb8fca59c92
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
-            'Symfony\\Polyfill\\Util\\' => 22,
-            'Symfony\\Polyfill\\Php70\\' => 23,
-            'Symfony\\Polyfill\\Php56\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\Translation\\' => 30,
-            'Symfony\\Component\\Templating\\' => 29,
-            'Symfony\\Component\\Stopwatch\\' => 28,
-            'Symfony\\Component\\Security\\Csrf\\' => 32,
-            'Symfony\\Component\\Security\\Core\\' => 32,
             'Symfony\\Component\\Routing\\' => 26,
-            'Symfony\\Component\\OptionsResolver\\' => 34,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
-            'Symfony\\Component\\Finder\\' => 25,
-            'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
-            'Symfony\\Component\\DependencyInjection\\' => 38,
             'Symfony\\Component\\Debug\\' => 24,
-            'Symfony\\Component\\Console\\' => 26,
-            'Symfony\\Component\\Config\\' => 25,
-            'Symfony\\Component\\ClassLoader\\' => 30,
-            'Symfony\\Component\\Asset\\' => 24,
-            'Symfony\\Bundle\\FrameworkBundle\\' => 31,
             'Symfony\\Bridge\\Twig\\' => 20,
-            'Symfony\\Bridge\\Doctrine\\' => 24,
             'Silex\\' => 6,
         ),
         'P' => 
@@ -63,14 +44,6 @@ class ComposerStaticInit04fb34e52e38b02599391bb8fca59c92
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
         ),
-        'D' => 
-        array (
-            'Doctrine\\Instantiator\\' => 22,
-            'Doctrine\\Common\\Cache\\' => 22,
-            'Doctrine\\Common\\Annotations\\' => 28,
-            'Doctrine\\Common\\' => 16,
-            'Doctrine\\Bundle\\MongoDBBundle\\' => 30,
-        ),
         'C' => 
         array (
             'Cowsayphp\\' => 10,
@@ -83,18 +56,6 @@ class ComposerStaticInit04fb34e52e38b02599391bb8fca59c92
     );
 
     public static $prefixDirsPsr4 = array (
-        'Symfony\\Polyfill\\Util\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-util',
-        ),
-        'Symfony\\Polyfill\\Php70\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php70',
-        ),
-        'Symfony\\Polyfill\\Php56\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php56',
-        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -103,29 +64,9 @@ class ComposerStaticInit04fb34e52e38b02599391bb8fca59c92
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
         ),
-        'Symfony\\Component\\Templating\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/templating',
-        ),
-        'Symfony\\Component\\Stopwatch\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/stopwatch',
-        ),
-        'Symfony\\Component\\Security\\Csrf\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/security-csrf',
-        ),
-        'Symfony\\Component\\Security\\Core\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/security-core',
-        ),
         'Symfony\\Component\\Routing\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/routing',
-        ),
-        'Symfony\\Component\\OptionsResolver\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/options-resolver',
         ),
         'Symfony\\Component\\HttpKernel\\' => 
         array (
@@ -135,53 +76,17 @@ class ComposerStaticInit04fb34e52e38b02599391bb8fca59c92
         array (
             0 => __DIR__ . '/..' . '/symfony/http-foundation',
         ),
-        'Symfony\\Component\\Finder\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/finder',
-        ),
-        'Symfony\\Component\\Filesystem\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/filesystem',
-        ),
         'Symfony\\Component\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
-        ),
-        'Symfony\\Component\\DependencyInjection\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/dependency-injection',
         ),
         'Symfony\\Component\\Debug\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/debug',
         ),
-        'Symfony\\Component\\Console\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/console',
-        ),
-        'Symfony\\Component\\Config\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/config',
-        ),
-        'Symfony\\Component\\ClassLoader\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/class-loader',
-        ),
-        'Symfony\\Component\\Asset\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/asset',
-        ),
-        'Symfony\\Bundle\\FrameworkBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/framework-bundle',
-        ),
         'Symfony\\Bridge\\Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/twig-bridge',
-        ),
-        'Symfony\\Bridge\\Doctrine\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/doctrine-bridge',
         ),
         'Silex\\' => 
         array (
@@ -218,26 +123,6 @@ class ComposerStaticInit04fb34e52e38b02599391bb8fca59c92
         'Illuminate\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
-        ),
-        'Doctrine\\Instantiator\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
-        ),
-        'Doctrine\\Common\\Cache\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
-        ),
-        'Doctrine\\Common\\Annotations\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
-        ),
-        'Doctrine\\Common\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
-        ),
-        'Doctrine\\Bundle\\MongoDBBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/mongodb-odm-bundle',
         ),
         'Cowsayphp\\' => 
         array (
@@ -295,42 +180,20 @@ class ComposerStaticInit04fb34e52e38b02599391bb8fca59c92
         ),
         'D' => 
         array (
-            'Doctrine\\ODM\\MongoDB' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/mongodb-odm/lib',
-            ),
-            'Doctrine\\MongoDB' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/mongodb/lib',
-            ),
-            'Doctrine\\Common\\Lexer\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
-            ),
             'Doctrine\\Common\\Inflector\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
-            ),
-            'Doctrine\\Common\\Collections\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/collections/lib',
             ),
         ),
     );
 
     public static $classMap = array (
-        'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
-        'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
         'DNSAnswer' => __DIR__ . '/..' . '/phpclasses/phpresolver/DNS.php',
         'DNSMessageParser' => __DIR__ . '/..' . '/phpclasses/phpresolver/DNS.php',
         'DNSName' => __DIR__ . '/..' . '/phpclasses/phpresolver/DNS.php',
         'DNSQuery' => __DIR__ . '/..' . '/phpclasses/phpresolver/DNS.php',
         'DNSRecord' => __DIR__ . '/..' . '/phpclasses/phpresolver/DNS.php',
         'DNSResolver' => __DIR__ . '/..' . '/phpclasses/phpresolver/DNS.php',
-        'DivisionByZeroError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php',
-        'Error' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/Error.php',
-        'ParseError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ParseError.php',
-        'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
         'basic_sasl_client_class' => __DIR__ . '/..' . '/phpclasses/sasl/basic_sasl_client.php',
         'cram_md5_sasl_client_class' => __DIR__ . '/..' . '/phpclasses/sasl/cram_md5_sasl_client.php',
         'digest_sasl_client_class' => __DIR__ . '/..' . '/phpclasses/sasl/digest_sasl_client.php',

@@ -12,9 +12,5 @@ return array(
     'Mongo' => array($vendorDir . '/alcaeus/mongo-php-adapter/lib/Mongo'),
     'Jenssegers\\Mongodb' => array($vendorDir . '/jenssegers/mongodb/src'),
     'Jenssegers\\Eloquent' => array($vendorDir . '/jenssegers/mongodb/src'),
-    'Doctrine\\ODM\\MongoDB' => array($vendorDir . '/doctrine/mongodb-odm/lib'),
-    'Doctrine\\MongoDB' => array($vendorDir . '/doctrine/mongodb/lib'),
-    'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
-    'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
 );
