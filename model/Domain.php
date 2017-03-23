@@ -58,6 +58,16 @@ class Domain extends Model
     $q = $collection->updateOne($query,$set);
 	}
 
+	public function domDetailUpdate($idDomain)
+	{
+			$set['$set']['note'] = 0;
+			$set['$set']['lastsend'] = $_SERVER['REQUEST_TIME'];
+			$collection = $this->db->Domain;
+			$query['_id'] = new MongoDB\BSON\ObjectID($idDomain);
+	    $q = $collection->findOneAndUpdate($query,$set);
+			$result = json_decode(json_encode($q),true);
+			return($result);
+	}
 
 
 	public function updateEndDomain($idDomain,$set)

@@ -148,7 +148,7 @@ class Shoot extends Controller
         unset($peoples[$k]);
       }
 
-      if($shoot == 0 && $i == 1)
+      if($shoot != "ok" && $i == 1)
         $set['$set']['note'] = $Domain['note']+1;
 
       $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);

@@ -57,57 +57,13 @@ class Bulk extends Controller
         $boom = $async->sync($shoot);
       }
     }
-    public function logs()
-    {
-      $this->loadModel('Logs');
 
-      $count = $this->count();
-      $i = $count;
-      $lastlogs[_id]['$oid'] = "";
-      $w = 0;
-      while(1)
-      {
-        $logs = $this->Logs->log();
-
-        foreach($logs as $k=>$v)
-        {
-          if(!isset($lastlogs[$k]))
-          {
-            if($v['shoot'] == 'ok' && $w == 1)
-              $i++;
-            $lastlogs[] = $v;
-          }
-        }
-        $j=$i - count($lastlogs);
-        foreach($lastlogs as $k=>$v)
-        {
-          if($j < 60 + $i - count($lastlogs))
-          {
-            $v['SendLast24h'] = $j;
-            print_r($v);
-            $j++;
-            sleep(1);
-          }
-        }
-        $w = 1;
-        $lastlogs = $logs;
-
-      }
-    }
-
-
-    public function count()
-    {
-      $this->loadModel('People');
-      return($this->People->count());
-    }
     public function shootDom($e)
     {
       $time = $_SERVER['REQUEST_TIME'];
       $this->loadModel('Domain');
 
-      $Domain = $this->Domain->domDetail($e[0]);
-      $this->Domain->updateDomain($Domain['_id']['$oid']);
+      $Domain = $this->Domain->domDetailUpdate($e[0]);
       $allPeoples = $this->people($Domain,$e[1]);
       $peoples = $allPeoples['peoples'];
       $status = $allPeoples['status'];
@@ -116,42 +72,22 @@ class Bulk extends Controller
       $shoot = "ok";
       $i = 0;
 
-      foreach($peoples as $k=>$v)
+      while($shoot = "ok" && $i < $e[1])
       {
-        if($shoot == "ok")
-        {
+          //select people
           $shoot = $this->sendPeople($v,$Domain);
           sleep(1);
           $i++;
-        }
-
-        if($shoot != "ok" && $v['status'] == 'new')
-        {
-          if($shoot == 'it were not specified any valid recipients')
-            $this->deletePeople($v['_id']['$oid']);
-          else
-            $this->deleteDomToPeople($v['_id']['$oid']);
-        }
-        else if($shoot == "ok" && $v['status'] == 'new')
-        {
-          $p['id'] = $v['_id']['$oid'];
-          $p['nextSend'] = $v['nextSend'];
-          if($status == "set")
-            $set['$set']['people'][] = $p;
-          else
-            $set['$addToSet']['people']['$each'][] = $p;
-
-          unset($p);
-        }else if($v['status'] == 'up')
-          $set['$set']['people.'.$v['k'].'.nextSend'] = $v['nextSend'];
-
-        unset($peoples[$k]);
+          //on update people
       }
 
-      if($shoot == 0 && $i == 1)
+      if($shoot != "ok" && $i == 1)
+      {
         $set['$set']['note'] = $Domain['note']+1;
+        $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
 
-      $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
+      }
+
     }
 
     private function people($Domain,$nb)
