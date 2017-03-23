@@ -146,13 +146,6 @@ class ComposerStaticInit04fb34e52e38b02599391bb8fca59c92
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
             ),
         ),
-        'S' => 
-        array (
-            'Sendinblue' => 
-            array (
-                0 => __DIR__ . '/..' . '/mailin-api/mailin-api-php/src',
-            ),
-        ),
         'P' => 
         array (
             'Pimple' => 
@@ -187,31 +180,12 @@ class ComposerStaticInit04fb34e52e38b02599391bb8fca59c92
         ),
     );
 
-    public static $classMap = array (
-        'DNSAnswer' => __DIR__ . '/..' . '/phpclasses/phpresolver/DNS.php',
-        'DNSMessageParser' => __DIR__ . '/..' . '/phpclasses/phpresolver/DNS.php',
-        'DNSName' => __DIR__ . '/..' . '/phpclasses/phpresolver/DNS.php',
-        'DNSQuery' => __DIR__ . '/..' . '/phpclasses/phpresolver/DNS.php',
-        'DNSRecord' => __DIR__ . '/..' . '/phpclasses/phpresolver/DNS.php',
-        'DNSResolver' => __DIR__ . '/..' . '/phpclasses/phpresolver/DNS.php',
-        'basic_sasl_client_class' => __DIR__ . '/..' . '/phpclasses/sasl/basic_sasl_client.php',
-        'cram_md5_sasl_client_class' => __DIR__ . '/..' . '/phpclasses/sasl/cram_md5_sasl_client.php',
-        'digest_sasl_client_class' => __DIR__ . '/..' . '/phpclasses/sasl/digest_sasl_client.php',
-        'login_sasl_client_class' => __DIR__ . '/..' . '/phpclasses/sasl/login_sasl_client.php',
-        'ntlm_sasl_client_class' => __DIR__ . '/..' . '/phpclasses/sasl/ntlm_sasl_client.php',
-        'plain_sasl_client_class' => __DIR__ . '/..' . '/phpclasses/sasl/plain_sasl_client.php',
-        'sasl_client_class' => __DIR__ . '/..' . '/phpclasses/sasl/sasl.php',
-        'sasl_interact_class' => __DIR__ . '/..' . '/phpclasses/sasl/sasl.php',
-        'smtp_class' => __DIR__ . '/..' . '/phpclasses/smtpclass/smtp.php',
-    );
-
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit04fb34e52e38b02599391bb8fca59c92::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit04fb34e52e38b02599391bb8fca59c92::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit04fb34e52e38b02599391bb8fca59c92::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit04fb34e52e38b02599391bb8fca59c92::$classMap;
 
         }, null, ClassLoader::class);
     }

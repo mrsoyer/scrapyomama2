@@ -6,19 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'DNSAnswer' => $vendorDir . '/phpclasses/phpresolver/DNS.php',
-    'DNSMessageParser' => $vendorDir . '/phpclasses/phpresolver/DNS.php',
-    'DNSName' => $vendorDir . '/phpclasses/phpresolver/DNS.php',
-    'DNSQuery' => $vendorDir . '/phpclasses/phpresolver/DNS.php',
-    'DNSRecord' => $vendorDir . '/phpclasses/phpresolver/DNS.php',
-    'DNSResolver' => $vendorDir . '/phpclasses/phpresolver/DNS.php',
-    'basic_sasl_client_class' => $vendorDir . '/phpclasses/sasl/basic_sasl_client.php',
-    'cram_md5_sasl_client_class' => $vendorDir . '/phpclasses/sasl/cram_md5_sasl_client.php',
-    'digest_sasl_client_class' => $vendorDir . '/phpclasses/sasl/digest_sasl_client.php',
-    'login_sasl_client_class' => $vendorDir . '/phpclasses/sasl/login_sasl_client.php',
-    'ntlm_sasl_client_class' => $vendorDir . '/phpclasses/sasl/ntlm_sasl_client.php',
-    'plain_sasl_client_class' => $vendorDir . '/phpclasses/sasl/plain_sasl_client.php',
-    'sasl_client_class' => $vendorDir . '/phpclasses/sasl/sasl.php',
-    'sasl_interact_class' => $vendorDir . '/phpclasses/sasl/sasl.php',
-    'smtp_class' => $vendorDir . '/phpclasses/smtpclass/smtp.php',
 );

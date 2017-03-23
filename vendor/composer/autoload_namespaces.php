@@ -7,7 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
-    'Sendinblue' => array($vendorDir . '/mailin-api/mailin-api-php/src'),
     'Pimple' => array($vendorDir . '/pimple/pimple/lib'),
     'Mongo' => array($vendorDir . '/alcaeus/mongo-php-adapter/lib/Mongo'),
     'Jenssegers\\Mongodb' => array($vendorDir . '/jenssegers/mongodb/src'),
