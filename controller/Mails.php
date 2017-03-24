@@ -132,7 +132,9 @@ class Mails extends Controller
      if(!isset($e['smtpHtmlDebug']))$smtp_html_debug = 0; else $smtp_html_debug=$e['smtpHtmlDebug'];
 
      $reply_name=$from_name;
-     $reply_address=$from_address;
+     $r = explode("@",$from_address);
+
+     $reply_address="noreply@".$r[1];
      $error_delivery_name=$from_name;
      $error_delivery_address=$from_address;
      $localhost = explode("@",$from_address);
