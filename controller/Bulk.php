@@ -45,7 +45,7 @@ class Bulk extends Controller
       foreach($dom as $k=>$v)
       {
 
-        $minutes = (60+(($v['note']*$v['note']*$v['note'])/2));
+        $minutes = (6+(($v['note']*$v['note']*$v['note'])/2));
         $diff =   strtotime("-".$minutes." minutes", $_SERVER['REQUEST_TIME'])-$v['lastsend'];
         if($diff > 0 && $i < $e[0])
         {
@@ -113,7 +113,6 @@ class Bulk extends Controller
       $people['note'] = $note['note'];
       $people['BackNote'] = $note['BackNote'];
       if(isset($people['_id']['$oid']))
-        $this->Campaign->updateCamp($camp['_id']['$oid'],1);
         $this->People->updateOnePeople($people);
       return($people);
     }
@@ -121,10 +120,13 @@ class Bulk extends Controller
     private function sendPeople($people,$Domain,$camp)
     {
       $this->loadModel('People');
+      $this->loadModel('Campaign');
     //  $this->loadModel('Logs');
       $shoot = $this->sendMail($Domain,$people,$camp);
       $return = $this->preparReturn($Domain,$people,$shoot);
       $return['insert'] = $_SERVER['REQUEST_TIME'];
+      if($shoot == "ok")
+        $this->Campaign->updateCamp($camp['_id']['$oid'],1);
     //  $this->Logs->insert($return);
       print_r($return);
       return($shoot);
