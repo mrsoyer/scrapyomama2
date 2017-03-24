@@ -19,10 +19,12 @@ class Bulk extends Controller
 //____________________________________________________________________________||
 //-----------------------------------------------------------------------------*
 
-// modif : if domaine et people nexiste pas selectione un domaine que l on update immediatement
-//          on selectione une liste e1 de profil on update immediatement les nouveaux
-//          on shoot si ok on update le profil on reprograme un envoie
-//          si pas ok ou count 0 on update le dom on reprograme le dom
+// do to
+// selection de people > rechercher last send et next send sur a 1 journee
+// order by note asc nextsend asc
+// update immediatement lastsend if shoot ok update nextsend plus note
+
+// selection domaine
 
     ';
     }
@@ -43,17 +45,18 @@ class Bulk extends Controller
       foreach($dom as $k=>$v)
       {
 
-        $minutes = (6+(($v['note']*$v['note']*$v['note'])/2));
-        $diff =   strtotime("-".$minutes." minutes", $_SERVER['REQUEST_TIME'])-$v['lastsend'];
+        $minutes = (6+round((($v['note']*$v['note']*$v['note'])/2)));
+        $diff =   strtotime("-".$minutes." minutes", $_SERVER['REQUEST_TIME']) -$v['lastsend'];
         if($diff > 0 && $i < $e[0])
         {
           $shoot[]= ['Bulk','shootDom',[$v['_id']['$oid'],$e[1]],[],[$e[2]]];
           $i++;
+          print_r($v);
         }
       }
       if(count($shoot) > 0)
       {
-        print_r($shoot);
+      //  print_r($shoot);
         $boom = $async->sync($shoot);
       }
     }
@@ -62,114 +65,63 @@ class Bulk extends Controller
     {
       $time = $_SERVER['REQUEST_TIME'];
       $this->loadModel('Domain');
-
+      $this->loadModel('Campaign');
+      $camp = $this->Campaign->selectcamp();
+      if(!isset($camp['_id']['$oid'])) die();
       $Domain = $this->Domain->domDetailUpdate($e[0]);
-      $allPeoples = $this->people($Domain,$e[1]);
-      $peoples = $allPeoples['peoples'];
-      $status = $allPeoples['status'];
-      unset($allPeoples);
       unset($Domain['people']);
       $shoot = "ok";
       $i = 0;
 
       while($shoot = "ok" && $i < $e[1])
       {
-          //select people
-          $shoot = $this->sendPeople($v,$Domain);
+          $people = $this->people();
+          $shoot = $this->sendPeople($people,$Domain,$camp);
           sleep(1);
           $i++;
-          //on update people
       }
 
-      if($shoot != "ok" && $i == 1)
+      $this->Campaign->updateCamp($camp['_id']['$oid'],$i);
+      if($shoot != "ok" && $i > 0)
       {
         $set['$set']['note'] = $Domain['note']+1;
         $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
 
       }
-
+      $this->shoot([1,$e[1]]);
     }
 
-    private function people($Domain,$nb)
+    private function people()
     {
       $this->loadModel('People');
-      $peoples = array();
-      $status = 'set';
-      if(isset($Domain['people']))
-      {
-        $peoples_nb = $this->selectPeople($Domain['people'],$nb);
-        $peoples = $peoples_nb['peoples'];
-        $nb = $peoples_nb['nb'];
-        unset($peoples_nb);
-        $status = 'addToSet';
-      }
 
-      if($nb != 0)
-      {
-        $result = $this->People->findPeople($nb,$Domain);
-        foreach($result as $k=>$v)
-        {
-          $nextSend = $this->nextSend($v['note']);
-          $preparPeople = $v;
-          $preparPeople['status'] = 'new';
-          $preparPeople['nextSend'] = $nextSend;
-          $peoples[] = $preparPeople;
-          unset($preparPeople);
-          unset($nextSend);
-        }
-      }
-      $return['status'] = $status;
-      $return['peoples'] = $peoples;
-      return($return);
+      $people = $this->People->findOnePeople();
+
+      $nextSend = $this->nextSend($people['note']);
+      $note = $this->calculNote($people);
+      $people['nextSend'] = $nextSend;
+      $people['note'] = $note['note'];
+      $people['BackNote'] = $note['BackNote'];
+
+      $this->People->updateOnePeople($people);
+      return($people);
     }
 
-    public function selectPeople($PeopleList,$nb)
+    private function sendPeople($people,$Domain,$camp)
     {
       $this->loadModel('People');
-      $nextSend = $_SERVER['REQUEST_TIME'];
-      $peoples = array();
-      foreach($PeopleList as $k0 => $v0)
-      {
-        if($v0['nextSend'] < $nextSend && $nb != 0)
-        {
-          unset($v0['nextSend']);
-          $preparPeople = $this->People->peopleDetail($v0['id']);
-          $preparPeople['k'] = $k0;
-          $preparPeople['nextSend'] = $this->nextSend($preparPeople['note']);
-          $preparPeople['status'] = 'up';
-          $peoples[] = $preparPeople;
-          unset($preparPeople);
-          $nb--;
-        }
-
-      }
-      $return['peoples'] = $peoples;
-      $return['nb'] = $nb;
-      return($return);
-    }
-
-    private function sendPeople($people,$Domain)
-    {
-      $this->loadModel('People');
-      //$this->loadModel('Logs');
-
-      $shoot = $this->sendMail($Domain,$people);
-      if($shoot == "ok")
-        $this->updatePeople($people);
-
+    //  $this->loadModel('Logs');
+      $shoot = $this->sendMail($Domain,$people,$camp);
       $return = $this->preparReturn($Domain,$people,$shoot);
-    //  print_r($return);
       $return['insert'] = $_SERVER['REQUEST_TIME'];
     //  $this->Logs->insert($return);
       print_r($return);
-        return($shoot);
-
+      return($shoot);
     }
 
-    private function sendMail($Domain,$people)
+    private function sendMail($Domain,$people,$camp)
     {
-      $this->loadModel('Campaign');
-      $camp = $this->Campaign->selectcamp();
+
 
       $Prepar = [
         'domid' =>$Domain['_id']['$oid'],
@@ -178,6 +130,7 @@ class Bulk extends Controller
         'fromAddress' => $camp['email'],
         'toName' => $people['firstname'],
         'toAdress' => $people['email'],
+        //'toAdress' => "garciathomas@gmail.com",
         'proxy' => $Domain['proxy'],
         'fromName' => $camp['name'],
         'subject' => $camp['sujet'],

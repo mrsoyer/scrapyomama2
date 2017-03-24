@@ -23,11 +23,17 @@ class Mongo extends Controller
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
 			$page = curl_exec($ch) or die(curl_error($ch));
-			
-			
-			
-			echo $page;	
-    }    
-    
-    
+
+
+
+			echo $page;
+    }
+
+    public function query($e)
+    {
+      $this->loadModel($e[0]);
+
+      print_r($this->$e[0]->$e[1]());
+    }
+
 }

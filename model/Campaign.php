@@ -16,12 +16,9 @@ class Campaign extends Model
 	public function selectcamp()
 	{
 		$collection = $this->db->Campaign;
-		$query = $collection->findOneAndUpdate(
+		$query = $collection->findOne(
 			[
 				'end' => ['$exists' => false],
-			],
-			[
-				'$inc' => ['count' => 1]
 			],
 			[
         'sort' => ['create' => 1],
@@ -30,11 +27,21 @@ class Campaign extends Model
 		$result = json_decode(json_encode($query),true);
 		if($result['count']>$result['limit'])
 		{
-			$q = new MongoDB\BSON\ObjectID($result['_id']['$oid']);
+			$q['_id'] = new MongoDB\BSON\ObjectID($result['_id']['$oid']);
 			$set['$set']['end'] = 1;
 			$q = $collection->updateOne($q,$set);
 		}
 		return($result);
+	}
+
+	public function updateCamp($idCamp,$nb)
+	{
+		$collection = $this->db->Campaign;
+
+			$q['_id'] = new MongoDB\BSON\ObjectID($idCamp);
+			$set['$inc']['count'] = $nb;
+			$q = $collection->updateOne($q,$set);
+		
 	}
 
 

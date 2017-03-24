@@ -38,7 +38,7 @@ class Mails extends Controller
       $message = $kit->findKit($e);
 
 
-      print_r($e);
+    //  print_r($e);
       $shoot = $this->smtp([
         'fromName' => $message['name'],
         'fromAddress' => $e['fromAddress'],
@@ -67,7 +67,7 @@ class Mails extends Controller
 
 
 
-      print_r($e);
+      //print_r($e);
 
       $shoot = $this->smtp([
         'fromName' => $e['fromName'],
@@ -112,7 +112,7 @@ class Mails extends Controller
         smtpHtmlDebug => 0
       ])
       */
-
+    $useragent = "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; InfoPath.2; MSOffice 14)";
      $from_name= $e['fromName'];
      $from_address=$e['fromAddress'];                                              $sender_line=__LINE__;
      $to_name=$e['toName'];
@@ -125,11 +125,11 @@ class Mails extends Controller
      $smtp_port=$e['smtpPort'];
      $smtp_user=$e['smtpUser'];
      $smtp_password=$e['smtpPassword'];
-     $ssl=$e['ssl'];//ifnotexist
-     $tls=$e['tls'];//ifnotexist
-     $useragent=$e['useragent'];//ifnotexist
-     $smtp_debug=$e['smtpDebug'];//ifnotexist
-     $smtp_html_debug=$e['smtpHtmlDebug'];//ifnotexist
+     if(!isset($e['ssl']))$ssl = 0; else $ssl=$e['ssl'];
+     if(!isset($e['tls']))$tls = 0; else $tls=$e['tls'];
+     if(isset($e['useragent']))$useragent=$e['useragent'];
+     if(!isset($e['smtpDebug']))$smtp_debug = 1; else $smtp_debug=$e['smtpDebug'];
+     if(!isset($e['smtpHtmlDebug']))$smtp_html_debug = 1; else $smtp_html_debug=$e['smtpHtmlDebug'];
 
      $reply_name=$from_name;
      $reply_address=$from_address;
@@ -139,11 +139,6 @@ class Mails extends Controller
      $localhost = $localhost[1];
 
      $to_address = str_replace(" ","",$to_address);
-     if(!isset($ssl))$ssl = 0;
-     if(!isset($tls))$tls = 0;
-     if(!isset($useragent))$useragent = "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; InfoPath.2; MSOffice 14)";
-     if(!isset($smtp_debug))$smtp_debug = 0;
-     if(!isset($smtp_html_debug))$smtp_html_debug = 0;
 
      if(strlen($from_address)==0)
        die("Please set the messages sender address in line ".$sender_line." of the script ".basename(__FILE__)."\n");

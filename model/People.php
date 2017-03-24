@@ -19,6 +19,22 @@ class People extends Model
 		);
 	}
 
+	public function updateOnePeople($people)
+	{
+		$collection = $this->db->People;
+		$updateResult = $collection->updateOne(
+		    ['_id' => new MongoDB\BSON\ObjectID($people['_id']['$oid'])],
+				[
+					'$set'=> [
+						'note'=> $people['note'],
+						'BackNote'=> $people['BackNote'],
+						'nextSend'=> $people['nextSend']
+					],
+					'$inc' => ['count' => 1]
+				]
+		);
+	}
+
 	public function updatePeopleNote($idPeople,$note)
 	{
 		$collection = $this->db->People;
@@ -89,6 +105,42 @@ class People extends Model
 				$result[] = json_decode(json_encode($query),true);
 				$nb--;
 			}
+			return($result);
+	}
+
+	public function findOnePeople()
+	{
+			$collection = $this->db->People;
+
+
+
+				$query = $collection->findOneAndUpdate(
+					[
+						'$or' => [
+							[
+								'lastsend' => [ '$exists' => false]
+							],
+							[
+								'lastsend' => ['$lt' => strtotime("-1 day",$_SERVER['REQUEST_TIME'])]
+							],
+							[
+								'lastsend' => ['$lt' => strtotime("-1 day",$_SERVER['REQUEST_TIME'])],
+								'nextsend' => ['$lt' => strtotime("-1 day",$_SERVER['REQUEST_TIME'])]
+							]
+						]
+
+					],
+					[
+						'$set'=> [
+							'lastsend'=> $_SERVER['REQUEST_TIME']
+						]
+					],
+					[
+						'sort' => ['note' => -1, 'nextsend' => 1]
+					]
+				);
+				$result = json_decode(json_encode($query),true);
+
 			return($result);
 	}
 
