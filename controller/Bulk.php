@@ -106,14 +106,16 @@ class Bulk extends Controller
       $this->loadModel('People');
 
       $people = $this->People->findOnePeople();
-
-      $nextSend = $this->nextSend($people['note']);
-      $note = $this->calculNote($people);
-      $people['nextSend'] = $nextSend;
-      $people['note'] = $note['note'];
-      $people['BackNote'] = $note['BackNote'];
       if(isset($people['_id']['$oid']))
+      {
+        $nextSend = $this->nextSend($people['note']);
+        $note = $this->calculNote($people);
+        $people['nextSend'] = $nextSend;
+        $people['note'] = $note['note'];
+        $people['BackNote'] = $note['BackNote'];
         $this->People->updateOnePeople($people);
+      }
+
       return($people);
     }
 
