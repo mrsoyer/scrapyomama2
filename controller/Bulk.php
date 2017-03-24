@@ -77,19 +77,22 @@ class Bulk extends Controller
       unset($Domain['people']);
       $shoot = "ok";
       $i = 0;
-
+      $j = 0;
       while($i < $e[1])
       {
           $people = $this->people();
           if($shoot == "ok" && isset($people['_id']['$oid']))
+          {
             $shoot = $this->sendPeople($people,$Domain,$camp);
+            $j++;
+          }
           else
             $shoot = "error";
           sleep(1);
           $i++;
       }
 
-      $this->Campaign->updateCamp($camp['_id']['$oid'],$i);
+      $this->Campaign->updateCamp($camp['_id']['$oid'],$j);
       if($shoot != "ok" && $i == 1)
       {
         $set['$set']['note'] = $Domain['note']+1;
