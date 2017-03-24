@@ -49,7 +49,7 @@ class Bulk extends Controller
         $diff =   strtotime("-".$minutes." minutes", $_SERVER['REQUEST_TIME'])-$v['lastsend'];
         if($diff > 0 && $i < $e[0])
         {
-          $shoot[]= ['Shoot','shootDom',[$v['_id']['$oid'],$e[1]],[],[$e[2]]];
+          $shoot[]= ['Bulk','shootDom',[$v['_id']['$oid'],$e[1]],[],[$e[2]]];
           $i++;
         }
       }
