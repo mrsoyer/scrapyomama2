@@ -105,8 +105,8 @@ class Bulk extends Controller
       $people['nextSend'] = $nextSend;
       $people['note'] = $note['note'];
       $people['BackNote'] = $note['BackNote'];
-
-      $this->People->updateOnePeople($people);
+      if(isset($people['_id']['$oid']))
+        $this->People->updateOnePeople($people);
       return($people);
     }
 
