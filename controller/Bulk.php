@@ -92,7 +92,6 @@ class Bulk extends Controller
           $i++;
       }
 
-      $this->Campaign->updateCamp($camp['_id']['$oid'],$j);
       if($shoot != "ok" && $i == 1)
       {
         $set['$set']['note'] = $Domain['note']+1;
@@ -114,6 +113,7 @@ class Bulk extends Controller
       $people['note'] = $note['note'];
       $people['BackNote'] = $note['BackNote'];
       if(isset($people['_id']['$oid']))
+        $this->Campaign->updateCamp($camp['_id']['$oid'],1);
         $this->People->updateOnePeople($people);
       return($people);
     }
