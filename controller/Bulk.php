@@ -53,6 +53,11 @@ class Bulk extends Controller
           $i++;
         }
       }
+
+      $nbinsert = count($shoot)*$e[1];
+      $this->loadModel('People');
+      $camp = $this->People->findAllPeople($nbinsert);
+
       if(count($shoot) > 0)
       {
         print_r($shoot);
@@ -73,10 +78,10 @@ class Bulk extends Controller
       $shoot = "ok";
       $i = 0;
 
-      while($shoot = "ok" && $i < $e[1])
+      while($i < $e[1])
       {
           $people = $this->people();
-          if(isset($people['_id']['$oid']))
+          if($shoot == "ok" && isset($people['_id']['$oid']))
             $shoot = $this->sendPeople($people,$Domain,$camp);
           else
             $shoot = "error";
@@ -91,7 +96,7 @@ class Bulk extends Controller
         $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
 
       }
-      $this->shoot([1,$e[1]]);
+      //$this->shoot([1,$e[1]]);
     }
 
     private function people()

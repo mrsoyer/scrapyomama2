@@ -107,14 +107,13 @@ class People extends Model
 			}
 			return($result);
 	}
-
-	public function findOnePeople()
+	public function findAllPeople($nbinsert)
 	{
 			$collection = $this->db->People;
 
 
 
-				$query = $collection->findOneAndUpdate(
+				$query = $collection->find(
 					[
 						'$or' => [
 							[
@@ -131,15 +130,44 @@ class People extends Model
 
 					],
 					[
-						'$set'=> [
-							'lastsend'=> $_SERVER['REQUEST_TIME']
-						]
-					],
-					[
+						'limit' => $nbinsert,
 						'sort' => ['note' => -1, 'nextsend' => 1]
 					]
 				);
+
+				foreach ($query as $document) {
+		   			$result = json_decode(json_encode($document),true);
+						$or[]['_id'] = new MongoDB\BSON\ObjectID($result['_id']['$oid']);
+						$result['id'] = $result['_id']['$oid'];
+						unset($result['_id']);
+						$insert[] = $result;
+				}
+				$updateResult = $collection->updateMany(
+						['$or' => $or],
+						[
+							'$set'=> [
+								'lastsend'=> $_SERVER['REQUEST_TIME']
+							]
+						]
+				);
+				unset($collection);
+				$collection2 = $this->db->PeopleShoot;
+				$insertManyResult = $collection2->insertMany($insert);
+
+
+
+	}
+
+	public function findOnePeople()
+	{
+			$collection = $this->db->PeopleShoot;
+
+
+
+				$query = $collection->findOneAndDelete([]);
 				$result = json_decode(json_encode($query),true);
+				$result['_id']['$oid'] = $result['id'];
+				unset($result['id']);
 
 			return($result);
 	}
