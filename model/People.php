@@ -137,22 +137,28 @@ class People extends Model
 
 				foreach ($query as $document) {
 		   			$result = json_decode(json_encode($document),true);
-						$or[]['_id'] = new MongoDB\BSON\ObjectID($result['_id']['$oid']);
-						$result['id'] = $result['_id']['$oid'];
-						unset($result['_id']);
-						$insert[] = $result;
+						if(isset($result['_id']['$oid']))
+						{
+							$or[]['_id'] = new MongoDB\BSON\ObjectID($result['_id']['$oid']);
+							$result['id'] = $result['_id']['$oid'];
+							unset($result['_id']);
+							$insert[] = $result;
+						}
 				}
-				$updateResult = $collection->updateMany(
-						['$or' => $or],
-						[
-							'$set'=> [
-								'lastsend'=> $_SERVER['REQUEST_TIME']
+				if(count($or)>0)
+				{
+					$updateResult = $collection->updateMany(
+							['$or' => $or],
+							[
+								'$set'=> [
+									'lastsend'=> $_SERVER['REQUEST_TIME']
+								]
 							]
-						]
-				);
-				unset($collection);
-				$collection2 = $this->db->PeopleShoot;
-				$insertManyResult = $collection2->insertMany($insert);
+					);
+					unset($collection);
+					$collection2 = $this->db->PeopleShoot;
+					$insertManyResult = $collection2->insertMany($insert);
+				}
 
 
 
