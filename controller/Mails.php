@@ -128,8 +128,8 @@ class Mails extends Controller
      if(!isset($e['ssl']))$ssl = 0; else $ssl=$e['ssl'];
      if(!isset($e['tls']))$tls = 0; else $tls=$e['tls'];
      if(isset($e['useragent']))$useragent=$e['useragent'];
-     if(!isset($e['smtpDebug']))$smtp_debug = 1; else $smtp_debug=$e['smtpDebug'];
-     if(!isset($e['smtpHtmlDebug']))$smtp_html_debug = 1; else $smtp_html_debug=$e['smtpHtmlDebug'];
+     if(!isset($e['smtpDebug']))$smtp_debug = 0; else $smtp_debug=$e['smtpDebug'];
+     if(!isset($e['smtpHtmlDebug']))$smtp_html_debug = 0; else $smtp_html_debug=$e['smtpHtmlDebug'];
 
      $reply_name=$from_name;
      $reply_address=$from_address;

@@ -34,7 +34,6 @@ class Bulk extends Controller
       if(!isset($e[0])) $e[0] = 1;
       if(!isset($e[1])) $e[1] = 5;
       if(!isset($e[2])) $e[2] = "";
-      $async = $this->newsym('Async');
       $this->loadModel('Domain');
       echo "---Start--- \n";
       flush();
@@ -45,20 +44,16 @@ class Bulk extends Controller
       foreach($dom as $k=>$v)
       {
 
-        $minutes = (6+round((($v['note']*$v['note']*$v['note'])/2)));
+        $minutes = (60+round((($v['note']*$v['note']*$v['note'])/2)));
         $diff =   strtotime("-".$minutes." minutes", $_SERVER['REQUEST_TIME']) -$v['lastsend'];
         if($diff > 0 && $i < $e[0])
         {
-          $shoot[]= ['Bulk','shootDom',[$v['_id']['$oid'],$e[1]],[],[$e[2]]];
           $i++;
           print_r($v);
+          $this->shootDom([$v['_id']['$oid'],$e[1]]);
         }
       }
-      if(count($shoot) > 0)
-      {
-      //  print_r($shoot);
-        $boom = $async->sync($shoot);
-      }
+
     }
 
     public function shootDom($e)
@@ -76,6 +71,7 @@ class Bulk extends Controller
       while($shoot = "ok" && $i < $e[1])
       {
           $people = $this->people();
+          if(!isset($people['_id']['$oid'])) die();
           $shoot = $this->sendPeople($people,$Domain,$camp);
           sleep(1);
           $i++;
