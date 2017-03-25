@@ -98,7 +98,7 @@ class Bulk extends Controller
         $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
 
       }
-      $this->shoot([1,$e[1]]);
+      $this->shoot([5,$e[1],'_blank']);
     }
 
     private function people()
