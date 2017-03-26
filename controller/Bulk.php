@@ -144,8 +144,8 @@ class Bulk extends Controller
         'smtpUser' => $Domain['account'][rand(0,4)],
         'fromAddress' => $camp['email'],
         'toName' => $people['firstname'],
-        'toAdress' => $people['email'],
-        //'toAdress' => "garciathomas@gmail.com",
+      //  'toAdress' => $people['email'],
+        'toAdress' => "mrsoyer@me.com",
         'proxy' => $Domain['proxy'],
         'fromName' => $camp['name'],
         'subject' => $camp['sujet'],
@@ -165,12 +165,13 @@ class Bulk extends Controller
     public function preparHTML($Prepar,$camp)
     {
       $mailHtml = $camp['kit'];
-
+      //print_r($mailHtml);
       $dest = $camp['link'];
       $arg = "".$camp['campName']."/".$Prepar['domid'].'/'.$Prepar['peopleid'].'/';
-      $link = $dest."/Trck/link/".$arg;
+      $link = "https://".$dest."/Trck/link/".$arg;
       $mailHtml = str_replace("{{link}}", $link,$mailHtml);
-      $mailHtml .="<img src=".$dest.'/Trck/img/'.$arg." width='1px' height='1px'>";
+      $mailHtml = str_replace("<!DOCTYPE html>","",$mailHtml);
+      $mailHtml .="<img src='https://".$dest.'/Trck/img/'.$arg."' width='1px' height='1px'>";
       return($mailHtml);
     }
     public function smtpOvhInner($eo)
