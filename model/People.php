@@ -121,6 +121,7 @@ class People extends Model
 							],
 							[
 								'lastsend' => ['$lt' => strtotime("-1 day",$_SERVER['REQUEST_TIME'])]
+								'nextsend' => [ '$exists' => false]
 							],
 							[
 								'lastsend' => ['$lt' => strtotime("-1 day",$_SERVER['REQUEST_TIME'])],
@@ -145,7 +146,7 @@ class People extends Model
 							$insert[] = $result;
 						}
 				}
-				
+
 				if(count($or)>0)
 				{
 					$updateResult = $collection->updateMany(
