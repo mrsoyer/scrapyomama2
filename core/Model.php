@@ -30,7 +30,9 @@ class Model
         {
             die($e->getMessage());
         }*/
-        $client = new MongoDB\Client("mongodb://sym:adty5M-cj@ds111570-a0.mlab.com:11570,ds111570-a1.mlab.com:11570/sym?replicaSet=rs-ds111570");
+
+      //  $client = new MongoDB\Client("mongodb://sym:adty5M-cj@ds111570-a0.mlab.com:11570,ds111570-a1.mlab.com:11570/sym?replicaSet=rs-ds111570");
+        $client = new MongoDB\Client("mongodb://mrsoyer:adty5M-cj@ds145620-a0.mlab.com:45620,ds145620-a1.mlab.com:45620/sym?replicaSet=rs-ds145620");
         $this->db = $client->sym;
     }
 
