@@ -95,13 +95,13 @@ class Bulk extends Controller
       if($shoot != "ok" && $j < 2)
       {
         $set['$set']['note'] = $Domain['note']+1;
+        $set['$inc']['account.'.$ka.'.nb'] = 2000;
         $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
 
       }
       else{
         $ka = $this->accountSMTP($Domain,0);
-        $set
-        ['account'][$ka]['$inc']['nb'] = $j;
+        $set['$inc']['account.'.$ka.'.nb'] = $j;
         $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
       }
       //$this->shoot([2,$e[1],'_blank']);
