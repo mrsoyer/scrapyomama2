@@ -92,11 +92,17 @@ class Bulk extends Controller
           $i++;
       }
 
-      if($shoot != "ok" && $i == 1)
+      if($shoot != "ok" && $j < 2)
       {
         $set['$set']['note'] = $Domain['note']+1;
         $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
 
+      }
+      else{
+        $ka = $this->accountSMTP($Domain,0);
+        $set
+        ['account'][$ka]['$inc']['nb'] = $j;
+        $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
       }
       $this->shoot([2,$e[1],'_blank']);
     }
@@ -137,15 +143,15 @@ class Bulk extends Controller
     private function sendMail($Domain,$people,$camp)
     {
 
-
+      $smtp = $this->accountSMTP($Domain,1);
       $Prepar = [
         'domid' =>$Domain['_id']['$oid'],
         'peopleid' =>$people['_id']['$oid'],
-        'smtpUser' => $Domain['account'][rand(0,4)],
+        'smtpUser' => $smtp,
         'fromAddress' => $camp['email'],
         'toName' => $people['firstname'],
         'toAdress' => $people['email'],
-      //  'toAdress' => "mrsoyer@me.com",
+        'toAdress' => "mrsoyer@me.com",
         'proxy' => $Domain['proxy'],
         'fromName' => $camp['name'],
         'subject' => $camp['sujet'],
@@ -160,6 +166,21 @@ class Bulk extends Controller
       }
 
       return($shoot);
+    }
+
+    public function accountSMTP($Domain,$type)
+    {
+      foreach($Domain['account'] as $k=>$v)
+      {
+        if($v['nb'] < 2000)
+        {
+          if($type == 1)
+            return($v['account']);
+          else
+            return($k);
+          die();
+        }
+      }
     }
 
     public function preparHTML($Prepar,$camp)

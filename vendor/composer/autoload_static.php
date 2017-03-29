@@ -44,6 +44,14 @@ class ComposerStaticInit04fb34e52e38b02599391bb8fca59c92
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
         ),
+        'F' => 
+        array (
+            'FontLib\\' => 8,
+        ),
+        'D' => 
+        array (
+            'Dompdf\\' => 7,
+        ),
         'C' => 
         array (
             'Cowsayphp\\' => 10,
@@ -124,6 +132,14 @@ class ComposerStaticInit04fb34e52e38b02599391bb8fca59c92
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
         ),
+        'FontLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phenx/php-font-lib/src/FontLib',
+        ),
+        'Dompdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
+        ),
         'Cowsayphp\\' => 
         array (
             0 => __DIR__ . '/..' . '/alrik11es/cowsayphp/src',
@@ -144,6 +160,17 @@ class ComposerStaticInit04fb34e52e38b02599391bb8fca59c92
             'Twig_' => 
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+        'S' => 
+        array (
+            'Svg\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/phenx/php-svg-lib/src',
+            ),
+            'Sabberworm\\CSS' => 
+            array (
+                0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/lib',
             ),
         ),
         'P' => 
@@ -180,12 +207,22 @@ class ComposerStaticInit04fb34e52e38b02599391bb8fca59c92
         ),
     );
 
+    public static $classMap = array (
+        'Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
+        'HTML5_Data' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Data.php',
+        'HTML5_InputStream' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/InputStream.php',
+        'HTML5_Parser' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Parser.php',
+        'HTML5_Tokenizer' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Tokenizer.php',
+        'HTML5_TreeBuilder' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/TreeBuilder.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit04fb34e52e38b02599391bb8fca59c92::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit04fb34e52e38b02599391bb8fca59c92::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit04fb34e52e38b02599391bb8fca59c92::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit04fb34e52e38b02599391bb8fca59c92::$classMap;
 
         }, null, ClassLoader::class);
     }

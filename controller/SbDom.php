@@ -32,40 +32,38 @@ class SbDom extends Controller
         if($i < 5)
         {
           try {
-              $delete = $ovh->deleteMail($dom[0][domain],$v);
-              print_r($delete);
+              print_r($ovh->tcheckAccount($dom[0][domain],$v));
+              $upPass = $ovh->updatePassword($dom[0][domain],$v);
+              $listmailadd[] = ['account' => $v."@".$dom[0][domain],'nb' => 0];
               $i++;
-              sleep(1);
           } catch (Exception $e) {
-              $delete = "error";
+
           }
 
         }
       }
       print_r("\n delete : $i \n");
 
-      if($i == 5)
-      {
-        $j = 0;
+
         $error = 0;
-        while($j < 5 && $error < 5)
+        while($i < 5 && $error < 5)
         {
           $name = $this->t();
           try {
             print_r($ovh->createMail($dom[0][domain],$name));
-            $listmailadd[] = $name."@".$dom[0][domain];
-            sleep(1);
-            $j++;
+            //$listmailadd[] = $name."@".$dom[0][domain];
+            $listmailadd[] = ['account' => $name."@".$dom[0][domain],'nb' => 0];
+            $i++;
 
           }catch (Exception $e) {
               $error++;
           }
         }
-      }
+
 
       print_r("\n FileCreate : $i \n");
 
-      if($i == 5 && $j == 5)
+      if($i >= 5 )
       {
         $sym->V1([
           _coll => Domain,

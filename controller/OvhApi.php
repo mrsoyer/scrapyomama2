@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../vendor/php-ovh/vendor/autoload.php';
+require __DIR__ . '/../vendor/php-ovh-master/vendor/autoload.php';
 use \Ovh\Api;
 
 class OvhApi extends Controller
@@ -63,6 +63,21 @@ class OvhApi extends Controller
       return($result);
     }
 
+    public function tcheckAccount($dom,$account)
+    {
+      $ovh = $this->ovhapi();
+      $result = $ovh->get('/email/domain/'.$dom.'/account/'.$account);
+      return($result);
+    }
+
+    public function updatePassword($dom,$account)
+    {
+      $ovh = $this->ovhapi();
+      $result = $ovh->post('/email/domain/'.$dom.'/account/'.$account.'/changePassword', array(
+    'password' => 'tomylyjon', // Required: New password (type: password)
+      ));
+      return($result);
+    }
     public function createMail($dom,$account)
     {
       $ovh = $this->ovhapi();
