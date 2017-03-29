@@ -84,7 +84,7 @@ class Bulk extends Controller
           if($shoot == "ok" && isset($people['_id']['$oid']))
           {
             $shoot = $this->sendPeople($people,$Domain,$camp);
-            sleep(5);
+            sleep(24);
             $j++;
           }
           else
@@ -104,7 +104,7 @@ class Bulk extends Controller
         ['account'][$ka]['$inc']['nb'] = $j;
         $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
       }
-      $this->shoot([2,$e[1],'_blank']);
+      //$this->shoot([2,$e[1],'_blank']);
     }
 
     private function people()
