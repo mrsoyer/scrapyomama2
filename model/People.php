@@ -120,7 +120,7 @@ class People extends Model
 								'lastsend' => [ '$exists' => false]
 							],
 							[
-								'lastsend' => ['$lt' => strtotime("-1 day",$_SERVER['REQUEST_TIME'])]
+								'lastsend' => ['$lt' => strtotime("-1 day",$_SERVER['REQUEST_TIME'])],
 								'nextsend' => [ '$exists' => false]
 							],
 							[
