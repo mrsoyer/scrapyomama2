@@ -187,7 +187,7 @@ class Mails extends Controller
      $email_message->AddRelatedMultipart($related_parts);
 
      $rand = [1,2,3,4,5,6,7];
-     shuffle($rand);
+     //shuffle($rand);
 
 
 

@@ -45,7 +45,7 @@ class Bulk extends Controller
       foreach($dom as $k=>$v)
       {
 
-        $minutes = (120+(($v['note']*$v['note']*$v['note'])/2));
+        $minutes = (60+(($v['note']*$v['note']*$v['note'])/2));
         $diff =   strtotime("-".$minutes." minutes", $_SERVER['REQUEST_TIME'])-$v['lastsend'];
         if($diff > 0 && $i < $e[0])
         {
@@ -84,7 +84,7 @@ class Bulk extends Controller
           if($shoot == "ok" && isset($people['_id']['$oid']))
           {
             $shoot = $this->sendPeople($people,$Domain,$camp);
-            sleep(rand(15,35));
+            sleep(1);
             $j++;
           }
           else
@@ -94,6 +94,7 @@ class Bulk extends Controller
 
       if($shoot != "ok" && $j < 2)
       {
+        $ka = $this->accountSMTP($Domain,0);
         $set['$set']['note'] = $Domain['note']+1;
         $set['$inc']['account.'.$ka.'.nb'] = 2000;
         $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
@@ -104,7 +105,7 @@ class Bulk extends Controller
         $set['$inc']['account.'.$ka.'.nb'] = $j;
         $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
       }
-      //$this->shoot([2,$e[1],'_blank']);
+      $this->shoot([2,$e[1],'_blank']);
     }
 
     private function people()
@@ -148,11 +149,13 @@ class Bulk extends Controller
         'domid' =>$Domain['_id']['$oid'],
         'peopleid' =>$people['_id']['$oid'],
         'smtpUser' => $smtp,
-        'fromAddress' => $camp['email'],
+        //'fromAddress' => $camp['email'],
+        'fromAddress' => $smtp,
         'toName' => $people['firstname'],
         'toAdress' => $people['email'],
-        'toAdress' => "mrsoyer@me.com",
+        //'toAdress' => "mrsoyer@me.com",
         'proxy' => $Domain['proxy'],
+      //  'proxy' => "",
         'fromName' => $camp['name'],
         'subject' => $camp['sujet'],
         'textMessage' => $camp['message'],
