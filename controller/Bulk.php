@@ -85,9 +85,10 @@ class Bulk extends Controller
       $j = 0;
       while($i < $e[1])
       {
-          $people = $this->people();
-          if($shoot == "ok" && isset($people['_id']['$oid']))
+
+          if($shoot == "ok")
           {
+            $people = $this->people();
             $shoot = $this->sendPeople($people,$Domain,$camp);
             sleep(1);
             $j++;
