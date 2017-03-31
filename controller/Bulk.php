@@ -55,8 +55,7 @@ class Bulk extends Controller
       }
 
       $nbinsert = count($shoot)*$e[1];
-      $this->loadModel('People');
-      $camp = $this->People->findAllPeople($nbinsert);
+
 
       if(count($shoot) > 0)
       {
@@ -66,6 +65,12 @@ class Bulk extends Controller
 
     }
 
+    public function insert()
+    {
+      $this->loadModel('People');
+      $camp = $this->People->findAllPeople(500);
+      $this->insert();
+    }
     public function shootDom($e)
     {
       $time = $_SERVER['REQUEST_TIME'];
@@ -92,7 +97,7 @@ class Bulk extends Controller
           $i++;
       }
 
-      if($shoot != "ok" && $j < 2)
+      if($shoot != "ok" && $j < 3)
       {
         $ka = $this->accountSMTP($Domain,0);
         $set['$set']['note'] = $Domain['note']+1;
@@ -150,10 +155,12 @@ class Bulk extends Controller
         'peopleid' =>$people['_id']['$oid'],
         'smtpUser' => $smtp,
         //'fromAddress' => $camp['email'],
-        'fromAddress' => $smtp,
+        //'fromAddress' => $smtp,
+        //'fromAddress' => "nina.garcia42@yahoo.fr",
+        'fromAddress' => substr($Domain['_id']['$oid'], 0, 10)."@".substr($Domain['_id']['$oid'], -10).".com",
         'toName' => $people['firstname'],
         'toAdress' => $people['email'],
-        //'toAdress' => "mrsoyer@me.com",
+        //'toAdress' => "mrsoyer@live.fr",
         'proxy' => $Domain['proxy'],
       //  'proxy' => "",
         'fromName' => $camp['name'],
@@ -162,6 +169,7 @@ class Bulk extends Controller
       ];
       $Prepar['htmlMessage'] = $this->preparHTML($Prepar,$camp);
       $Mails = $this->newsym('Mails');
+      print_r($Prepar);
       try {
           $shoot = $Mails->smtpOvhBulk($Prepar);
       } catch (Exception $e) {
