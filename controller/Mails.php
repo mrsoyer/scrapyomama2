@@ -134,7 +134,8 @@ class Mails extends Controller
      $reply_name=$from_name;
      $r = explode("@",$from_address);
 
-     $reply_address="noreply@".$r[1];
+     //$reply_address="noreply@".$r[1];
+     $reply_address=$from_address;
      $error_delivery_name=$from_name;
      $error_delivery_address=$from_address;
      $localhost = explode("@",$from_address);

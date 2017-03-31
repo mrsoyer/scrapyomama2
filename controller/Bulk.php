@@ -45,7 +45,7 @@ class Bulk extends Controller
       foreach($dom as $k=>$v)
       {
 
-        $minutes = (120+(($v['note']*$v['note']*$v['note'])/2));
+        $minutes = (60+(($v['note']*$v['note']*$v['note'])/2));
         $diff =   strtotime("-".$minutes." minutes", $_SERVER['REQUEST_TIME'])-$v['lastsend'];
         if($diff > 0 && $i < $e[0])
         {
@@ -155,13 +155,13 @@ class Bulk extends Controller
         'domid' =>$Domain['_id']['$oid'],
         'peopleid' =>$people['_id']['$oid'],
         'smtpUser' => $smtp,
-        //'fromAddress' => $camp['email'],
-        //'fromAddress' => $smtp,
-        //'fromAddress' => "nina.garcia42@yahoo.fr",
-        'fromAddress' => substr($Domain['_id']['$oid'], 0, 10)."@".substr($Domain['_id']['$oid'], -10).".com",
+        'fromAddress' => $camp['email'],
+      //  'fromAddress' => $smtp,
+      //  'fromAddress' => "nina.garcia42@yahoo.fr",
+      //  'fromAddress' => substr($Domain['_id']['$oid'], 0, 10)."@".substr($Domain['_id']['$oid'], -10).".com",
         'toName' => $people['firstname'],
         'toAdress' => $people['email'],
-        //'toAdress' => "mrsoyer@live.fr",
+      //  'toAdress' => "mrsoyer@live.fr",
         'proxy' => $Domain['proxy'],
       //  'proxy' => "",
         'fromName' => $camp['name'],
