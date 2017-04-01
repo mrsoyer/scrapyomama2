@@ -102,7 +102,8 @@ class Bulk extends Controller
       {
         $ka = $this->accountSMTP($Domain,0);
         $set['$set']['note'] = $Domain['note']+1;
-        $set['$inc']['account.'.$ka.'.nb'] = 2000;
+        if(isset($ka))
+          $set['$inc']['account.'.$ka.'.nb'] = 2000;
         $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
 
       }
@@ -111,7 +112,7 @@ class Bulk extends Controller
         $set['$inc']['account.'.$ka.'.nb'] = $j;
         $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
       }
-      $this->shoot([2,$e[1],'_blank']);
+      //$this->shoot([2,$e[1],'_blank']);
     }
 
     private function people()
@@ -202,24 +203,40 @@ class Bulk extends Controller
       $dest = $camp['link'];
       $arg = "".$camp['campName']."/".$Prepar['domid'].'/'.$Prepar['peopleid'].'/';
       $link = "https://".$dest."/Trck/link/".$arg;
-      $mailHtml = str_replace("{{link}}", $link,$mailHtml);
-      $mailHtml = str_replace("<!DOCTYPE html>","",$mailHtml);
+      $mailHtml = $this->replace_a_href($mailHtml,$link);
+      $mailHtml = $this->replace_img_src($mailHtml,$dest);
       $mailHtml .="<img src='https://".$dest.'/Trck/img/'.$arg."' width='1px' height='1px'>";
+      $mailHtml = str_replace(array("\n","\r","\t"),'',$mailHtml);
       return($mailHtml);
     }
-    public function smtpOvhInner($eo)
-    {
-      $url = 'http://ns3022893.ip-149-202-196.eu/Mails/smtpOvh/';
-      $fields = json_encode($eo);
-      $ch = curl_init();
-      curl_setopt($ch,CURLOPT_URL, $url);
-      curl_setopt($ch,CURLOPT_POST, true);
-      curl_setopt($ch,CURLOPT_POSTFIELDS, "json=".$fields);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-      $results = curl_exec($ch);
-      curl_close($ch);
-      return($results);
+
+    public  function replace_img_src($img_tag,$dest) {
+        $doc = new DOMDocument();
+        $doc->loadHTML($img_tag);
+        $tags = $doc->getElementsByTagName('img');
+        foreach ($tags as $tag) {
+            $old_src = $tag->getAttribute('src');
+            $old_src = $this->base64url_encode($old_src);
+            $new_src_url = "https://".$dest."/Trck/imgSrc/".$old_src;
+            $tag->setAttribute('src', $new_src_url);
+        }
+        return $doc->saveHTML();
     }
+
+    public  function replace_a_href($html,$link) {
+        $doc = new DOMDocument();
+        $doc->loadHTML($html);
+        $tags = $doc->getElementsByTagName('a');
+        foreach ($tags as $tag) {
+            $tag->setAttribute('href', $link);
+        }
+        return $doc->saveHTML();
+    }
+
+    public function base64url_encode($data) {
+      return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
+    }
+
 
     private function updatePeople($people)
     {
