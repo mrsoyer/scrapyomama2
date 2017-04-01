@@ -45,7 +45,7 @@ class Bulk extends Controller
       foreach($dom as $k=>$v)
       {
 
-        $minutes = (60+(($v['note']*$v['note']*$v['note'])/2));
+        $minutes = (6+(($v['note']*$v['note']*$v['note'])/2));
         $diff =   strtotime("-".$minutes." minutes", $_SERVER['REQUEST_TIME'])-$v['lastsend'];
         if($diff > 0 && $i < $e[0])
         {
@@ -170,6 +170,7 @@ class Bulk extends Controller
         'textMessage' => $camp['message'],
       ];
       $Prepar['htmlMessage'] = $this->preparHTML($Prepar,$camp);
+    //  $Prepar['htmlMessage'] = "test";
       $Mails = $this->newsym('Mails');
       print_r($Prepar);
       try {

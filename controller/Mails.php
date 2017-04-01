@@ -112,7 +112,7 @@ class Mails extends Controller
         smtpHtmlDebug => 0
       ])
       */
-    $useragent = "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; InfoPath.2; MSOffice 14)";
+   //  $useragent = "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; InfoPath.2; MSOffice 14)";
      $from_name= $e['fromName'];
      $from_address=$e['fromAddress'];                                              $sender_line=__LINE__;
      $to_name=$e['toName'];
