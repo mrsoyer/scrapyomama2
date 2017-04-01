@@ -112,7 +112,7 @@ class Bulk extends Controller
         $set['$inc']['account.'.$ka.'.nb'] = $j;
         $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
       }
-      //$this->shoot([2,$e[1],'_blank']);
+      $this->shoot([2,$e[1],'_blank']);
     }
 
     private function people()
