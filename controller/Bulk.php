@@ -103,7 +103,7 @@ class Bulk extends Controller
         $ka = $this->accountSMTP($Domain,0);
         $set['$set']['note'] = $Domain['note']+1;
         if(isset($ka))
-          $set['$inc']['account.'.$ka.'.nb'] = 2000;
+          $set['$inc']['account.'.$ka.'.nb'] = 4000;
         $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
 
       }
