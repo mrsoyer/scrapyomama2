@@ -184,7 +184,7 @@ class Bulk extends Controller
 
     public function accountSMTP($Domain,$type)
     {
-      foreach($Domain['account'] as $k=>$v)
+    /*  foreach($Domain['account'] as $k=>$v)
       {
         if($v['nb'] < 4000)
         {
@@ -194,6 +194,11 @@ class Bulk extends Controller
             return($k);
           die();
         }
+      }*/
+      if($type == 1)
+        return($Domain['account'][rand(0,count($Domain['account'])-1)]['account']);
+      else {
+        return(rand(0,count($Domain['account'])-1));
       }
     }
 
@@ -207,7 +212,7 @@ class Bulk extends Controller
       $mailHtml = $this->replace_a_href($mailHtml,$link);
       $mailHtml = $this->replace_img_src($mailHtml,$dest);
       $mailHtml .="<img src='https://".$dest.'/Trck/img/'.$arg."' width='1px' height='1px'>";
-      $mailHtml = str_replace(array("\n","\r","\t"),'',$mailHtml);
+      //$mailHtml = str_replace(array("\n","\r","\t"),'',$mailHtml);
       return($mailHtml);
     }
 
