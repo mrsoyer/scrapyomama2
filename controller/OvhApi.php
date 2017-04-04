@@ -55,11 +55,27 @@ class OvhApi extends Controller
       return($result);
     }
 
+    public function listDom()
+    {
+      $ovh = $this->ovhapi();
+      $result = $ovh->get('/email/domain');
+      //print_r( $result );
+      return($result);
+    }
+
+    public function domInfo($dom)
+    {
+      $ovh = $this->ovhapi();
+      $result = $ovh->get('/email/domain/'.$dom);
+      //print_r( $result );
+      return($result);
+    }
+
     public function deleteMail($dom,$account)
     {
       $ovh = $this->ovhapi();
       $result = $ovh->delete('/email/domain/'.$dom.'/account/'.$account);
-      //print_r( $result );
+      print_r( $result );
       return($result);
     }
 
@@ -76,6 +92,7 @@ class OvhApi extends Controller
       $result = $ovh->post('/email/domain/'.$dom.'/account/'.$account.'/changePassword', array(
     'password' => 'tomylyjon', // Required: New password (type: password)
       ));
+      print_r( $result );
       return($result);
     }
     public function createMail($dom,$account)
@@ -89,5 +106,11 @@ class OvhApi extends Controller
 
       //print_r( $result );
       return($result);
+    }
+    public function t()
+    {
+      $l = str_split("1234567890azertyuiopqsdfghjklmwxcvbn");
+      shuffle($l);
+      return $l[0].$l[1].$l[2].$l[3].$l[4]."-MailBox-".$l[5].$l[6].$l[7].$l[8].$l[9];
     }
 }

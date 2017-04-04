@@ -110,9 +110,7 @@ class People extends Model
 	public function findAllPeople($nbinsert)
 	{
 			$collection = $this->db->People;
-
-
-
+			$nbinsert = $nbinsert+1;
 				$query = $collection->find(
 					[
 						'$or' => [
@@ -199,6 +197,12 @@ class People extends Model
 		);
 		$result = json_decode(json_encode($query),true);
 		return($result['note']);
+	}
+
+	public function dellAllPeople()
+	{
+		$collection = $this->db->PeopleShoot;
+		$collection->deleteMany([]);
 	}
 
 }

@@ -35,84 +35,122 @@ class Bulk extends Controller
       if(!isset($e[1])) $e[1] = 5;
       if(!isset($e[2])) $e[2] = "";
       $async = $this->newsym('Async');
-      $this->loadModel('Domain');
+      $this->loadModel('Proxy');
+      $this->loadModel('Dom');
+      $ovh = $this->newsym("OvhApi");
+      $this->loadModel('Campaign');
+      $camp = $this->Campaign->selectcamp();
+      if(!isset($camp['_id']['$oid'])) die();
+      if($camp['count']==0)
+      {
+        echo "---Load Campaing--- \n";
+        $this->loadModel('People');
+        $this->People->dellAllPeople();
+        $this->insert($camp['limit']);
+        $this->Campaign->updateCamp($camp['_id']['$oid'],1);
+      }
       echo "---Start--- \n";
-      flush();
-      $dom = $this->Domain->selectDom();
+      $prox = $this->Proxy->selectProx();
       echo "---RUN--- \n";
       $i = 0;
       $shoot= array();
-      foreach($dom as $k=>$v)
+      foreach($prox as $k=>$v)
       {
+        if(!isset($v['smtp']))
+        {
 
-        $minutes = (60+(($v['note']*$v['note']*$v['note'])/2));
-        $diff =   strtotime("-".$minutes." minutes", $_SERVER['REQUEST_TIME'])-$v['lastsend'];
-        if($diff > 0 && $i < $e[0])
+          $dom = $this->Dom->findOneDom();
+
+          $name = $ovh->t();
+          try {
+            print_r($ovh->createMail($dom['domain'],$name));
+            if(isset($dom['account']))
+              $this->Dom->addAccount($v['_id']['$oid'],$dom['_id']['$oid'],$name);
+            else
+              $this->Dom->addCAccount($v['_id']['$oid'],$dom['_id']['$oid'],$name);
+
+            $this->Proxy->addAccount($v['_id']['$oid'],$name."@".$dom['domain']);
+
+          }catch (Exception $e) {
+              $this->Dom->domError($dom['_id']['$oid']);
+          }
+          print_r($dom);
+          print_r($v);
+        }
+        else if($v['error'] == 5)
+        {
+          // on kill le proxy et on sup le mail
+          $this->Proxy->killProx($v['_id']['$oid']);
+          if(isset($v['smtp']))
+          {
+            $acc = explode("@",$v['smtp']);
+
+            try {
+              $ovh->updatePassword($acc[1],$acc[0]);
+            //  $this->Dom->suppAccount($acc); //create
+            }catch (Exception $e){}
+          }
+
+        }
+        else if ($i < $e[0])
         {
           $shoot[]= ['Bulk','shootDom',[$v['_id']['$oid'],$e[1]],[],[$e[2]]];
           $i++;
         }
       }
 
-      $nbinsert = count($shoot)*$e[1];
-
-
       if(count($shoot) > 0)
       {
         print_r($shoot);
+        //die();
         $boom = $async->sync($shoot);
       }
 
     }
 
-    public function insert()
+    public function insert($n)
     {
       $this->loadModel('People');
       $camp = $this->People->findAllPeople(500);
-      $this->insert();
+      if($n>0)
+        $this->insert($n-500);
     }
     public function shootDom($e)
     {
       $time = $_SERVER['REQUEST_TIME'];
-      $this->loadModel('Domain');
+      $this->loadModel('Proxy');
       $this->loadModel('Campaign');
       $camp = $this->Campaign->selectcamp();
       if(!isset($camp['_id']['$oid'])) die();
-      $Domain = $this->Domain->domDetailUpdate($e[0]);
-      unset($Domain['people']);
+      $Proxy = $this->Proxy->domDetailUpdate($e[0]);
       $shoot = "ok";
       $i = 0;
       $j = 0;
       while($i < $e[1])
       {
-
-          if($shoot == "ok")
+          if($j<5)
           {
             $people = $this->people();
-            $shoot = $this->sendPeople($people,$Domain,$camp);
+            $shoot = $this->sendPeople($people,$Proxy,$camp);
             sleep(1);
-            $j++;
+            if($shoot != "ok")
+              $j++;
+            else
+              $j=0;
+            $i++;
           }
-          else
-            $shoot = "error";
-          $i++;
       }
 
-      if($shoot != "ok" && $j < 3)
+      if($j >= 5 && $i == $j)
       {
-        $ka = $this->accountSMTP($Domain,0);
-        $set['$set']['note'] = $Domain['note']+1;
-        if(isset($ka))
-          $set['$inc']['account.'.$ka.'.nb'] = 4000;
-        $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
+        $this->Proxy->proxError($Proxy['_id']['$oid'],$Proxy['note']+1);//create
+        $acc = explode("@",$Proxy['smtp']);
+        try {
+          $ovh->updatePassword($acc[1],$acc[0]);
+        }catch (Exception $e){}
+        $this->shoot([1,$e[1],'_blank']);
+      }
 
-      }
-      else{
-        $ka = $this->accountSMTP($Domain,0);
-        $set['$inc']['account.'.$ka.'.nb'] = $j;
-        $this->Domain->updateEndDomain($Domain['_id']['$oid'],$set);
-      }
-      $this->shoot([2,$e[1],'_blank']);
     }
 
     private function people()
@@ -133,13 +171,13 @@ class Bulk extends Controller
       return($people);
     }
 
-    private function sendPeople($people,$Domain,$camp)
+    private function sendPeople($people,$Proxy,$camp)
     {
       $this->loadModel('People');
       $this->loadModel('Campaign');
     //  $this->loadModel('Logs');
-      $shoot = $this->sendMail($Domain,$people,$camp);
-      $return = $this->preparReturn($Domain,$people,$shoot);
+      $shoot = $this->sendMail($Proxy,$people,$camp);
+      $return = $this->preparReturn($Proxy,$people,$shoot);
       $return['insert'] = $_SERVER['REQUEST_TIME'];
       if($shoot == "ok")
         $this->Campaign->updateCamp($camp['_id']['$oid'],1);
@@ -148,14 +186,13 @@ class Bulk extends Controller
       return($shoot);
     }
 
-    private function sendMail($Domain,$people,$camp)
+    private function sendMail($Proxy,$people,$camp)
     {
 
-      $smtp = $this->accountSMTP($Domain,1);
       $Prepar = [
-        'domid' =>$Domain['_id']['$oid'],
+        'domid' =>$Proxy['_id']['$oid'],
         'peopleid' =>$people['_id']['$oid'],
-        'smtpUser' => $smtp,
+        'smtpUser' => $Proxy['smtp'],
         'fromAddress' => $camp['email'],
       //  'fromAddress' => $smtp,
       //  'fromAddress' => "nina.garcia42@yahoo.fr",
@@ -163,7 +200,7 @@ class Bulk extends Controller
         'toName' => $people['firstname'],
         'toAdress' => $people['email'],
       //  'toAdress' => "mrsoyer@live.fr",
-        'proxy' => $Domain['proxy'],
+        'proxy' => $Proxy['ip'],
       //  'proxy' => "",
         'fromName' => $camp['name'],
         'subject' => $camp['sujet'],
@@ -172,7 +209,7 @@ class Bulk extends Controller
       $Prepar['htmlMessage'] = $this->preparHTML($Prepar,$camp);
     //  $Prepar['htmlMessage'] = "test";
       $Mails = $this->newsym('Mails');
-      print_r($Prepar);
+      //print_r($Prepar);
       try {
           $shoot = $Mails->smtpOvhBulk($Prepar);
       } catch (Exception $e) {
@@ -184,17 +221,6 @@ class Bulk extends Controller
 
     public function accountSMTP($Domain,$type)
     {
-    /*  foreach($Domain['account'] as $k=>$v)
-      {
-        if($v['nb'] < 4000)
-        {
-          if($type == 1)
-            return($v['account']);
-          else
-            return($k);
-          die();
-        }
-      }*/
       if($type == 1)
         return($Domain['account'][rand(0,count($Domain['account'])-1)]['account']);
       else {
@@ -279,12 +305,12 @@ class Bulk extends Controller
     }
 
 
-    private function preparReturn($Domain,$people,$shoot)
+    private function preparReturn($Proxy,$people,$shoot)
     {
-      $return['idDomain']=$Domain['_id']['$oid'];
+      $return['idDomain']=$Proxy['_id']['$oid'];
       $return['idPeople']=$people['_id']['$oid'];
       $return['to']=$people['email'];
-      $return['dom']=$Domain['domain'];
+      $return['smtp']=$Proxy['smtp'];
       $return['shoot']=$shoot;
       return($return);
     }
