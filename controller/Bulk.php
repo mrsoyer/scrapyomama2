@@ -130,7 +130,7 @@ class Bulk extends Controller
       $k = 0;
       while($i < $e[1])
       {
-          if($j<5)
+          if($j<3)
           {
             $people = $this->people();
             $shoot = $this->sendPeople($people,$Proxy,$camp);
@@ -197,10 +197,10 @@ class Bulk extends Controller
         'domid' =>$Proxy['_id']['$oid'],
         'peopleid' =>$people['_id']['$oid'],
         'smtpUser' => $Proxy['smtp'],
-      //  'fromAddress' => $camp['email'],
+        'fromAddress' => $camp['email'],
       //  'fromAddress' => $smtp,
       //  'fromAddress' => "nina.garcia42@yahoo.fr",
-        'fromAddress' => substr($Domain['_id']['$oid'], 0, 10)."@".substr($Domain['_id']['$oid'], -10).".com",
+      //  'fromAddress' => substr($camp['_id']['$oid'], 0, 10)."@".substr($camp['_id']['$oid'], -10).".com",
         'toName' => $people['firstname'],
         'toAdress' => $people['email'],
       //  'toAdress' => "mrsoyer@live.fr",
