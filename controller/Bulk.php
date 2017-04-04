@@ -117,6 +117,7 @@ class Bulk extends Controller
     }
     public function shootDom($e)
     {
+      $ovh = $this->newsym("OvhApi");
       $time = $_SERVER['REQUEST_TIME'];
       $this->loadModel('Proxy');
       $this->loadModel('Campaign');
@@ -126,6 +127,7 @@ class Bulk extends Controller
       $shoot = "ok";
       $i = 0;
       $j = 0;
+      $k = 0;
       while($i < $e[1])
       {
           if($j<5)
@@ -137,18 +139,20 @@ class Bulk extends Controller
               $j++;
             else
               $j=0;
-            $i++;
+          $k++;
           }
+            $i++;
       }
 
-      if($j >= 5 && $i == $j)
+      if( $k == $j)
       {
         $this->Proxy->proxError($Proxy['_id']['$oid'],$Proxy['note']+1);//create
         $acc = explode("@",$Proxy['smtp']);
         try {
           $ovh->updatePassword($acc[1],$acc[0]);
-        }catch (Exception $e){}
-        $this->shoot([1,$e[1],'_blank']);
+        }catch (Exception $e){print_r($e);}
+        //$this->shoot([1,$e[1],'_blank']);
+
       }
 
     }
