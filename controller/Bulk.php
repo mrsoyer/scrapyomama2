@@ -140,7 +140,7 @@ class Bulk extends Controller
             $people = $this->people();
             if(!isset($people['_id']['$oid'])) die();
             $shoot = $this->sendPeople($people,$Proxy,$camp);
-            sleep(120);
+            sleep(rand(50,150));
             if($shoot != "ok")
               $j++;
             else
