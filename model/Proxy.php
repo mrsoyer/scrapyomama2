@@ -26,7 +26,7 @@ class Proxy extends Model
     $result = array();
     $query = $collection->find(
 	    [
-        'lastsend' =>['$lt' => strtotime("-1 hours",$_SERVER['REQUEST_TIME'])] ,
+      //  'lastsend' =>['$lt' => strtotime("-1 hours",$_SERVER['REQUEST_TIME'])] ,
         'error' => ['$lt' => 5],
         'end' => ['$gt' => $_SERVER['REQUEST_TIME']],
         'status' => 1
@@ -69,6 +69,17 @@ class Proxy extends Model
   public function domDetailUpdate($idDomain)
 	{
 			$set['$set']['error'] = 0;
+			$set['$set']['lastsend'] = $_SERVER['REQUEST_TIME'];
+			$collection = $this->db->Proxy;
+			$query['_id'] = new MongoDB\BSON\ObjectID($idDomain);
+	    $q = $collection->findOneAndUpdate($query,$set);
+			$result = json_decode(json_encode($q),true);
+			return($result);
+	}
+
+  public function domUpdate($idDomain)
+	{
+
 			$set['$set']['lastsend'] = $_SERVER['REQUEST_TIME'];
 			$collection = $this->db->Proxy;
 			$query['_id'] = new MongoDB\BSON\ObjectID($idDomain);

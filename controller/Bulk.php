@@ -28,7 +28,13 @@ class Bulk extends Controller
 
     ';
     }
+    public function run($e)
+    {
+      $async = $this->newsym('Async');
+      $shoot[]= ['Bulk','shoot',[$e],[],['_blank']];
+      $boom = $async->sync($shoot);
 
+    }
     public function shoot($e)
     {
       if(!isset($e[0])) $e[0] = 1;
@@ -111,9 +117,9 @@ class Bulk extends Controller
     public function insert($n)
     {
       $this->loadModel('People');
-      $camp = $this->People->findAllPeople(500);
+      $camp = $this->People->findAllPeople(1000);
       if($n>0)
-        $this->insert($n-500);
+        $this->insert($n-1000);
     }
     public function shootDom($e)
     {
@@ -128,30 +134,31 @@ class Bulk extends Controller
       $i = 0;
       $j = 0;
       $k = 0;
-      while($i < $e[1])
+      while($j<3)
       {
-          if($j<3)
-          {
+
             $people = $this->people();
+            if(!isset($people['_id']['$oid'])) die();
             $shoot = $this->sendPeople($people,$Proxy,$camp);
-            sleep(1);
+            sleep(120);
             if($shoot != "ok")
               $j++;
             else
               $j=0;
           $k++;
-          }
-            $i++;
+
+          $this->Proxy->domUpdate($e[0]);
       }
 
-      if( $k == $j)
+      if($j == 3)
       {
         $this->Proxy->proxError($Proxy['_id']['$oid'],$Proxy['note']+1);//create
+        $this->Campaign->errorCamp($camp['_id']['$oid']);
         $acc = explode("@",$Proxy['smtp']);
         try {
           $ovh->updatePassword($acc[1],$acc[0]);
-        }catch (Exception $e){print_r($e);}
-        //$this->shoot([1,$e[1],'_blank']);
+        }catch (Exception $w){}
+
 
       }
 
@@ -198,7 +205,7 @@ class Bulk extends Controller
         'peopleid' =>$people['_id']['$oid'],
         'smtpUser' => $Proxy['smtp'],
         'fromAddress' => $camp['email'],
-      //  'fromAddress' => $smtp,
+      //  'fromAddress' => $Proxy['smtp'],
       //  'fromAddress' => "nina.garcia42@yahoo.fr",
       //  'fromAddress' => substr($camp['_id']['$oid'], 0, 10)."@".substr($camp['_id']['$oid'], -10).".com",
         'toName' => $people['firstname'],
@@ -208,10 +215,11 @@ class Bulk extends Controller
       //  'proxy' => "",
         'fromName' => $camp['name'],
         'subject' => $camp['sujet'],
+      //    'subject' => "coucou",
         'textMessage' => $camp['message'],
       ];
       $Prepar['htmlMessage'] = $this->preparHTML($Prepar,$camp);
-    //  $Prepar['htmlMessage'] = "test";
+      //$Prepar['htmlMessage'] = "test";
       $Mails = $this->newsym('Mails');
       //print_r($Prepar);
       try {

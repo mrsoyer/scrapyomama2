@@ -19,6 +19,7 @@ class Campaign extends Model
 		$query = $collection->findOne(
 			[
 				'end' => ['$exists' => false],
+				'error' => ['$lt' => 10]
 			],
 			[
         'sort' => ['create' => 1],
@@ -41,7 +42,16 @@ class Campaign extends Model
 			$q['_id'] = new MongoDB\BSON\ObjectID($idCamp);
 			$set['$inc']['count'] = $nb;
 			$q = $collection->updateOne($q,$set);
-		
+
+	}
+	public function errorCamp($idCamp)
+	{
+		$collection = $this->db->Campaign;
+
+			$q['_id'] = new MongoDB\BSON\ObjectID($idCamp);
+			$set['$inc']['error'] = 1;
+			$q = $collection->updateOne($q,$set);
+
 	}
 
 
