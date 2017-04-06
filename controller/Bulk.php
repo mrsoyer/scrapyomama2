@@ -200,6 +200,7 @@ class Bulk extends Controller
     private function sendMail($Proxy,$people,$camp)
     {
       //$Proxy['smtp'] = "coucou@lkpg.fr";
+      
       $Prepar = [
         'domid' =>$Proxy['_id']['$oid'],
         'peopleid' =>$people['_id']['$oid'],
