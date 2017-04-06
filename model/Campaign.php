@@ -18,8 +18,8 @@ class Campaign extends Model
 		$collection = $this->db->Campaign;
 		$query = $collection->findOne(
 			[
-				'end' => ['$exists' => false],
-				'error' => ['$lt' => 10]
+				'end' => ['$exists' => false]
+				//'error' => ['$lt' => 10]
 			],
 			[
         'sort' => ['create' => 1],

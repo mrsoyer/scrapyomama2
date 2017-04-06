@@ -112,7 +112,7 @@ class Mails extends Controller
         smtpHtmlDebug => 0
       ])
       */
-     $useragent = "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.0; WOW64; Trident/8.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; Microsoft Outlook 16.0.6366; ms-office; MSOffice 16)";
+     $useragent = $this->userAgent();
      $from_name= $e['fromName'];
      $from_address=$e['fromAddress'];                                              $sender_line=__LINE__;
      $to_name=$e['toName'];
@@ -128,8 +128,8 @@ class Mails extends Controller
      if(!isset($e['ssl']))$ssl = 0; else $ssl=$e['ssl'];
      if(!isset($e['tls']))$tls = 0; else $tls=$e['tls'];
      if(isset($e['useragent']))$useragent=$e['useragent'];
-     if(!isset($e['smtpDebug']))$smtp_debug = 0; else $smtp_debug=$e['smtpDebug'];
-     if(!isset($e['smtpHtmlDebug']))$smtp_html_debug = 0; else $smtp_html_debug=$e['smtpHtmlDebug'];
+     if(!isset($e['smtpDebug']))$smtp_debug = 1; else $smtp_debug=$e['smtpDebug'];
+     if(!isset($e['smtpHtmlDebug']))$smtp_html_debug = 1; else $smtp_html_debug=$e['smtpHtmlDebug'];
 
      $reply_name=$from_name;
      $r = explode("@",$from_address);
@@ -188,7 +188,7 @@ class Mails extends Controller
      $email_message->AddRelatedMultipart($related_parts);
 
      $rand = [1,2,3,4,5,6,7];
-     //shuffle($rand);
+     shuffle($rand);
 
 
 
@@ -219,6 +219,17 @@ class Mails extends Controller
          }else{
            return('ok');
          }
+
+    }
+
+    public function userAgent()
+    {
+      $u = '[{"id":"3","useragent":"Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident\/4.0; InfoPath.2; MSOffice 14)"}, {"id":"4","useragent":"Microsoft Office\/14.0 (Windows NT 5.1; Microsoft Outlook 14.0.4536; Pro; MSOffice 14)"}, {"id":"5","useragent":"Microsoft Office\/14.0 (Windows NT 6.1; Microsoft Outlook 14.0.5128; Pro)"}, {"id":"6","useragent":"Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident\/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.2; AskTB5.5; MSOffice 12)"}, {"id":"7","useragent":"Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; MSOffice 12)"}, {"id":"8","useragent":"Microsoft Office\/12.0 (Windows NT 6.1; Microsoft Office Outlook 12.0.6739; Pro)"}, {"id":"9","useragent":"Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident\/6.0; Microsoft Outlook 15.0.4420)"}, {"id":"10","useragent":"Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Win64; x64; Trident\/6.0; .NET CLR 2.0.50727; SLCC2; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; Tablet PC 2.0; Microsoft Outlook 15.0.4481; ms-office; MSOf"}, {"id":"11","useragent":"Microsoft Office\/16.0 (Microsoft Outlook Mail 16.0.6416; Pro)"}, {"id":"12","useragent":"Microsoft Office\/16.0 (Windows NT 10.0; Microsoft Outlook 16.0.6326; Pro)"}, {"id":"13","useragent":"Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 10.0; WOW64; Trident\/8.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; Microsoft Outlook 16.0.6366; ms-office; MSOffice 16)"}, {"id":"14","useragent":"Mozilla\/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.0.7) Gecko\/2009021910 Firefox\/3.0.7 (via ggpht.com)"}, {"id":"15","useragent":"Mozilla\/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.0.7) Gecko\/2009021910 Firefox\/3.0.7 (via ggpht.com GoogleImageProxy)"}, {"id":"16","useragent":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit\/536.26.14 (KHTML, like Gecko)"}, {"id":"17","useragent":"Mozilla\/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.14) Gecko\/20080505 Thunderbird\/2.0.0.14"}, {"id":"18","useragent":"Mozilla\/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.8.1.19) Gecko\/20081209 Thunderbird\/2.0.0.19"}, {"id":"19","useragent":"Mozilla\/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9pre) Gecko\/2008050715 Thunderbird\/3.0a1"}, {"id":"20","useragent":"Mozilla\/5.0 (Windows; U; Windows NT 5.1; cs; rv:1.8.1.21) Gecko\/20090302 Lightning\/0.9 Thunderbird\/2.0.0.21"}, {"id":"21","useragent":"Mozilla\/5.0 (Windows; U; Windows NT 5.1; cs; rv:1.9.1.8) Gecko\/20100227 Lightning\/1.0b1 Thunderbird\/3.0.3"}, {"id":"22","useragent":"Mozilla\/5.0 (X11; U; Linux i686; en-US; rv:1.9.2.13) Gecko\/20101208 Lightning\/1.0b2 Thunderbird\/3.1.7"}, {"id":"23","useragent":"Mozilla\/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.2.8) Gecko\/20100802 Lightning\/1.0b2 Thunderbird\/3.1.2 ThunderBrowse\/3.3.2"}, {"id":"24","useragent":"Mozilla\/5.0 (Windows NT 6.1; rv:6.0) Gecko\/20110812 Thunderbird\/6.0"}, {"id":"25","useragent":"Mozilla\/5.0 (X11; Linux i686; rv:7.0.1) Gecko\/20110929 Thunderbird\/7.0.1"}, {"id":"26","useragent":"Mozilla\/5.0 (Windows NT 6.2; WOW64; rv:24.0) Gecko\/20100101 Thunderbird\/24.2.0"}, {"id":"27","useragent":"Mozilla\/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko\/20100101 Thunderbird\/38.2.0"}]';
+      $u = json_decode($u,true);
+      shuffle($u);
+      $result = $u[0]['useragent'];
+      //print_r($result);
+      return($result);
 
     }
 }

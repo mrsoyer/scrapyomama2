@@ -94,7 +94,8 @@ class Proxy extends Model
 		$query = $collection->updateOne(
 			['_id' => new MongoDB\BSON\ObjectID($proxId)],
 			['$set' => [
-				'error' => $note
+				'error' => $note,
+        'lastsend' => strtotime("1 day",$_SERVER['REQUEST_TIME'])
 				]
 			]
 		);

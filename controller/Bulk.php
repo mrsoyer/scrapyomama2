@@ -140,7 +140,7 @@ class Bulk extends Controller
             $people = $this->people();
             if(!isset($people['_id']['$oid'])) die();
             $shoot = $this->sendPeople($people,$Proxy,$camp);
-            sleep(rand(50,150));
+            sleep(rand(50,100));
             if($shoot != "ok")
               $j++;
             else
@@ -152,8 +152,8 @@ class Bulk extends Controller
 
       if($j == 3)
       {
-        $this->Proxy->proxError($Proxy['_id']['$oid'],$Proxy['note']+1);//create
-        $this->Campaign->errorCamp($camp['_id']['$oid']);
+        //$this->Proxy->proxError($Proxy['_id']['$oid'],$Proxy['note']+1);//create
+        //$this->Campaign->errorCamp($camp['_id']['$oid']);
         $acc = explode("@",$Proxy['smtp']);
         try {
           $ovh->updatePassword($acc[1],$acc[0]);
@@ -199,7 +199,7 @@ class Bulk extends Controller
 
     private function sendMail($Proxy,$people,$camp)
     {
-
+      //$Proxy['smtp'] = "coucou@lkpg.fr";
       $Prepar = [
         'domid' =>$Proxy['_id']['$oid'],
         'peopleid' =>$people['_id']['$oid'],
@@ -209,14 +209,15 @@ class Bulk extends Controller
       //  'fromAddress' => "nina.garcia42@yahoo.fr",
       //  'fromAddress' => substr($camp['_id']['$oid'], 0, 10)."@".substr($camp['_id']['$oid'], -10).".com",
         'toName' => $people['firstname'],
-        'toAdress' => $people['email'],
-      //  'toAdress' => "mrsoyer@live.fr",
+      //  'toAdress' => $people['email'],
+        'toAdress' => "mrsoyer@live.fr",
         'proxy' => $Proxy['ip'],
       //  'proxy' => "",
         'fromName' => $camp['name'],
         'subject' => $camp['sujet'],
-      //    'subject' => "coucou",
+        //  'subject' => "test",
         'textMessage' => $camp['message'],
+      //'textMessage' => "test",
       ];
       $Prepar['htmlMessage'] = $this->preparHTML($Prepar,$camp);
       //$Prepar['htmlMessage'] = "test";
