@@ -134,20 +134,20 @@ class Bulk extends Controller
       $i = 0;
       $j = 0;
       $k = 0;
-      while($j<3)
+      while($j<3 && $k<$e[1])
       {
 
             $people = $this->people();
             if(!isset($people['_id']['$oid'])) die();
             $shoot = $this->sendPeople($people,$Proxy,$camp);
-            sleep(rand(50,100));
+            sleep(1);
             if($shoot != "ok")
               $j++;
             else
               $j=0;
           $k++;
 
-          $this->Proxy->domUpdate($e[0]);
+          //$this->Proxy->domUpdate($e[0]);
       }
 
       if($j == 3)
@@ -204,8 +204,8 @@ class Bulk extends Controller
         'domid' =>$Proxy['_id']['$oid'],
         'peopleid' =>$people['_id']['$oid'],
         'smtpUser' => $Proxy['smtp'],
-        'fromAddress' => $camp['email'],
-      //  'fromAddress' => $Proxy['smtp'],
+      //  'fromAddress' => $camp['email'],
+        'fromAddress' => $Proxy['smtp'],
       //  'fromAddress' => "nina.garcia42@yahoo.fr",
       //  'fromAddress' => substr($camp['_id']['$oid'], 0, 10)."@".substr($camp['_id']['$oid'], -10).".com",
         'toName' => $people['firstname'],
