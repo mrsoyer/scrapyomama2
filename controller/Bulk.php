@@ -263,12 +263,14 @@ class Bulk extends Controller
             $old_src = $tag->getAttribute('src');
             $old_src = $this->base64url_encode($old_src);
             $new_src_url = "https://".$dest."/Trck/imgSrc/".$old_src;
+            $new_src_url= $this->tinyurl($new_src_url);
             $tag->setAttribute('src', $new_src_url);
         }
         return $doc->saveHTML();
     }
 
     public  function replace_a_href($html,$link) {
+        $link = $this->tinyurl($link);
         $doc = new DOMDocument();
         $doc->loadHTML($html);
         $tags = $doc->getElementsByTagName('a');
@@ -282,6 +284,10 @@ class Bulk extends Controller
       return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
     }
 
+    public function tinyurl($url)
+    {
+      return file_get_contents('http://tinyurl.com/api-create.php?url='.$url);
+    }
 
     private function updatePeople($people)
     {
