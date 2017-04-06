@@ -116,11 +116,11 @@ class Bulk extends Controller
 
     public function insert($n)
     {
-      //$n = $n[0];
+      $n = $n[0];
       $this->loadModel('People');
-      $camp = $this->People->findAllPeople(1000);
+      $camp = $this->People->findAllPeople(500);
       if($n>0)
-        $this->insert($n-1000);
+        $this->insert([$n-500]);
     }
     public function shootDom($e)
     {

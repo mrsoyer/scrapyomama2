@@ -144,7 +144,7 @@ class People extends Model
 							$insert[] = $result;
 						}
 				}
-
+				print_r($insert);
 				if(count($or)>0)
 				{
 					$updateResult = $collection->updateMany(
