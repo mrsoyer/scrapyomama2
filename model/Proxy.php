@@ -32,7 +32,7 @@ class Proxy extends Model
         'status' => 1
       ],
 			[
-        'sort' => ['lastsend' => -1]
+        'sort' => ['lastsend' => 1]
 			]
 		);
 		foreach ($query as $document) {

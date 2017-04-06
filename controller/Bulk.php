@@ -116,6 +116,7 @@ class Bulk extends Controller
 
     public function insert($n)
     {
+      //$n = $n[0];
       $this->loadModel('People');
       $camp = $this->People->findAllPeople(1000);
       if($n>0)
@@ -200,7 +201,7 @@ class Bulk extends Controller
     private function sendMail($Proxy,$people,$camp)
     {
       //$Proxy['smtp'] = "coucou@lkpg.fr";
-      
+
       $Prepar = [
         'domid' =>$Proxy['_id']['$oid'],
         'peopleid' =>$people['_id']['$oid'],
