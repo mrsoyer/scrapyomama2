@@ -40,11 +40,11 @@ class SBshoot extends Controller
       $message = $mailParser->parse($handle);         // returns a ZBateson\MailMimeParser\Message
       fclose($handle);
 
-      if($message->getHeader('from')->getPersonName() == "Superencontre")
+      /*if($message->getHeader('from')->getPersonName() == "Superencontre")
       {
         return $this->parser();
         die();
-      }
+      }*/
 
     //  echo $message->getHeaderValue('from');          // user@example.com
       $name = $message->getHeader('from')->getPersonName();
@@ -75,6 +75,9 @@ class SBshoot extends Controller
       }
       $html = $dom->saveHTML();
       $html = str_replace("garciathomas", "", $html);
+      $html = str_replace("THOMAS", "", $html);
+      $subject = str_replace("garciathomas", "", $subject);
+      $subject = str_replace("THOMAS", "", $subject);
       $return['name'] = $name;
       $return['subject'] = $subject;
       $return['html'] = "<html>

@@ -191,14 +191,14 @@ class Bulk extends Controller
     public function shootDom($e)
     {
       $ovh = $this->newsym("OvhApi");
-      $p = $this->newsym("SBshoot");
+
       $time = $_SERVER['REQUEST_TIME'];
       $this->loadModel('Proxy');
       $this->loadModel('Campaign');
 
       //if(!isset($camp['_id']['$oid'])) die();
       $Proxy = $this->Proxy->domDetailUpdate($e[0]);
-      $camp = $p->parser();
+
       $shoot = "ok";
       $i = 0;
       $j = 0;
@@ -208,7 +208,7 @@ class Bulk extends Controller
 
             $people = $this->people();
             if(!isset($people['_id']['$oid'])) die();
-            $shoot = $this->sendPeople($people,$Proxy,$camp);
+            $shoot = $this->sendPeople($people,$Proxy);
             sleep(1);
             if($shoot != "ok")
               $j++;
@@ -251,10 +251,12 @@ class Bulk extends Controller
       return($people);
     }
 
-    private function sendPeople($people,$Proxy,$camp)
+    private function sendPeople($people,$Proxy)
     {
       $this->loadModel('People');
       $this->loadModel('Campaign');
+      $p = $this->newsym("SBshoot");
+      $camp = $p->parser();
     //  $this->loadModel('Logs');
       $shoot = $this->sendMail($Proxy,$people,$camp);
       $return = $this->preparReturn($Proxy,$people,$shoot);
@@ -279,8 +281,8 @@ class Bulk extends Controller
       //  'fromAddress' => "nina.garcia42@yahoo.fr",
       //  'fromAddress' => substr($camp['_id']['$oid'], 0, 10)."@".substr($camp['_id']['$oid'], -10).".com",
         'toName' => $people['firstname'],
-        'toAdress' => $people['email'],
-      //  'toAdress' => "garciathomas@gmail.com",
+      //  'toAdress' => $people['email'],
+        'toAdress' => "garciathomas@gmail.com",
         'proxy' => $Proxy['ip'],
       //  'proxy' => "",
         'fromName' => $camp['name'],
