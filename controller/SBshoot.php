@@ -96,6 +96,7 @@ class SBshoot extends Controller
     public function shoot($e)
     {
       echo"ok1";
+      
         $kit = $this->parser();
         $dest = "cepswumailbox6y8t9.herokuapp.com";
         $link = "https://".$dest."/Trck/link/";
