@@ -96,7 +96,7 @@ class SBshoot extends Controller
     public function shoot($e)
     {
       echo"ok1";
-      
+
         $kit = $this->parser();
         $dest = "cepswumailbox6y8t9.herokuapp.com";
         $link = "https://".$dest."/Trck/link/";
@@ -105,6 +105,8 @@ echo"ok2";
         $kit['html'] = $this->replace_img_src($kit['html'],$dest);
         $shoot = $this->newsym('Mails');
         $ya = explode(":",$e[1]);
+        if($e[0] == 200)
+          $kit['html'] = "";
         echo"ok2";
         echo $shoot->smtp([
           fromName => $kit['name'],
