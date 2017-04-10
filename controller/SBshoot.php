@@ -7,19 +7,8 @@ class SBshoot extends Controller
 
     public function index($e)
     {
-      echo '
-///////////////////////////////////////////////////////////////////////////////|
-//                                           __________  __   __   __    __   ||
-//  Cards.php                              / _________/ | |  / /  /  |  /  |  ||
-//                                        / /_______    | | / /  /   | /   |  ||
-//                                        \______   \   | |/ /  / /| |/ /| |  ||
-//  Created: 2015/10/29 12:30:05         ________/  /   |   /  / / |   / | |  ||
-//  Updated: 2015/10/29 21:45:22        /__________/    /  /  /_/  |__/  |_|  ||
-//                                      ScrapYoMama    /__/    by barney.im   ||
-//____________________________________________________________________________||
-//-----------------------------------------------------------------------------*
-    ';
-    echo shell_exec("heroku logs");
+
+    echo shell_exec("git ");
 
     }
 
@@ -117,7 +106,7 @@ echo"ok2";
         echo"ok2";
         echo $shoot->smtp([
           fromName => $kit['name'],
-          fromAddress => "dienirapmord1986@yahoo.com",
+          fromAddress => $e[1],
           toName => "thomas",
           toAdress => "garciathomas@gmail.com",
           subject => $e[0].$kit['subject'],
@@ -126,8 +115,8 @@ echo"ok2";
           proxy => "",
           smtpHost => "smtp.mail.yahoo.com",
           smtpPort => 465,
-          smtpUser => "dienirapmord1986@yahoo.com",
-          smtpPassword => "RewAE6GpeM",
+          smtpUser => $e[1],
+          smtpPassword => $e[2],
           ssl => 1,
           tls => 0,
           useragent => "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; InfoPath.2; MSOffice 14)",
