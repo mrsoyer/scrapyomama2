@@ -276,8 +276,8 @@ class Bulk extends Controller
         'domid' =>$Proxy['_id']['$oid'],
         'peopleid' =>$people['_id']['$oid'],
         'smtpUser' => $Proxy['smtp'],
-      //  'fromAddress' => $camp['email'],
-        'fromAddress' => $Proxy['cloudmailin'],
+        'fromAddress' => $camp['email'],
+      //  'fromAddress' => $Proxy['cloudmailin'],
       //  'fromAddress' => "nina.garcia42@yahoo.fr",
       //  'fromAddress' => substr($camp['_id']['$oid'], 0, 10)."@".substr($camp['_id']['$oid'], -10).".com",
         'toName' => $people['firstname'],
@@ -338,14 +338,14 @@ class Bulk extends Controller
             $old_src = $tag->getAttribute('src');
             $old_src = $this->base64url_encode($old_src);
             $new_src_url = "https://".$dest."/Trck/imgSrc/".$old_src;
-            //$new_src_url= $this->tinyurl($new_src_url);
+            $new_src_url= $this->tinyurl($new_src_url);
             $tag->setAttribute('src', $new_src_url);
         }
         return $doc->saveHTML();
     }
 
     public  function replace_a_href($html,$link) {
-        //$link = $this->tinyurl($link);
+        $link = $this->tinyurl($link);
         $doc = new DOMDocument();
         $doc->loadHTML($html);
         $tags = $doc->getElementsByTagName('a');
