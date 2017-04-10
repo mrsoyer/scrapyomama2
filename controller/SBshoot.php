@@ -117,7 +117,7 @@ echo"ok2";
         echo"ok2";
         echo $shoot->smtp([
           fromName => $kit['name'],
-          fromAddress => "surojucar1981@yahoo.com",
+          fromAddress => "dienirapmord1986@yahoo.com",
           toName => "thomas",
           toAdress => "garciathomas@gmail.com",
           subject => $e[0].$kit['subject'],
@@ -126,8 +126,8 @@ echo"ok2";
           proxy => "",
           smtpHost => "smtp.mail.yahoo.com",
           smtpPort => 465,
-          smtpUser => "surojucar1981@yahoo.com",
-          smtpPassword => "rnGXInxoUJ",
+          smtpUser => "dienirapmord1986@yahoo.com",
+          smtpPassword => "RewAE6GpeM",
           ssl => 1,
           tls => 0,
           useragent => "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; InfoPath.2; MSOffice 14)",
@@ -138,7 +138,7 @@ echo"ok2";
         if($e[0]>0)
         {
           echo "\n n: ".$e[0]."\n";
-          sleep(1);
+          //sleep(1);
           $e[0]--;
           //$this->shoot($e);
           $async = $this->newsym('Async');
