@@ -39,15 +39,25 @@ class SBshoot extends Controller
       $handle = fopen(dirname(dirname(__FILE__)).'/test/'.$file[0], 'r');
       $message = $mailParser->parse($handle);         // returns a ZBateson\MailMimeParser\Message
       fclose($handle);
-
-      /*if($message->getHeader('from')->getPersonName() == "Superencontre")
-      {
+      try {
+        if($message->getHeader('from')->getPersonName() == "Superencontre")
+        {
+          return $this->parser();
+          die();
+        }
+      }
+      catch (Exception $e) {
         return $this->parser();
-        die();
-      }*/
+      }
+
 
     //  echo $message->getHeaderValue('from');          // user@example.com
-      $name = $message->getHeader('from')->getPersonName();
+      try {
+        $name = $message->getHeader('from')->getPersonName();
+      } catch (Exception $e) {
+        return $this->parser();
+      }
+
                             // Person Name
       $subject =  $message->getHeaderValue('subject');       // The email's subject
       //echo $message->getTextContent();                // or getHtmlContent
