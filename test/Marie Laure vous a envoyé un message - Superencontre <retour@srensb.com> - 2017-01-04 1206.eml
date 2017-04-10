@@ -1,0 +1,95 @@
+Delivered-To: gar.ciathom.as@gmail.com
+Received: by 10.140.103.245 with SMTP id y108csp8313172qge;
+        Wed, 4 Jan 2017 03:06:20 -0800 (PST)
+X-Received: by 10.194.141.98 with SMTP id rn2mr56777721wjb.1.1483527980669;
+        Wed, 04 Jan 2017 03:06:20 -0800 (PST)
+Return-Path: <noreply@srensbp.com>
+Received: from srensbp.com (srensbp.com. [94.143.19.20])
+        by mx.google.com with ESMTPS id l6si80910765wje.169.2017.01.04.03.06.20
+        for <gar.ciathom.as@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 04 Jan 2017 03:06:20 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) client-ip=94.143.19.20;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@srensb.com;
+       spf=pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) smtp.mailfrom=noreply@srensbp.com;
+       dmarc=pass (p=NONE dis=NONE) header.from=srensb.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=srensb.com;
+ q=dns/txt; s=mail; bh=rI27eH0yDwNM+BlYElthNYzq0XYR8KRxCGOQtGNJOIU=;
+ h=from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe;
+        b=esm8Xn5PzkaKvTyh963pYUm2/6T2begAvv3NU2H3IsEydZRGla+X41B5csVRizYKrziYKyj/+/Qm
+        IW6uJlG0V1DaMCcd27vySvrXXJtQQHtt5vri0HKqc8UbMZ6QUmMQ+MxwxE3Rp7jHGlUBB645moWf
+        OIU5jBxE8yhOQvh8nTQ=
+To: <gar.ciathom.as@gmail.com>
+Subject: =?UTF-8?Q?Marie_Laure_vous_a_envoy=C3=A9_un_message?=
+From: =?UTF-8?Q?Superencontre?= <retour@srensb.com>
+List-Id: MTA2MzUyNC0xNDY4OTgtMTM1 <MTA2MzUyNC0xNDY4OTgtMTM1.list-id.srensbp.com>
+List-Unsubscribe: <mailto:unsubscribe@srensbp.com?subject=unsub-5xuw0oh6jgr6b7j&body=5xuw0oh6jgr6b7j>,<http://r.srensbp.com/v0mb4qnvgr6b7g.html>
+Content-Type: multipart/alternative; boundary="-------?=_77867-2496825100646"
+MIME-Version: 1.0
+Precedence: bulk
+Feedback-ID: ded_94.143.19.20:1063524:1063524_9622:Sendinblue
+X-Mailer: Sendinblue
+X-Mailin-Client: 1063524
+X-Mailin-Campaign: 9622
+Reply-To: contact@strandlink.com
+Message-Id: <201701041206.5xuw0oh6jgr6b7j@srensbp.com>
+Date: Wed, 04 Jan 2017 12:06:19 +0100
+
+
+---------?=_77867-2496825100646
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Si vous ne parvenez pas =C3=A0 lire cet e-mail, cliquez http://r.srensbp.co=
+m/v0mb4qnvgr6b7f.html.=0AVous recevez ce mail car vous acceptez de recevoir=
+ les mails de Superencontre[  ]( http://r.srensbp.com/3g2h8iynhp8r6b7d.html=
+ )=0A=0ABonjour=C2=A0garciathomas, c'est Marie Laure=0A=0ATu viens de recev=
+oir aujourd'hui une nouvelle notification sur votre compte :=0A=0A[ Vous av=
+ez une demande de tchat en attente sur le messenger ]( http://r.srensbp.com=
+/3g2h8iynihor6b7d.html )=0A=C2=A0=0AD=C3=A9p=C3=A9che toi d'accepter, les n=
+ouvelles rencontres ne doivent pas attendre=0A=0ANous vous remercions et no=
+us vous souhaitons une bonne journ=C3=A9e.=0A=0ACordialement=0AL'=C3=A9quip=
+e Superencontre=0A=0A=C2=A0Si vous souhaitez vous d=C3=A9sinscrire des mail=
+s de Superencontre, cliquez http://r.srensbp.com/v0mb4qnvgr6b7g.html
+
+
+---------?=_77867-2496825100646
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<body style=3D"margin:0; padding:0;"><div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous ne parvenez pas =C3=A0 lire cet e-mail, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.sren=
+sbp.com/v0mb4qnvgr6b7f.html">ici</a>.<br>
+Vous recevez ce mail car vous acceptez de recevoir les mails de Superencont=
+re</div><title></title>=0A<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"640">=0A=09<tbody>=0A=09=09<tr>=0A=09=09=
+=09<td>=0A=09=09=09=09<p align=3D"left">=0A=09=09=09=09=09<a href=3D"http:/=
+/r.srensbp.com/3g2h8iynhp8r6b7d.html"><font color=3D"#000000" face=3D"Arial=
+, Helvetica, sans-serif" size=3D"12px" style=3D"font-family:Arial, Helvetic=
+a, sans-serif; font-size:12px; color:#000000"><img src=3D"http://img.srensb=
+p.com/w0lbhp8r6b7e.png" style=3D"display: block; border-width: 0px; border-=
+style: solid; width: 189px; height: 57px;" /></font></a></p>=0A=09=09=09=09=
+<p>=0A=09=09=09=09=09Bonjour&nbsp;garciathomas, c&#39;est Marie Laure<br />=
+=0A=09=09=09=09=09<br />=0A=09=09=09=09=09Tu viens de recevoir aujourd&#39;=
+hui une nouvelle notification sur votre compte :<br />=0A=09=09=09=09=09<br=
+ />=0A=09=09=09=09=09<a href=3D"http://r.srensbp.com/3g2h8iynihor6b7d.html"=
+ target=3D"_blank"><strong>Vous avez une demande de tchat en attente sur le=
+ messenger</strong></a><br />=0A=09=09=09=09=09&nbsp;<br />=0A=09=09=09=09=
+=09D&eacute;p&eacute;che toi d&#39;accepter, les nouvelles rencontres ne do=
+ivent pas attendre</p>=0A=09=09=09=09<p class=3D"p2">=0A=09=09=09=09=09Nous=
+ vous remercions et nous vous souhaitons une bonne journ&eacute;e.</p>=0A=
+=09=09=09=09<p class=3D"p1">=0A=09=09=09=09=09<span class=3D"s1">Cordialeme=
+nt</span><br />=0A=09=09=09=09=09L&#39;&eacute;quipe Superencontre</p>=0A=
+=09=09=09=09<p>=0A=09=09=09=09=09&nbsp;</p>=0A=09=09=09</td>=0A=09=09</tr>=
+=0A=09</tbody>=0A</table>=0A<br />=0A<div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous souhaitez vous d=C3=A9sinscrire des mail=
+s de Superencontre, cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" h=
+ref=3D"http://r.srensbp.com/v0mb4qnvgr6b7g.html">ici</a></div><div><img wid=
+th=3D"1" height=3D"1" src=3D"http://r.srensbp.com/v0mb4qnvgr6b7h.jpg" /></d=
+iv></body>
+
+
+---------?=_77867-2496825100646--
+

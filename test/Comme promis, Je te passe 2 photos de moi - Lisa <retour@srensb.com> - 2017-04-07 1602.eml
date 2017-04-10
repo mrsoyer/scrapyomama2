@@ -1,0 +1,81 @@
+Delivered-To: garciathom.as@gmail.com
+Received: by 10.37.3.141 with SMTP id 135csp331503ybd;
+        Fri, 7 Apr 2017 07:02:55 -0700 (PDT)
+X-Received: by 10.28.69.72 with SMTP id s69mr29070682wma.85.1491573775221;
+        Fri, 07 Apr 2017 07:02:55 -0700 (PDT)
+Return-Path: <noreply@srensbp.com>
+Received: from srensbp.com (srensbp.com. [94.143.19.20])
+        by mx.google.com with ESMTPS id b53si7933825wra.74.2017.04.07.07.02.55
+        for <garciathom.as@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 07 Apr 2017 07:02:55 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) client-ip=94.143.19.20;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@srensb.com;
+       spf=pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) smtp.mailfrom=noreply@srensbp.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=srensb.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=srensb.com;
+ q=dns/txt; s=mail; bh=ErKvtKyh0qBNmMjf0OU3aGO5OmcNbT3rRCmfln63+aw=;
+ h=from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe;
+        b=sGmOxwF+0A3ZKcYEY8sLrSLPd5yGzrGhEl0rZBHaDf3cGZbvjuWrOq9jsfaoxb4EYtjjm/0as6r5
+        bGy9aXkOkEs4A+fvPEtc2Yp7Rc4Yc73rkU+yNoTLHGuQp4arKJ+ICWKBhz3xOiExbsZV1C4/PP/Y
+        n62zLfCTtI2vXSHzSUU=
+To: <garciathom.as@gmail.com>
+Subject: =?UTF-8?Q?Comme_promis,_Je_te_passe_2_photos_de_moi?=
+From: =?UTF-8?Q?Lisa?= <retour@srensb.com>
+List-Id: MTA2MzUyNC02NjA4MjAtMTQ5 <MTA2MzUyNC02NjA4MjAtMTQ5.list-id.srensbp.com>
+List-Unsubscribe: <mailto:unsubscribe@srensbp.com?subject=unsub-7wwbwskhukr6b7j&body=7wwbwskhukr6b7j>,<http://r.srensbp.com/1cqanqd23j0r6b7g.html>
+Content-Type: multipart/alternative; boundary="-------?=_25651-4328352804813"
+MIME-Version: 1.0
+Precedence: bulk
+Feedback-ID: ded_94.143.19.20:1063524:1063524_10814:Sendinblue
+X-Mailer: Sendinblue
+X-Mailin-Client: 1063524
+X-Mailin-Campaign: 10814
+Reply-To: contact@strandlink.com
+Message-Id: <201704071602.7wwbwskhukr6b7j@srensbp.com>
+Date: Fri, 07 Apr 2017 16:02:54 +0200
+
+
+---------?=_25651-4328352804813
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Si vous ne parvenez pas =C3=A0 lire cet e-mail, cliquez http://r.srensbp.co=
+m/1cqanqd23j0r6b7f.html.=0AVous recevez ce mail car vous acceptez de recevo=
+ir les mails de SuperencontreLisa a partag=C3=A9 avec vous 2 photos=0A=
+=C2=A0=0ACliquez sur la photo que vous souhaitez regarder :=0A=C2=A0=0A=
+=C2=A0 =C2=A0 =C2=A0[ Cap D'Agde_ete2016.JPG ]( http://r.srensbp.com/5ex6mx=
+g8e3x8r6b7d.html ) (200Ko)=0A=C2=A0 =C2=A0 =C2=A0[ Robe mariage Daphn=C3=
+=A9 et Pierre.JPG ]( http://r.srensbp.com/5ex6mxg8e4por6b7d.html ) (322Ko)=
+=0A=C2=A0=0AMerci de ne pas diffuser ces photos =C3=A0 de tierce personneSi=
+ vous souhaitez vous d=C3=A9sinscrire des mails de Superencontre, cliquez h=
+ttp://r.srensbp.com/1cqanqd23j0r6b7g.html
+
+
+---------?=_25651-4328352804813
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<body style=3D"margin:0; padding:0;"><div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous ne parvenez pas =C3=A0 lire cet e-mail, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.sren=
+sbp.com/1cqanqd23j0r6b7f.html">ici</a>.<br>
+Vous recevez ce mail car vous acceptez de recevoir les mails de Superencont=
+re</div><div>=0A=09<strong>Lisa a partag&eacute; avec vous 2 photos</strong=
+></div>=0A<div>=0A=09&nbsp;</div>=0A<div>=0A=09Cliquez sur la photo que vou=
+s souhaitez regarder :</div>=0A<div>=0A=09&nbsp;</div>=0A<div>=0A=09&nbsp; =
+&nbsp; &nbsp;<a href=3D"http://r.srensbp.com/5ex6mxg8e3x8r6b7d.html">Cap D&=
+#39;Agde_ete2016.JPG</a> (200Ko)</div>=0A<div>=0A=09&nbsp; &nbsp; &nbsp;<a =
+href=3D"http://r.srensbp.com/5ex6mxg8e4por6b7d.html">Robe mariage Daphn&eac=
+ute; et Pierre.JPG</a> (322Ko)<br />=0A=09&nbsp;</div>=0A<div>=0A=09Merci d=
+e ne pas diffuser ces photos &agrave; de tierce personne</div>=0A<div align=
+=3D"center" style=3D"color: #727272; font-size: 10px;">Si vous souhaitez vo=
+us d=C3=A9sinscrire des mails de Superencontre, cliquez <a style=3D"color:#=
+01a4c6;" target=3D"_blank" href=3D"http://r.srensbp.com/1cqanqd23j0r6b7g.ht=
+ml">ici</a></div><div><img width=3D"1" height=3D"1" src=3D"http://r.srensbp=
+.com/1cqanqd23j0r6b7h.jpg" /></div></body>
+
+
+---------?=_25651-4328352804813--
+

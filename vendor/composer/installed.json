@@ -1726,5 +1726,111 @@
         ],
         "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
         "homepage": "https://github.com/dompdf/dompdf"
+    },
+    {
+        "name": "messaged/php-mime-mail-parser",
+        "version": "v1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/message/php-mime-mail-parser.git",
+            "reference": "694e00365123d10e2c8a2065e21279f7f2846ae5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/message/php-mime-mail-parser/zipball/694e00365123d10e2c8a2065e21279f7f2846ae5",
+            "reference": "694e00365123d10e2c8a2065e21279f7f2846ae5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "time": "2014-02-26T11:32:50+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "MimeMailParser": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "CC BY-SA 3.0"
+        ],
+        "authors": [
+            {
+                "name": "bucabay",
+                "email": "gabe@fijiwebdesign.com",
+                "homepage": "http://www.fijiwebdesign.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Dmitry Polovka",
+                "email": "messaged@messaged.lv",
+                "homepage": "http://messaged.lv"
+            }
+        ],
+        "description": "Mailparse extension wrapper for PHP 5.3+",
+        "homepage": "http://github.com/message/php-mime-mail-parser",
+        "keywords": [
+            "MimeMailParser",
+            "mail",
+            "mailparse",
+            "mime"
+        ],
+        "abandoned": "php-mime-mail-parser/php-mime-mail-parser"
+    },
+    {
+        "name": "zbateson/mail-mime-parser",
+        "version": "0.4.3",
+        "version_normalized": "0.4.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zbateson/MailMimeParser.git",
+            "reference": "c60636e6744c34508635393f196f214d65a827d6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zbateson/MailMimeParser/zipball/c60636e6744c34508635393f196f214d65a827d6",
+            "reference": "c60636e6744c34508635393f196f214d65a827d6",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mbstring": "*",
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "evert/phpdoc-md": "~0.1.1",
+            "phing/phing": "~2.15.0",
+            "phpdocumentor/phpdocumentor": "~2.8.0",
+            "phpunit/phpunit": "~4.5.0"
+        },
+        "time": "2017-04-05T21:50:13+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "ZBateson\\MailMimeParser\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-2-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Zaahid Bateson",
+                "email": "zbateson@users.noreply.github.com"
+            }
+        ],
+        "description": "MIME email message parser",
+        "homepage": "https://github.com/zbateson/MailMimeParser",
+        "keywords": [
+            "email",
+            "mail",
+            "mime",
+            "parser",
+            "php-imap"
+        ]
     }
 ]

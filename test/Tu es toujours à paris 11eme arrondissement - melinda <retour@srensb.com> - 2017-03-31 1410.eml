@@ -1,0 +1,103 @@
+Delivered-To: garciathom.as@gmail.com
+Received: by 10.37.3.141 with SMTP id 135csp2288205ybd;
+        Fri, 31 Mar 2017 05:10:08 -0700 (PDT)
+X-Received: by 10.223.162.198 with SMTP id t6mr2755756wra.155.1490962208193;
+        Fri, 31 Mar 2017 05:10:08 -0700 (PDT)
+Return-Path: <noreply@srensbp.com>
+Received: from srensbp.com (srensbp.com. [94.143.19.20])
+        by mx.google.com with ESMTPS id i206si3208174wma.9.2017.03.31.05.10.08
+        for <garciathom.as@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 31 Mar 2017 05:10:08 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) client-ip=94.143.19.20;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@srensb.com;
+       spf=pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) smtp.mailfrom=noreply@srensbp.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=srensb.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=srensb.com;
+ q=dns/txt; s=mail; bh=pWylAq9dKzedlg1uWvEDzzkNm7WQeYpHekoq7wsFQ2s=;
+ h=from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe;
+        b=ZkzPZJcVHU7iNkHlPbrn+henFzjva7T8AUDHehpsIQOjssP79nY0qpGgGQawxvTjyWzw+JQARbre
+        jmagDCzAUbZp7+AnGIBzfVl1oSLVe6wSfyRz9j8xVx2t664vvG67BSc0OYYbDAzFCpJly5Mard6R
+        Supa/CEcqC8TEroW0aE=
+To: <garciathom.as@gmail.com>
+Subject: =?UTF-8?Q?Tu_es_toujours_=C3=A0_paris_11eme_arrondissement?=
+From: =?UTF-8?Q?melinda?= <retour@srensb.com>
+List-Id: MTA2MzUyNC02NjA4MjAtMTQ5 <MTA2MzUyNC02NjA4MjAtMTQ5.list-id.srensbp.com>
+List-Unsubscribe: <mailto:unsubscribe@srensbp.com?subject=unsub-7wvv1z8hukr6b7j&body=7wvv1z8hukr6b7j>,<http://r.srensbp.com/1cqanqd22qkr6b7g.html>
+Content-Type: multipart/alternative; boundary="-------?=_60480-8528559696343"
+MIME-Version: 1.0
+Precedence: bulk
+Feedback-ID: ded_94.143.19.20:1063524:1063524_10813:Sendinblue
+X-Mailer: Sendinblue
+X-Mailin-Client: 1063524
+X-Mailin-Campaign: 10813
+Reply-To: contact@strandlink.com
+Message-Id: <201703311410.7wvv1z8hukr6b7j@srensbp.com>
+Date: Fri, 31 Mar 2017 14:10:07 +0200
+
+
+---------?=_60480-8528559696343
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Si vous ne parvenez pas =C3=A0 lire cet e-mail, cliquez http://r.srensbp.co=
+m/1cqanqd22qkr6b7f.html.=0AVous recevez ce mail car vous acceptez de recevo=
+ir les mails de SuperencontreVous venez de recevoir 1 nouveau message:=0A=
+=0A*****=0A=0ADe :=C2=A0[ Melinda ]( http://r.srensbp.com/5ex6mxg8ay58r6b7d=
+.html )=0A=C3=80 :=C2=A0THOMAS=0A=0ALe : 05/01/2017=0AObjet : Tu es toujour=
+s =C3=A0=C2=A0paris 11eme arrondissement!=0A=0A*****=0A=0AHello,=0A=0AJe pe=
+ux venir quand chez toi ce week end? Ou alors g mon appart =C3=A0=C2=A0pari=
+s 11eme arrondissement!=0A=0ATiens moi au courant : 06 39 20 1(...)=C2=
+=A0[ Lire la suite du message ]( http://r.srensbp.com/5ex6mxg8ayxor6b7d.htm=
+l )=0A=0A=C2=A0=0A=0A*****=0A=0A[ Lire la suite ]( http://r.srensbp.com/5ex=
+6mxg8azq4r6b7d.html )=0A=0A=C2=A0Si vous souhaitez vous d=C3=A9sinscrire de=
+s mails de Superencontre, cliquez http://r.srensbp.com/1cqanqd22qkr6b7g.htm=
+l
+
+
+---------?=_60480-8528559696343
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<body style=3D"margin:0; padding:0;"><div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous ne parvenez pas =C3=A0 lire cet e-mail, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.sren=
+sbp.com/1cqanqd22qkr6b7f.html">ici</a>.<br>
+Vous recevez ce mail car vous acceptez de recevoir les mails de Superencont=
+re</div><p style=3D"color: rgb(0, 0, 0); font-family: Tahoma, Verdana, Aria=
+l;">=0A=09Vous venez de recevoir 1 nouveau message:</p>=0A<p style=3D"color=
+: rgb(0, 0, 0); font-family: Tahoma, Verdana, Arial;">=0A=09*****</p>=0A<p =
+style=3D"color: rgb(0, 0, 0); font-family: Tahoma, Verdana, Arial;">=0A=09D=
+e :&nbsp;<a href=3D"http://r.srensbp.com/5ex6mxg8ay58r6b7d.html">Melinda</a=
+><br />=0A=09&Agrave; :&nbsp;<span style=3D"color: rgb(55, 55, 55); font-fa=
+mily: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; lin=
+e-height: 15.7143px;">THOMAS</span></p>=0A<p style=3D"color: rgb(0, 0, 0); =
+font-family: Tahoma, Verdana, Arial;">=0A=09Le : 05/01/2017<br />=0A=09Obje=
+t : Tu es toujours &agrave;&nbsp;<span style=3D"color: rgb(55, 55, 55); fon=
+t-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold;=
+">paris 11eme arrondissement</span>!</p>=0A<p align=3D"left" style=3D"color=
+: rgb(0, 0, 0); font-family: Tahoma, Verdana, Arial;">=0A=09*****</p>=0A<p =
+style=3D"color: rgb(0, 0, 0); font-family: Tahoma, Verdana, Arial;">=0A=09H=
+ello,</p>=0A<p style=3D"color: rgb(0, 0, 0); font-family: Tahoma, Verdana, =
+Arial;">=0A=09Je peux venir quand chez toi ce week end? Ou alors g mon appa=
+rt &agrave;&nbsp;<span style=3D"color: rgb(55, 55, 55); font-family: Arial,=
+ Helvetica, sans-serif; font-size: 11px; font-weight: bold;">paris 11eme ar=
+rondissement</span>!</p>=0A<p style=3D"color: rgb(0, 0, 0); font-family: Ta=
+homa, Verdana, Arial;">=0A=09Tiens moi au courant : 06 39 20 1(...)&nbsp;<a=
+ href=3D"http://r.srensbp.com/5ex6mxg8ayxor6b7d.html">Lire la suite du mess=
+age</a></p>=0A<p style=3D"color: rgb(0, 0, 0); font-family: Tahoma, Verdana=
+, Arial;">=0A=09&nbsp;</p>=0A<p style=3D"color: rgb(0, 0, 0); font-family: =
+Tahoma, Verdana, Arial;">=0A=09*****</p>=0A<p style=3D"color: rgb(0, 0, 0);=
+ font-family: Tahoma, Verdana, Arial;">=0A=09<a href=3D"http://r.srensbp.co=
+m/5ex6mxg8azq4r6b7d.html">Lire la suite</a></p>=0A<p style=3D"color: rgb(0,=
+ 0, 0); font-family: Tahoma, Verdana, Arial;">=0A=09&nbsp;</p>=0A<div align=
+=3D"center" style=3D"color: #727272; font-size: 10px;">Si vous souhaitez vo=
+us d=C3=A9sinscrire des mails de Superencontre, cliquez <a style=3D"color:#=
+01a4c6;" target=3D"_blank" href=3D"http://r.srensbp.com/1cqanqd22qkr6b7g.ht=
+ml">ici</a></div><div><img width=3D"1" height=3D"1" src=3D"http://r.srensbp=
+.com/1cqanqd22qkr6b7h.jpg" /></div></body>
+
+
+---------?=_60480-8528559696343--
+

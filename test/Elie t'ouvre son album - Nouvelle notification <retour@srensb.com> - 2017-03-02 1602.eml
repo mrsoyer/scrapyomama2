@@ -1,0 +1,172 @@
+Delivered-To: garciathom.as@gmail.com
+Received: by 10.37.173.157 with SMTP id z29csp288522ybi;
+        Thu, 2 Mar 2017 07:02:11 -0800 (PST)
+X-Received: by 10.28.88.129 with SMTP id m123mr2314035wmb.28.1488466930972;
+        Thu, 02 Mar 2017 07:02:10 -0800 (PST)
+Return-Path: <noreply@srensbp.com>
+Received: from srensbp.com (srensbp.com. [94.143.19.20])
+        by mx.google.com with ESMTPS id a2si26278192wmc.73.2017.03.02.07.02.10
+        for <garciathom.as@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 02 Mar 2017 07:02:10 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) client-ip=94.143.19.20;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@srensb.com;
+       spf=pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) smtp.mailfrom=noreply@srensbp.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=srensb.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=srensb.com;
+ q=dns/txt; s=mail; bh=mP3XJt371vJJPvIUFDo/EH5bB1bmxq+ruUKEZMQtfBE=;
+ h=from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe;
+        b=12SMdkAs2o/gjrgroIRJV8wpFyGhhwJVE/BV2yuW9z1eqd0CF4XCclRSmeqVnDrHrvk8cnKR6pQj
+        h21t++lFxqtTgOv9vXjKmYv4S6yO84o7DyZ+GvZXWlmo+FEUrMb11yoFMHtslHdLYM6fQXrRmB+h
+        zCdCgr2M7vJJPV2WmPA=
+To: <garciathom.as@gmail.com>
+Subject: =?UTF-8?Q?Elie_t'ouvre_son_album?=
+From: =?UTF-8?Q?Nouvelle=20notification?= <retour@srensb.com>
+List-Id: MTA2MzUyNC02NjA4MjAtMTQ5 <MTA2MzUyNC02NjA4MjAtMTQ5.list-id.srensbp.com>
+List-Unsubscribe: <mailto:unsubscribe@srensbp.com?subject=unsub-7od6e9whukr6b7j&body=7od6e9whukr6b7j>,<http://r.srensbp.com/1cqanqcnp7gr6b7g.html>
+Content-Type: multipart/alternative; boundary="-------?=_97925-4532739449706"
+MIME-Version: 1.0
+Precedence: bulk
+Feedback-ID: ded_94.143.19.20:1063524:1063524_10368:Sendinblue
+X-Mailer: Sendinblue
+X-Mailin-Client: 1063524
+X-Mailin-Campaign: 10368
+Reply-To: contact@strandlink.com
+Message-Id: <201703021602.7od6e9whukr6b7j@srensbp.com>
+Date: Thu, 02 Mar 2017 16:02:10 +0100
+
+
+---------?=_97925-4532739449706
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Si vous ne parvenez pas =C3=A0 lire cet e-mail, cliquez http://r.srensbp.co=
+m/1cqanqcnp7gr6b7f.html.=0AVous recevez ce mail car vous acceptez de recevo=
+ir les mails de SuperencontreElie attend une r=C3=A9ponse de votre part=0A=
+=0AD=C3=A9sirez-vous ouvrir son album ?=0A[ Oui ]( http://r.srensbp.com/5ex=
+6mxemstp8r6b7d.html )      [ Non ]( http://r.srensbp.com/5ex6mxemsuhor6b7d.=
+html )=0AElie=C2=A0- 26 ans=0A=0A[  ]( http://r.srensbp.com/5ex6mxemsva4r6b=
+7d.html )=0A[ Voir son profil >> ]( http://r.srensbp.com/5ex6mxemsw2kr6b7d.=
+html )Si vous souhaitez vous d=C3=A9sinscrire des mails de Superencontre, c=
+liquez http://r.srensbp.com/1cqanqcnp7gr6b7g.html
+
+
+---------?=_97925-4532739449706
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<body style=3D"margin:0; padding:0;"><div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous ne parvenez pas =C3=A0 lire cet e-mail, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.sren=
+sbp.com/1cqanqcnp7gr6b7f.html">ici</a>.<br>
+Vous recevez ce mail car vous acceptez de recevoir les mails de Superencont=
+re</div><title></title>=0A<meta content=3D"text/html; charset=3Dutf-8" http=
+-equiv=3D"Content-Type" />=0A<meta content=3D"width=3Ddevice-width" name=3D=
+"viewport" />=0A<style type=3D"text/css">=0A@media only screen and (max-wid=
+th : 600px) =0Atable, tr, tbody, td=0Adisplay : block;=0Awidth:100% !import=
+ant;=0A=0A.col=0Apadding:10px 0 0 !important;=0A=0A.col2=0Apadding:0 0 10px=
+ !important;=0A=0A.col3=0Apadding:0 !important;=0A=0A.boutons=0Awidth:90% !=
+important;</style>=0A<table style=3D"border-collapse: collapse; border-spac=
+ing: 0; margin: 0 auto; padding: 0; text-align: center; width: 580px;">=0A=
+=09<tbody>=0A=09=09<tr>=0A=09=09=09<td style=3D"border-collapse: collapse; =
+color: #222; font-family: Helvetica,Arial,sans-serif; font-size: 14px; font=
+-weight: 400; line-height: 16px; margin: 0; padding: 10px 0; text-align: ce=
+nter; vertical-align: top; word-break: break-word;">=0A=09=09=09=09<p align=
+=3D"center" class=3D"center" style=3D"color: #000; font-family: Helvetica,A=
+rial,sans-serif; font-size: 28px; font-weight: bold; line-height: 1.2; marg=
+in: 0; padding: 10px 0; text-align: center;">=0A=09=09=09=09=09Elie attend =
+une r&eacute;ponse de votre part</p>=0A=09=09=09</td>=0A=09=09</tr>=0A=09</=
+tbody>=0A</table>=0A<table style=3D"border-collapse: collapse; border-spaci=
+ng: 0; margin: 0 auto; padding: 0; text-align: center; width: 580px;">=0A=
+=09<tbody>=0A=09=09<tr>=0A=09=09=09<td style=3D"border-collapse: collapse; =
+color: #222; font-family: Helvetica,Arial,sans-serif; font-size: 14px; font=
+-weight: 400; line-height: 16px; margin: 0; padding: 0; text-align: center;=
+ vertical-align: top; word-break: break-word;">=0A=09=09=09=09<p align=3D"c=
+enter" class=3D"center" style=3D"color: #000; font-family: Helvetica,Arial,=
+sans-serif; font-size: 18px; font-weight: 400; margin: 0; text-align: cente=
+r; padding: 0 0 10px;">=0A=09=09=09=09=09<strong>D&eacute;sirez-vous ouvrir=
+ son album ?</strong></p>=0A=09=09=09</td>=0A=09=09</tr>=0A=09</tbody>=0A</=
+table>=0A<table style=3D"border-bottom-color: #DCDCDC; border-bottom-style:=
+ solid; border-bottom-width: 1px; border-collapse: collapse; border-spacing=
+: 0; border-top-color: #DCDCDC; border-top-style: solid; border-top-width: =
+1px; display: block; padding: 0; margin: 0 auto; text-align: center; vertic=
+al-align: top; width: 580px;">=0A=09<tbody>=0A=09=09<tr>=0A=09=09=09<td cla=
+ss=3D"col" style=3D"padding: 10px 20px 0 0;">=0A=09=09=09=09<table class=3D=
+"boutons" style=3D"border-collapse: collapse; border-spacing: 0; margin: 0 =
+auto; padding: 0; text-align: center; vertical-align: top; width: 280px;">=
+=0A=09=09=09=09=09<tbody>=0A=09=09=09=09=09=09<tr>=0A=09=09=09=09=09=09=09<=
+td style=3D"padding: 0 0 10px;">=0A=09=09=09=09=09=09=09=09<table style=3D"=
+border-collapse: collapse; border-spacing: 0; width: 100%;">=0A=09=09=09=09=
+=09=09=09=09=09<tbody>=0A=09=09=09=09=09=09=09=09=09=09<tr>=0A=09=09=09=09=
+=09=09=09=09=09=09=09<td bgcolor=3D"#59d573" style=3D"-moz-border-radius: 6=
+px; -moz-hyphens: auto; -webkit-border-radius: 6px; background: #f56b2a; bo=
+rder-collapse: collapse !important; border-radius: 6px; color: #fff; displa=
+y: block; font-family: Helvetica,Arial,sans-serif; font-size: 14px; font-we=
+ight: 400; line-height: 36px; margin: 0; padding: 10px 0; text-align: cente=
+r; width: auto !important; word-break: break-word;">=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09<a href=3D"http://r.srensbp.com/5ex6mxemstp8r6b7d.html" s=
+tyle=3D"color: #fff; display: block; font-family: Helvetica,Arial,sans-seri=
+f; font-size: 20px; font-weight: bold; height: 100%; text-decoration: none;=
+ width: 100%;" target=3D"_blank">Oui</a></td>=0A=09=09=09=09=09=09=09=09=09=
+=09</tr>=0A=09=09=09=09=09=09=09=09=09</tbody>=0A=09=09=09=09=09=09=09=09</=
+table>=0A=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09</tr>=0A=09=09=09=
+=09=09</tbody>=0A=09=09=09=09</table>=0A=09=09=09</td>=0A=09=09=09<td class=
+=3D"col2" style=3D"padding: 10px 0 0 0;">=0A=09=09=09=09<table class=3D"bou=
+tons" style=3D"border-collapse: collapse; border-spacing: 0; margin: 0 auto=
+; padding: 0; text-align: center; vertical-align: top; width: 280px;">=0A=
+=09=09=09=09=09<tbody>=0A=09=09=09=09=09=09<tr>=0A=09=09=09=09=09=09=09<td =
+class=3D"col3" style=3D"padding: 0 0 10px;">=0A=09=09=09=09=09=09=09=09<tab=
+le style=3D"border-collapse: collapse; border-spacing: 0; width: 100%;">=0A=
+=09=09=09=09=09=09=09=09=09<tbody>=0A=09=09=09=09=09=09=09=09=09=09<tr>=0A=
+=09=09=09=09=09=09=09=09=09=09=09<td bgcolor=3D"#59d573" style=3D"-moz-bord=
+er-radius: 6px; -moz-hyphens: auto; -webkit-border-radius: 6px; background:=
+ #f56b2a; border-collapse: collapse !important; border-radius: 6px; color: =
+#fff; display: block; font-family: Helvetica,Arial,sans-serif; font-size: 1=
+4px; font-weight: 400; line-height: 36px; margin: 0; padding: 10px 0; text-=
+align: center; width: auto !important; word-break: break-word;">=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09<a href=3D"http://r.srensbp.com/5ex6mxemsuhor=
+6b7d.html" style=3D"color: #fff; display: block; font-family: Helvetica,Ari=
+al,sans-serif; font-size: 20px; font-weight: bold; height: 100%; text-decor=
+ation: none; width: 100%;" target=3D"_blank">Non</a></td>=0A=09=09=09=09=09=
+=09=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=09</tbody>=0A=09=09=09=09=
+=09=09=09=09</table>=0A=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09</tr>=
+=0A=09=09=09=09=09</tbody>=0A=09=09=09=09</table>=0A=09=09=09</td>=0A=09=09=
+</tr>=0A=09</tbody>=0A</table>=0A<table bgcolor=3D"#f5f5f5" style=3D"backgr=
+ound: #F5F5F5; border-collapse: collapse; border-spacing: 0; display: block=
+; padding: 0; position: relative; text-align: center; margin: 0 auto; width=
+: 580px;">=0A=09<tbody>=0A=09=09<tr style=3D"padding: 0;">=0A=09=09=09<td s=
+tyle=3D"border-collapse: collapse !important; padding: 20px 0 0;">=0A=09=09=
+=09=09<p align=3D"center" style=3D"color: #222; font-family: Helvetica,Aria=
+l,sans-serif; font-size: 16px; font-weight: 400; line-height: 16px; margin:=
+ 0; padding: 0; text-align: center; width: 580px;">=0A=09=09=09=09=09<span =
+style=3D"color: #f56b2a; font-weight: bold;">Elie</span>&nbsp;- 26 ans</p>=
+=0A=09=09=09</td>=0A=09=09</tr>=0A=09</tbody>=0A</table>=0A<table bgcolor=
+=3D"#f5f5f5" style=3D"background: #F5F5F5; border-collapse: collapse; borde=
+r-spacing: 0; display: block; padding: 0; position: relative; text-align: c=
+enter; margin: 0 auto; width: 580px;">=0A=09<tbody>=0A=09=09<tr style=3D"pa=
+dding: 0;">=0A=09=09=09<td style=3D"border-collapse: collapse !important; p=
+adding: 20px 0 0; width: 580px;">=0A=09=09=09=09<p style=3D"margin: 0; padd=
+ing: 0; text-align: center;">=0A=09=09=09=09=09<a href=3D"http://r.srensbp.=
+com/5ex6mxemsva4r6b7d.html" target=3D"_blank"><img class=3D"center" src=3D"=
+http://img.srensbp.com/ac9qstp8r6b7e.jpg" style=3D"display: block; margin: =
+0px auto; max-width: 100%; outline: 0px; text-decoration: none; width: 300p=
+x; border: 2px solid rgb(245, 107, 42); height: 300px;" /></a></p>=0A=09=09=
+=09</td>=0A=09=09</tr>=0A=09</tbody>=0A</table>=0A<table bgcolor=3D"#f5f5f5=
+" style=3D"background: #F5F5F5; border-collapse: collapse; border-spacing: =
+0; display: block; padding: 0; position: relative; text-align: center; marg=
+in: 0 auto; width: 580px;">=0A=09<tbody>=0A=09=09<tr style=3D"padding: 0;">=
+=0A=09=09=09<td style=3D"border-collapse: collapse !important; padding: 20p=
+x 0 20px; width: 580px;">=0A=09=09=09=09<a href=3D"http://r.srensbp.com/5ex=
+6mxemsw2kr6b7d.html" style=3D"color: #ff0000; font-size: 24px; font-weight:=
+ bold; text-decoration: underline;" target=3D"_blank">Voir son profil &gt;&=
+gt;</a></td>=0A=09=09</tr>=0A=09</tbody>=0A</table>=0A<br />=0A<br />=0A<di=
+v align=3D"center" style=3D"color: #727272; font-size: 10px;">Si vous souha=
+itez vous d=C3=A9sinscrire des mails de Superencontre, cliquez <a style=3D"=
+color:#01a4c6;" target=3D"_blank" href=3D"http://r.srensbp.com/1cqanqcnp7gr=
+6b7g.html">ici</a></div><div><img width=3D"1" height=3D"1" src=3D"http://r.=
+srensbp.com/1cqanqcnp7gr6b7h.jpg" /></div></body>
+
+
+---------?=_97925-4532739449706--
+

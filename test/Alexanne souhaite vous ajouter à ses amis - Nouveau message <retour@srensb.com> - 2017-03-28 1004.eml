@@ -1,0 +1,87 @@
+Delivered-To: garciathom.as@gmail.com
+Received: by 10.37.3.141 with SMTP id 135csp795846ybd;
+        Tue, 28 Mar 2017 01:04:11 -0700 (PDT)
+X-Received: by 10.28.35.66 with SMTP id j63mr13746137wmj.84.1490688251678;
+        Tue, 28 Mar 2017 01:04:11 -0700 (PDT)
+Return-Path: <noreply@srensbp.com>
+Received: from srensbp.com (srensbp.com. [94.143.19.20])
+        by mx.google.com with ESMTPS id g93si3781861wrd.149.2017.03.28.01.04.11
+        for <garciathom.as@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 28 Mar 2017 01:04:11 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) client-ip=94.143.19.20;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@srensb.com;
+       spf=pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) smtp.mailfrom=noreply@srensbp.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=srensb.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=srensb.com;
+ q=dns/txt; s=mail; bh=FofycIeggOVr1wcXCEXBqrv0JlbaJWcScVHQWFEKseU=;
+ h=from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe;
+        b=YYKad4jBl9yB2s16H1geJFWc07vGdsecNhqZETrox3t2yU+a/h4jN98yILRgK/due2+0UIH08rHt
+        qY6u28eoZko3qTElJgJaegF1ebWZPLzqyBKqx8JCJ1uGfoNhLMElhBmJ8JQV8FBqXJ0C2Jwdc6nR
+        0jgve6AwafZ9DJpV3jE=
+To: <garciathom.as@gmail.com>
+Subject: =?UTF-8?Q?Alexanne_souhaite_vous_ajouter_=C3=A0_ses_amis?=
+From: =?UTF-8?Q?Nouveau=20message?= <retour@srensb.com>
+List-Id: MTA2MzUyNC02NjA4MjAtMTQ5 <MTA2MzUyNC02NjA4MjAtMTQ5.list-id.srensbp.com>
+List-Unsubscribe: <mailto:unsubscribe@srensbp.com?subject=unsub-7v0fsn8hukr6b7j&body=7v0fsn8hukr6b7j>,<http://r.srensbp.com/1cqanqcywykr6b7g.html>
+Content-Type: multipart/alternative; boundary="-------?=_75718-2996174937320"
+MIME-Version: 1.0
+Precedence: bulk
+Feedback-ID: ded_94.143.19.20:1063524:1063524_10713:Sendinblue
+X-Mailer: Sendinblue
+X-Mailin-Client: 1063524
+X-Mailin-Campaign: 10713
+Reply-To: contact@strandlink.com
+Message-Id: <201703281004.7v0fsn8hukr6b7j@srensbp.com>
+Date: Tue, 28 Mar 2017 10:04:10 +0200
+
+
+---------?=_75718-2996174937320
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Si vous ne parvenez pas =C3=A0 lire cet e-mail, cliquez http://r.srensbp.co=
+m/1cqanqcywykr6b7f.html.=0AVous recevez ce mail car vous acceptez de recevo=
+ir les mails de SuperencontreAlexanne souhaite vous ajouter =C3=A0 ses amis=
+=0A=0AVoici le message de Alexanne :=0A=0ASalut c'est Alexanne ! Tu te rapp=
+elle de moi ? Quand on s'est vu la derni=C3=A8re fois,=0Aje t'avais dis que=
+ je n'=C3=A9tais pas libre mais je viens de rompre il y a 2 semaines du cou=
+p=0Aje suis de nouveau c=C3=A9libataire alors si tu as toujours envie de fa=
+ire connaissance c'est quand tu veux !=0ABisous=0A=0A[ Accepter comme amie =
+]( http://r.srensbp.com/5ex6mxfvnu58r6b7d.html ) - [ Voir sa fiche ]( http:=
+//r.srensbp.com/5ex6mxfvnuxor6b7d.html ) - [ Voir ses photos ]( http://r.sr=
+ensbp.com/5ex6mxfvnvq4r6b7d.html )Si vous souhaitez vous d=C3=A9sinscrire d=
+es mails de Superencontre, cliquez http://r.srensbp.com/1cqanqcywykr6b7g.ht=
+ml
+
+
+---------?=_75718-2996174937320
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<body style=3D"margin:0; padding:0;"><div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous ne parvenez pas =C3=A0 lire cet e-mail, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.sren=
+sbp.com/1cqanqcywykr6b7f.html">ici</a>.<br>
+Vous recevez ce mail car vous acceptez de recevoir les mails de Superencont=
+re</div><strong>Alexanne souhaite vous ajouter &agrave; ses amis </strong><=
+br />=0A<br />=0A<span style=3D"color:#0000ff;">Voici le message de Alexann=
+e :</span><br />=0A<br />=0ASalut c&#39;est Alexanne ! Tu te rappelle de mo=
+i ? Quand on s&#39;est vu la derni&egrave;re fois,<br />=0Aje t&#39;avais d=
+is que je n&#39;&eacute;tais pas libre mais je viens de rompre il y a 2 sem=
+aines du coup<br />=0Aje suis de nouveau c&eacute;libataire alors si tu as =
+toujours envie de faire connaissance c&#39;est quand tu veux !<br />=0ABiso=
+us<br />=0A<br />=0A<a href=3D"http://r.srensbp.com/5ex6mxfvnu58r6b7d.html"=
+>Accepter comme amie</a> - <a href=3D"http://r.srensbp.com/5ex6mxfvnuxor6b7=
+d.html">Voir sa fiche</a> - <a href=3D"http://r.srensbp.com/5ex6mxfvnvq4r6b=
+7d.html">Voir ses photos</a><div align=3D"center" style=3D"color: #727272; =
+font-size: 10px;">Si vous souhaitez vous d=C3=A9sinscrire des mails de Supe=
+rencontre, cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"ht=
+tp://r.srensbp.com/1cqanqcywykr6b7g.html">ici</a></div><div><img width=3D"1=
+" height=3D"1" src=3D"http://r.srensbp.com/1cqanqcywykr6b7h.jpg" /></div></=
+body>
+
+
+---------?=_75718-2996174937320--
+

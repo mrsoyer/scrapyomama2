@@ -11,6 +11,7 @@ return array(
     'Sabberworm\\CSS' => array($vendorDir . '/sabberworm/php-css-parser/lib'),
     'Pimple' => array($vendorDir . '/pimple/pimple/lib'),
     'Mongo' => array($vendorDir . '/alcaeus/mongo-php-adapter/lib/Mongo'),
+    'MimeMailParser' => array($vendorDir . '/messaged/php-mime-mail-parser/lib'),
     'Jenssegers\\Mongodb' => array($vendorDir . '/jenssegers/mongodb/src'),
     'Jenssegers\\Eloquent' => array($vendorDir . '/jenssegers/mongodb/src'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),

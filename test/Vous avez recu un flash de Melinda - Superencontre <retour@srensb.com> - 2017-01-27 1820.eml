@@ -1,0 +1,94 @@
+Delivered-To: gar.ciathom.as@gmail.com
+Received: by 10.37.177.33 with SMTP id g33csp362378ybj;
+        Fri, 27 Jan 2017 09:20:44 -0800 (PST)
+X-Received: by 10.223.165.17 with SMTP id i17mr9973769wrb.62.1485537644706;
+        Fri, 27 Jan 2017 09:20:44 -0800 (PST)
+Return-Path: <noreply@srensbp.com>
+Received: from srensbp.com (srensbp.com. [94.143.19.20])
+        by mx.google.com with ESMTPS id l189si3545141wml.23.2017.01.27.09.20.44
+        for <gar.ciathom.as@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 27 Jan 2017 09:20:44 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) client-ip=94.143.19.20;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@srensb.com;
+       spf=pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) smtp.mailfrom=noreply@srensbp.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=srensb.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=srensb.com;
+ q=dns/txt; s=mail; bh=5SP8l4gVDPnF9rYaMOE0OxF3qPOXlbYzAFLAailMv54=;
+ h=from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe;
+        b=EmE93Fgi4x9zemXBT3FLLeQnjaFfq80yysiMbtsoGtNdTXv4KhCXekxnDtgDwasYTzIb60kC4Sjs
+        4akSsqc2AnBMjibT1HOvQ7tA5da01m4+QoxMdVPodlhiBQE5yPvfsRFZLWTIkL5VCZ5r1aZgWaN2
+        WHpz0/LpG1Y8oTZ8HGI=
+To: <gar.ciathom.as@gmail.com>
+Subject: =?UTF-8?Q?Vous_avez_recu_un_flash_de_Melinda?=
+From: =?UTF-8?Q?Superencontre?= <retour@srensb.com>
+List-Id: MTA2MzUyNC0xNDY4OTgtMTM1 <MTA2MzUyNC0xNDY4OTgtMTM1.list-id.srensbp.com>
+List-Unsubscribe: <mailto:unsubscribe@srensbp.com?subject=unsub-7i6r7n56jgr6b7j&body=7i6r7n56jgr6b7j>,<http://r.srensbp.com/ac7fml99wcr6b7g.html>
+Content-Type: multipart/alternative; boundary="-------?=_42407-1234745536413"
+MIME-Version: 1.0
+Precedence: bulk
+Feedback-ID: ded_94.143.19.20:1063524:1063524_10031:Sendinblue
+X-Mailer: Sendinblue
+X-Mailin-Client: 1063524
+X-Mailin-Campaign: 10031
+Reply-To: contact@strandlink.com
+Message-Id: <201701271820.7i6r7n56jgr6b7j@srensbp.com>
+Date: Fri, 27 Jan 2017 18:20:44 +0100
+
+
+---------?=_42407-1234745536413
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Si vous ne parvenez pas =C3=A0 lire cet e-mail, cliquez http://r.srensbp.co=
+m/ac7fml99wcr6b7f.html.=0AVous recevez ce mail car vous acceptez de recevoi=
+r les mails de Superencontre[  ]( http://r.srensbp.com/15ctqid13l98r6b7d.ht=
+ml )=0A=0ABonjour=C2=A0garciathomas, c'est Melinda=0A=0AJe viens de d=C3=
+=A9m=C3=A9nager =C3=A0 . Tu es toujours disponible pour faire des rencontre=
+s=0A=0A[ Vous avez recu 1 nouveau flash aujourd'hui ]( http://r.srensbp.com=
+/15ctqid13m1or6b7d.html )=0A=C2=A0=0AD=C3=A9p=C3=A9che toi de voir qui peut=
+ bien avoir flash=C3=A9 sur toi=0A=0ANous vous remercions et nous vous souh=
+aitons une bonne journ=C3=A9e.=0A=0ACordialement=0ASuperencontre=0A=0A=
+=C2=A0Si vous souhaitez vous d=C3=A9sinscrire des mails de Superencontre, c=
+liquez http://r.srensbp.com/ac7fml99wcr6b7g.html
+
+
+---------?=_42407-1234745536413
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<body style=3D"margin:0; padding:0;"><div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous ne parvenez pas =C3=A0 lire cet e-mail, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.sren=
+sbp.com/ac7fml99wcr6b7f.html">ici</a>.<br>
+Vous recevez ce mail car vous acceptez de recevoir les mails de Superencont=
+re</div><title></title>=0A<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"640">=0A=09<tbody>=0A=09=09<tr>=0A=09=09=
+=09<td>=0A=09=09=09=09<p align=3D"left">=0A=09=09=09=09=09<a href=3D"http:/=
+/r.srensbp.com/15ctqid13l98r6b7d.html"><font color=3D"#000000" face=3D"Aria=
+l, Helvetica, sans-serif" size=3D"12px" style=3D"font-family:Arial, Helveti=
+ca, sans-serif; font-size:12px; color:#000000"><img src=3D"http://img.srens=
+bp.com/ac8l3l98r6b7e.png" style=3D"display: block; border-width: 0px; borde=
+r-style: solid; width: 189px; height: 57px;" /></font></a></p>=0A=09=09=09=
+=09<p>=0A=09=09=09=09=09Bonjour&nbsp;garciathomas, c&#39;est Melinda<br />=
+=0A=09=09=09=09=09<br />=0A=09=09=09=09=09Je viens de d&eacute;m&eacute;nag=
+er &agrave; . Tu es toujours disponible pour faire des rencontres<br />=0A=
+=09=09=09=09=09<br />=0A=09=09=09=09=09<strong><a href=3D"http://r.srensbp.=
+com/15ctqid13m1or6b7d.html" target=3D"_blank">Vous avez recu 1 nouveau flas=
+h aujourd&#39;hui</a></strong><br />=0A=09=09=09=09=09&nbsp;<br />=0A=09=09=
+=09=09=09D&eacute;p&eacute;che toi de voir qui peut bien avoir flash&eacute=
+; sur toi</p>=0A=09=09=09=09<p class=3D"p2">=0A=09=09=09=09=09Nous vous rem=
+ercions et nous vous souhaitons une bonne journ&eacute;e.</p>=0A=09=09=09=
+=09<p class=3D"p1">=0A=09=09=09=09=09<span class=3D"s1">Cordialement</span>=
+<br />=0A=09=09=09=09=09Superencontre</p>=0A=09=09=09=09<p>=0A=09=09=09=09=
+=09&nbsp;</p>=0A=09=09=09</td>=0A=09=09</tr>=0A=09</tbody>=0A</table>=0A<br=
+ />=0A<div align=3D"center" style=3D"color: #727272; font-size: 10px;">Si v=
+ous souhaitez vous d=C3=A9sinscrire des mails de Superencontre, cliquez <a =
+style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.srensbp.com/ac7=
+fml99wcr6b7g.html">ici</a></div><div><img width=3D"1" height=3D"1" src=3D"h=
+ttp://r.srensbp.com/ac7fml99wcr6b7h.jpg" /></div></body>
+
+
+---------?=_42407-1234745536413--
+

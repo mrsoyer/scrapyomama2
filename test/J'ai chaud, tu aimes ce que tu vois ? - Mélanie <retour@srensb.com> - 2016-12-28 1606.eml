@@ -1,0 +1,102 @@
+Delivered-To: gar.ciathom.as@gmail.com
+Received: by 10.140.103.245 with SMTP id y108csp5498925qge;
+        Wed, 28 Dec 2016 07:06:25 -0800 (PST)
+X-Received: by 10.28.152.67 with SMTP id a64mr7308905wme.1.1482937585733;
+        Wed, 28 Dec 2016 07:06:25 -0800 (PST)
+Return-Path: <noreply@srensbp.com>
+Received: from srensbp.com (srensbp.com. [94.143.19.20])
+        by mx.google.com with ESMTPS id x204si50641909wmx.24.2016.12.28.07.06.25
+        for <gar.ciathom.as@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 28 Dec 2016 07:06:25 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) client-ip=94.143.19.20;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@srensb.com;
+       spf=pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) smtp.mailfrom=noreply@srensbp.com;
+       dmarc=pass (p=NONE dis=NONE) header.from=srensb.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=srensb.com;
+ q=dns/txt; s=mail; bh=DIwmm5LokpHKhWeEenRhawJdb+4zrCSl1ryuCzw8D7M=;
+ h=from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe;
+        b=0/98GLMVFXdcC/4KXWUTNF4PgMmi0yUf+abSOfn1k1B+80SvGHYy1UXZjfwQZdFaZ6mdfnR//lS8
+        unbfeyxOZCHxADX2Ggy6+7POMOP9hUbT7afJEwD4mijB84ASESvGB/efisw14+KWALyESOaHrOwT
+        qHW3vdEpPW78zNDN4cs=
+To: <gar.ciathom.as@gmail.com>
+Subject: =?UTF-8?Q?J'ai_chaud,_tu_aimes_ce_que_tu_vois_=3F?=
+From: =?UTF-8?Q?M=C3=A9lanie?= <retour@srensb.com>
+List-Id: MTA2MzUyNC0xNDY4OTgtMTI3 <MTA2MzUyNC0xNDY4OTgtMTI3.list-id.srensbp.com>
+List-Unsubscribe: <mailto:unsubscribe@srensbp.com?subject=unsub-5wl04tt6jgr6b7j&body=5wl04tt6jgr6b7j>,<http://r.srensbp.com/v0mb4oifwr6b7g.html>
+Content-Type: multipart/alternative; boundary="-------?=_59002-6980919676522"
+MIME-Version: 1.0
+Precedence: bulk
+Feedback-ID: ded_94.143.19.20:1063524:1063524_9560:Sendinblue
+X-Mailer: Sendinblue
+X-Mailin-Client: 1063524
+X-Mailin-Campaign: 9560
+Reply-To: contact@strandlink.com
+Message-Id: <201612281606.5wl04tt6jgr6b7j@srensbp.com>
+Date: Wed, 28 Dec 2016 16:06:25 +0100
+
+
+---------?=_59002-6980919676522
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Si vous ne parvenez pas =C3=A0 lire cet e-mail, cliquez http://r.srensbp.co=
+m/v0mb4oifwr6b7f.html.=0AVous recevez ce mail car vous acceptez de recevoir=
+ les mails de Superencontre=C2=A0=0A=0AHello toi,=0A=0AJe cherche un mec av=
+ec qui je pourrais passer du bon temps sur  et rendre mon quotidien un peu =
+moins routinier. J'aime avant tout les mecs sympas et sans prise de t=C3=
+=AAte (comme tout le monde je pense ).=0A=0AOn pourrait d=C3=A9j=C3=A0 disc=
+uter en priv=C3=A9 si tu le souhaite, j'ai cr=C3=A9=C3=A9e un compte sur=
+=C2=A0[ ce site ]( http://r.srensbp.com/3g2h8iq1rh8r6b7d.html ). Si on voit=
+ que le feeling passe bien ensemble on pourrait tr=C3=A8s bien se rencontre=
+r pour faire un resto et plus si affinit=C3=A9 ;)=0A=0AA tr=C3=A8s vite.=0A=
+Ps : Voil=C3=A0 une photo de moi et une vid=C3=A9o qu'une amie a fait de mo=
+i.=0A[=0AVoir en HQ ]( http://r.srensbp.com/3g2h8iq1s9or6b7d.html )=0A[  ](=
+ http://r.srensbp.com/3g2h8iq1t24r6b7d.html )=0A=0A=C2=A0Si vous souhaitez =
+vous d=C3=A9sinscrire des mails de Superencontre, cliquez http://r.srensbp.=
+com/v0mb4oifwr6b7g.html
+
+
+---------?=_59002-6980919676522
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<body style=3D"margin:0; padding:0;"><div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous ne parvenez pas =C3=A0 lire cet e-mail, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.sren=
+sbp.com/v0mb4oifwr6b7f.html">ici</a>.<br>
+Vous recevez ce mail car vous acceptez de recevoir les mails de Superencont=
+re</div><title></title>=0A<p>=0A=09&nbsp;</p>=0A<table align=3D"center" bor=
+der=3D"0" cellpadding=3D"1" cellspacing=3D"1" style=3D"width: 500px;">=0A=
+=09<tbody>=0A=09=09<tr>=0A=09=09=09<td>=0A=09=09=09=09<p>=0A=09=09=09=09=09=
+<span style=3D"font-size:14px;"><span style=3D"font-family:tahoma,geneva,sa=
+ns-serif;">Hello toi,<br />=0A=09=09=09=09=09<br />=0A=09=09=09=09=09Je che=
+rche un mec avec qui je pourrais passer du bon temps sur  et rendre mon quo=
+tidien un peu moins routinier. J&#39;aime avant tout les mecs sympas et san=
+s prise de t&ecirc;te (comme tout le monde je pense ).<br />=0A=09=09=09=09=
+=09<br />=0A=09=09=09=09=09On pourrait d&eacute;j&agrave; discuter en priv&=
+eacute; si tu le souhaite, j&#39;ai cr&eacute;&eacute;e un compte sur&nbsp;=
+<a href=3D"http://r.srensbp.com/3g2h8iq1rh8r6b7d.html" target=3D"_blank">ce=
+ site</a>. Si on voit que le feeling passe bien ensemble on pourrait tr&egr=
+ave;s bien se rencontrer pour faire un resto et plus si affinit&eacute; ;)<=
+br />=0A=09=09=09=09=09<br />=0A=09=09=09=09=09A tr&egrave;s vite.<br />=0A=
+=09=09=09=09=09Ps : Voil&agrave; une photo de moi et une vid&eacute;o qu&#3=
+9;une amie a fait de moi.</span></span></p>=0A=09=09=09</td>=0A=09=09</tr>=
+=0A=09=09<tr>=0A=09=09=09<td style=3D"text-align: center;">=0A=09=09=09=09<=
+a href=3D"http://r.srensbp.com/3g2h8iq1s9or6b7d.html"><img src=3D"http://im=
+g.srensbp.com/w0cprh8r6b7e.png" style=3D"width: 183px; height: 314px;" /><b=
+r />=0A=09=09=09=09Voir en HQ</a></td>=0A=09=09</tr>=0A=09=09<tr>=0A=09=09=
+=09<td style=3D"text-align: center;">=0A=09=09=09=09<p>=0A=09=09=09=09=09<a=
+ href=3D"http://r.srensbp.com/3g2h8iq1t24r6b7d.html"><img alt=3D"" src=3D"h=
+ttp://img.srensbp.com/w0cps9or6b7e.png" style=3D"width: 276px; height: 40px=
+;" /></a></p>=0A=09=09=09</td>=0A=09=09</tr>=0A=09</tbody>=0A</table>=0A<p>=
+=0A=09&nbsp;</p>=0A<div align=3D"center" style=3D"color: #727272; font-size=
+: 10px;">Si vous souhaitez vous d=C3=A9sinscrire des mails de Superencontre=
+, cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.sr=
+ensbp.com/v0mb4oifwr6b7g.html">ici</a></div><div><img width=3D"1" height=3D=
+"1" src=3D"http://r.srensbp.com/v0mb4oifwr6b7h.jpg" /></div></body>
+
+
+---------?=_59002-6980919676522--
+

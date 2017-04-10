@@ -1,0 +1,105 @@
+Delivered-To: gar.ciathom.as@gmail.com
+Received: by 10.37.177.33 with SMTP id g33csp2113598ybj;
+        Tue, 31 Jan 2017 15:13:19 -0800 (PST)
+X-Received: by 10.28.66.221 with SMTP id k90mr13036834wmi.90.1485904399241;
+        Tue, 31 Jan 2017 15:13:19 -0800 (PST)
+Return-Path: <noreply@srensbp.com>
+Received: from srensbp.com (srensbp.com. [94.143.19.20])
+        by mx.google.com with ESMTPS id 36si22502074wrk.321.2017.01.31.15.13.19
+        for <gar.ciathom.as@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 31 Jan 2017 15:13:19 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) client-ip=94.143.19.20;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@srensb.com;
+       spf=pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) smtp.mailfrom=noreply@srensbp.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=srensb.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=srensb.com;
+ q=dns/txt; s=mail; bh=mvPnqbqsSSn/QxV1fWuv0d0X53ehqbGTzbzzl0FFmaM=;
+ h=from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe;
+        b=xPeY/RmbAAH5rzk8/bQdv7rKTwG2qjMyXi/psgTRa4zQ6zD7VNd7WrPwJCqkplwdBZ8NFbI24VCG
+        Om424YAfg9yLlmQDBq6ydsl257ciIf89z/MmIb68mKnq8twuqOSqYUVhZJInQjDRM6t7VUUba6V7
+        rj2HCXozmIJl+Gi2xbM=
+To: <gar.ciathom.as@gmail.com>
+Subject: =?UTF-8?Q?J'ai_vu_que_tu_=C3=A9tais_inscrit_toi_aussi_sur_le_site?=
+From: =?UTF-8?Q?Anita?= <retour@srensb.com>
+List-Id: MTA2MzUyNC0xNDY4OTgtMTQ5 <MTA2MzUyNC0xNDY4OTgtMTQ5.list-id.srensbp.com>
+List-Unsubscribe: <mailto:unsubscribe@srensbp.com?subject=unsub-7jschv56jgr6b7j&body=7jschv56jgr6b7j>,<http://r.srensbp.com/ac7fmlbz30r6b7g.html>
+Content-Type: multipart/alternative; boundary="-------?=_13598-7416580613288"
+MIME-Version: 1.0
+Precedence: bulk
+Feedback-ID: ded_94.143.19.20:1063524:1063524_10114:Sendinblue
+X-Mailer: Sendinblue
+X-Mailin-Client: 1063524
+X-Mailin-Campaign: 10114
+Reply-To: contact@strandlink.com
+Message-Id: <201702010013.7jschv56jgr6b7j@srensbp.com>
+Date: Wed, 01 Feb 2017 00:13:18 +0100
+
+
+---------?=_13598-7416580613288
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Si vous ne parvenez pas =C3=A0 lire cet e-mail, cliquez http://r.srensbp.co=
+m/ac7fmlbz30r6b7f.html.=0AVous recevez ce mail car vous acceptez de recevoi=
+r les mails de Superencontre[ Ambrine de =0Avous a envoy=C3=A9 un message p=
+riv=C3=A9 ]( http://r.srensbp.com/15ctqidbwbx8r6b7d.html )  " Coucou toi=0A=
+=0ASensualit=C3=A9, respect, plaisir, l=C3=A9g=C3=A8ret=C3=A9, gourmandise,=
+ bien =C3=AAtre, complicit=C3=A9...voici quelques mots qui me caract=C3=
+=A9risent! Je cherche un mec avec une t=C3=AAte (bien remplie), deux bras (=
+pour me rassurer), et deux jambes (pour me suivre..."=0A=C2=A0  [  ]( http:=
+//r.srensbp.com/15ctqidbwcpor6b7d.html )=0A=C2=A0  [ >> LUI REPONDRE << ]( =
+http://r.srensbp.com/15ctqidbwdi4r6b7d.html )Si vous souhaitez vous d=C3=
+=A9sinscrire des mails de Superencontre, cliquez http://r.srensbp.com/ac7fm=
+lbz30r6b7g.html
+
+
+---------?=_13598-7416580613288
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<body style=3D"margin:0; padding:0;"><div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous ne parvenez pas =C3=A0 lire cet e-mail, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.sren=
+sbp.com/ac7fmlbz30r6b7f.html">ici</a>.<br>
+Vous recevez ce mail car vous acceptez de recevoir les mails de Superencont=
+re</div><title></title>=0A<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width: 400px">=0A=09<tbody>=0A=09=09<tr>=
+=0A=09=09=09<td bgcolor=3D"#D8BFD8" colspan=3D"2" style=3D"text-align: cent=
+er;">=0A=09=09=09=09<a href=3D"http://r.srensbp.com/15ctqidbwbx8r6b7d.html"=
+ style=3D"text-decoration: none;"><strong><span style=3D"color:#ffffff;"><s=
+pan style=3D"font-family: arial, sans-serif; font-size: 18px;"><span style=
+=3D"font-size:26px;">Ambrine de </span><br />=0A=09=09=09=09<span style=3D"=
+font-size:16px;">vous a envoy&eacute; un message priv&eacute;</span></span>=
+</span></strong></a></td>=0A=09=09</tr>=0A=09=09<tr>=0A=09=09=09<td bgcolor=
+=3D"#F5F5F5" colspan=3D"2">=0A=09=09=09=09<em><span style=3D"color:#000000;=
+"><span style=3D"font-size: 14px; font-family: Arial, Helvetica, sans-serif=
+;">&quot; Coucou toi</span><br style=3D"font-size: 14px; color: rgb(85, 85,=
+ 85); font-family: Arial, Helvetica, sans-serif;" />=0A=09=09=09=09<br styl=
+e=3D"font-size: 14px; color: rgb(85, 85, 85); font-family: Arial, Helvetica=
+, sans-serif;" />=0A=09=09=09=09<span style=3D"font-size: 14px; font-family=
+: arial, helvetica, sans-serif;"><span style=3D"line-height: 16.8px;">Sensu=
+alit&eacute;, respect, plaisir, l&eacute;g&egrave;ret&eacute;, gourmandise,=
+ bien &ecirc;tre, complicit&eacute;...voici quelques mots qui me caract&eac=
+ute;risent! Je cherche un mec avec une t&ecirc;te (bien remplie), deux bras=
+ (pour me rassurer), et deux jambes (pour me suivre...&quot;</span></span><=
+/span></em><br />=0A=09=09=09=09&nbsp;</td>=0A=09=09</tr>=0A=09=09<tr>=0A=
+=09=09=09<td bgcolor=3D"#F5F5F5" colspan=3D"2" style=3D"text-align: center;=
+">=0A=09=09=09=09<a href=3D"http://r.srensbp.com/15ctqidbwcpor6b7d.html"><i=
+mg src=3D"http://img.srensbp.com/ac8vwbx8r6b7e.jpg" style=3D"width: 200px; =
+height: 200px;" /></a><br />=0A=09=09=09=09&nbsp;</td>=0A=09=09</tr>=0A=09=
+=09<tr>=0A=09=09=09<td bgcolor=3D"#D8BFD8" colspan=3D"2" style=3D"text-alig=
+n: center;">=0A=09=09=09=09<a href=3D"http://r.srensbp.com/15ctqidbwdi4r6b7=
+d.html" style=3D"text-decoration: none;"><strong><span style=3D"font-size:2=
+6px;"><span style=3D"color:#ffffff;">&gt;&gt; LUI REPONDRE &lt;&lt;</span><=
+/span></strong></a></td>=0A=09=09</tr>=0A=09</tbody>=0A</table>=0A<br />=0A=
+<div align=3D"center" style=3D"color: #727272; font-size: 10px;">Si vous so=
+uhaitez vous d=C3=A9sinscrire des mails de Superencontre, cliquez <a style=
+=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.srensbp.com/ac7fmlbz=
+30r6b7g.html">ici</a></div><div><img width=3D"1" height=3D"1" src=3D"http:/=
+/r.srensbp.com/ac7fmlbz30r6b7h.jpg" /></div></body>
+
+
+---------?=_13598-7416580613288--
+

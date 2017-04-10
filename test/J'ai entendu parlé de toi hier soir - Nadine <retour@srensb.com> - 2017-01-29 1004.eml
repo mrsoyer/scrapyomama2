@@ -1,0 +1,127 @@
+Delivered-To: gar.ciathom.as@gmail.com
+Received: by 10.37.177.33 with SMTP id g33csp966131ybj;
+        Sun, 29 Jan 2017 01:04:47 -0800 (PST)
+X-Received: by 10.223.142.208 with SMTP id q74mr14032927wrb.101.1485680686966;
+        Sun, 29 Jan 2017 01:04:46 -0800 (PST)
+Return-Path: <noreply@srensbp.com>
+Received: from srensbp.com (srensbp.com. [94.143.19.20])
+        by mx.google.com with ESMTPS id g16si9140008wmg.156.2017.01.29.01.04.46
+        for <gar.ciathom.as@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 29 Jan 2017 01:04:46 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) client-ip=94.143.19.20;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@srensb.com;
+       spf=pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) smtp.mailfrom=noreply@srensbp.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=srensb.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=srensb.com;
+ q=dns/txt; s=mail; bh=mWjJnONRToZZEZtsCRYb9ao2m6SiyIze0PQfMtHkqCk=;
+ h=from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe;
+        b=naoTAwKfDftqb6erjRCU5KOVJ2EhAEgAFmzpODUA/f+GL0jOsc4kdZnABtu1X8zgPM7xoGlAYxa3
+        XA+zbZLZL3GUCBZCSfxrQNuHap/wgUtVEfY01CPABjZMDs4qoH8v7vjsNZ8sGkzidNqAXp2Vf5Wm
+        Jd10yirTiWpYbmsHtKI=
+To: <gar.ciathom.as@gmail.com>
+Subject: =?UTF-8?Q?J'ai_entendu_parl=C3=A9_de_toi_hier_soir?=
+From: =?UTF-8?Q?Nadine?= <retour@srensb.com>
+List-Id: MTA2MzUyNC0xNDY4OTgtMTI3 <MTA2MzUyNC0xNDY4OTgtMTI3.list-id.srensbp.com>
+List-Unsubscribe: <mailto:unsubscribe@srensbp.com?subject=unsub-646wvht6jgr6b7j&body=646wvht6jgr6b7j>,<http://r.srensbp.com/v0mb51cnwr6b7g.html>
+Content-Type: multipart/alternative; boundary="-------?=_53252-2434086650609"
+MIME-Version: 1.0
+Precedence: bulk
+Feedback-ID: ded_94.143.19.20:1063524:1063524_9969:Sendinblue
+X-Mailer: Sendinblue
+X-Mailin-Client: 1063524
+X-Mailin-Campaign: 9969
+Reply-To: contact@strandlink.com
+Message-Id: <201701291004.646wvht6jgr6b7j@srensbp.com>
+Date: Sun, 29 Jan 2017 10:04:46 +0100
+
+
+---------?=_53252-2434086650609
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Si vous ne parvenez pas =C3=A0 lire cet e-mail, cliquez http://r.srensbp.co=
+m/v0mb51cnwr6b7f.html.=0AVous recevez ce mail car vous acceptez de recevoir=
+ les mails de Superencontre=C2=A0=0A=0A[ Vous avez un nouveau message ]( ht=
+tp://r.srensbp.com/3g2h8k5enh8r6b7d.html )=C2=A0!=0A[  ]( http://r.srensbp.=
+com/3g2h8k5eo9or6b7d.html )=0ANadine=C2=A0g=C3=A9ocalis=C3=A9 =C3=A0 9 km d=
+e  souhaite prendre=C2=A0contact avec vous=0A=0A" Bonjour, je me suis inscr=
+ite sur ce site pour faire des rencontres sans prise de t=C3=AAte ! Qu'est =
+ce que t'en pense ? On pourrait faire connaissance ... j'ai mis des photos =
+sur mon profil, viens voir bisous "=0A[ >> ACCEDER AUX PHOTOS << ]( http://=
+r.srensbp.com/3g2h8k5ep24r6b7d.html )=C2=A0=0A=C2=A0Si vous souhaitez vous =
+d=C3=A9sinscrire des mails de Superencontre, cliquez http://r.srensbp.com/v=
+0mb51cnwr6b7g.html
+
+
+---------?=_53252-2434086650609
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<body style=3D"margin:0; padding:0;"><div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous ne parvenez pas =C3=A0 lire cet e-mail, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.sren=
+sbp.com/v0mb51cnwr6b7f.html">ici</a>.<br>
+Vous recevez ce mail car vous acceptez de recevoir les mails de Superencont=
+re</div><title></title>=0A<table align=3D"center" border=3D"0" cellpadding=
+=3D"1" cellspacing=3D"1" style=3D"width: 500px;">=0A=09<tbody>=0A=09=09<tr>=
+=0A=09=09=09<td colspan=3D"2">=0A=09=09=09=09<div>=0A=09=09=09=09=09&nbsp;<=
+/div>=0A=09=09=09=09<div>=0A=09=09=09=09=09<table align=3D"center" bgcolor=
+=3D"#CC99FF" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"back=
+ground-color:rgb(204, 153, 255);color:rgb(34, 34, 34);font-family:arial,san=
+s-serif;font-size:12.8px;width:500px;">=0A=09=09=09=09=09=09<tbody>=0A=09=
+=09=09=09=09=09=09<tr>=0A=09=09=09=09=09=09=09=09<td style=3D"font-family: =
+Tahoma, Geneva, sans-serif; margin: 0px; color: rgb(255, 255, 255); font-si=
+ze: 22px; line-height: 22px; padding: 0px 5px 3px; font-weight: bold; heigh=
+t: 47px; text-align: center; background-color: rgb(102, 153, 204);" valign=
+=3D"middle">=0A=09=09=09=09=09=09=09=09=09<p>=0A=09=09=09=09=09=09=09=09=09=
+=09<span style=3D"font-family:trebuchet ms,helvetica,sans-serif;"><a href=
+=3D"http://r.srensbp.com/3g2h8k5enh8r6b7d.html" style=3D"color: rgb(255, 25=
+5, 255); font-size: 25px; text-decoration: none;" target=3D"_blank">Vous av=
+ez un nouveau message</a>&nbsp;!</span></p>=0A=09=09=09=09=09=09=09=09</td>=
+=0A=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09</tbody>=0A=09=09=09=09=
+=09</table>=0A=09=09=09=09</div>=0A=09=09=09</td>=0A=09=09</tr>=0A=09=09<tr=
+>=0A=09=09=09<td colspan=3D"2">=0A=09=09=09=09<table align=3D"center" borde=
+r=3D"0" cellpadding=3D"1" cellspacing=3D"1" style=3D"width:500px;">=0A=09=
+=09=09=09=09<tbody>=0A=09=09=09=09=09=09<tr>=0A=09=09=09=09=09=09=09<td sty=
+le=3D"text-align: center;">=0A=09=09=09=09=09=09=09=09<a href=3D"http://r.s=
+rensbp.com/3g2h8k5eo9or6b7d.html"><img alt=3D"" src=3D"http://img.srensbp.c=
+om/w1s2nh8r6b7e.jpg" style=3D"width: 150px; height: 150px;" /></a></td>=0A=
+=09=09=09=09=09=09=09<td>=0A=09=09=09=09=09=09=09=09<p style=3D"text-align:=
+ center;">=0A=09=09=09=09=09=09=09=09=09<span style=3D"font-size:16px;"><sp=
+an style=3D"font-family:trebuchet ms,helvetica,sans-serif;"><span style=3D"=
+color: rgb(255, 0, 153);"><strong>Nadine&nbsp;</strong></span><strong>g&eac=
+ute;ocalis&eacute; &agrave; 9 km de  souhaite prendre&nbsp;</strong><strong=
+>contact avec vous</strong></span></span></p>=0A=09=09=09=09=09=09=09=09<p =
+style=3D"text-align: center;">=0A=09=09=09=09=09=09=09=09=09<em><span style=
+=3D"font-size:16px;"><span style=3D"font-family:trebuchet ms,helvetica,sans=
+-serif;">&quot; Bonjour, je me suis inscrite sur ce site pour faire des ren=
+contres sans prise de t&ecirc;te ! Qu&#39;est ce que t&#39;en pense ? On po=
+urrait faire connaissance ... j&#39;ai mis des photos sur mon profil, viens=
+ voir bisous &quot;</span></span></em></p>=0A=09=09=09=09=09=09=09</td>=0A=
+=09=09=09=09=09=09</tr>=0A=09=09=09=09=09</tbody>=0A=09=09=09=09</table>=0A=
+=09=09=09</td>=0A=09=09</tr>=0A=09=09<tr>=0A=09=09=09<td colspan=3D"2">=0A=
+=09=09=09=09<table align=3D"center" bgcolor=3D"#202426" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" style=3D"color: rgb(34, 34, 34); font-family:=
+ arial, sans-serif; font-size: 12.8px; width: 500px; background-color: rgb(=
+32, 36, 38);">=0A=09=09=09=09=09<tbody>=0A=09=09=09=09=09=09<tr>=0A=09=09=
+=09=09=09=09=09<td style=3D"font-family: Tahoma, Geneva, sans-serif; margin=
+: 0px; color: rgb(255, 255, 255); font-size: 22px; line-height: 10px; paddi=
+ng: 0px 5px 3px; font-weight: bold; height: 47px; text-align: center; backg=
+round-color: rgb(51, 255, 51);" valign=3D"middle">=0A=09=09=09=09=09=09=09=
+=09<span style=3D"font-size:18px;"><span style=3D"font-family:trebuchet ms,=
+helvetica,sans-serif;"><a href=3D"http://r.srensbp.com/3g2h8k5ep24r6b7d.htm=
+l" style=3D"color: rgb(255, 255, 255); font-size: 20px; text-decoration: no=
+ne;" target=3D"_blank">&gt;&gt; ACCEDER AUX PHOTOS &lt;&lt;</a>&nbsp;</span=
+></span></td>=0A=09=09=09=09=09=09</tr>=0A=09=09=09=09=09</tbody>=0A=09=09=
+=09=09</table>=0A=09=09=09</td>=0A=09=09</tr>=0A=09</tbody>=0A</table>=0A<p=
+>=0A=09&nbsp;</p>=0A<div align=3D"center" style=3D"color: #727272; font-siz=
+e: 10px;">Si vous souhaitez vous d=C3=A9sinscrire des mails de Superencontr=
+e, cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.s=
+rensbp.com/v0mb51cnwr6b7g.html">ici</a></div><div><img width=3D"1" height=
+=3D"1" src=3D"http://r.srensbp.com/v0mb51cnwr6b7h.jpg" /></div></body>
+
+
+---------?=_53252-2434086650609--
+

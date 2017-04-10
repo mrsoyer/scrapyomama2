@@ -1,0 +1,154 @@
+Delivered-To: gar.ciathom.as@gmail.com
+Received: by 10.140.28.119 with SMTP id 110csp819242qgy;
+        Sun, 22 Jan 2017 07:04:08 -0800 (PST)
+X-Received: by 10.28.153.139 with SMTP id b133mr9790054wme.93.1485097448713;
+        Sun, 22 Jan 2017 07:04:08 -0800 (PST)
+Return-Path: <noreply@srensbp.com>
+Received: from srensbp.com (srensbp.com. [94.143.19.20])
+        by mx.google.com with ESMTPS id c142si10812758wmc.89.2017.01.22.07.04.08
+        for <gar.ciathom.as@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 22 Jan 2017 07:04:08 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) client-ip=94.143.19.20;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@srensb.com;
+       spf=pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) smtp.mailfrom=noreply@srensbp.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=srensb.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=srensb.com;
+ q=dns/txt; s=mail; bh=6snvR2yLrdlZMon12d9LtvT1Fd1ZIOZg3MtxmamQAjQ=;
+ h=from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe;
+        b=kBJTfOTW+HBffoqXuaMC4LH56W3JXUHEJFGe/X11iSV5+CBvhnXNLEgopb+6PyWym7zeXLhf9949
+        BtJV9WphIlfXx6yfY5sEXiCDJoxxc3BIdfe9zSmrrp5oGDPfMWOylDJ+kmsTvjWD36OZUhEVmb2x
+        i/NduAh78bRmnJeTjVE=
+To: <gar.ciathom.as@gmail.com>
+Subject: =?UTF-8?Q?garciathomas,_finaliser_votre_inscription_d=C3=A8s_maintenant?=
+From: =?UTF-8?Q?Sandra=20V?= <retour@srensb.com>
+List-Id: MTA2MzUyNC0xNDY4OTgtMTI3 <MTA2MzUyNC0xNDY4OTgtMTI3.list-id.srensbp.com>
+List-Unsubscribe: <mailto:unsubscribe@srensbp.com?subject=unsub-62fpbht6jgr6b7j&body=62fpbht6jgr6b7j>,<http://r.srensbp.com/v0mb4ydzwr6b7g.html>
+Content-Type: multipart/alternative; boundary="-------?=_19299-1853331542677"
+MIME-Version: 1.0
+Precedence: bulk
+Feedback-ID: ded_94.143.19.20:1063524:1063524_9876:Sendinblue
+X-Mailer: Sendinblue
+X-Mailin-Client: 1063524
+X-Mailin-Campaign: 9876
+Reply-To: contact@strandlink.com
+Message-Id: <201701221604.62fpbht6jgr6b7j@srensbp.com>
+Date: Sun, 22 Jan 2017 16:04:08 +0100
+
+
+---------?=_19299-1853331542677
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Si vous ne parvenez pas =C3=A0 lire cet e-mail, cliquez http://r.srensbp.co=
+m/v0mb4ydzwr6b7f.html.=0AVous recevez ce mail car vous acceptez de recevoir=
+ les mails de SuperencontreBonjour garciathomas,=C2=A0=0AJe viens de voir q=
+ue vous =C3=A9tiez int=C3=A9ress=C3=A9(e) par notre site=C2=A0mais que=
+=C2=A0votre inscription n=E2=80=99est pas finalis=C3=A9e.=0A=0ATout d=
+=E2=80=99abord, permettez-moi de vous remercier pour votre int=C3=A9r=C3=
+=AAt.=0A=0AVous =C3=AAtes dans une d=C3=A9marche personnelle de=C2=A0rencon=
+trer une personne qui vous correspond, c=E2=80=99est avec plaisir que je vo=
+us rappelle qu'ici, tous nos membres sont sur la meme longueur d'onde que v=
+ous.=0A=0A[ Ne perdez pas de temps, connecter vous sans plus attendre ]( ht=
+tp://r.srensbp.com/3g2h8jtjzh8r6b7d.html )=0A=0AJe vous embrasse et vous so=
+uhaite une grande r=C3=A9ussite dans votre d=C3=A9marche de rencontrer l'am=
+our sur notre site.=0A=0ASandra V.=0A=0A=C2=A0=0A[ FINALISER MON INSCRIPTIO=
+N ]( http://r.srensbp.com/3g2h8jtk09or6b7d.html )Si vous souhaitez vous d=
+=C3=A9sinscrire des mails de Superencontre, cliquez http://r.srensbp.com/v0=
+mb4ydzwr6b7g.html
+
+
+---------?=_19299-1853331542677
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<body style=3D"margin:0; padding:0;"><div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous ne parvenez pas =C3=A0 lire cet e-mail, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.sren=
+sbp.com/v0mb4ydzwr6b7f.html">ici</a>.<br>
+Vous recevez ce mail car vous acceptez de recevoir les mails de Superencont=
+re</div><title></title>=0A<table align=3D"center" border=3D"0" cellpadding=
+=3D"1" cellspacing=3D"1" style=3D"width: 500px;">=0A=09<tbody>=0A=09=09<tr>=
+=0A=09=09=09<td>=0A=09=09=09=09<p style=3D"font-family: arial, sans-serif; =
+font-size: 12.8px;">=0A=09=09=09=09=09<span style=3D"font-size:12px;"><span=
+ style=3D"font-family:trebuchet ms,helvetica,sans-serif;">Bonjour garciatho=
+mas,&nbsp;</span></span></p>=0A=09=09=09=09<div style=3D"font-family: arial=
+, sans-serif; font-size: 12.8px;">=0A=09=09=09=09=09<span style=3D"font-siz=
+e:12px;"><span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica,=
+ Helvetica, Arial, sans-serif;">Je viens de voir que vous &eacute;tiez int&=
+eacute;ress&eacute;(e) par notre site&nbsp;mais que&nbsp;</span><strong sty=
+le=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Helvetica, Arial,=
+ sans-serif; font-size: 12.8px; line-height: 1.6; margin: 0px; padding: 0px=
+;">votre inscription n&rsquo;est pas finalis&eacute;e</strong><span style=
+=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Helvetica, Arial, s=
+ans-serif;">.</span><br style=3D"font-family: &quot;Helvetica Neue&quot;, H=
+elvetica, Helvetica, Arial, sans-serif; font-size: 12.8px; line-height: 1.6=
+; margin: 0px; padding: 0px;" />=0A=09=09=09=09=09<br style=3D"font-family:=
+ &quot;Helvetica Neue&quot;, Helvetica, Helvetica, Arial, sans-serif; font-=
+size: 12.8px; line-height: 1.6; margin: 0px; padding: 0px;" />=0A=09=09=09=
+=09=09<span style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, He=
+lvetica, Arial, sans-serif;">Tout d&rsquo;abord, permettez-moi de vous reme=
+rcier pour votre int&eacute;r&ecirc;t.</span><br style=3D"font-family: &quo=
+t;Helvetica Neue&quot;, Helvetica, Helvetica, Arial, sans-serif; font-size:=
+ 12.8px; line-height: 1.6; margin: 0px; padding: 0px;" />=0A=09=09=09=09=09=
+<br style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Helvetica,=
+ Arial, sans-serif; font-size: 12.8px; line-height: 1.6; margin: 0px; paddi=
+ng: 0px;" />=0A=09=09=09=09=09<span style=3D"font-family: &quot;Helvetica N=
+eue&quot;, Helvetica, Helvetica, Arial, sans-serif;">Vous &ecirc;tes dans u=
+ne d&eacute;marche personnelle de&nbsp;</span><strong style=3D"font-family:=
+ &quot;Helvetica Neue&quot;, Helvetica, Helvetica, Arial, sans-serif; font-=
+size: 12.8px; line-height: 1.6; margin: 0px; padding: 0px;">rencontrer une =
+personne qui vous correspond</strong><span style=3D"font-family: &quot;Helv=
+etica Neue&quot;, Helvetica, Helvetica, Arial, sans-serif;">, c</span><span=
+ style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Helvetica, Ar=
+ial, sans-serif;">&rsquo;est avec plaisir que je vous rappelle qu&#39;ici, =
+tous nos membres sont sur la meme longueur d&#39;onde que vous.</span><br s=
+tyle=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Helvetica, Aria=
+l, sans-serif; font-size: 12.8px; line-height: 1.6; margin: 0px; padding: 0=
+px;" />=0A=09=09=09=09=09<br style=3D"font-family: &quot;Helvetica Neue&quo=
+t;, Helvetica, Helvetica, Arial, sans-serif; font-size: 12.8px; line-height=
+: 1.6; margin: 0px; padding: 0px;" />=0A=09=09=09=09=09<a href=3D"http://r.=
+srensbp.com/3g2h8jtjzh8r6b7d.html"><span style=3D"color:#0000ff;"><font fac=
+e=3D"Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif"><span style=
+=3D"line-height: 1.6; word-break: break-word;">Ne perdez pas de te</span></=
+font><font face=3D"Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif"=
+><span style=3D"line-height: 1.6; word-break: break-word;">mps, co</span></=
+font>nnecter vous sans plus attendre</span></a><br style=3D"font-family: &q=
+uot;Helvetica Neue&quot;, Helvetica, Helvetica, Arial, sans-serif; font-siz=
+e: 12.8px; line-height: 1.6; margin: 0px; padding: 0px;" />=0A=09=09=09=09=
+=09<br style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Helveti=
+ca, Arial, sans-serif; font-size: 12.8px; line-height: 1.6; margin: 0px; pa=
+dding: 0px;" />=0A=09=09=09=09=09<span style=3D"font-family: &quot;Helvetic=
+a Neue&quot;, Helvetica, Helvetica, Arial, sans-serif;">Je vous embrasse et=
+ vous souhaite une grande r&eacute;ussite dans votre d&eacute;marche de ren=
+contrer l&#39;amour sur notre site.</span><br style=3D"font-family: &quot;H=
+elvetica Neue&quot;, Helvetica, Helvetica, Arial, sans-serif; font-size: 12=
+.8px; line-height: 1.6; margin: 0px; padding: 0px;" />=0A=09=09=09=09=09<br=
+ style=3D"font-family: &quot;Helvetica Neue&quot;, Helvetica, Helvetica, Ar=
+ial, sans-serif; font-size: 12.8px; line-height: 1.6; margin: 0px; padding:=
+ 0px;" />=0A=09=09=09=09=09<span style=3D"font-family: &quot;Helvetica Neue=
+&quot;, Helvetica, Helvetica, Arial, sans-serif;">Sandra V.</span></span></=
+div>=0A=09=09=09=09<div style=3D"font-family: arial, sans-serif; font-size:=
+ 12.8px; text-align: center;">=0A=09=09=09=09=09<div>=0A=09=09=09=09=09=09&=
+nbsp;</div>=0A=09=09=09=09=09<div>=0A=09=09=09=09=09=09<table align=3D"cent=
+er" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size: 12=
+.8px;">=0A=09=09=09=09=09=09=09<tbody>=0A=09=09=09=09=09=09=09=09<tr>=0A=09=
+=09=09=09=09=09=09=09=09<td align=3D"center" bgcolor=3D"#5D35FF" style=3D"f=
+ont-family: Tahoma, Geneva, sans-serif; margin: 0px; padding: 20px; border-=
+radius: 4px;" width=3D"100%">=0A=09=09=09=09=09=09=09=09=09=09<a href=3D"ht=
+tp://r.srensbp.com/3g2h8jtk09or6b7d.html" style=3D"color: rgb(255, 255, 255=
+); font-weight: bold; text-transform: uppercase; font-size: 18px; text-deco=
+ration: none;" target=3D"_blank" title=3D"Confirmez votre inscription">FINA=
+LISER MON INSCRIPTION</a></td>=0A=09=09=09=09=09=09=09=09</tr>=0A=09=09=09=
+=09=09=09=09</tbody>=0A=09=09=09=09=09=09</table>=0A=09=09=09=09=09</div>=
+=0A=09=09=09=09</div>=0A=09=09=09</td>=0A=09=09</tr>=0A=09</tbody>=0A</tabl=
+e>=0A<br />=0A<div align=3D"center" style=3D"color: #727272; font-size: 10p=
+x;">Si vous souhaitez vous d=C3=A9sinscrire des mails de Superencontre, cli=
+quez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.srensbp=
+.com/v0mb4ydzwr6b7g.html">ici</a></div><div><img width=3D"1" height=3D"1" s=
+rc=3D"http://r.srensbp.com/v0mb4ydzwr6b7h.jpg" /></div></body>
+
+
+---------?=_19299-1853331542677--
+

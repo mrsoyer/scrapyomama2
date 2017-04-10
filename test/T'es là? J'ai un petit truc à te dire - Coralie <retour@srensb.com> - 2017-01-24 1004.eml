@@ -1,0 +1,212 @@
+Delivered-To: gar.ciathom.as@gmail.com
+Received: by 10.37.177.33 with SMTP id g33csp1272063ybj;
+        Tue, 24 Jan 2017 01:04:11 -0800 (PST)
+X-Received: by 10.28.109.27 with SMTP id i27mr16177960wmc.54.1485248651075;
+        Tue, 24 Jan 2017 01:04:11 -0800 (PST)
+Return-Path: <noreply@srensbp.com>
+Received: from srensbp.com (srensbp.com. [94.143.19.20])
+        by mx.google.com with ESMTPS id i74si17490729wmh.85.2017.01.24.01.04.10
+        for <gar.ciathom.as@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 24 Jan 2017 01:04:11 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) client-ip=94.143.19.20;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@srensb.com;
+       spf=pass (google.com: domain of noreply@srensbp.com designates 94.143.19.20 as permitted sender) smtp.mailfrom=noreply@srensbp.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=srensb.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=srensb.com;
+ q=dns/txt; s=mail; bh=Df/DC+PHJpQOb+eHnpnu+0LetSmTwDqhSM78C8u1gSg=;
+ h=from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe;
+        b=CvpfaABNBdiXoHXTZdSEDRVlrCR0Afbp1ENv3rGRo8KefES37J5FK5U3g7yYXwpOnpMU/QYkVGdW
+        OnUZiJXax/8ncAJTaE9YiZXKG5fG6hxFTs9yXTf3Cg0OeyyUlyUm/XN3XM/2kf/Kyw0ta0HYEWR1
+        Gy++0u+iuJSq2ftl9i8=
+To: <gar.ciathom.as@gmail.com>
+Subject: =?UTF-8?Q?T'es_l=C3=A0=3F_J'ai_un_petit_truc_=C3=A0_te_dire?=
+From: =?UTF-8?Q?Coralie?= <retour@srensb.com>
+List-Id: MTA2MzUyNC0xNDY4OTgtMTI3 <MTA2MzUyNC0xNDY4OTgtMTI3.list-id.srensbp.com>
+List-Unsubscribe: <mailto:unsubscribe@srensbp.com?subject=unsub-62erlv56jgr6b7j&body=62erlv56jgr6b7j>,<http://r.srensbp.com/v0mb4ycf0r6b7g.html>
+Content-Type: multipart/alternative; boundary="-------?=_60965-6488001077539"
+MIME-Version: 1.0
+Precedence: bulk
+Feedback-ID: ded_94.143.19.20:1063524:1063524_9874:Sendinblue
+X-Mailer: Sendinblue
+X-Mailin-Client: 1063524
+X-Mailin-Campaign: 9874
+Reply-To: contact@strandlink.com
+Message-Id: <201701241004.62erlv56jgr6b7j@srensbp.com>
+Date: Tue, 24 Jan 2017 10:04:09 +0100
+
+
+---------?=_60965-6488001077539
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Si vous ne parvenez pas =C3=A0 lire cet e-mail, cliquez http://r.srensbp.co=
+m/v0mb4ycf0r6b7f.html.=0AVous recevez ce mail car vous acceptez de recevoir=
+ les mails de Superencontre[ Rejoignez la plus grande communaut=C3=A9 de c=
+=C3=A9libataires sur internet ]( http://r.srensbp.com/15ctqulsk3mkr6b7d.htm=
+l )=0A[  ]( http://r.srensbp.com/15ctqulsk4f0r6b7d.html )  [ Accueil | Mon =
+compte ]( http://r.srensbp.com/15ctqulsk57gr6b7d.html )   [  ]( http://r.sr=
+ensbp.com/15ctqulsk5zwr6b7d.html )    [  ]( http://r.srensbp.com/3g2h8jtdr3=
+0r6b7d.html )  [ Coralie267 ]( http://r.srensbp.com/15ctqulsk6scr6b7d.html =
+)  [  ]( http://r.srensbp.com/15ctqulsk7ksr6b7d.html )     =C2=A0  [  N=
+=C3=A9e le 11 janvier 1989=0AC=C3=A9libataire=0A=C3=89tudiante=0AAime les s=
+orties en g=C3=A9n=C3=A9ral  ]( http://r.srensbp.com/15ctqulsk8d8r6b7d.html=
+ )   [  ]( http://r.srensbp.com/15ctqulskaqkr6b7d.html )  [  ]( http://r.sr=
+ensbp.com/15ctqulskbj0r6b7d.html )   =C2=A0  [  =C3=80 propos de  ]( http:/=
+/r.srensbp.com/15ctqulskcbgr6b7d.html )   [  Amis 275  ]( http://r.srensbp.=
+com/15ctqulskd3wr6b7d.html )  [  Photos  ]( http://r.srensbp.com/15ctqulskd=
+wcr6b7d.html )    =C2=A0Si vous souhaitez vous d=C3=A9sinscrire des mails d=
+e Superencontre, cliquez http://r.srensbp.com/v0mb4ycf0r6b7g.html
+
+
+---------?=_60965-6488001077539
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<body style=3D"margin:0; padding:0;"><div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous ne parvenez pas =C3=A0 lire cet e-mail, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.sren=
+sbp.com/v0mb4ycf0r6b7f.html">ici</a>.<br>
+Vous recevez ce mail car vous acceptez de recevoir les mails de Superencont=
+re</div><meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-=
+Type" />=0A<title></title>=0A<table align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" width=3D"600">=0A=09<tbody>=0A=09=09<tr>=0A=09=
+=09=09<td align=3D"center" bgcolor=3D"#3b5998" height=3D"37" style=3D"backg=
+round-color:#3b5998;padding:10px 0 10px 0;font-family:'lucida grande',tahom=
+a,verdana,arial,sans-serif;font-size:14px;font-weight:bold;text-align:cente=
+r" valign=3D"middle">=0A=09=09=09=09<a href=3D"http://r.srensbp.com/15ctqul=
+sk3mkr6b7d.html" style=3D"text-decoration:none;color:#fff" target=3D"_blank=
+"><font color=3D"#FFFFFF" face=3D"lucida grande,tahoma,verdana,arial,sans-s=
+erif" size=3D"3"><strong>Rejoignez la plus grande communaut&eacute; de c&ea=
+cute;libataires sur internet</strong></font></a></td>=0A=09=09</tr>=0A=09</=
+tbody>=0A</table>=0A<br />=0A<table align=3D"center" bgcolor=3D"#e7ebf2" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600">=0A=09<tbody>=
+=0A=09=09<tr>=0A=09=09=09<td bgcolor=3D"#3b5998">=0A=09=09=09=09<table alig=
+n=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"bord=
+er-bottom:solid 1px #1f4189" width=3D"100%">=0A=09=09=09=09=09<tbody>=0A=09=
+=09=09=09=09=09<tr>=0A=09=09=09=09=09=09=09<td align=3D"left" height=3D"37"=
+>=0A=09=09=09=09=09=09=09=09<a href=3D"http://r.srensbp.com/15ctqulsk4f0r6b=
+7d.html" style=3D"text-decoration:none" target=3D"_blank"><span style=3D"fo=
+nt-family:'lucida grande',tahoma,verdana,arial,sans-serif;font-size:12px;fo=
+nt-weight:bold;color:#d8dfea"><strong><img alt=3D"1 notification" border=3D=
+"0" height=3D"37" src=3D"http://img.srensbp.com/w1g1nx8r6b7e.png" style=3D"=
+display:block" width=3D"101" /></strong></span></a></td>=0A=09=09=09=09=09=
+=09=09<td align=3D"right" style=3D"padding-right:10px">=0A=09=09=09=09=09=
+=09=09=09<a href=3D"http://r.srensbp.com/15ctqulsk57gr6b7d.html" style=3D"t=
+ext-decoration:none" target=3D"_blank"><span style=3D"font-family:'lucida g=
+rande',tahoma,verdana,arial,sans-serif;font-size:11px;color:#d8dfea"><stron=
+g style=3D"font-weight:bold">Accueil</strong> <span style=3D"color:#526da4"=
+>|</span> <strong style=3D"font-weight:bold">Mon compte</strong></span></a>=
+</td>=0A=09=09=09=09=09=09</tr>=0A=09=09=09=09=09</tbody>=0A=09=09=09=09</t=
+able>=0A=09=09=09</td>=0A=09=09</tr>=0A=09=09<tr>=0A=09=09=09<td align=3D"c=
+enter" bgcolor=3D"#999999" height=3D"314" valign=3D"middle" width=3D"600">=
+=0A=09=09=09=09<a href=3D"http://r.srensbp.com/15ctqulsk5zwr6b7d.html" styl=
+e=3D"text-decoration:none;color:#ffffff;font-family:'lucida grande',tahoma,=
+verdana,arial,sans-serif;font-size:13px" target=3D"_blank"><img alt=3D"Cora=
+lie267 26 ans et c&eacute;libataire" border=3D"0" height=3D"314" src=3D"htt=
+p://img.srensbp.com/w1g1opor6b7e.jpg" style=3D"display:block" width=3D"600"=
+ /></a></td>=0A=09=09</tr>=0A=09=09<tr>=0A=09=09=09<td align=3D"center" val=
+ign=3D"top">=0A=09=09=09=09<table align=3D"center" bgcolor=3D"#ffffff" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border:solid 1px #c6c=
+fe1;border-top-width:0" width=3D"574">=0A=09=09=09=09=09<tbody>=0A=09=09=09=
+=09=09=09<tr>=0A=09=09=09=09=09=09=09<td>=0A=09=09=09=09=09=09=09=09<table =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+574">=0A=09=09=09=09=09=09=09=09=09<tbody>=0A=09=09=09=09=09=09=09=09=09=09=
+<tr>=0A=09=09=09=09=09=09=09=09=09=09=09<td align=3D"right" height=3D"60" v=
+align=3D"top" width=3D"155">=0A=09=09=09=09=09=09=09=09=09=09=09=09<a href=
+=3D"http://r.srensbp.com/3g2h8jtdr30r6b7d.html" style=3D"text-decoration:no=
+ne;color:#333333;font-family:'lucida grande',tahoma,verdana,arial,sans-seri=
+f;font-size:11px" target=3D"_blank"><img alt=3D"" border=3D"0" height=3D"43=
+" src=3D"http://img.srensbp.com/w1g1pi4r6b7e.jpg" style=3D"display:block" w=
+idth=3D"135" /></a></td>=0A=09=09=09=09=09=09=09=09=09=09=09<td align=3D"ce=
+nter">=0A=09=09=09=09=09=09=09=09=09=09=09=09<a href=3D"http://r.srensbp.co=
+m/15ctqulsk6scr6b7d.html" style=3D"text-decoration:none" target=3D"_blank">=
+<span style=3D"font-family:'lucida grande',tahoma,verdana,arial,sans-serif;=
+font-size:20px;color:#1c2a47"><strong style=3D"font-weight:bold">Coralie267=
+</strong></span></a></td>=0A=09=09=09=09=09=09=09=09=09=09=09<td align=3D"l=
+eft" width=3D"235">=0A=09=09=09=09=09=09=09=09=09=09=09=09<a href=3D"http:/=
+/r.srensbp.com/15ctqulsk7ksr6b7d.html" style=3D"text-decoration:none" targe=
+t=3D"_blank"><span style=3D"font-family:'lucida grande',tahoma,verdana,aria=
+l,sans-serif;font-size:12px;font-weight:bold;color:#333333"><strong><img al=
+t=3D"Accepter la demande d'ami" border=3D"0" height=3D"25" src=3D"http://im=
+g.srensbp.com/w1g1qakr6b7e.png" style=3D"display:block" width=3D"215" /></s=
+trong></span></a></td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=
+=09=09=09=09=09</tbody>=0A=09=09=09=09=09=09=09=09</table>=0A=09=09=09=09=
+=09=09=09</td>=0A=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09<tr>=0A=09=09=
+=09=09=09=09=09<td>=0A=09=09=09=09=09=09=09=09<table align=3D"center" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"574">=0A=09=09=09=09=
+=09=09=09=09=09<tbody>=0A=09=09=09=09=09=09=09=09=09=09<tr>=0A=09=09=09=09=
+=09=09=09=09=09=09=09<td align=3D"left" valign=3D"top" width=3D"307">=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09<table bgcolor=3D"#f1f3f8" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"border:solid 1px #e5e7eb;border-=
+left-width:0" width=3D"295">=0A=09=09=09=09=09=09=09=09=09=09=09=09=09<tbod=
+y>=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09<td height=3D"78" width=3D"20">=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09=09=09&nbsp;</td>=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09<td align=3D"left">=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09<a href=3D"http://r.srensbp.com/15ctqulsk8d8r6b7d.html" styl=
+e=3D"text-decoration:none" target=3D"_blank"><span style=3D"font-family:'lu=
+cida grande',tahoma,verdana,arial,sans-serif;font-size:11px;line-height:18p=
+x;font-weight:bold;color:#333333"><strong> N&eacute;e le 11 janvier 1989<br=
+ />=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<span style=3D"color:=
+#3b5998">C&eacute;libataire</span><br />=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09<span style=3D"color:#3b5998">&Eacute;tudiante</span><br =
+/>=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09Aime <span style=3D"co=
+lor:#3b5998">les sorties en g&eacute;n&eacute;ral</span> </strong></span></=
+a></td>=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=09</tbody>=0A=09=09=09=09=09=09=09=09=09=09=09=09</ta=
+ble>=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=
+=09=09<td width=3D"128">=0A=09=09=09=09=09=09=09=09=09=09=09=09<a href=3D"h=
+ttp://r.srensbp.com/15ctqulskaqkr6b7d.html" style=3D"text-decoration:none;c=
+olor:#333333;font-family:'lucida grande',tahoma,verdana,arial,sans-serif;fo=
+nt-size:11px" target=3D"_blank"><img alt=3D"Liste d'amis" border=3D"0" heig=
+ht=3D"78" src=3D"http://img.srensbp.com/w1g1r30r6b7e.jpg" style=3D"display:=
+block" width=3D"117" /></a></td>=0A=09=09=09=09=09=09=09=09=09=09=09<td>=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09<a href=3D"http://r.srensbp.com/15ctqul=
+skbj0r6b7d.html" style=3D"text-decoration:none;color:#333333;font-family:'l=
+ucida grande',tahoma,verdana,arial,sans-serif;font-size:11px" target=3D"_bl=
+ank"><img alt=3D"Albums photos" border=3D"0" height=3D"78" src=3D"http://im=
+g.srensbp.com/w1g1rvgr6b7e.jpg" style=3D"display:block" width=3D"117" /></a=
+></td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=09=
+=09<tr>=0A=09=09=09=09=09=09=09=09=09=09=09<td align=3D"left" height=3D"30"=
+ valign=3D"middle">=0A=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"295">=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09<tbody>=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09<t=
+r>=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td width=3D"20">=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09&nbsp;</td>=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09=09<td>=0A=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09<a href=3D"http://r.srensbp.com/15ctqulskcbgr6b7d.html" style=
+=3D"text-decoration:none" target=3D"_blank"><span style=3D"font-family:'luc=
+ida grande',tahoma,verdana,arial,sans-serif;font-size:11px;line-height:18px=
+;font-weight:bold;color:#d8dfea"><strong> <span style=3D"color:#3b5998">&Ag=
+rave; propos de</span> </strong></span></a></td>=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=09=09=09=09=09</tbody>=
+=0A=09=09=09=09=09=09=09=09=09=09=09=09</table>=0A=09=09=09=09=09=09=09=09=
+=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=09=09<td align=3D"left" height=
+=3D"30" valign=3D"middle">=0A=09=09=09=09=09=09=09=09=09=09=09=09<a href=3D=
+"http://r.srensbp.com/15ctqulskd3wr6b7d.html" style=3D"text-decoration:none=
+" target=3D"_blank"><span style=3D"font-family:'lucida grande',tahoma,verda=
+na,arial,sans-serif;font-size:11px;line-height:18px;font-weight:bold;color:=
+#333333"><strong> <span style=3D"color:#3b5998">Amis</span> 275 </strong></=
+span></a></td>=0A=09=09=09=09=09=09=09=09=09=09=09<td align=3D"left" height=
+=3D"30" valign=3D"middle">=0A=09=09=09=09=09=09=09=09=09=09=09=09<a href=3D=
+"http://r.srensbp.com/15ctqulskdwcr6b7d.html" style=3D"text-decoration:none=
+" target=3D"_blank"><span style=3D"font-family:'lucida grande',tahoma,verda=
+na,arial,sans-serif;font-size:11px;line-height:18px;font-weight:bold;color:=
+#333333"><strong> <span style=3D"color:#3b5998">Photos</span> </strong></sp=
+an></a></td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=
+=09=09</tbody>=0A=09=09=09=09=09=09=09=09</table>=0A=09=09=09=09=09=09=09</=
+td>=0A=09=09=09=09=09=09</tr>=0A=09=09=09=09=09</tbody>=0A=09=09=09=09</tab=
+le>=0A=09=09=09</td>=0A=09=09</tr>=0A=09=09<tr>=0A=09=09=09<td align=3D"cen=
+ter" height=3D"20" valign=3D"top">=0A=09=09=09=09&nbsp;</td>=0A=09=09</tr>=
+=0A=09</tbody>=0A</table>=0A<br />=0A<div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous souhaitez vous d=C3=A9sinscrire des mail=
+s de Superencontre, cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" h=
+ref=3D"http://r.srensbp.com/v0mb4ycf0r6b7g.html">ici</a></div><div><img wid=
+th=3D"1" height=3D"1" src=3D"http://r.srensbp.com/v0mb4ycf0r6b7h.jpg" /></d=
+iv></body>
+
+
+---------?=_60965-6488001077539--
+
