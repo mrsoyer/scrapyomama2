@@ -30,13 +30,13 @@ class SBshoot extends Controller
 
     public function parser()
     {
-      $file = scandir("../test");
+      $file = scandir(dirname(dirname(__FILE__))."/test");
       //print_r($file);
 
       shuffle($file);
       $mailParser = new ZBateson\MailMimeParser\MailMimeParser();
 
-      $handle = fopen('../test/'.$file[0], 'r');
+      $handle = fopen(dirname(dirname(__FILE__)).'/test/'.$file[0], 'r');
       $message = $mailParser->parse($handle);         // returns a ZBateson\MailMimeParser\Message
       fclose($handle);
 
