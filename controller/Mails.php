@@ -114,7 +114,7 @@ class Mails extends Controller
         smtpHtmlDebug => 0
       ])
       */
-     $useragent = $e['useragent'];
+     $useragent = $this->userAgent();
      $order = $e['order'];
      $from_name= $e['fromName'];
      $from_address=$e['fromAddress'];                                              $sender_line=__LINE__;
