@@ -26,7 +26,7 @@ class Proxy extends Model
     $result = array();
     $query = $collection->find(
 	    [
-        //'lastsend' =>['$lt' => strtotime("-1 hours",$_SERVER['REQUEST_TIME'])] ,
+        'lastsend' =>['$lt' => strtotime("-1 hours",$_SERVER['REQUEST_TIME'])] ,
         'error' => ['$lt' => 5],
         'end' => ['$gt' => $_SERVER['REQUEST_TIME']],
         'status' => 1
