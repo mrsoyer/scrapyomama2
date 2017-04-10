@@ -93,10 +93,11 @@ class SBshoot extends Controller
 
     public function shoot($e)
     {
+      echo"ok1";
         $kit = $this->parser();
         $dest = "c1491463354lll.herokuapp.com";
         $link = "https://".$dest."/Trck/link/";
-
+echo"ok2";
         $kit['html'] = $this->replace_a_href($kit['html'],$link);
         $kit['html'] = $this->replace_img_src($kit['html'],$dest);
         $shoot = $this->newsym('Mails');
@@ -119,6 +120,7 @@ class SBshoot extends Controller
           smtpDebug => 1,
           smtpHtmlDebug => 1
         ]);
+        echo"ok3";
         if($e[0]>0)
         {
           echo "\n n: ".$e[0]."\n";
