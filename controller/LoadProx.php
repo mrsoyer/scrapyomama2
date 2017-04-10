@@ -101,17 +101,23 @@ class LoadProx extends Controller
       $async = $this->newsym("Async");
       $listDom = $async->sync([['OvhApi','listDom',"",[],[_sync]]]);
       $listDom = $listDom[0]['request'];
+      shuffle($listDom);
       foreach($listDom as $k=>$v)
       {
 
         $domInfo = $async->sync([['OvhApi','domInfo',$v,[],[_sync]]]);
         $domInfo = $domInfo[0]['request'];
+        print_r($domInfo);
 
         if($domInfo['status'] == "ok" && $domInfo['offer'] != "redirect")
         {
           if($domInfo['offer'] == "MXPLAN 005")
             $nb = 5;
-          else
+          else if($domInfo['offer'] == "MXPLAN 025")
+            $nb = 25;
+          else if($domInfo['offer'] == "MXPLAN 100")
+            $nb = 100;
+          else if($domInfo['offer'] == "MXPLAN full")
             $nb = 1000;
 
           $listdom[] = [
@@ -122,6 +128,7 @@ class LoadProx extends Controller
       }
 
       print_r($listdom);
+      //die();
       foreach($listdom as $k=>$v)
       {
         $this->Dom->insertDom($v);

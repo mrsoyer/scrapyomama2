@@ -39,10 +39,10 @@ class OvhApi extends Controller
 //{"validationUrl":"https://eu.api.ovh.com/auth/?credentialToken=WjIIQwyWLVPpUWiCfjRnFSgBaByV8ILfJYWJHDjdXbGY15hYvPqCThnLjQWEZFKN","consumerKey":"pGUPP5VUGd2FNY7CpgYa9bp7YjmNdTw4","state":"pendingValidation"}%
 
     //  $test = new \Ovh\Api;
-      return new Api( 'A9KYnddIUDFVhnpZ',  // Application Key
-                      'kTKnO8QFbovvT4lO622V7aMdBCDjB4Un',  // Application Secret
+      return new Api( 'X7zY0mNV6CKxRzjd',  // Application Key
+                      'yJ0NvbJsAO5ALWsBtYJilQOR3zmsHo7O',  // Application Secret
                       'ovh-eu',      // Endpoint of API OVH Europe (List of available endpoints)
-                      '70FgfGdcttIcfYhH6dbCtu1NrKvDgqaQ'); // Consumer Key
+                      'hujfsBahOIAVsID1LBjbnFfvJsbHNheb'); // Consumer Key
 
 
     }
@@ -111,6 +111,6 @@ class OvhApi extends Controller
     {
       $l = str_split("1234567890azertyuiopqsdfghjklmwxcvbn");
       shuffle($l);
-      return $l[0].$l[1].$l[2].$l[3].$l[4]."-MailBox-".$l[5].$l[6].$l[7].$l[8].$l[9];
+      return $l[0].$l[1].$l[2].$l[3].$l[4]."mailbox".$l[5].$l[6].$l[7].$l[8].$l[9];
     }
 }

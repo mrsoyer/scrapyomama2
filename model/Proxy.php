@@ -26,7 +26,7 @@ class Proxy extends Model
     $result = array();
     $query = $collection->find(
 	    [
-        'lastsend' =>['$lt' => strtotime("-1 hours",$_SERVER['REQUEST_TIME'])] ,
+        //'lastsend' =>['$lt' => strtotime("-1 hours",$_SERVER['REQUEST_TIME'])] ,
         'error' => ['$lt' => 5],
         'end' => ['$gt' => $_SERVER['REQUEST_TIME']],
         'status' => 1
@@ -41,14 +41,18 @@ class Proxy extends Model
 		return($result);
 	}
 
-  public function addAccount($proxId,$smtp)
+  public function addAccount($proxId,$smtp,$cloud)
 	{
 		$collection = $this->db->Proxy;
 		$query = $collection->updateOne(
 			['_id' => new MongoDB\BSON\ObjectID($proxId)],
 			['$set' => [
 				'smtp' => $smtp,
-        'lastsend' => $_SERVER['REQUEST_TIME']
+        'lastsend' => $_SERVER['REQUEST_TIME'],
+        'cloudmailin' => $cloud['email'],
+        'link' => $cloud['link'],
+        'useragent' => $cloud['useragent'],
+        'order' => $cloud['order']
 				]
 			]
 		);

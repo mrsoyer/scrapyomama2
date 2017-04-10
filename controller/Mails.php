@@ -82,7 +82,9 @@ class Mails extends Controller
         'smtpHost' => "ssl0.ovh.net",
         'smtpPort' => 587,
         'smtpUser' => $e['smtpUser'],
-        'smtpPassword' => "tomylyjon"
+        'smtpPassword' => "tomylyjon",
+        'useragent' => $e['useragent'],
+        'order' => $e['order'],
       ]);
 
         return $shoot;
@@ -112,7 +114,8 @@ class Mails extends Controller
         smtpHtmlDebug => 0
       ])
       */
-     $useragent = $this->userAgent();
+     $useragent = $e['useragent'];
+     $order = $e['order'];
      $from_name= $e['fromName'];
      $from_address=$e['fromAddress'];                                              $sender_line=__LINE__;
      $to_name=$e['toName'];
@@ -187,8 +190,8 @@ class Mails extends Controller
      );
      $email_message->AddRelatedMultipart($related_parts);
 
-     $rand = [1,2,3,4,5,6,7];
-     shuffle($rand);
+     $rand = explode(",",$order);
+     //shuffle($rand);
 
 
 
