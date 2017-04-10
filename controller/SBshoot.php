@@ -103,10 +103,11 @@ echo"ok2";
         $kit['html'] = $this->replace_a_href($kit['html'],$link);
         $kit['html'] = $this->replace_img_src($kit['html'],$dest);
         $shoot = $this->newsym('Mails');
+        $ya = explode(":",$e[1]);
         echo"ok2";
         echo $shoot->smtp([
           fromName => $kit['name'],
-          fromAddress => $e[1],
+          fromAddress => $ya[0],
           toName => "thomas",
           toAdress => "garciathomas@gmail.com",
           subject => $e[0].$kit['subject'],
@@ -115,8 +116,8 @@ echo"ok2";
           proxy => "",
           smtpHost => "smtp.mail.yahoo.com",
           smtpPort => 465,
-          smtpUser => $e[1],
-          smtpPassword => $e[2],
+          smtpUser => $ya[0],
+          smtpPassword => $ya[1],
           ssl => 1,
           tls => 0,
           useragent => "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; InfoPath.2; MSOffice 14)",
