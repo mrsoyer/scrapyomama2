@@ -117,7 +117,7 @@ echo"ok2";
         echo"ok2";
         echo $shoot->smtp([
           fromName => $kit['name'],
-          fromAddress => "sweepurexci1985@yahoo.com",
+          fromAddress => "surojucar1981@yahoo.com",
           toName => "thomas",
           toAdress => "garciathomas@gmail.com",
           subject => $e[0].$kit['subject'],
@@ -126,8 +126,8 @@ echo"ok2";
           proxy => "",
           smtpHost => "smtp.mail.yahoo.com",
           smtpPort => 465,
-          smtpUser => "sweepurexci1985@yahoo.com",
-          smtpPassword => "OAX672LDtt",
+          smtpUser => "surojucar1981@yahoo.com",
+          smtpPassword => "rnGXInxoUJ",
           ssl => 1,
           tls => 0,
           useragent => "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; InfoPath.2; MSOffice 14)",
