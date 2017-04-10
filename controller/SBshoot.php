@@ -30,13 +30,13 @@ class SBshoot extends Controller
 
     public function parser()
     {
-      $file = scandir("test");
+      $file = scandir("../test");
       //print_r($file);
 
       shuffle($file);
       $mailParser = new ZBateson\MailMimeParser\MailMimeParser();
 
-      $handle = fopen('test/'.$file[0], 'r');
+      $handle = fopen('../test/'.$file[0], 'r');
       $message = $mailParser->parse($handle);         // returns a ZBateson\MailMimeParser\Message
       fclose($handle);
 
@@ -101,6 +101,7 @@ echo"ok2";
         $kit['html'] = $this->replace_a_href($kit['html'],$link);
         $kit['html'] = $this->replace_img_src($kit['html'],$dest);
         $shoot = $this->newsym('Mails');
+        echo"ok2";
         echo $shoot->smtp([
           fromName => $kit['name'],
           fromAddress => "sforroberle1972@yahoo.com",
