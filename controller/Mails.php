@@ -190,8 +190,13 @@ class Mails extends Controller
      );
      $email_message->AddRelatedMultipart($related_parts);
 
-     $rand = explode(",",$order);
-     //shuffle($rand);
+     if(isset($order))
+      $rand = explode(",",$order);
+     else {
+       $rand = [1,2,3,4,5,6,7];
+       shuffle($rand);
+     }
+
 
 
 

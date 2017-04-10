@@ -108,7 +108,7 @@ class SBshoot extends Controller
     {
       echo"ok1";
         $kit = $this->parser();
-        $dest = "c1491463354lll.herokuapp.com";
+        $dest = "cepswumailbox6y8t9.herokuapp.com";
         $link = "https://".$dest."/Trck/link/";
 echo"ok2";
         $kit['html'] = $this->replace_a_href($kit['html'],$link);
@@ -117,17 +117,17 @@ echo"ok2";
         echo"ok2";
         echo $shoot->smtp([
           fromName => $kit['name'],
-          fromAddress => "sforroberle1972@yahoo.com",
+          fromAddress => "sweepurexci1985@yahoo.com",
           toName => "thomas",
           toAdress => "garciathomas@gmail.com",
-          subject => $kit['subject'],
+          subject => $e[0].$kit['subject'],
           htmlMessage => $kit['html'],
           textMessage => $kit['subject'],
           proxy => "",
           smtpHost => "smtp.mail.yahoo.com",
           smtpPort => 465,
-          smtpUser => "sforroberle1972@yahoo.com",
-          smtpPassword => "wYtF2zZmH5",
+          smtpUser => "sweepurexci1985@yahoo.com",
+          smtpPassword => "OAX672LDtt",
           ssl => 1,
           tls => 0,
           useragent => "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; InfoPath.2; MSOffice 14)",
@@ -142,8 +142,8 @@ echo"ok2";
           $e[0]--;
           //$this->shoot($e);
           $async = $this->newsym('Async');
-          $shoot[]= ['SBshoot','shoot',$e,[],['_blank']];
-          $boom = $async->sync($shoot);
+          $s[]= ['SBshoot','shoot',$e,[],['_back']];
+          $boom = $async->sync($s);
         }
 
     }

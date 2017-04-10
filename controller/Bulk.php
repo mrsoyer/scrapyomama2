@@ -307,6 +307,8 @@ class Bulk extends Controller
       return($shoot);
     }
 
+    
+
     public function accountSMTP($Domain,$type)
     {
       if($type == 1)
