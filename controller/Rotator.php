@@ -12,12 +12,13 @@ class Rotator extends Controller
     {
       print_r($sym);
       echo "ok";
-      $this->loadModel('Smtp');
+      $this->loadModel('Smtpm');
       echo "ok";
-      die();
+
       print_r($this->rotateIp($sym));
+      die();
       echo "ok";
-      $smtp = $this->Smtp->findSmtp();
+      $smtp = $this->Smtpm->findSmtp();
       $sym[1]=200;
       $sym[2]=$smtp['mail'].":".$smtp['pass'];
       $sym[3]='_back';

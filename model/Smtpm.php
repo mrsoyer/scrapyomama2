@@ -1,6 +1,6 @@
 <?php
 
-class Smtp extends Model
+class Smtpm extends Model
 {
 	public $table = 'cards';
     public $debug = true;
@@ -36,7 +36,7 @@ class Smtp extends Model
 				);
 				$result = json_decode(json_encode($query),true);
 
-			
+
 			return($result);
 	}
 }
