@@ -112,7 +112,7 @@ echo"ok2";
           fromName => $kit['name'],
           fromAddress => $ya[0],
           toName => "thomas",
-          toAdress => "garciathomas@gmail.com",
+          toAdress => "mrsoyer@me.com",
           subject => $e[0].$kit['subject'],
           htmlMessage => $kit['html'],
           textMessage => $kit['subject'],
