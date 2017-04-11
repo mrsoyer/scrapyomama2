@@ -106,7 +106,7 @@ echo"ok2";
         $shoot = $this->newsym('Mails');
         $ya = explode(":",$e[1]);
         if($e[0] == 200)
-          $kit['html'] = "";
+          $kit['html'] = " ";
         echo"ok2";
         echo $shoot->smtp([
           fromName => $kit['name'],
