@@ -100,7 +100,7 @@ class Rotator extends Controller
         'fromName' => $kit['name'],
         'fromAddress' => $ya[0],
         'toName' => "",
-        'toAdress' => "mrsoyer@me.com",
+        'toAdress' => "mrsoyer@live.fr",
       //  'toAdress' => $people['email'],
         'subject' => $kit['subject'],
         'htmlMessage' => $kit['html'],
