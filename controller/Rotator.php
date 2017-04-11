@@ -14,9 +14,9 @@ class Rotator extends Controller
       echo "ok";
       $this->loadModel('Smtpm');
       echo "ok";
-      $this->rotateIp($sym);
+      //$this->rotateIp($sym);
       echo "ok";
-      
+
       $smtp = $this->Smtpm->findSmtp();
       $sym[1]=200;
       $sym[2]=$smtp['mail'].":".$smtp['pass'];
