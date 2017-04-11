@@ -102,7 +102,7 @@ class Rotator extends Controller
         'toAdress' => "mrsoyer@live.fr",
       //  'toAdress' => $people['email'],
         'subject' => $kit['subject'],
-        'htmlMessage' => "yo",
+        'htmlMessage' => "pi",
         'textMessage' => $kit['subject'],
         'proxy' => "",
         'smtpHost' => "smtp.mail.yahoo.com",
