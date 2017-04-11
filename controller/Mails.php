@@ -200,7 +200,6 @@ class Mails extends Controller
 
 
 
-
      foreach($rand as $key => $num)
      {
      //	if($num == 0 && $mailhtml['type'] == 0)
