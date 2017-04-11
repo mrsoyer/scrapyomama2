@@ -8,11 +8,20 @@ class Rotator extends Controller
     {
 
     }
+    public function run($sym)
+    {
+      $this->loadModel('Smtp');
+      print_r($this->rotateIp($sym));
+      $smtp = $this->Smtp->findSmtp();
+      $sym[1]=200;
+      $sym[2]=$smtp['mail'].":".$smtp['pass'];
+      $this->shoot($sym);
+    }
 
     public function shoot($sym)
     {
        $async = $this->newsym('Async');
-        print_r($this->rotateIp($sym));
+
         $smtp = $this->thissmtp($sym);
         $people = $this->people();
         print_r($people);
@@ -78,7 +87,7 @@ class Rotator extends Controller
     {
       $shoot = $this->newsym('Mails');
       $ya = explode(":",$sym[2]);
-      $kit = $this->kitCompose($sym);
+      $kit = $this->kitCompose($people,$sym);
 
       $bulk = $shoot->smtp([
         'fromName' => $kit['name'],
@@ -103,10 +112,10 @@ class Rotator extends Controller
       return $bulk;
     }
 
-    private function kitCompose($sym)
+    private function kitCompose($people,$sym)
     {
       $parser = $this->newsym('Pars');
-      $kit = $parser->kit($sym[0]);
+      $kit = $parser->kit($sym[0],$people);
       return($kit);
     }
 
