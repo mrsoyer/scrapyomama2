@@ -8,8 +8,9 @@ class Rotator extends Controller
     {
       echo "ok";
     }
-    public function run($sym)
+    public function run($e)
     {
+      $sym = $e;
       echo "ok";
       $this->loadModel('Smtp');
       echo "ok";
