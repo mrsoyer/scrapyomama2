@@ -6,10 +6,11 @@ class Rotator extends Controller
 
     public function index($e)
     {
-
+      echo "ok";
     }
     public function run($sym)
     {
+      echo "ok";
       $this->loadModel('Smtp');
       echo "ok";
       print_r($this->rotateIp($sym));
