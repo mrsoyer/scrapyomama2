@@ -27,7 +27,9 @@ class Bulk extends Controller
 // selection domaine
 
     ';
-
+    echo shell_exec('curl -n -X DELETE https://api.heroku.com/apps/scrapyomama/dynos \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/vnd.heroku+json; version=3"');
     print_r($_SERVER['SERVER_ADDR']);
     }
     public function run($e)
