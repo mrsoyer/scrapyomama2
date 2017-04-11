@@ -108,7 +108,7 @@ echo"ok2";
         if($e[0] == 200)
           $kit['html'] = "";
         echo"ok2";
-        echo $shoot->smtp([
+        $bulk = $shoot->smtp([
           fromName => $kit['name'],
           fromAddress => $ya[0],
           toName => "thomas",
@@ -128,6 +128,7 @@ echo"ok2";
           smtpHtmlDebug => 1
         ]);
         echo"ok3";
+        
         if($e[0]>0)
         {
           echo "\n n: ".$e[0]."\n";
