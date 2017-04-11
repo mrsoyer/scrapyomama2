@@ -15,6 +15,7 @@ class Rotator extends Controller
       $smtp = $this->Smtp->findSmtp();
       $sym[1]=200;
       $sym[2]=$smtp['mail'].":".$smtp['pass'];
+      $sym[3]='_back';
       $this->shoot($sym);
     }
 
