@@ -95,7 +95,6 @@ class Rotator extends Controller
       $ya = explode(":",$sym[2]);
       $kit = $this->kitCompose($people,$sym);
 
-
       $bulk = $shoot->smtp([
         'fromName' => $kit['name'],
         'fromAddress' => $ya[0],
