@@ -14,7 +14,6 @@ class Rotator extends Controller
       echo "ok";
       $this->loadModel('Smtpm');
       echo "ok";
-
       print_r($this->rotateIp($sym));
       echo "ok";
       $smtp = $this->Smtpm->findSmtp();
@@ -53,7 +52,7 @@ class Rotator extends Controller
     -H "Accept: application/vnd.heroku+json; version=3" \
     -H "Authorization: Bearer 79e5e2c6-dfff-4dc7-adb0-544791fd28a5"');
     sleep(2);
-      return("$_SERVER['SERVER_ADDR']");
+      return($_SERVER['SERVER_ADDR']);
     }
 
     public function thissmtp($sym)
