@@ -8,7 +8,16 @@ class SBshoot extends Controller
     public function index($e)
     {
 
-    echo shell_exec("git ");
+    $app = shell_exec("heroku apps");
+    $app = explode("\n",$app);
+    print_r($app);
+    foreach($app as $k=>$v)
+    {
+      if($v != "scrapyomama")
+      {
+        echo shell_exec('heroku apps:destroy --app '.$v.' --confirm '.$v);
+      }
+    }
 
     }
 
@@ -128,7 +137,7 @@ echo"ok2";
           smtpHtmlDebug => 1
         ]);
         echo"ok3";
-        
+
         if($e[0]>0)
         {
           echo "\n n: ".$e[0]."\n";
