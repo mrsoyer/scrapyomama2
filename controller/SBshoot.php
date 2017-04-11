@@ -13,6 +13,7 @@ class SBshoot extends Controller
     print_r($app);
     foreach($app as $k=>$v)
     {
+      
       if($v != "scrapyomama")
       {
         echo shell_exec('heroku apps:destroy --app '.$v.' --confirm '.$v);
