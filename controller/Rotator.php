@@ -52,7 +52,8 @@ class Rotator extends Controller
     -H "Content-Type: application/json" \
     -H "Accept: application/vnd.heroku+json; version=3" \
     -H "Authorization: Bearer 79e5e2c6-dfff-4dc7-adb0-544791fd28a5"');
-      return("");
+    sleep(2);
+      return("$_SERVER['SERVER_ADDR']");
     }
 
     public function thissmtp($sym)
