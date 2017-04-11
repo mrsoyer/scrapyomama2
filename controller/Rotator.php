@@ -15,6 +15,7 @@ class Rotator extends Controller
         print_r($this->rotateIp($sym));
         $smtp = $this->thissmtp($sym);
         $people = $this->people();
+        print_r($people);
         if(!isset($people['_id']['$oid'])) die();
         $shoot = $this->sendPeople($people,$sym);
         if($shoot != "ok")
@@ -27,7 +28,7 @@ class Rotator extends Controller
 
         $sym[1]--;
         if($sym[1]>0 && $sym['e'] < 3)
-          $boom = $async->sync([['SBshoot','shoot',$e,[],['_back']]]);
+          $boom = $async->sync([['Rotator','shoot',$sym,[],[$sym[3]]]]);
     }
 
     public function rotateIp($sym)
@@ -83,9 +84,9 @@ class Rotator extends Controller
         'fromName' => $kit['name'],
         'fromAddress' => $ya[0],
         'toName' => "",
-      //  'toAdress' => "mrsoyer@me.com",
-        'toAdress' => $people['email'],
-        'subject' => $e[0].$kit['subject'],
+        'toAdress' => "mrsoyer@me.com",
+      //  'toAdress' => $people['email'],
+        'subject' => $kit['subject'],
         'htmlMessage' => $kit['html'],
         'textMessage' => $kit['subject'],
         'proxy' => "",
@@ -104,8 +105,42 @@ class Rotator extends Controller
 
     private function kitCompose($sym)
     {
-      $parser = $this->newsym('Parser');
+      $parser = $this->newsym('Pars');
       $kit = $parser->kit($sym[0]);
       return($kit);
+    }
+
+    private function updatePeople($people)
+    {
+      $this->loadModel('People');
+      $note = $this->calculNote($people);
+      $this->People->updatePeople($people['_id']['$oid'],$note);
+    }
+
+    private function calculNote($people)
+    {
+      if(!isset($people['BackNote']))
+      {
+        $note['BackNote'] = $people['note']-1;
+        $note['note'] = $people['note'];
+      }
+      else{
+        if($people['BackNote'] == 0)
+        {
+          $note['BackNote'] = $people['note']-1;
+          $note['note'] = $people['note']-1;
+        }
+        else {
+          $note['BackNote'] = $people['BackNote']-1;
+          $note['note'] = $people['note'];
+        }
+      }
+        return($note);
+    }
+
+    private function nextSend($note)
+    {
+        $day = 6-$note;
+        return(strtotime("+".$day." day", $_SERVER['REQUEST_TIME']));
     }
 }

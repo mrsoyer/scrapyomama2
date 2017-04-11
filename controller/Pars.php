@@ -1,7 +1,7 @@
 <?php
 use MimeMailParser\Parser;
 use MimeMailParser\Attachment;
-class Parser extends Controller
+class Pars extends Controller
 {
     public $name = 'cards';
 
@@ -12,7 +12,7 @@ class Parser extends Controller
 
 
 
-    public function parser()
+    public function parse()
     {
       $file = scandir(dirname(dirname(__FILE__))."/test");
 
@@ -25,18 +25,18 @@ class Parser extends Controller
       try {
         if($message->getHeader('from')->getPersonName() == "Superencontre")
         {
-          return $this->parser();
+          return $this->parse();
           die();
         }
       }
       catch (Exception $e) {
-        return $this->parser();
+        return $this->parse();
       }
 
       try {
         $name = $message->getHeader('from')->getPersonName();
       } catch (Exception $e) {
-        return $this->parser();
+        return $this->parse();
       }
 
       $subject =  $message->getHeaderValue('subject');       // The email's subject
@@ -84,7 +84,7 @@ class Parser extends Controller
     public function kit($app)
     {
 
-        $kit = $this->parser();
+        $kit = $this->parse();
         $dest = $app.".herokuapp.com";
         $link = "https://".$dest."/Trck/link/";
 echo"ok2";
