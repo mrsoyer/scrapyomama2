@@ -101,7 +101,7 @@ class Rotator extends Controller
         'toName' => "",
         'toAdress' => "mrsoyer@live.fr",
       //  'toAdress' => $people['email'],
-        'subject' => $kit['subject'],
+        'subject' => "yop",
         'htmlMessage' => "pi",
         'textMessage' => $kit['subject'],
         'proxy' => "",
