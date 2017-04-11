@@ -16,7 +16,6 @@ class Rotator extends Controller
       echo "ok";
 
       print_r($this->rotateIp($sym));
-      die();
       echo "ok";
       $smtp = $this->Smtpm->findSmtp();
       $sym[1]=200;
