@@ -27,6 +27,8 @@ class Bulk extends Controller
 // selection domaine
 
     ';
+
+    print_r($_SERVER['SERVER_ADDR']);
     }
     public function run($e)
     {
@@ -307,7 +309,7 @@ class Bulk extends Controller
       return($shoot);
     }
 
-    
+
 
     public function accountSMTP($Domain,$type)
     {

@@ -1,4 +1,0 @@
-textnow
-=======
-
-textnow reversing
