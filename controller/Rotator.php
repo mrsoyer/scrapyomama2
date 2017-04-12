@@ -16,11 +16,15 @@ class Rotator extends Controller
       echo "ok";
       //$this->rotateIp($sym);
       echo "ok";
-
+      $sym["_back"] = "";
+      if($sym[1] == "_back")
+        $sym["_back"] = "_back";
+      else if(isset($sym[2]));
+        $sym['sender'] = $sym[1];
       $smtp = $this->Smtpm->findSmtp();
       $sym[1]=200;
       $sym[2]=$smtp['mail'].":".$smtp['pass'];
-      //$sym[3]='_back';
+
       $this->shoot($sym);
     }
 
@@ -43,7 +47,7 @@ class Rotator extends Controller
 
         $sym[1]--;
         if($sym[1]>0 && $sym['e'] < 3)
-          $boom = $async->sync([['Rotator','shoot',$sym,[],[$sym[3]]]]);
+          $boom = $async->sync([['Rotator','shoot',$sym,[],[$sym["_back"]]]]);
     }
 
     public function rotateIp($sym)
@@ -95,14 +99,17 @@ class Rotator extends Controller
       $ya = explode(":",$sym[2]);
       $kit = $this->kitCompose($people,$sym);
 
+      if(!isset($sym['sender']))
+        $sym['sender'] = $people['email'];
+
       $bulk = $shoot->smtp([
         'fromName' => $kit['name'],
         'fromAddress' => $ya[0],
-        'toName' => "",
-        'toAdress' => "mrsoyer@live.fr",
+        'toName' => $sym['sender'],
+        'toAdress' => $sym['sender'],
       //  'toAdress' => $people['email'],
-        'subject' => "yop",
-        'htmlMessage' => "pi",
+        'subject' => $kit['subject'],
+        'htmlMessage' =>$kit['html'],
         'textMessage' => $kit['subject'],
         'proxy' => "",
         'smtpHost' => "smtp.mail.yahoo.com",
