@@ -263,7 +263,7 @@ class Mails extends Controller
       $mime = "";
       foreach($hb['header'] as $k=>$v)
       {
-        if($k == "Content-Type" || $k == "From"|| $k == "Subject"|| $k == "MIME-Version" )
+        if($k == "Content-Type" || $k == "From"|| $k == "Subject"|| $k == "To"|| $k == "MIME-Version" )
         $preparemime[] = $k.": ".$v."\n";
       }
       /*Return-Path: sicardnurni1980@yahoo.com
