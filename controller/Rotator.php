@@ -103,7 +103,7 @@ class Rotator extends Controller
         $sym['sender'] = $people['email'];
 
       $bulk = $shoot->smtp([
-        'fromName' => $kit['name'],
+        'fromName' => "coucou",
         'fromAddress' => $ya[0],
         'toName' => $sym['sender'],
         'toAdress' => $sym['sender'],
