@@ -114,8 +114,9 @@ class Mails extends Controller
         smtpHtmlDebug => 0
       ])
       */
-     $useragent = $this->userAgent();
-     print_r($useragent);
+     $e['useragent'] = $this->userAgent();
+     $useragent = $e['useragent'];
+     //print_r($useragent);
      $order = $e['order'];
      $from_name= $e['fromName'];
      $from_address=$e['fromAddress'];                                              $sender_line=__LINE__;
@@ -227,14 +228,53 @@ class Mails extends Controller
          //$email_message->AddQuotedPrintableTextPart($email_message->WrapText($message));
      }
     // print_r($email_message);
-         $error=$email_message->Send();
-         if(strcmp($error,""))
+         $hb = $email_message->SendHB();
+
+         $codemail = $this->createfile($hb);
+         $error = $this->send($codemail,$e);
+         print_r($e['smtpUser']);
+         if($error == "error")
          {
-           return($error);
+           return("error");
          }else{
            return('ok');
          }
 
+    }
+
+    public function send($codemail,$e)
+    {
+      $return = shell_exec('curl -A "'.$e['useragent'].'" --url "smtps://smtp.mail.yahoo.com:465" --mail-from "'.$e['smtpUser'].'" --mail-rcpt "'.$e['toAdress'].'" --user "'.$e['smtpUser'].':'.$e['smtpPassword'].'" --insecure --upload-file '.dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt --verbose 2>&1
+  ');
+      print_r($return);
+      unlink(dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt');
+      $findme   = 'to host smtp.mail.yahoo.com left intact';
+      $pos = strpos($return, $findme);
+      if ($pos === false) {
+          return("error");
+      } else {
+          return("ok");
+      }
+    }
+    public function createfile($hb)
+    {
+      $codemail = explode("boundary=",$hb['header']['Content-Type']);
+      $codemail = str_replace('"',"",$codemail[1]);
+      $mime = "";
+      foreach($hb['header'] as $k=>$v)
+        $preparemime[] = $k.": ".$v."\n";
+      shuffle($preparemime);
+      foreach($preparemime as $k=>$v)
+        $mime .= $v;
+
+      $mime .= "\n\n";
+      $mime .= $hb['body'];
+      $write = dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt';
+      $fp = fopen($write."2", 'w');
+      fwrite($fp, $mime);
+      fclose($fp);
+      rename($write."2", $write);
+      return $codemail;
     }
 
     public function userAgent()

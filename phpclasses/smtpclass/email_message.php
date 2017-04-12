@@ -3376,6 +3376,17 @@ class email_message_class
 		print_r($body);
 		return($error);
 	}
+	Function SendHB()
+	{
+		if(strlen($this->error))
+			return($this->error);
+		if(strlen($error=$this->GetHeadersAndBody($headers, $body)))
+			return($error);
+		$return['header'] = $headers;
+		$return['body'] = $body;
+
+		return($return);
+	}
 /*
 {metadocument}
 		</do>

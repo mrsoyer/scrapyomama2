@@ -24,7 +24,7 @@ class Rotator extends Controller
       $smtp = $this->Smtpm->findSmtp();
       $sym[1]=200;
       $sym[2]=$smtp['mail'].":".$smtp['pass'];
-      $sym[2] = "sicardnurni1980@yahoo.com:vZvqWgrjbe";
+      //$sym[2] = "sicardnurni1980@yahoo.com:vZvqWgrjbe";
 
       $this->shoot($sym);
     }
@@ -35,9 +35,10 @@ class Rotator extends Controller
 
         $smtp = $this->thissmtp($sym);
         $people = $this->people();
-        print_r($people);
+        //print_r($people);
         if(!isset($people['_id']['$oid'])) die();
         $shoot = $this->sendPeople($people,$sym);
+        print_r($shoot);
         if($shoot != "ok")
         {
           $sym['e']++;
