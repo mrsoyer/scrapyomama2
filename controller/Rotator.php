@@ -20,7 +20,7 @@ class Rotator extends Controller
       if($sym[1] == "_back")
         $sym["_back"] = "_back";
       else if(isset($sym[2]));
-        $sym['sender'] = $sym[1];
+        $sym['sender'] = $sym[2];
       $smtp = $this->Smtpm->findSmtp();
       $sym[1]=200;
       $sym[2]=$smtp['mail'].":".$smtp['pass'];
