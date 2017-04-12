@@ -263,10 +263,10 @@ class Mails extends Controller
       $mime = "";
       foreach($hb['header'] as $k=>$v)
       {
-        //if($k == "Content-Type" || $k == "From"|| $k == "Subject"|| $k == "To"|| $k == "MIME-Version" )
+        if( $k == "From"|| $k == "Subject"|| $k == "To" )
         $preparemime[] = $k.": ".$v."\r\n";
       }
-      //$preparemime[] = "X-Mailer: Benchmail Agent \r\n";
+      /*//$preparemime[] = "X-Mailer: Benchmail Agent \r\n";
       $preparemime[] .= "Message-ID: <" . md5(uniqid(time())) . "@yahoo.com>\n";
       //$headers .= "Date: ".date("D, d M Y H:i:s") . " UT\n"; //a valid header for comparison
       $preparemime[] .= "Date: ".date("r")."\r\n"; // intentionally bogus email header
@@ -288,7 +288,7 @@ class Mails extends Controller
 
 
       $mime .= "\n\n";
-      $mime .= $hb['body'];
+      $mime .= "body";
       $write = dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt';
       $fp = fopen($write."2", 'w');
       fwrite($fp, $mime);
