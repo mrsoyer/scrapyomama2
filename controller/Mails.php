@@ -245,7 +245,7 @@ class Mails extends Controller
     public function send($codemail,$e)
     {
       //-A "'.$e['useragent'].'"
-      $return = shell_exec('curl -A "'.$e['useragent'].'" --url "smtps://smtp.mail.yahoo.com:465" --mail-from "'.$e['smtpUser'].'" --mail-rcpt "'.$e['toAdress'].'" --user "'.$e['smtpUser'].':'.$e['smtpPassword'].'" --insecure --upload-file '.dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt --verbose 2>&1
+      $return = shell_exec('curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/536.30.1 (KHTML, like Gecko) Version/6.0.5 Safari/536.30.1" --url "smtps://smtp.mail.yahoo.com:465" --mail-from "'.$e['smtpUser'].'" --mail-rcpt "'.$e['toAdress'].'" --user "'.$e['smtpUser'].':'.$e['smtpPassword'].'" --insecure --upload-file '.dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt --verbose 2>&1
   ');
       print_r($return);
       unlink(dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt');
