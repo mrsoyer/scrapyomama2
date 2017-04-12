@@ -3362,8 +3362,6 @@ class email_message_class
 */
 	Function Send()
 	{
-		print_r($body);
-		print_r("rrr");
 		if(strlen($this->error))
 			return($this->error);
 		if(strlen($error=$this->GetHeadersAndBody($headers, $body)))
@@ -3374,6 +3372,8 @@ class email_message_class
 		&& strlen($error=$this->SendMessageBody($body))==0)
 			$error=$this->EndSendingMessage();
 		$this->StopSendingMessage();
+		print_r($headers);
+		print_r($body);
 		return($error);
 	}
 /*

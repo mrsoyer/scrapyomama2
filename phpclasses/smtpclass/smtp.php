@@ -893,10 +893,17 @@ class smtp_class
 				$ip = 'ssl://'.($proxy_host = $this->http_proxy_host_name);
 			else
 				$proxy_host = $ip;
-			if($this->debug)
+			if($this->debug){
 				$this->OutputDebug("Connecting to HTTP proxy server \"".$ip."\" port ".$this->http_proxy_host_port."...");
+				print_r("--");
+				print_r($ip);
+				print_r("--");
+				//print_r(fsockopen($ip, $this->http_proxy_host_port, $errno, $error, $this->timeout));
+
+			}
 			if(($this->connection=($this->timeout ? @fsockopen($ip, $this->http_proxy_host_port, $errno, $error, $this->timeout) : @fsockopen($ip, $this->http_proxy_host_port, $errno, $error))))
 			{
+				print_r("bou2");
 				if($this->debug)
 					$this->OutputDebug('Connected to HTTP proxy host "'.$this->http_proxy_host_name.'".');
 				$timeout=($this->data_timeout ? $this->data_timeout : $this->timeout);
@@ -906,9 +913,10 @@ class smtp_class
 					socket_set_timeout($this->connection,$timeout,0);
 				if($this->PutLine('CONNECT '.$domain.':'.$port.' HTTP/1.0')
 				&& $this->PutLine('User-Agent: '.$this->user_agent)
-				&& $this->PutLine("Proxy-Authorization: Basic ".base64_encode("mrsoyer:tomylyjon"))
+				&& $this->PutLine("Proxy-Authorization: Basic ".base64_encode("thomasgarc:tomylyjon"))
 				&& $this->PutLine(""))
 				{
+					print_r("bou");
 					if(GetType($response = $this->GetLine()) == 'string')
 					{
 						if(!preg_match('/^http\\/[0-9]+\\.[0-9]+[ \t]+([0-9]+)[ \t]*(.*)$/i', $response,$matches))
@@ -946,10 +954,20 @@ class smtp_class
 				$ip = $host = $domain;
 			else
 				$host = $ip;
-			if($this->debug)
+			if($this->debug){
 				$this->OutputDebug("Connecting to SMTP server \"".$host."\" port ".$port."...");
+				print_r('yo');
+			}
+
 			if(($this->connection=($this->timeout ? @fsockopen($ip, $port, $errno, $error, $this->timeout) : @fsockopen($ip, $port, $errno, $error))))
+			{
+				//$this->PutLine('CONNECT '.$domain.':'.$port.' HTTP/1.0');
+				//$this->PutLine('User-Agent: '.$this->user_agent);
+				//$this->PutLine("");
+				//echo"hh";
 				return("");
+			}
+
 		}
 		$error=($this->timeout ? strval($error) : "??");
 		switch($error)

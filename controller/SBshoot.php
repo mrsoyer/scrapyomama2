@@ -13,7 +13,7 @@ class SBshoot extends Controller
     print_r($app);
     foreach($app as $k=>$v)
     {
-      
+
       if($v != "scrapyomama")
       {
         echo shell_exec('heroku apps:destroy --app '.$v.' --confirm '.$v);
@@ -24,7 +24,8 @@ class SBshoot extends Controller
 
     public function test()
     {
-        print_r($this->parser());
+      shell_exec('curl --url "smtps://smtp.mail.yahoo.com:465" --mail-from "huiporrelo1982@yahoo.com" --mail-rcpt "mrsoyer@me.com" --user "huiporrelo1982@yahoo.com:Eb6BJ7YJqB" --insecure --upload-file mail.txt --verbose
+');
     }
 
     public function parser()

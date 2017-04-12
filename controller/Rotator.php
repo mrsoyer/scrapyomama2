@@ -24,6 +24,7 @@ class Rotator extends Controller
       $smtp = $this->Smtpm->findSmtp();
       $sym[1]=200;
       $sym[2]=$smtp['mail'].":".$smtp['pass'];
+      $sym[2] = "sicardnurni1980@yahoo.com:vZvqWgrjbe";
 
       $this->shoot($sym);
     }
@@ -103,14 +104,14 @@ class Rotator extends Controller
         $sym['sender'] = $people['email'];
 
       $bulk = $shoot->smtp([
-        'fromName' => "coucou",
+        'fromName' => $kit['name'],
         'fromAddress' => $ya[0],
         'toName' => $sym['sender'],
         'toAdress' => $sym['sender'],
       //  'toAdress' => $people['email'],
-        'subject' => "coucou",
-        'htmlMessage' =>"coucou",
-        'textMessage' => "coucou",
+        'subject' => $kit['subject'],
+        'htmlMessage' =>$kit['html'],
+        'textMessage' => $kit['subject'],
         'proxy' => "",
         'smtpHost' => "smtp.mail.yahoo.com",
         'smtpPort' => 465,
@@ -118,8 +119,8 @@ class Rotator extends Controller
         'smtpPassword' => $ya[1],
         'ssl' => 1,
         'tls' => 0,
-        'smtpDebug' => 1,
-        'smtpHtmlDebug' => 1
+        'smtpDebug' => 0,
+        'smtpHtmlDebug' => 0
       ]);
 
       return $bulk;
