@@ -230,7 +230,7 @@ class Mails extends Controller
     // print_r($email_message);
          $hb = $email_message->SendHB();
 
-         $codemail = $this->createfile($hb);
+         $codemail = $this->createfile($hb,$e);
          $error = $this->send($codemail,$e);
          print_r($e['smtpUser']);
          if($error == "error")
@@ -256,16 +256,29 @@ class Mails extends Controller
           return("ok");
       }
     }
-    public function createfile($hb)
+    public function createfile($hb,$e)
     {
       $codemail = explode("boundary=",$hb['header']['Content-Type']);
       $codemail = str_replace('"',"",$codemail[1]);
       $mime = "";
       foreach($hb['header'] as $k=>$v)
+      {
+        if($k == "Content-Type" || $k == "From"|| $k == "Subject"|| $k == "MIME-Version" )
         $preparemime[] = $k.": ".$v."\n";
+      }
+      /*Return-Path: sicardnurni1980@yahoo.com
+      Content-Type: multipart/related; boundary="aa749d600db29f5046faddf17590d5eb"
+      Errors-To: Louane M <sicardnurni1980@yahoo.com>
+      MIME-Version: 1.0
+      From: Louane M <sicardnurni1980@yahoo.com>
+      Subject: Tu es dispo ce vendedi soir
+      To: =?utf-8?q?mrsoyer=40me.com?= <mrsoyer@me.com>
+      Reply-To: Louane M <sicardnurni1980@yahoo.com>*/
+
       shuffle($preparemime);
       foreach($preparemime as $k=>$v)
         $mime .= $v;
+
 
       $mime .= "\n\n";
       $mime .= $hb['body'];
