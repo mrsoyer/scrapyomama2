@@ -24,7 +24,7 @@ class SBshoot extends Controller
 
     public function test()
     {
-      shell_exec('curl --url "smtps://smtp.mail.yahoo.com:465" --mail-from "huiporrelo1982@yahoo.com" --mail-rcpt "mrsoyer@me.com" --user "huiporrelo1982@yahoo.com:Eb6BJ7YJqB" --insecure --upload-file mail.txt --verbose
+    echo  shell_exec('curl --url "smtps://smtp.mail.yahoo.com:465" --mail-from "huiporrelo1982@yahoo.com" --mail-rcpt "mrsoyer@me.com" --user "huiporrelo1982@yahoo.com:Eb6BJ7YJqB" --insecure --upload-file mail.txt --verbose
 ');
     }
 
