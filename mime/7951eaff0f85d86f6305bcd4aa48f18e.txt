@@ -1,0 +1,64 @@
+
+Subject: Tu es toujours =?utf-8?q?=C3=A0_paris_11eme_arrondissement?=
+X-Mailer: PHP/5.6.30
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Benchmail Agent 
+To: =?utf-8?q?mrsoyer=40me.com?= <mrsoyer@me.com>
+Date: Wed, 12 Apr 2017 18:14:50 +0200
+From: melinda <nodevemet1979@yahoo.com>
+Errors-To: melinda <nodevemet1979@yahoo.com>
+Return-Path: nodevemet1979@yahoo.com
+Content-Type: multipart/related; boundary="7951eaff0f85d86f6305bcd4aa48f18e"
+Reply-To: melinda <nodevemet1979@yahoo.com>
+Message-ID: <346069c082fa735cda5b4f051e1210b9@yahoo.com>
+MIME-Version: 1.0
+
+
+--7951eaff0f85d86f6305bcd4aa48f18e
+Content-Type: multipart/alternative; boundary="a494b8502bebc79309c3d104dacfbaaf"
+
+--a494b8502bebc79309c3d104dacfbaaf
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Tu es toujours =C3=A0 paris 11eme arrondissement
+--a494b8502bebc79309c3d104dacfbaaf
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w=
+3.org/TR/REC-html40/loose.dtd">=0A<html><head><title>Tu es toujours &Atilde=
+;&nbsp; paris 11eme arrondissement</title><link rel=3D"important stylesheet=
+" href=3D"chrome://messagebody/skin/messageBody.css"></head><head><title>Tu=
+ es toujours &Atilde;&nbsp; paris 11eme arrondissement</title></head><body =
+style=3D"margin:0; padding:0;"><p style=3D"color: rgb(0, 0, 0); font-family=
+: Tahoma, Verdana, Arial;">=0A=09Vous venez de recevoir 1 nouveau message:<=
+/p>=0A<p style=3D"color: rgb(0, 0, 0); font-family: Tahoma, Verdana, Arial;=
+">=0A=09*****</p>=0A<p style=3D"color: rgb(0, 0, 0); font-family: Tahoma, V=
+erdana, Arial;">=0A=09De :&nbsp;<a href=3D"http://tinyurl.com/lh5vz8b">Meli=
+nda</a><br>=0A=09&Agrave; :&nbsp;<span style=3D"color: rgb(55, 55, 55); fon=
+t-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold;=
+ line-height: 15.7143px;"></span></p>=0A<p style=3D"color: rgb(0, 0, 0); fo=
+nt-family: Tahoma, Verdana, Arial;">=0A=09Le : 05/01/2017<br>=0A=09Objet : =
+Tu es toujours &agrave;&nbsp;<span style=3D"color: rgb(55, 55, 55); font-fa=
+mily: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold;">pa=
+ris 11eme arrondissement</span>!</p>=0A<p align=3D"left" style=3D"color: rg=
+b(0, 0, 0); font-family: Tahoma, Verdana, Arial;">=0A=09*****</p>=0A<p styl=
+e=3D"color: rgb(0, 0, 0); font-family: Tahoma, Verdana, Arial;">=0A=09Hello=
+,</p>=0A<p style=3D"color: rgb(0, 0, 0); font-family: Tahoma, Verdana, Aria=
+l;">=0A=09Je peux venir quand chez toi ce week end? Ou alors g mon appart &=
+agrave;&nbsp;<span style=3D"color: rgb(55, 55, 55); font-family: Arial, Hel=
+vetica, sans-serif; font-size: 11px; font-weight: bold;">paris 11eme arrond=
+issement</span>!</p>=0A<p style=3D"color: rgb(0, 0, 0); font-family: Tahoma=
+, Verdana, Arial;">=0A=09Tiens moi au courant : 06 39 20 1(...)&nbsp;<a hre=
+=66=3D"http://tinyurl.com/lh5vz8b">Lire la suite du message</a></p>=0A<p styl=
+e=3D"color: rgb(0, 0, 0); font-family: Tahoma, Verdana, Arial;">=0A=09&nbsp=
+;</p>=0A<p style=3D"color: rgb(0, 0, 0); font-family: Tahoma, Verdana, Aria=
+l;">=0A=09*****</p>=0A<p style=3D"color: rgb(0, 0, 0); font-family: Tahoma,=
+ Verdana, Arial;">=0A=09<a href=3D"http://tinyurl.com/lh5vz8b">Lire la suit=
+e</a></p>=0A<p style=3D"color: rgb(0, 0, 0); font-family: Tahoma, Verdana, =
+Arial;">=0A=09&nbsp;</p>=0A<div><img width=3D"1" height=3D"1" src=3D"http:/=
+/tinyurl.com/mue3tqj"></div></body></html>=0A
+--a494b8502bebc79309c3d104dacfbaaf--
+--7951eaff0f85d86f6305bcd4aa48f18e--

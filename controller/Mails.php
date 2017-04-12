@@ -263,9 +263,16 @@ class Mails extends Controller
       $mime = "";
       foreach($hb['header'] as $k=>$v)
       {
-        if($k == "Content-Type" || $k == "From"|| $k == "Subject"|| $k == "To"|| $k == "MIME-Version" )
-        $preparemime[] = $k.": ".$v."\n";
+        //if($k == "Content-Type" || $k == "From"|| $k == "Subject"|| $k == "To"|| $k == "MIME-Version" )
+        $preparemime[] = $k.": ".$v."\r\n";
       }
+      //$preparemime[] = "X-Mailer: Benchmail Agent \r\n";
+      $preparemime[] .= "Message-ID: <" . md5(uniqid(time())) . "@yahoo.com>\n";
+      //$headers .= "Date: ".date("D, d M Y H:i:s") . " UT\n"; //a valid header for comparison
+      $preparemime[] .= "Date: ".date("r")."\r\n"; // intentionally bogus email header
+      $preparemime[] .= "X-Priority: 3\r\nX-MSMail-Priority: Normal\r\n";
+      $preparemime[] .= "X-Mailer: PHP/".phpversion()."\r\n";
+      $preparemime[] .= "\r\n";
       /*Return-Path: sicardnurni1980@yahoo.com
       Content-Type: multipart/related; boundary="aa749d600db29f5046faddf17590d5eb"
       Errors-To: Louane M <sicardnurni1980@yahoo.com>
