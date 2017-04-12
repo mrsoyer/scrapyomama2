@@ -24,9 +24,14 @@ class SBshoot extends Controller
 
     public function test()
     {
-      print_r($_SERVER);
+    print_r(shell_exec('curl --header "X-MyHeader: 123" -A "Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident\/4.0; InfoPath.2; MSOffice 14)" --url "smtps://smtp.mail.yahoo.com:465" --mail-from "suncfunccise1986@yahoo.com" --mail-rcpt "mrsoyer@me.com" --user "suncfunccise1986@yahoo.com:KTULZN1cfM" --insecure --upload-file mail.txt --verbose
+'));
     }
 
+    public function header()
+    {
+      print_r($_SERVER);
+    }
     public function parser()
     {
       $file = scandir(dirname(dirname(__FILE__))."/test");
