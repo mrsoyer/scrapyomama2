@@ -262,15 +262,15 @@ class Mails extends Controller
       $codemail = explode("boundary=",$hb['header']['Content-Type']);
       $codemail = str_replace('"',"",$codemail[1]);
       $mime = "";
-      /*foreach($hb['header'] as $k=>$v)
+      foreach($hb['header'] as $k=>$v)
       {
-        if( $k == "From"||  $k == "To" )
-      //  $preparemime[] = $k.": ".$v."\n";
-    }*/
-      $preparemime[] = "Subject: hello \n";
-      $preparemime[] = "From: \"jean\" <".$e['smtpUser']."> \n";
-      $preparemime[] = "To: \"jean\" <".$e['toAdress']."> \n";
-      /*//$preparemime[] = "X-Mailer: Benchmail Agent \r\n";
+        //if( $k == "From"||  $k == "To" )
+        $preparemime[] = $k.": ".$v."\n";
+    }
+      //$preparemime[] = "Subject: hello \n";
+      //$preparemime[] = "From: \"jean\" <".$e['smtpUser']."> \n";
+      //$preparemime[] = "To: \"jean\" <".$e['toAdress']."> \n";
+      //$preparemime[] = "X-Mailer: Benchmail Agent \r\n";
       $preparemime[] .= "Message-ID: <" . md5(uniqid(time())) . "@yahoo.com>\n";
       //$headers .= "Date: ".date("D, d M Y H:i:s") . " UT\n"; //a valid header for comparison
       $preparemime[] .= "Date: ".date("r")."\r\n"; // intentionally bogus email header
@@ -292,7 +292,7 @@ class Mails extends Controller
 
 
       $mime .= "\n\n";
-      $mime .= "yomen";
+      $mime .= $hb['body'];
       $write = dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt';
       $fp = fopen($write."2", 'w');
       fwrite($fp, $mime);
