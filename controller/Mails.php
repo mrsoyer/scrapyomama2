@@ -245,7 +245,7 @@ class Mails extends Controller
     public function send($codemail,$e)
     {
       //-A "'.$e['useragent'].'"
-      $return = shell_exec('curl --header "X-Myh: 345" -A "Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; MSOffice 12)" --url "smtps://smtp.mail.yahoo.com:465" --mail-from "'.$e['smtpUser'].'" --mail-rcpt "'.$e['toAdress'].'" --user "'.$e['smtpUser'].':'.$e['smtpPassword'].'" --insecure --upload-file '.dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt --verbose 2>&1
+      $return = shell_exec('curl --header "host: webalchimiste.net" -A "Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; MSOffice 12)" --url "smtps://smtp.mail.yahoo.com:465" --mail-from "'.$e['smtpUser'].'" --mail-rcpt "'.$e['toAdress'].'" --user "'.$e['smtpUser'].':'.$e['smtpPassword'].'" --insecure --upload-file '.dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt --verbose 2>&1
   ');
       print_r($return);
       unlink(dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt');
@@ -268,8 +268,8 @@ class Mails extends Controller
       //  $preparemime[] = $k.": ".$v."\n";
     }*/
       $preparemime[] = "Subject: hello \n";
-      $preparemime[] = "From: \"luc\" <".$e['smtpUser']."> \n";
-      $preparemime[] = "To: \"John\" <".$e['toAdress']."> \n";
+      $preparemime[] = "From: \"jean\" <".$e['smtpUser']."> \n";
+      $preparemime[] = "To: \"jean\" <".$e['toAdress']."> \n";
       /*//$preparemime[] = "X-Mailer: Benchmail Agent \r\n";
       $preparemime[] .= "Message-ID: <" . md5(uniqid(time())) . "@yahoo.com>\n";
       //$headers .= "Date: ".date("D, d M Y H:i:s") . " UT\n"; //a valid header for comparison
