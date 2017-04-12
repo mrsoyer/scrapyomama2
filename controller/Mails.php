@@ -267,9 +267,9 @@ class Mails extends Controller
         if( $k == "From"||  $k == "To" )
       //  $preparemime[] = $k.": ".$v."\n";
     }*/
-      $preparemime[] = "Subject: hey :) \n";
-      $preparemime[] = "From: \"User Name\" <".$e['smtpUser']."> \n";
-      $preparemime[] = "To: \"John Smith\" <".$e['toAdress']."> \n";
+      $preparemime[] = "Subject: hello \n";
+      $preparemime[] = "From: \"luc\" <".$e['smtpUser']."> \n";
+      $preparemime[] = "To: \"John\" <".$e['toAdress']."> \n";
       /*//$preparemime[] = "X-Mailer: Benchmail Agent \r\n";
       $preparemime[] .= "Message-ID: <" . md5(uniqid(time())) . "@yahoo.com>\n";
       //$headers .= "Date: ".date("D, d M Y H:i:s") . " UT\n"; //a valid header for comparison
@@ -292,7 +292,7 @@ class Mails extends Controller
 
 
       $mime .= "\n\n";
-      $mime .= "body";
+      $mime .= "yomen";
       $write = dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt';
       $fp = fopen($write."2", 'w');
       fwrite($fp, $mime);
