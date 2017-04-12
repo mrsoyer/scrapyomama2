@@ -244,7 +244,8 @@ class Mails extends Controller
 
     public function send($codemail,$e)
     {
-      $return = shell_exec('curl -A "'.$e['useragent'].'" --url "smtps://smtp.mail.yahoo.com:465" --mail-from "'.$e['smtpUser'].'" --mail-rcpt "'.$e['toAdress'].'" --user "'.$e['smtpUser'].':'.$e['smtpPassword'].'" --insecure --upload-file '.dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt --verbose 2>&1
+      //-A "'.$e['useragent'].'"
+      $return = shell_exec('curl  --url "smtps://smtp.mail.yahoo.com:465" --mail-from "'.$e['smtpUser'].'" --mail-rcpt "'.$e['toAdress'].'" --user "'.$e['smtpUser'].':'.$e['smtpPassword'].'" --insecure --upload-file '.dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt --verbose 2>&1
   ');
       print_r($return);
       unlink(dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt');
@@ -264,7 +265,7 @@ class Mails extends Controller
       foreach($hb['header'] as $k=>$v)
       {
         if( $k == "From"|| $k == "Subject"|| $k == "To" )
-        $preparemime[] = $k.": ".$v."\r\n";
+        $preparemime[] = $k.": ".$v."\n";
       }
       /*//$preparemime[] = "X-Mailer: Benchmail Agent \r\n";
       $preparemime[] .= "Message-ID: <" . md5(uniqid(time())) . "@yahoo.com>\n";
