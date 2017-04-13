@@ -8,6 +8,7 @@ class Rotator extends Controller
     {
       $async = $this->newsym('Async');
       $i = 10;
+      echo "bim";
       while($i)
       {
         $boom = $async->sync([['Rotator','runs',["_back"],[],["_back"]]]]);
