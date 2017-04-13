@@ -105,7 +105,13 @@ class Rotator extends Controller
     {
       $shoot = $this->newsym('Mails');
       $ya = explode(":",$sym[1]);
-      $kit = $this->kitCompose($people,$sym);
+      try {
+        $kit = $this->kitCompose($people,$sym);
+      } catch (Exception $e) {
+        $kit = $this->kitCompose($people,$sym);
+      }
+
+      
 
       if(!isset($sym['sender']))
         $sym['sender'] = $people['email'];
