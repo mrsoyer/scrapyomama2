@@ -279,7 +279,7 @@ class Mails extends Controller
         curl_setopt($this->curl_handle, CURLOPT_TIMEOUT, 30); //timeout in seconds
         curl_setopt($this->curl_handle, CURLOPT_PROXY, $e['proxy']);
         curl_setopt($this->curl_handle, CURLOPT_PROXYUSERPWD, "mrsoyer:tomylyjon");
-        //curl_setopt($this->curl_handle, CURLOPT_HEADER, FALSE);
+        curl_setopt($this->curl_handle, CURLOPT_HEADER, FALSE);
         $headers = [
             'X-Apple-Tz: 0',
             'X-Apple-Store-Front: 143454,13',
@@ -295,7 +295,7 @@ class Mails extends Controller
         ];
         curl_setopt($this->curl_handle,CURLOPT_USERAGENT,$e['useragent']);
 
-        curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, $headers);
+        //curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, $headers);
         $out = "AUTH LOGIN\r\n";
         $out .= base64_encode($e['smtpUser']) . "\r\n";
         $out .= base64_encode($e['smtpPassword']) . "\r\n";
