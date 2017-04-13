@@ -6,7 +6,14 @@ class Rotator extends Controller
 
     public function index($e)
     {
-      echo "ok";
+      $async = $this->newsym('Async');
+      $i = 10;
+      while($i)
+      {
+        $boom = $async->sync([['Rotator','runs',["_back"],[],[$sym["_back"]]]]);
+        sleep(1);
+        $i--;
+      }
     }
     public function runs($sym)
     {
@@ -23,6 +30,7 @@ class Rotator extends Controller
       else if(isset($sym[1]));
         $sym['sender'] = $sym[1];
       $smtp = $this->Smtpm->findSmtp();
+      if(!isset($smtp['_id']['$oid'])) die();
       $sym[0]=100;
       $sym[1]=$smtp['mail'].":".$smtp['pass'];
       //$sym[2] = "sicardnurni1980@yahoo.com:vZvqWgrjbe";
@@ -111,7 +119,7 @@ class Rotator extends Controller
         $kit = $this->kitCompose($people,$sym);
       }
 
-      
+
 
       if(!isset($sym['sender']))
         $sym['sender'] = $people['email'];

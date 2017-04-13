@@ -63,8 +63,14 @@ class Pars extends Controller
       $html = $dom->saveHTML();
       $html = str_replace("garciathomas", "", $html);
       $html = str_replace("THOMAS", "", $html);
+      $html = str_replace("paris 11eme arrondissement", "", $html);
+      $html = str_replace("garciathom.as@gmail.com", "", $html);
+      $html = str_replace("gar.ciathom.as@gmail.com", "", $html);
       $subject = str_replace("garciathomas", "", $subject);
       $subject = str_replace("THOMAS", "", $subject);
+      $subject = str_replace("paris 11eme arrondissement", "", $subject);
+
+    
       $return['name'] = $name;
       $return['subject'] = $subject;
       $return['html'] = "<html>

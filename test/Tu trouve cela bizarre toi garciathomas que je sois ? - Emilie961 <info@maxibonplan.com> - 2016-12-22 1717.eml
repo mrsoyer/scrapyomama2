@@ -1,0 +1,123 @@
+Delivered-To: gar.ciathom.as@gmail.com
+Received: by 10.140.103.245 with SMTP id y108csp2864130qge;
+        Thu, 22 Dec 2016 08:18:48 -0800 (PST)
+X-Received: by 10.28.138.135 with SMTP id m129mr9933082wmd.36.1482423528751;
+        Thu, 22 Dec 2016 08:18:48 -0800 (PST)
+Return-Path: <noreply@maxibonplan.com>
+Received: from maxibonplan.com (maxibonplan.com. [94.143.20.154])
+        by mx.google.com with ESMTPS id m141si28704519wmd.20.2016.12.22.08.18.48
+        for <gar.ciathom.as@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 22 Dec 2016 08:18:48 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@maxibonplan.com designates 94.143.20.154 as permitted sender) client-ip=94.143.20.154;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@maxibonplan.com;
+       spf=pass (google.com: domain of noreply@maxibonplan.com designates 94.143.20.154 as permitted sender) smtp.mailfrom=noreply@maxibonplan.com;
+       dmarc=pass (p=NONE dis=NONE) header.from=maxibonplan.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=maxibonplan.com;
+ q=dns/txt; s=mail; bh=8+jHpZavQVaGyFYNURomWa2n4L3AgfazggnfgAo5WeU=;
+ h=from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe;
+        b=rM8i/YfqCrq6cH0ww6MECaDn7CKisdWaI/JaoAx0lm63RwGVdVYjrgxXghBd1ClO4k77pEcUaqhX
+        i4tuBMSw3p7DcPfhcDA03sLRUb+6UE1Y3BiaOgPWgA6Za8HrZEBUUQvVAdp8KTyc+2sgw2wAW7FG
+        738HeXAIhY9aSC2IiqM=
+To: <gar.ciathom.as@gmail.com>
+Subject: =?UTF-8?Q?Tu_trouve_cela_bizarre_toi_garciathomas_que_je_sois_=3F?=
+From: =?UTF-8?Q?Emilie961?= <info@maxibonplan.com>
+List-Id: MTA2MzUyNC0xNDY4OTgtMTI1 <MTA2MzUyNC0xNDY4OTgtMTI1.list-id.maxibonplan.com>
+List-Unsubscribe: <mailto:unsubscribe@maxibonplan.com?subject=unsub-5xwal4h6jgr6b7j&body=5xwal4h6jgr6b7j>,<http://r.maxibonplan.com/v0mb4qq8sr6b7g.html>
+Content-Type: multipart/alternative; boundary="-------?=_42560-6439683842990"
+MIME-Version: 1.0
+Precedence: bulk
+Feedback-ID: ded_94.143.20.154:1063524:1063524_9625:Sendinblue
+X-Mailer: Sendinblue
+X-Mailin-Client: 1063524
+X-Mailin-Campaign: 9625
+Reply-To: contact@strandlink.com
+Message-Id: <201612221717.5xwal4h6jgr6b7j@maxibonplan.com>
+Date: Thu, 22 Dec 2016 17:17:51 +0100
+
+
+---------?=_42560-6439683842990
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Si vous ne parvenez pas =C3=A0 lire cet e-mail, cliquez http://r.maxibonpla=
+n.com/v0mb4qq8sr6b7f.html.=0AVous recevez ce mail car vous acceptez de rece=
+voir les mails de Superencontre-- Vous avez recu un nouveau message --  [  =
+ ]( http://r.maxibonplan.com/3g2h8iywz18r6b7d.html )  =C2=A0=0AQue je reche=
+rche un rdv avec une personne s=C3=A9rieuse et sinc=C3=A8re et que personne=
+ ne me r=C3=A9pond ? Je suis une personne enti=C3=A8re, dynamique, joviale =
+et sensible. Je recherche la personne avec qui concr=C3=A9tiser des projets=
+ communs et surtout une personne " ouverte d'esprit" , qui est sinc=C3=
+=A8re et avec qui je pourrais partag=C3=A9s plein de bons moments=0A=0ASi t=
+oi aussi tu pense comme mois, tu sais ce qu'il te reste a faire ...=C2=
+=A0=0A=C2=A0  [   Cliquez ici pour r=C3=A9pondre au message de Emilie961 ! =
+  ]( http://r.maxibonplan.com/3g2h8iywztor6b7d.html )Si vous souhaitez vous=
+ d=C3=A9sinscrire des mails de Superencontre, cliquez http://r.maxibonplan.=
+com/v0mb4qq8sr6b7g.html
+
+
+---------?=_42560-6439683842990
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<body style=3D"margin:0; padding:0;"><div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous ne parvenez pas =C3=A0 lire cet e-mail, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.maxi=
+bonplan.com/v0mb4qq8sr6b7f.html">ici</a>.<br>
+Vous recevez ce mail car vous acceptez de recevoir les mails de Superencont=
+re</div><meta charset=3D"utf-8" />=0A<title></title>=0A<meta content=3D"wid=
+th=3Ddevice-width; initial-scale=3D0.0; maximum-scale=3D0.0;" name=3D"viewp=
+ort" />=0A<style type=3D"text/css">=0Ahtml, body { margin: 0; padding: 0; }=
+</style>=0A<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100%">=0A=09<tbody>=0A=09=09<tr>=0A=09=09=09<td align=3D"center" bgcol=
+or=3D"#FFFFFF">=0A=09=09=09=09<br />=0A=09=09=09=09<table align=3D"center" =
+bgcolor=3D"#F0F0F0" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width:=
+ 600px; border: 1px solid #CCCCCC;border-top-right-radius: 3px; border-top-=
+left-radius: 3px;" width=3D"95%">=0A=09=09=09=09=09<tbody>=0A=09=09=09=09=
+=09=09<tr>=0A=09=09=09=09=09=09=09<td colspan=3D"3" height=3D"50" style=3D"=
+padding: 0px 10px; text-align: center;" valign=3D"middle">=0A=09=09=09=09=
+=09=09=09=09<font color=3D"#333333" face=3D"Tahoma" size=3D"3" style=3D"fon=
+t-family: Tahoma, sans-serif;; font-size: 18px; font-weight: normal; color:=
+ #000000; text-shadow: #000000;">-- Vous avez recu un nouveau message --</f=
+ont></td>=0A=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09<tr>=0A=09=09=09=09=
+=09=09=09<td align=3D"center" colspan=3D"3">=0A=09=09=09=09=09=09=09=09<a h=
+ref=3D"http://r.maxibonplan.com/3g2h8iywz18r6b7d.html" target=3D"_blank" ti=
+tle=3D"Voir Fanny"> <img alt=3D"Fanny" src=3D"http://img.maxibonplan.com/w0=
+lkz18r6b7e.jpg" style=3D"width: 230px; height: 310px;" /> </a></td>=0A=09=
+=09=09=09=09=09</tr>=0A=09=09=09=09=09=09<tr>=0A=09=09=09=09=09=09=09<td wi=
+dth=3D"2%">=0A=09=09=09=09=09=09=09=09&nbsp;</td>=0A=09=09=09=09=09=09=09<t=
+d>=0A=09=09=09=09=09=09=09=09<p>=0A=09=09=09=09=09=09=09=09=09<font color=
+=3D"#333333" face=3D"Tahoma" size=3D"1" style=3D"font-family: Tahoma, sans-=
+serif;; font-size: 12px; font-weight: normal; color: #000000; text-shadow: =
+#000000;">Que je recherche un rdv avec une personne s&eacute;rieuse et sinc=
+&egrave;re et que personne ne me r&eacute;pond ? Je suis une personne enti&=
+egrave;re, dynamique, joviale et sensible. Je recherche la personne avec qu=
+i concr&eacute;tiser des projets communs et surtout une personne &quot; ouv=
+erte d&#39;esprit&quot; , qui est sinc&egrave;re et avec qui je pourrais pa=
+rtag&eacute;s plein de bons moments</font></p>=0A=09=09=09=09=09=09=09=09<p=
+>=0A=09=09=09=09=09=09=09=09=09<font color=3D"#333333" face=3D"Tahoma" size=
+=3D"1" style=3D"font-family: Tahoma, sans-serif;; font-size: 12px; font-wei=
+ght: normal; color: #000000; text-shadow: #000000;">Si toi aussi tu pense c=
+omme mois, tu sais ce qu&#39;il te reste a faire ...&nbsp;</font></p>=0A=09=
+=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09<td width=3D"2%">=0A=09=09=
+=09=09=09=09=09=09&nbsp;</td>=0A=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=
+=09<tr>=0A=09=09=09=09=09=09=09<td align=3D"center" colspan=3D"3">=0A=09=09=
+=09=09=09=09=09=09<a href=3D"http://r.maxibonplan.com/3g2h8iywztor6b7d.html=
+" style=3D"display: block; width: 95%; margin: 0 auto; padding: 2px 5px;  b=
+ackground: #02C0D0; border: 0; border-radius: 3px; text-decoration: none; l=
+ine-height: 25px; text-align: center;" title=3D"R=C3=A9pondre"> <font color=
+=3D"#ffffff" face=3D"Tahoma" size=3D"3" style=3D"font-family: 'Helvetica', =
+'Arial', sans-serif;; font-size: 22px; font-weight: bold; color: #ffffff; t=
+ext-shadow: #000000;"> Cliquez ici pour r&eacute;pondre au message de Emili=
+e961 ! </font> </a></td>=0A=09=09=09=09=09=09</tr>=0A=09=09=09=09=09</tbody=
+>=0A=09=09=09=09</table>=0A=09=09=09</td>=0A=09=09</tr>=0A=09</tbody>=0A</t=
+able>=0A<br />=0A<div align=3D"center" style=3D"color: #727272; font-size: =
+10px;">Si vous souhaitez vous d=C3=A9sinscrire des mails de Superencontre, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.maxi=
+bonplan.com/v0mb4qq8sr6b7g.html">ici</a></div><div><img width=3D"1" height=
+=3D"1" src=3D"http://r.maxibonplan.com/v0mb4qq8sr6b7h.jpg" /></div></body>
+
+
+---------?=_42560-6439683842990--
+

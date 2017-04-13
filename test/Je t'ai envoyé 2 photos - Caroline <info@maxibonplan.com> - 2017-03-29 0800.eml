@@ -1,0 +1,81 @@
+Delivered-To: garciathom.as@gmail.com
+Received: by 10.37.3.141 with SMTP id 135csp1234490ybd;
+        Tue, 28 Mar 2017 23:00:58 -0700 (PDT)
+X-Received: by 10.223.172.21 with SMTP id v21mr31124699wrc.100.1490767258246;
+        Tue, 28 Mar 2017 23:00:58 -0700 (PDT)
+Return-Path: <noreply@maxibonplan.com>
+Received: from maxibonplan.com (maxibonplan.com. [94.143.20.154])
+        by mx.google.com with ESMTPS id 71si7188407wrc.318.2017.03.28.23.00.58
+        for <garciathom.as@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 28 Mar 2017 23:00:58 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@maxibonplan.com designates 94.143.20.154 as permitted sender) client-ip=94.143.20.154;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@maxibonplan.com;
+       spf=pass (google.com: domain of noreply@maxibonplan.com designates 94.143.20.154 as permitted sender) smtp.mailfrom=noreply@maxibonplan.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=maxibonplan.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=maxibonplan.com;
+ q=dns/txt; s=mail; bh=rgq8hA7wmhx0l0BYy1OxcDOteYHHeVDMobkl31oApZo=;
+ h=from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe;
+        b=Ii6mB/pLBfMA9DKKu7Z93LRvzUYaK+77zPPcS29rmRrh4YkpSyuZEjYgMJyiDNMYXbCS1h20jaQZ
+        S1PvUdhZjHtK9x6fGP7UUDo++qpw7vyQJPKDEHeqcAnxprjv44txMStdYmn6tPA/jf/qRatfQMD+
+        TQoMA0cNTxKu90cJCyA=
+To: <garciathom.as@gmail.com>
+Subject: =?UTF-8?Q?Je_t'ai_envoy=C3=A9_2_photos?=
+From: =?UTF-8?Q?Caroline?= <info@maxibonplan.com>
+List-Id: MTA2MzUyNC02NjA4MjAtMTQ5 <MTA2MzUyNC02NjA4MjAtMTQ5.list-id.maxibonplan.com>
+List-Unsubscribe: <mailto:unsubscribe@maxibonplan.com?subject=unsub-7v54cskhukr6b7j&body=7v54cskhukr6b7j>,<http://r.maxibonplan.com/1cqanqcz4v0r6b7g.html>
+Content-Type: multipart/alternative; boundary="-------?=_52861-9240335060490"
+MIME-Version: 1.0
+Precedence: bulk
+Feedback-ID: ded_94.143.20.154:1063524:1063524_10721:Sendinblue
+X-Mailer: Sendinblue
+X-Mailin-Client: 1063524
+X-Mailin-Campaign: 10721
+Reply-To: contact@strandlink.com
+Message-Id: <201703290800.7v54cskhukr6b7j@maxibonplan.com>
+Date: Wed, 29 Mar 2017 08:00:54 +0200
+
+
+---------?=_52861-9240335060490
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Si vous ne parvenez pas =C3=A0 lire cet e-mail, cliquez http://r.maxibonpla=
+n.com/1cqanqcz4v0r6b7f.html.=0AVous recevez ce mail car vous acceptez de re=
+cevoir les mails de SuperencontreCaroline a partag=C3=A9 avec vous 2 photos=
+=0A=C2=A0=0ACliquez sur la photo que vous souhaitez regarder :=0A=C2=A0=0A=
+=C2=A0 =C2=A0 =C2=A0[ Plage_ete2016.JPG ]( http://r.maxibonplan.com/5ex6mxf=
+wjfx8r6b7d.html ) (200Ko)=0A=C2=A0 =C2=A0 =C2=A0[ Dans _ma_chambre_avec_ver=
+o.JPG ]( http://r.maxibonplan.com/5ex6mxfwjgpor6b7d.html ) (322Ko)=0A=C2=
+=A0=0AMerci de ne pas diffuser ces photos =C3=A0 de tierce personneSi vous =
+souhaitez vous d=C3=A9sinscrire des mails de Superencontre, cliquez http://=
+r.maxibonplan.com/1cqanqcz4v0r6b7g.html
+
+
+---------?=_52861-9240335060490
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<body style=3D"margin:0; padding:0;"><div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous ne parvenez pas =C3=A0 lire cet e-mail, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.maxi=
+bonplan.com/1cqanqcz4v0r6b7f.html">ici</a>.<br>
+Vous recevez ce mail car vous acceptez de recevoir les mails de Superencont=
+re</div><div>=0A=09<strong>Caroline a partag&eacute; avec vous 2 photos</st=
+rong></div>=0A<div>=0A=09&nbsp;</div>=0A<div>=0A=09Cliquez sur la photo que=
+ vous souhaitez regarder :</div>=0A<div>=0A=09&nbsp;</div>=0A<div>=0A=09&nb=
+sp; &nbsp; &nbsp;<a href=3D"http://r.maxibonplan.com/5ex6mxfwjfx8r6b7d.html=
+">Plage_ete2016.JPG</a> (200Ko)</div>=0A<div>=0A=09&nbsp; &nbsp; &nbsp;<a h=
+ref=3D"http://r.maxibonplan.com/5ex6mxfwjgpor6b7d.html">Dans _ma_chambre_av=
+ec_vero.JPG</a> (322Ko)<br />=0A=09&nbsp;</div>=0A<div>=0A=09Merci de ne pa=
+s diffuser ces photos &agrave; de tierce personne</div>=0A<div align=3D"cen=
+ter" style=3D"color: #727272; font-size: 10px;">Si vous souhaitez vous d=
+=C3=A9sinscrire des mails de Superencontre, cliquez <a style=3D"color:#01a4=
+c6;" target=3D"_blank" href=3D"http://r.maxibonplan.com/1cqanqcz4v0r6b7g.ht=
+ml">ici</a></div><div><img width=3D"1" height=3D"1" src=3D"http://r.maxibon=
+plan.com/1cqanqcz4v0r6b7h.jpg" /></div></body>
+
+
+---------?=_52861-9240335060490--
+

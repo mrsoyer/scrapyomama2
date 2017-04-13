@@ -1,0 +1,116 @@
+Delivered-To: gar.ciathom.as@gmail.com
+Received: by 10.140.103.245 with SMTP id y108csp1114385qge;
+        Wed, 18 Jan 2017 11:45:44 -0800 (PST)
+X-Received: by 10.28.62.144 with SMTP id l138mr4004310wma.50.1484768744195;
+        Wed, 18 Jan 2017 11:45:44 -0800 (PST)
+Return-Path: <noreply@maxibonplan.com>
+Received: from maxibonplan.com (maxibonplan.com. [94.143.20.154])
+        by mx.google.com with ESMTPS id y62si3527405wmb.48.2017.01.18.11.45.43
+        for <gar.ciathom.as@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 18 Jan 2017 11:45:44 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@maxibonplan.com designates 94.143.20.154 as permitted sender) client-ip=94.143.20.154;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@maxibonplan.com;
+       spf=pass (google.com: domain of noreply@maxibonplan.com designates 94.143.20.154 as permitted sender) smtp.mailfrom=noreply@maxibonplan.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=maxibonplan.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=maxibonplan.com;
+ q=dns/txt; s=mail; bh=RCdv+s+vPQk7swBzOV2btTx4W1+VXTZHvnznW7LunG8=;
+ h=from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe;
+        b=hQycwsOXSLYGlRMJigImH5V5piuOAxI/x5rXq71W02w838iaGqHT8zDEZeBWf+D6i8xRl1vcAzKe
+        SeEepbiAvYSfGb64JiJE6ipdjsPDw1pWOmymBqHhs4vKzjwGRAAJLTmQaIHMSQ6ZbHLVcTSfqbh0
+        f+Wjsh8Z7IAPQRTbx84=
+To: <gar.ciathom.as@gmail.com>
+Subject: =?UTF-8?Q?Fais_pas_comme_si_t'avais_pas_vu_mon_message?=
+From: =?UTF-8?Q?Myriam=20C?= <info@maxibonplan.com>
+List-Id: MTA2MzUyNC0xNDY4OTgtMTQ3 <MTA2MzUyNC0xNDY4OTgtMTQ3.list-id.maxibonplan.com>
+List-Unsubscribe: <mailto:unsubscribe@maxibonplan.com?subject=unsub-63y0m0h6jgr6b7j&body=63y0m0h6jgr6b7j>,<http://r.maxibonplan.com/v0mb50xngr6b7g.html>
+Content-Type: multipart/alternative; boundary="-------?=_41832-3499017324712"
+MIME-Version: 1.0
+Precedence: bulk
+Feedback-ID: ded_94.143.20.154:1063524:1063524_9952:Sendinblue
+X-Mailer: Sendinblue
+X-Mailin-Client: 1063524
+X-Mailin-Campaign: 9952
+Reply-To: contact@strandlink.com
+Message-Id: <201701182044.63y0m0h6jgr6b7j@maxibonplan.com>
+Date: Wed, 18 Jan 2017 20:44:40 +0100
+
+
+---------?=_41832-3499017324712
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Si vous ne parvenez pas =C3=A0 lire cet e-mail, cliquez http://r.maxibonpla=
+n.com/v0mb50xngr6b7f.html.=0AVous recevez ce mail car vous acceptez de rece=
+voir les mails de Superencontre[ =C2=A0Envie d'une rencontre cet soir? ]( h=
+ttp://r.maxibonplan.com/3g2h8k3qlp8r6b7d.html )=0AMyriam C - 39 ans=0A=0Ase=
+cr=C3=A9taire - =0A=0AJe souhaiterais avoir une rencontre s=C3=A9rieuse, tr=
+ouver un homme=0A=0A-->=C2=A0Myriam C souhaite te rencontrer dans un bar=0A=
+[ DECOUVRE SON PROFIL ICI ]( http://r.maxibonplan.com/3g2h8k3qmhor6b7d.html=
+ )=0A=C2=A0Si vous souhaitez vous d=C3=A9sinscrire des mails de Superencont=
+re, cliquez http://r.maxibonplan.com/v0mb50xngr6b7g.html
+
+
+---------?=_41832-3499017324712
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<body style=3D"margin:0; padding:0;"><div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous ne parvenez pas =C3=A0 lire cet e-mail, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.maxi=
+bonplan.com/v0mb50xngr6b7f.html">ici</a>.<br>
+Vous recevez ce mail car vous acceptez de recevoir les mails de Superencont=
+re</div><title></title>=0A<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width: 450px">=0A=09<tbody>=0A=09=09<tr>=
+=0A=09=09=09<td colspan=3D"2">=0A=09=09=09=09<table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-family: arial, san=
+s-serif; font-size: 13px; background-color: rgb(255, 255, 255);width: 450px=
+" width=3D"600">=0A=09=09=09=09=09<tbody>=0A=09=09=09=09=09=09<tr>=0A=09=09=
+=09=09=09=09=09<td style=3D"margin: 0px;">=0A=09=09=09=09=09=09=09=09<table=
+ align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D=
+"background-color: rgb(255, 255, 255);width: 450px" width=3D"600">=0A=09=09=
+=09=09=09=09=09=09=09<tbody>=0A=09=09=09=09=09=09=09=09=09=09<tr>=0A=09=09=
+=09=09=09=09=09=09=09=09=09<td height=3D"60px" style=3D"margin: 0px; vertic=
+al-align: middle; text-align: center; background-color: rgb(81, 255, 134);"=
+ valign=3D"middle">=0A=09=09=09=09=09=09=09=09=09=09=09=09<span style=3D"fo=
+nt-family:verdana,geneva,sans-serif;"><a href=3D"http://r.maxibonplan.com/3=
+g2h8k3qlp8r6b7d.html" style=3D"color: rgb(255, 255, 255); font-size: 30px; =
+text-decoration: none;" target=3D"_blank">&nbsp;<span style=3D"font-size:26=
+px;">Envie d&#39;une rencontre cet soir?</span></a></span></td>=0A=09=09=09=
+=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=09</tbody>=0A=09=09=
+=09=09=09=09=09=09</table>=0A=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=
+=09</tr>=0A=09=09=09=09=09</tbody>=0A=09=09=09=09</table>=0A=09=09=09</td>=
+=0A=09=09</tr>=0A=09=09<tr>=0A=09=09=09<td colspan=3D"2" style=3D"text-alig=
+n: center;">=0A=09=09=09=09<p>=0A=09=09=09=09=09<span style=3D"font-size:24=
+px;"><strong><span style=3D"color:#EE82EE;"><span style=3D"font-family:verd=
+ana,geneva,sans-serif;">Myriam C - 39 ans</span></span></strong></span></p>=
+=0A=09=09=09=09<p>=0A=09=09=09=09=09<strong><span style=3D"color:#EE82EE;">=
+<span style=3D"font-family:verdana,geneva,sans-serif;">secr&eacute;taire - =
+</span></span></strong></p>=0A=09=09=09=09<p>=0A=09=09=09=09=09<span style=
+=3D"font-family:verdana,geneva,sans-serif;">Je souhaiterais avoir une renco=
+ntre s&eacute;rieuse, trouver un homme</span></p>=0A=09=09=09=09<p>=0A=09=
+=09=09=09=09<span style=3D"font-family:verdana,geneva,sans-serif;">--&gt;&n=
+bsp;<strong><span style=3D"color:#EE82EE;">Myriam C souhaite te rencontrer =
+dans un bar</span></strong></span></p>=0A=09=09=09</td>=0A=09=09</tr>=0A=09=
+=09<tr>=0A=09=09=09<td colspan=3D"2">=0A=09=09=09=09<table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-family: ari=
+al, sans-serif; font-size: 13px;width: 450px" width=3D"600">=0A=09=09=09=09=
+=09<tbody>=0A=09=09=09=09=09=09<tr>=0A=09=09=09=09=09=09=09<td height=3D"30=
+px" style=3D"margin: 0px; vertical-align: middle; text-align: center; backg=
+round-color: rgb(81, 255, 134);" valign=3D"middle">=0A=09=09=09=09=09=09=09=
+=09<strong><span style=3D"font-size:28px;"><span style=3D"font-family:verda=
+na,geneva,sans-serif;"><a href=3D"http://r.maxibonplan.com/3g2h8k3qmhor6b7d=
+.html" style=3D"color: rgb(255, 255, 255); font-size: 20px; text-decoration=
+: none;" target=3D"_blank">DECOUVRE SON PROFIL ICI</a></span></span></stron=
+g></td>=0A=09=09=09=09=09=09</tr>=0A=09=09=09=09=09</tbody>=0A=09=09=09=09<=
+/table>=0A=09=09=09</td>=0A=09=09</tr>=0A=09</tbody>=0A</table>=0A<p>=0A=09=
+&nbsp;</p>=0A<div align=3D"center" style=3D"color: #727272; font-size: 10px=
+;">Si vous souhaitez vous d=C3=A9sinscrire des mails de Superencontre, cliq=
+uez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.maxibonp=
+lan.com/v0mb50xngr6b7g.html">ici</a></div><div><img width=3D"1" height=3D"1=
+" src=3D"http://r.maxibonplan.com/v0mb50xngr6b7h.jpg" /></div></body>
+
+
+---------?=_41832-3499017324712--
+

@@ -1,0 +1,116 @@
+Delivered-To: garciathom.as@gmail.com
+Received: by 10.37.3.141 with SMTP id 135csp394741ybd;
+        Wed, 5 Apr 2017 11:02:10 -0700 (PDT)
+X-Received: by 10.223.160.68 with SMTP id l4mr24384298wrl.90.1491415330470;
+        Wed, 05 Apr 2017 11:02:10 -0700 (PDT)
+Return-Path: <noreply@maxibonplan.com>
+Received: from maxibonplan.com (maxibonplan.com. [94.143.20.154])
+        by mx.google.com with ESMTPS id o102si30066933wrb.208.2017.04.05.11.02.10
+        for <garciathom.as@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 05 Apr 2017 11:02:10 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@maxibonplan.com designates 94.143.20.154 as permitted sender) client-ip=94.143.20.154;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@maxibonplan.com;
+       spf=pass (google.com: domain of noreply@maxibonplan.com designates 94.143.20.154 as permitted sender) smtp.mailfrom=noreply@maxibonplan.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=maxibonplan.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=maxibonplan.com;
+ q=dns/txt; s=mail; bh=LGwOIAS47VEnUrA/QXcJ+nim4QhgJoFbyuKhtTB3ylg=;
+ h=from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe;
+        b=Z3ZgC5GYjP+8Q5ybVYxA8JZoZmPyyXShluSyZCXxR5oq6knAAXbuAAuq5Wk0WwcBFaYTKvrHE8L6
+        vkA4XXCbyovcnMBwV1QYs7qKNUCehYhYugFfkMTveL6pYxZdR9bVFLzByL8IpLmAs/DhisUhQLID
+        hwNxtoRvxXjLGhZUsR0=
+To: <garciathom.as@gmail.com>
+Subject: =?UTF-8?Q?On_habite_juste_=C3=A0_cot=C3=A9_THOMAS?=
+From: =?UTF-8?Q?Constance?= <info@maxibonplan.com>
+List-Id: MTA2MzUyNC02NjA4MjAtMTQ5 <MTA2MzUyNC02NjA4MjAtMTQ5.list-id.maxibonplan.com>
+List-Unsubscribe: <mailto:unsubscribe@maxibonplan.com?subject=unsub-7wpb2kkhukr6b7j&body=7wpb2kkhukr6b7j>,<http://r.maxibonplan.com/1cqanqd1rocr6b7g.html>
+Content-Type: multipart/alternative; boundary="-------?=_27874-3117057606577"
+MIME-Version: 1.0
+Precedence: bulk
+Feedback-ID: ded_94.143.20.154:1063524:1063524_10801:Sendinblue
+X-Mailer: Sendinblue
+X-Mailin-Client: 1063524
+X-Mailin-Campaign: 10801
+Reply-To: contact@strandlink.com
+Message-Id: <201704052001.7wpb2kkhukr6b7j@maxibonplan.com>
+Date: Wed, 05 Apr 2017 20:01:55 +0200
+
+
+---------?=_27874-3117057606577
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Si vous ne parvenez pas =C3=A0 lire cet e-mail, cliquez http://r.maxibonpla=
+n.com/1cqanqd1rocr6b7f.html.=0AVous recevez ce mail car vous acceptez de re=
+cevoir les mails de SuperencontreRENCONTRE IMMEDIATE=0ADerni=C3=A8res annon=
+ces sur paris 11eme arrondissement=0A=0A[ Constance ]( http://r.maxibonplan=
+.com/5ex6mxg72p98r6b7d.html )=0A=0A" Pour une rencontre=C2=A0sans prise de =
+t=C3=AAte "=0A=0A34 ans g=C3=A9olocalis=C3=A9 =C3=A0 6 km de chez vous=0A=
+=0A[ Voir son annonce ]( http://r.maxibonplan.com/5ex6mxg72q1or6b7d.html )=
+=0A[ La contacter=C2=A0 ]( http://r.maxibonplan.com/5ex6mxg72qu4r6b7d.html =
+)=0A[ Afficher son num=C3=A9ro ]( http://r.maxibonplan.com/5ex6mxg72rmkr6b7=
+d.html )=0A[  ]( http://r.maxibonplan.com/5ex6mxg72sf0r6b7d.html )  [ >> Vo=
+ir toutes les annonces de ma r=C3=A9gion ]( http://r.maxibonplan.com/5ex6mx=
+g72t7gr6b7d.html )=0A=C2=A0Si vous souhaitez vous d=C3=A9sinscrire des mail=
+s de Superencontre, cliquez http://r.maxibonplan.com/1cqanqd1rocr6b7g.html
+
+
+---------?=_27874-3117057606577
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<body style=3D"margin:0; padding:0;"><div align=3D"center" style=3D"color: =
+#727272; font-size: 10px;">Si vous ne parvenez pas =C3=A0 lire cet e-mail, =
+cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r.maxi=
+bonplan.com/1cqanqd1rocr6b7f.html">ici</a>.<br>
+Vous recevez ce mail car vous acceptez de recevoir les mails de Superencont=
+re</div><title></title>=0A<table align=3D"center" border=3D"0" cellpadding=
+=3D"1" cellspacing=3D"1" style=3D"width: 500px">=0A=09<tbody>=0A=09=09<tr>=
+=0A=09=09=09<td bgcolor=3D"#B0C4DE" colspan=3D"2" style=3D"text-align: cent=
+er;">=0A=09=09=09=09<span style=3D"font-size:18px;"><span style=3D"font-fam=
+ily: arial, helvetica, sans-serif;">RENCONTRE IMMEDIATE</span></span></td>=
+=0A=09=09</tr>=0A=09=09<tr>=0A=09=09=09<td bgcolor=3D"#FF69B4" colspan=3D"2=
+" style=3D"text-align: center;">=0A=09=09=09=09<p>=0A=09=09=09=09=09<span s=
+tyle=3D"font-size:18px;"><span style=3D"font-family: arial, helvetica, sans=
+-serif;">Derni&egrave;res annonces sur paris 11eme arrondissement</span></s=
+pan></p>=0A=09=09=09</td>=0A=09=09</tr>=0A=09=09<tr>=0A=09=09=09<td>=0A=09=
+=09=09=09<p style=3D"text-align: center;">=0A=09=09=09=09=09<span style=3D"=
+font-size: 16px;"><span style=3D"font-family: arial, helvetica, sans-serif;=
+"><span style=3D"font-size:20px;"><a href=3D"http://r.maxibonplan.com/5ex6m=
+xg72p98r6b7d.html" style=3D"text-decoration: none;"><span style=3D"color:#0=
+000ff;">Constance</span></a></span><br />=0A=09=09=09=09=09<br />=0A=09=09=
+=09=09=09<em>&quot; Pour une rencontre&nbsp;</em></span></span><em><span st=
+yle=3D"font-family: arial, helvetica, sans-serif; font-size: 16px;">sans pr=
+ise de t&ecirc;te &quot;</span></em></p>=0A=09=09=09=09<p style=3D"text-ali=
+gn: center;">=0A=09=09=09=09=09<span style=3D"font-size: 16px;"><span style=
+=3D"font-family: arial, helvetica, sans-serif;"><span style=3D"color:#0000f=
+f;">34 ans</span> g&eacute;olocalis&eacute; &agrave; <span style=3D"color:#=
+0000ff;">6 km</span> de chez vous<br />=0A=09=09=09=09=09<br />=0A=09=09=09=
+=09=09<a href=3D"http://r.maxibonplan.com/5ex6mxg72q1or6b7d.html" style=3D"=
+text-decoration: none;"><span style=3D"color:#0000ff;">Voir son annonce</sp=
+an></a><br />=0A=09=09=09=09=09<a href=3D"http://r.maxibonplan.com/5ex6mxg7=
+2qu4r6b7d.html" style=3D"text-decoration: none;"><span style=3D"color:#0000=
+ff;">La contacter&nbsp;</span></a><br />=0A=09=09=09=09=09<a href=3D"http:/=
+/r.maxibonplan.com/5ex6mxg72rmkr6b7d.html" style=3D"text-decoration: none;"=
+><span style=3D"color:#0000ff;">Afficher son num&eacute;ro</span></a></span=
+></span></p>=0A=09=09=09</td>=0A=09=09=09<td style=3D"text-align: center;">=
+=0A=09=09=09=09<a href=3D"http://r.maxibonplan.com/5ex6mxg72sf0r6b7d.html" =
+style=3D"text-align: center;"><img src=3D"http://img.maxibonplan.com/acbb2p=
+98r6b7e.jpg" style=3D"width: 150px; height: 202px;" /></a></td>=0A=09=09</t=
+r>=0A=09=09<tr>=0A=09=09=09<td bgcolor=3D"#32CD32" colspan=3D"2" style=3D"t=
+ext-align: center;">=0A=09=09=09=09<a href=3D"http://r.maxibonplan.com/5ex6=
+mxg72t7gr6b7d.html" style=3D"text-decoration: none;"><span style=3D"color:#=
+000000;"><span style=3D"font-size:18px;"><span style=3D"font-family: arial,=
+ helvetica, sans-serif;">&gt;&gt; Voir toutes les annonces de ma r&eacute;g=
+ion</span></span></span></a></td>=0A=09=09</tr>=0A=09</tbody>=0A</table>=0A=
+<p>=0A=09&nbsp;</p>=0A<div align=3D"center" style=3D"color: #727272; font-s=
+ize: 10px;">Si vous souhaitez vous d=C3=A9sinscrire des mails de Superencon=
+tre, cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" href=3D"http://r=
+.maxibonplan.com/1cqanqd1rocr6b7g.html">ici</a></div><div><img width=3D"1" =
+height=3D"1" src=3D"http://r.maxibonplan.com/1cqanqd1rocr6b7h.jpg" /></div>=
+</body>
+
+
+---------?=_27874-3117057606577--
+
