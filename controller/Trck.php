@@ -34,7 +34,7 @@ class Trck extends Controller
 
 
 
-      header('location: http://ads.adextrem.com/delivery/directlink.php?slot=403');
+      header('location: http://trck.me/localsnap/');
       die();
 
     }
@@ -51,7 +51,7 @@ class Trck extends Controller
       }
 
 
-      header('location: http://click.sitemail.vivastreet.com:80/q/fdHY2z_A6TNisgiYvK0SvA~~/AAAAAQA~/RgRay9pNPkEIAKxuqhKsOcVXCnZpdmFzdHJlZXRYBAAAAABIEkZSX2Fub255bW91c19lbWFpbEIKAAJNVelY8DO8bFIXZ2FyLmNpYXRob21hc0BnbWFpbC5jb20JUQQAAAAARxh7ImJpbmRpbmciOiJ2aXZhc3RyZWV0In0T');
+      header('location: http://trck.me/429217/');
       die();
     }
 
