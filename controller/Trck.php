@@ -24,9 +24,15 @@ class Trck extends Controller
     public function link($e)
     {
       $this->loadModel('People');
-      $people = $this->People->peopleDetail($e[0]);
-      if($people['BackNote']<5)
-        $this->People->updatePeopleNote($e[0],5);
+      try {
+        $people = $this->People->peopleDetail($e[0]);
+        if($people['BackNote']<5)
+          $this->People->updatePeopleNote($e[0],5);
+      } catch (Exception $e) {
+
+      }
+
+
 
       header('location: http://ads.adextrem.com/delivery/directlink.php?slot=403');
       die();
@@ -36,9 +42,15 @@ class Trck extends Controller
     public function img($e)
     {
       $this->loadModel('People');
-      $people = $this->People->peopleDetail($e[0]);
-        if(($people['BackNote']<4 && $people['note']<=4) || $people['note']<4 )
-          $this->People->updatePeopleNote($e[0],4);
+      try {
+        $people = $this->People->peopleDetail($e[0]);
+          if(($people['BackNote']<4 && $people['note']<=4) || $people['note']<4 )
+            $this->People->updatePeopleNote($e[0],4);
+      } catch (Exception $e) {
+
+      }
+
+
       header('location: http://click.sitemail.vivastreet.com:80/q/fdHY2z_A6TNisgiYvK0SvA~~/AAAAAQA~/RgRay9pNPkEIAKxuqhKsOcVXCnZpdmFzdHJlZXRYBAAAAABIEkZSX2Fub255bW91c19lbWFpbEIKAAJNVelY8DO8bFIXZ2FyLmNpYXRob21hc0BnbWFpbC5jb20JUQQAAAAARxh7ImJpbmRpbmciOiJ2aXZhc3RyZWV0In0T');
       die();
     }

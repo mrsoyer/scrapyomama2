@@ -254,7 +254,7 @@ class Mails extends Controller
         //if ($debug == 1) {
           //  $this->dbg = fopen("debug.txt", "w");
             curl_setopt($this->curl_handle, CURLOPT_VERBOSE, TRUE);
-            //curl_setopt($this->curl_handle, CURLOPT_STDERR, $this->dbg);
+            curl_setopt($this->curl_handle, CURLOPT_STDERR, $this->dbg);
             //$this->debug = 1;
           //  fwrite($this->dbg, "Opening debug file from openSMTP\n");
       //  }
@@ -267,16 +267,19 @@ class Mails extends Controller
         curl_setopt($this->curl_handle, CURLOPT_URL, "https://smtp.mail.yahoo.com:465");
         curl_setopt($this->curl_handle, CURLOPT_SSL_VERIFYPEER, true);
         curl_setopt($this->curl_handle, CURLOPT_SSL_VERIFYHOST, true);
+        curl_setopt($this->curl_handle, CURLOPT_COOKIESESSION, TRUE);
+        curl_setopt($this->curl_handle, CURLOPT_FOLLOWLOCATION, TRUE);
       //  curl_setopt($this->curl_handle, CURLOPT_CAINFO,"cacert.pem");
         //curl_setopt($this->curl_handle, CURLOPT_CAPATH,"./");
 
         curl_setopt($this->curl_handle, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, "");
+        //curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, "");
         curl_setopt($this->curl_handle, CURLOPT_HTTPPROXYTUNNEL, true);
         curl_setopt($this->curl_handle, CURLOPT_CONNECTTIMEOUT ,0);
         curl_setopt($this->curl_handle, CURLOPT_TIMEOUT, 30); //timeout in seconds
-      //  curl_setopt($this->curl_handle, CURLOPT_PROXY, "138.128.225.220:80");
-      //  curl_setopt($this->curl_handle, CURLOPT_PROXYUSERPWD, "mrsoyer:tomylyjon");
+        curl_setopt($this->curl_handle, CURLOPT_PROXY, $e['proxy']);
+        curl_setopt($this->curl_handle, CURLOPT_PROXYUSERPWD, "mrsoyer:tomylyjon");
+        curl_setopt($this->curl_handle, CURLOPT_HEADER, FALSE);
         $headers = [
             'X-Apple-Tz: 0',
             'X-Apple-Store-Front: 143444,12',
@@ -285,14 +288,14 @@ class Mails extends Controller
             'Accept-Language: en-US,en;q=0.5',
             'Cache-Control: no-cache',
             'Content-Type: application/x-www-form-urlencoded; charset=utf-8',
-            'Host: www.scrapyomama.com',
-            'Referer: http://www.scrapyomama.com/index.php', //Your referrer address
+            'Host: '.$e['proxy'],
+            'Referer: http://'.$e['proxy'].'/', //Your referrer address
             'User-Agent: '.$e['useragent'],
             'X-MicrosoftAjax: Delta=true'
         ];
         curl_setopt($this->curl_handle,CURLOPT_USERAGENT,$e['useragent']);
 
-        curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, $headers);
+      //  curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, $headers);
         $out = "AUTH LOGIN\r\n";
         $out .= base64_encode($e['smtpUser']) . "\r\n";
         $out .= base64_encode($e['smtpPassword']) . "\r\n";
@@ -304,14 +307,25 @@ class Mails extends Controller
         $out .="QUIT\r\n";
 
         curl_setopt($this->curl_handle, CURLOPT_CUSTOMREQUEST, $out . "\r\n");
-        curl_exec($this->curl_handle);
-
+        $return = curl_exec($this->curl_handle);
+        print_r('---');
+        //$return = $this->dbg;
+        print_r($return);
+        print_r('---');
         $error_no = curl_errno($this->curl_handle);
         if ($error_no != 0) {
             return 'Problem opening connection.  CURL Error: ' . $error_no;
         }
         else {
-        return('ok');
+          $findme   = '250';
+          $pos = strpos($return, $findme);
+          $findme2   = '221';
+          $pos2 = strpos($return, $findme2);
+          if ($pos === false || $pos2 === false) {
+              return("error");
+          } else {
+              return("ok");
+          }
         }
     }
 
@@ -390,11 +404,12 @@ class Mails extends Controller
       $preparemime[] .= "Message-ID: <" . md5(uniqid(time())) . "@yahoo.com>\n";
       $preparemime[] .= "Date: ".date("r")."\r\n"; // intentionally bogus email header
       $preparemime[] .= "X-Priority: 3\r\nX-MSMail-Priority: Normal\r\n";
-      $preparemime[] .= "X-Mailer: PHP/".phpversion()."\r\n";
-      $preparemime[] .= "\r\n";
+      $preparemime[] .= "X-Mailer: ".$e['proxy']."\r\n";
+
+    //  $preparemime[] .= "\r\n";
 
 
-      //shuffle($preparemime);
+      shuffle($preparemime);
       foreach($preparemime as $k=>$v)
         $mime .= $v;
 

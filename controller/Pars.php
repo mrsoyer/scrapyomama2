@@ -81,12 +81,12 @@ class Pars extends Controller
 
     }
 
-    public function kit($app,$people)
+    public function kit($people)
     {
 
         $kit = $this->parse();
-        $dest = $app.".herokuapp.com";
-        $link = "https://".$dest."/Trck/link/".$people['peopleid'];
+        $dest = $people['link'];
+        $link = "https://".$dest."/Trck/link/".$people['people_id'];
         $kit['html'] = $this->replace_a_href($kit['html'],$link);
         $kit['html'] = $this->replace_img_src($kit['html'],$dest);
         return($kit);
