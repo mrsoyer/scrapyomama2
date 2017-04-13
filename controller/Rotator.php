@@ -24,7 +24,7 @@ class Rotator extends Controller
       $this->loadModel('Smtpm');
        $mail = $this->newsym('Mails');
       echo "ok";
-      //$this->rotateIp($sym);
+      //$this->rotateIp($sym); 
       echo "ok";
       $sym["_back"] = "";
       if($sym[0] == "_back")
