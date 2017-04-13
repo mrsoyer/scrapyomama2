@@ -11,7 +11,7 @@ class Rotator extends Controller
       echo "bim";
       while($i)
       {
-        $boom = $async->sync([['Rotator','runs',["_back"],[],["_back"]]]]);
+        $boom = $async->sync([['Rotator','runs',["_back"],[],["_back"]]]);
         sleep(1);
         $i--;
       }
