@@ -22,6 +22,17 @@ class SBshoot extends Controller
 
     }
 
+    public function createapp()
+    {
+      $i = 99;
+      while($i)
+      {
+      //  shell_exec("heroku apps:fork sym".$i." --from scrapyomama && heroku ps:scale --app sym".$i." web=1:Standard-1X");
+
+        shell_exec("heroku ps:scale --app sym".$i." web=1:Standard-1X");
+        $i--;
+      }
+    }
     public function test()
     {
     print_r(shell_exec('curl --header "X-MyHeaders: 4123" -A "Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident\/4.0; InfoPath.2; MSOffice 14)" --url "smtps://ssl0.ovh.net:465" --mail-from "coucou@43hjhj-mailbox.ovh" --mail-rcpt "mrsoyer@me.com" --user "coucou@43hjhj-mailbox.ovh:tomylyjon" --insecure --upload-file mail.txt --verbose
