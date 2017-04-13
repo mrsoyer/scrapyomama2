@@ -43,7 +43,7 @@ class Rotator extends Controller
         //print_r($people);
         if(!isset($people['_id']['$oid'])) die();
         $shoot = $this->sendPeople($people,$sym);
-        //sleep(1);
+        sleep(rand(0,3));
         print_r($shoot);
         if($shoot != "ok")
         {
