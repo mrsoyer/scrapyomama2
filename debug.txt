@@ -1,0 +1,29 @@
+Opening debug file from openSMTP
+* Rebuilt URL to: https://smtp.mail.yahoo.com:465/
+*   Trying 217.146.190.250...
+* TCP_NODELAY set
+* Connected to smtp.mail.yahoo.com (217.146.190.250) port 465 (#0)
+* TLS 1.2 connection using TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+* Server certificate: smtp.mail.yahoo.com
+* Server certificate: Symantec Class 3 Secure Server CA - G4
+* Server certificate: VeriSign Class 3 Public Primary Certification Authority - G5
+> AUTH LOGIN
+Y29pc3Vic3JlbWkxOTg0QHlhaG9vLmNvbQ==
+ZFNSb2F3R2VGeQ==
+MAIL FROM: <coisubsremi1984@yahoo.com>
+RCPT TO: <coisubsremi1984@yahoo.com>
+DATA
+To: garciathomas@gmail.com
+From: coisubsremi1984@yahoo.com
+Subject:  Test Message
+
+Message here
+.
+QUIT
+
+ / HTTP/1.1
+Host: smtp.mail.yahoo.com:465
+Accept: */*
+
+* Curl_http_done: called premature == 0
+* Connection #0 to host smtp.mail.yahoo.com left intact

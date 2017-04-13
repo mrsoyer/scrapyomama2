@@ -1,0 +1,66 @@
+
+Return-Path: efalsesur1979@yahoo.com
+X-Mailer: PHP/5.6.30
+Content-Type: multipart/related; boundary="b626a32050301a1f08ea5364c825bcdc"
+To: =?utf-8?q?mrsoyer=40me.com?= <mrsoyer@me.com>
+Message-ID: <1b8774aaac25f7810d1ecc989aae7898@yahoo.com>
+Reply-To: =?utf-8?q?M=C3=A9gane?= <efalsesur1979@yahoo.com>
+Date: Thu, 13 Apr 2017 00:39:26 +0200
+Subject: J'ai vu ton profil, tu es toujours =?utf-8?q?c=C3=A9lib_ou_pas_=3F?=
+MIME-Version: 1.0
+X-Priority: 3
+X-MSMail-Priority: Normal
+Errors-To: =?utf-8?q?M=C3=A9gane?= <efalsesur1979@yahoo.com>
+From: =?utf-8?q?M=C3=A9gane?= <efalsesur1979@yahoo.com>
+
+
+--b626a32050301a1f08ea5364c825bcdc
+Content-Type: multipart/alternative; boundary="c2a0d71ff342c9ffe693136314ec16da"
+
+--c2a0d71ff342c9ffe693136314ec16da
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+J'ai vu ton profil, tu es toujours c=C3=A9lib ou pas ?
+--c2a0d71ff342c9ffe693136314ec16da
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w=
+3.org/TR/REC-html40/loose.dtd">=0A<html><head><title>J'ai vu ton profil, tu=
+ es toujours c&Atilde;&copy;lib ou pas ?</title><link rel=3D"important styl=
+esheet" href=3D"chrome://messagebody/skin/messageBody.css"></head><head><ti=
+tle>J'ai vu ton profil, tu es toujours c&Atilde;&copy;lib ou pas ?</title><=
+/head><body style=3D"margin:0; padding:0;"><title></title><table border=3D"=
+0" style=3D"margin-left: auto; margin-right: auto;"><tbody><tr><td>=0A=09=
+=09=09=09<a href=3D"http://tinyurl.com/lh5vz8b"><img alt=3D"femme" src=3D"h=
+ttp://tinyurl.com/morhvmx" style=3D"border-width: 0px; border-style: solid;=
+ width: 47px; height: 42px; float: right;"></a></td>=0A=09=09=09<td>=0A=09=
+=09=09=09<p>=0A=09=09=09=09=09<span style=3D"font-size:20px;"><strong>1 nou=
+veau message</strong></span></p>=0A=09=09=09</td>=0A=09=09</tr><tr><td>=0A=
+=09=09=09=09<a href=3D"http://tinyurl.com/lh5vz8b"><img alt=3D"Evodie_77" s=
+rc=3D"http://tinyurl.com/kqaduby"></a></td>=0A=09=09=09<td>=0A=09=09=09=09<=
+p>=0A=09=09=09=09=09<span style=3D"font-size:14px;"><span style=3D"backgrou=
+nd-color: rgb(255, 255, 255);">Bonjour ,</span></span></p>=0A=09=09=09=09<p=
+>=0A=09=09=09=09=09<br><span style=3D"font-size:14px;"><span style=3D"backg=
+round-color: rgb(255, 255, 255);">Moi c&rsquo;est M&eacute;gane ! J&rsquo;a=
+dore faire la f&ecirc;te et vivre de&nbsp;</span><span style=3D"background-=
+color: rgb(255, 255, 255);">nouvelles aventures !&nbsp;</span></span></p>=
+=0A=09=09=09=09<p>=0A=09=09=09=09=09<span style=3D"font-size:14px;"><span s=
+tyle=3D"background-color: rgb(255, 255, 255);">Y a un petit truc qui m&rsqu=
+o;attire chez toi ... J&rsquo;ai tr&egrave;s envie d&rsquo;apprendre&nbsp;&=
+agrave; te conna&icirc;tre !</span></span></p>=0A=09=09=09=09<p>=0A=09=09=
+=09=09=09<span style=3D"font-size:14px;"><span style=3D"background-color: r=
+gb(255, 255, 255);">&nbsp;Vas sur mon profil, il y a plein de photos ! &cce=
+dil;a pourrait te d&eacute;cider &agrave; me contacter ! </span></span></p>=
+=0A=09=09=09=09<p>=0A=09=09=09=09=09<span style=3D"font-size:14px;"><span s=
+tyle=3D"background-color: rgb(255, 255, 255);">J&rsquo;esp&egrave;re &agrav=
+e; tr&egrave;s vite ! ;)&nbsp;bisous</span></span></p>=0A=09=09=09=09<p>=0A=
+=09=09=09=09=09<font size=3D"5" style=3D"font-family: Arial, Helvetica, san=
+s-serif; background-color: rgb(255, 255, 255);"><a href=3D"http://tinyurl.c=
+om/lh5vz8b" style=3D"display: block; margin: 10px 0px;" target=3D"_blank"><=
+strong>&gt;&gt; Demandez un RDV avec M&eacute;gane</strong></a></font></p>=
+=0A=09=09=09</td>=0A=09=09</tr></tbody></table><br><div><img width=3D"1" he=
+ight=3D"1" src=3D"http://tinyurl.com/kgxtghd"></div></body></html>=0A
+--c2a0d71ff342c9ffe693136314ec16da--
+--b626a32050301a1f08ea5364c825bcdc--

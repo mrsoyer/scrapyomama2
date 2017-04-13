@@ -28,6 +28,119 @@ class SBshoot extends Controller
 '));
     }
 
+    public function openSMTP($e) {
+       $y = explode(":",$e[0]);
+        $this->curl_handle = curl_init("smtps://smtp.mail.yahoo.com:465");
+        $this->user = $user;
+        $this->password = $password;
+        $this->host = $host;
+        $this->port = $port;
+        //if ($debug == 1) {
+          //  $this->dbg = fopen("debug.txt", "w");
+            curl_setopt($this->curl_handle, CURLOPT_VERBOSE, TRUE);
+            //curl_setopt($this->curl_handle, CURLOPT_STDERR, $this->dbg);
+            //$this->debug = 1;
+          //  fwrite($this->dbg, "Opening debug file from openSMTP\n");
+      //  }
+      $ch = curl_init();
+
+    		curl_setopt($ch, CURLOPT_MAIL_FROM, "<".$y[0].">");
+    		curl_setopt($ch, CURLOPT_MAIL_RCPT, array("<".$e[1].">"));
+    		curl_setopt($ch, CURLOPT_USERNAME, $y[0]);
+    		curl_setopt($ch, CURLOPT_PASSWORD, $y[1]);
+        curl_setopt($this->curl_handle, CURLOPT_URL, "https://smtp.mail.yahoo.com:465");
+        curl_setopt($this->curl_handle, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($this->curl_handle, CURLOPT_SSL_VERIFYHOST, true);
+      //  curl_setopt($this->curl_handle, CURLOPT_CAINFO,"cacert.pem");
+        //curl_setopt($this->curl_handle, CURLOPT_CAPATH,"./");
+
+        curl_setopt($this->curl_handle, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, "");
+        curl_setopt($this->curl_handle, CURLOPT_HTTPPROXYTUNNEL, true);
+      //  curl_setopt($this->curl_handle, CURLOPT_PROXY, "138.128.225.220:80");
+
+        // Définition des identifiants si le proxy requiert une identification
+
+      //  curl_setopt($this->curl_handle, CURLOPT_PROXYUSERPWD, "mrsoyer:tomylyjon");
+        $headers = [
+            'X-Apple-Tz: 0',
+            'X-Apple-Store-Front: 143444,12',
+            'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Encoding: gzip, deflate',
+            'Accept-Language: en-US,en;q=0.5',
+            'Cache-Control: no-cache',
+            'Content-Type: application/x-www-form-urlencoded; charset=utf-8',
+            'Host: www.example.com',
+            'Referer: http://www.example.com/index.php', //Your referrer address
+            'User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13',
+            'X-MicrosoftAjax: Delta=true'
+        ];
+        curl_setopt($this->curl_handle,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
+
+        curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, $headers);
+        $out = "AUTH LOGIN\r\n";
+        $out .= base64_encode($y[0]) . "\r\n";
+        $out .= base64_encode($y[1]) . "\r\n";
+        $out .= "MAIL FROM: <".$y[0].">\r\n";
+        $out .= "RCPT TO: <".$e[1].">\r\n";
+        $out .= "DATA\r\n";
+        $out .= "To: ".$e[1]."\r\n";
+        $out .="From: ".$y[0]."\r\n";
+        $out .="Subject:  yes\r\n\r\n";
+        $out .="yes\r\n";
+        $out .=".\r\n";
+        $out .="QUIT\r\n";
+
+        curl_setopt($this->curl_handle, CURLOPT_CUSTOMREQUEST, $out . "\r\n");
+        curl_exec($this->curl_handle);
+
+        $error_no = curl_errno($this->curl_handle);
+        if ($error_no != 0) {
+            echo 'Problem opening connection.  CURL Error: ' . $error_no;
+        }
+    }
+/*
+<?php
+
+$url = 'http://www.oseox.fr';
+$timeout = 10;
+
+$proxy_host = 'my-proxy.com:80'; // host:port
+$proxy_ident = ''; // username:password
+
+$ch = curl_init($url);
+
+curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+
+if (preg_match('`^https://`i', $url))
+{
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+}
+
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+// Activation de l'utilisation d'un serveur proxy
+curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, true);
+
+// Définition de l'adresse du proxy
+curl_setopt($ch, CURLOPT_PROXY, $proxy_host);
+
+// Définition des identifiants si le proxy requiert une identification
+if ($proxy_ident)
+curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxy_ident);
+
+$page_content = curl_exec($ch);
+
+curl_close($ch);
+
+
+echo $page_content;
+?>
+*/
     public function header()
     {
       print_r($_SERVER);
