@@ -8,7 +8,7 @@ class Run extends Controller
     {
       echo "bim";
       $async = $this->newsym('Async');
-      $shoot[]= ['Run','r',[""],[],['_blank']];
+      $shoot[]= ['Run','r',[""],[],['_back']];
       $boom = $async->sync($shoot);
       echo "bim";
     }
