@@ -23,7 +23,7 @@ class Rotator extends Controller
       else if(isset($sym[1]));
         $sym['sender'] = $sym[1];
       $smtp = $this->Smtpm->findSmtp();
-      $sym[0]=200;
+      $sym[0]=100;
       $sym[1]=$smtp['mail'].":".$smtp['pass'];
       //$sym[2] = "sicardnurni1980@yahoo.com:vZvqWgrjbe";
       $sym['useragent'] = $mail->userAgent();
