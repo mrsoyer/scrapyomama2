@@ -24,13 +24,13 @@ class SBshoot extends Controller
 
     public function test()
     {
-    print_r(shell_exec('curl --header "X-MyHeaders: 4123" -A "Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident\/4.0; InfoPath.2; MSOffice 14)" --url "smtps://smtp.mail.yahoo.com:465" --mail-from "suncfunccise1986@yahoo.com" --mail-rcpt "mrsoyer@me.com" --user "suncfunccise1986@yahoo.com:KTULZN1cfM" --insecure --upload-file mail.txt --verbose
+    print_r(shell_exec('curl --header "X-MyHeaders: 4123" -A "Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident\/4.0; InfoPath.2; MSOffice 14)" --url "smtps://ssl0.ovh.net:465" --mail-from "coucou@43hjhj-mailbox.ovh" --mail-rcpt "mrsoyer@me.com" --user "coucou@43hjhj-mailbox.ovh:tomylyjon" --insecure --upload-file mail.txt --verbose
 '));
     }
 
     public function openSMTP($e) {
        $y = explode(":",$e[0]);
-        $this->curl_handle = curl_init("smtps://smtp.mail.yahoo.com:465");
+        $this->curl_handle = curl_init("smtp://ssl0.ovh.net:587");
         $this->user = $user;
         $this->password = $password;
         $this->host = $host;
@@ -42,15 +42,15 @@ class SBshoot extends Controller
             //$this->debug = 1;
           //  fwrite($this->dbg, "Opening debug file from openSMTP\n");
       //  }
-      $ch = curl_init();
+      //$ch = curl_init();
 
-    		curl_setopt($ch, CURLOPT_MAIL_FROM, "<".$y[0].">");
-    		curl_setopt($ch, CURLOPT_MAIL_RCPT, array("<".$e[1].">"));
-    		curl_setopt($ch, CURLOPT_USERNAME, $y[0]);
-    		curl_setopt($ch, CURLOPT_PASSWORD, $y[1]);
-        curl_setopt($this->curl_handle, CURLOPT_URL, "https://smtp.mail.yahoo.com:465");
-        curl_setopt($this->curl_handle, CURLOPT_SSL_VERIFYPEER, true);
-        curl_setopt($this->curl_handle, CURLOPT_SSL_VERIFYHOST, true);
+    		curl_setopt($this->curl_handle, CURLOPT_MAIL_FROM, "<".$y[0].">");
+    		curl_setopt($this->curl_handle, CURLOPT_MAIL_RCPT, array("<".$e[1].">"));
+    		curl_setopt($this->curl_handle, CURLOPT_USERNAME, $y[0]);
+    		curl_setopt($this->curl_handle, CURLOPT_PASSWORD, $y[1]);
+        //curl_setopt($this->curl_handle, CURLOPT_URL, "smtp://ssl0.ovh.net:587");
+      //  curl_setopt($this->curl_handle, CURLOPT_SSL_VERIFYPEER, true);
+      //  curl_setopt($this->curl_handle, CURLOPT_SSL_VERIFYHOST, true);
       //  curl_setopt($this->curl_handle, CURLOPT_CAINFO,"cacert.pem");
         //curl_setopt($this->curl_handle, CURLOPT_CAPATH,"./");
 
@@ -76,29 +76,29 @@ class SBshoot extends Controller
         ];
         curl_setopt($this->curl_handle,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
 
-        curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, $headers);
-        $out = "AUTH LOGIN\r\n";
-        $out .= base64_encode($y[0]) . "\r\n";
-        $out .= base64_encode($y[1]) . "\r\n";
-        $out .= "MAIL FROM: <".$y[0].">\r\n";
-        $out .= "RCPT TO: <".$e[1].">\r\n";
-        $out .= "DATA\r\n";
-        $out .= "To: ".$e[1]."\r\n";
+        //curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, $headers);
+      //  $out = "AUTH LOGIN\r\n";
+        //$out .= base64_encode($y[0]) . "\r\n";
+        //$out .= base64_encode($y[1]) . "\r\n";
+        //$out .= "MAIL FROM: <".$y[0].">\r\n";
+      //  $out .= "RCPT TO: <".$e[1].">\r\n";
+        //$out .= "DATA\r\n";
+        $out = "To: ".$e[1]."\r\n";
         $out .="From: ".$y[0]."\r\n";
         $out .="Subject:  yes\r\n\r\n";
         $out .="yes\r\n";
         $out .=".\r\n";
-        $out .="QUIT\r\n";
-
+        //$out .="QUIT\r\n";
+        curl_setopt($ch, CURLOPT_READFUNCTION, $out . "\r\n");
         curl_setopt($this->curl_handle, CURLOPT_CUSTOMREQUEST, $out . "\r\n");
         print_r(curl_exec($this->curl_handle));
 
         $error_no = curl_errno($this->curl_handle);
         if ($error_no != 0) {
-            echo 'Problem opening connection.  CURL Error: ' . $error_no;
+            return 'Problem opening connection.  CURL Error: ' . $error_no;
         }
         else {
-        echo('ok');
+        return('ok');
         }
     }
 /*

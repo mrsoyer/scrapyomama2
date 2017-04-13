@@ -39,10 +39,10 @@ class OvhApi extends Controller
 //{"validationUrl":"https://eu.api.ovh.com/auth/?credentialToken=WjIIQwyWLVPpUWiCfjRnFSgBaByV8ILfJYWJHDjdXbGY15hYvPqCThnLjQWEZFKN","consumerKey":"pGUPP5VUGd2FNY7CpgYa9bp7YjmNdTw4","state":"pendingValidation"}%
 
     //  $test = new \Ovh\Api;
-      return new Api( 'X7zY0mNV6CKxRzjd',  // Application Key
-                      'yJ0NvbJsAO5ALWsBtYJilQOR3zmsHo7O',  // Application Secret
+      return new Api( 'xipAPRBTwv0L7wl4',  // Application Key
+                      '0hM03G2CyEhuuk7WyGeBlGEPgVJmpIws',  // Application Secret
                       'ovh-eu',      // Endpoint of API OVH Europe (List of available endpoints)
-                      'hujfsBahOIAVsID1LBjbnFfvJsbHNheb'); // Consumer Key
+                      'IdRei0Y3h0jgmkhKjYG01NIuG1ysA4Qb'); // Consumer Key
 
 
     }

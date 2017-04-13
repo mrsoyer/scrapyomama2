@@ -70,7 +70,7 @@ class Pars extends Controller
       $subject = str_replace("THOMAS", "", $subject);
       $subject = str_replace("paris 11eme arrondissement", "", $subject);
 
-    
+
       $return['name'] = $name;
       $return['subject'] = $subject;
       $return['html'] = "<html>
@@ -92,7 +92,7 @@ class Pars extends Controller
 
         $kit = $this->parse();
         $dest = $people['link'];
-        $link = "https://".$dest."/Trck/link/".$people['people_id'];
+        $link = "http://".$dest."/Trck/link/".$people['people_id'];
         $kit['html'] = $this->replace_a_href($kit['html'],$link);
         $kit['html'] = $this->replace_img_src($kit['html'],$dest);
         return($kit);
@@ -114,15 +114,27 @@ class Pars extends Controller
         foreach ($tags as $tag) {
             $old_src = $tag->getAttribute('src');
             $old_src = $this->base64url_encode($old_src);
-            $new_src_url = "https://".$dest."/Trck/imgSrc/".$old_src;
-            $new_src_url= $this->tinyurl($new_src_url);
+            $new_src_url = "http://".$dest."/Trck/imgSrc/".$old_src;
+            $findme   = 'scrapyomama';
+            $pos = strpos($dest, $findme);
+            if ($pos === false) {
+            } else {
+              $new_src_url= $this->tinyurl($new_src_url);
+            }
+
             $tag->setAttribute('src', $new_src_url);
         }
         return $doc->saveHTML();
     }
 
     public  function replace_a_href($html,$link) {
-        $link = $this->tinyurl($link);
+        $findme   = 'scrapyomama';
+        $pos = strpos($link, $findme);
+        if ($pos === false) {
+        } else {
+          $link = $this->tinyurl($link);
+        }
+
         $doc = new DOMDocument();
         $doc->loadHTML($html);
         $tags = $doc->getElementsByTagName('a');

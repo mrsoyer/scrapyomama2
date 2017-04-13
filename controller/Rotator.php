@@ -38,7 +38,15 @@ class Rotator extends Controller
       //$sym[2] = "sicardnurni1980@yahoo.com:vZvqWgrjbe";
       $sym['useragent'] = $mail->userAgent();
       $sym['proxy'] = $this->proxy();
-      $sym['link'] = "scrapyomama.herokuapp.com";
+      $findme   = 'yahoo';
+      $pos = strpos($smtp['mail'], $findme);
+      if ($pos === false) {
+        $l = explode("@",$smtp['mail']);
+         $sym['link'] = $l[1];
+      } else {
+        $sym['link'] = "scrapyomama.herokuapp.com";
+      }
+      //$sym['link'] = "scrapyomama.herokuapp.com";
       $sym['e']=0;
       $this->shoot($sym);
     }
