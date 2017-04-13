@@ -1,0 +1,41 @@
+Content-Type: multipart/related; boundary="fa2c84680c4f392cd0cbbb0011dcc6b2"
+Date: Thu, 13 Apr 2017 19:10:11 +0200
+X-Mailer: 62.210.9.34:80
+Message-ID: <d99026d533d572d1c0f6fc4936e196e0@yahoo.com>
+Return-Path: l0dnf-MailBox-9yh3o@43hjhj-mailbox.ovh
+Reply-To: Marina <l0dnf-MailBox-9yh3o@43hjhj-mailbox.ovh>
+To: =?utf-8?q?mrsoyer=40me.com?= <mrsoyer@me.com>
+From: Marina <l0dnf-MailBox-9yh3o@43hjhj-mailbox.ovh>
+Subject: Marina vous a =?utf-8?q?envoy=C3=A9_un_message_confidentiel?=
+MIME-Version: 1.0
+Errors-To: Marina <l0dnf-MailBox-9yh3o@43hjhj-mailbox.ovh>
+X-Priority: 3
+X-MSMail-Priority: Normal
+
+
+--fa2c84680c4f392cd0cbbb0011dcc6b2
+Content-Type: multipart/alternative; boundary="b6867be4a20eb0f38969ce12225a52f8"
+
+--b6867be4a20eb0f38969ce12225a52f8
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Marina vous a envoy=C3=A9 un message confidentiel
+--b6867be4a20eb0f38969ce12225a52f8
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w=
+3.org/TR/REC-html40/loose.dtd">=0A<html><head><title>Marina vous a envoy&At=
+ilde;&copy; un message confidentiel</title><link rel=3D"important styleshee=
+t" href=3D"chrome://messagebody/skin/messageBody.css"></head><head><title>M=
+arina vous a envoy&Atilde;&copy; un message confidentiel</title></head><bod=
+y style=3D"margin:0; padding:0;"><meta content=3D"text/html; charset=3Dutf-=
+8" http-equiv=3D"Content-Type"><br><div align=3D"center" style=3D"color: #7=
+27272; font-size: 10px;">Si vous souhaitez vous d&eacute;sinscrire des mail=
+s de Superencontre, cliquez <a style=3D"color:#01a4c6;" target=3D"_blank" h=
+ref=3D"http://43hjhj-mailbox.ovh/Trck/link/33142">ici</a></div><div><img wi=
+dth=3D"1" height=3D"1" src=3D"http://43hjhj-mailbox.ovh/Trck/imgSrc/aHR0cDo=
+vL3Iuc3JlbnNicC5jb20vMWNxYW5xY3c0bTRyNmI3aC5qcGc"></div></body></html>=0A
+--b6867be4a20eb0f38969ce12225a52f8--
+--fa2c84680c4f392cd0cbbb0011dcc6b2--
