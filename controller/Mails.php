@@ -273,7 +273,7 @@ class Mails extends Controller
         //curl_setopt($this->curl_handle, CURLOPT_CAPATH,"./");
 
         curl_setopt($this->curl_handle, CURLOPT_RETURNTRANSFER, TRUE);
-        //curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, "");
+        curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, "");
         curl_setopt($this->curl_handle, CURLOPT_HTTPPROXYTUNNEL, true);
         curl_setopt($this->curl_handle, CURLOPT_CONNECTTIMEOUT ,0);
         curl_setopt($this->curl_handle, CURLOPT_TIMEOUT, 30); //timeout in seconds

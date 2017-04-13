@@ -29,7 +29,7 @@ class Rotator extends Controller
       $sym["_back"] = "";
       if($sym[0] == "_back")
         $sym["_back"] = "_back";
-      else if(isset($sym[1]));
+      if(isset($sym[1]))
         $sym['sender'] = $sym[1];
       $smtp = $this->Smtpm->findSmtp();
       if(!isset($smtp['_id']['$oid'])) die();
@@ -46,6 +46,8 @@ class Rotator extends Controller
     public function shoot($sym)
     {
        $async = $this->newsym('Async');
+       if(isset($sym[2]))
+         $sym['sender'] = $sym[2];
 
         $smtp = $this->thissmtp($sym);
         $people = $this->people();
