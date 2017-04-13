@@ -24,7 +24,7 @@ class Rotator extends Controller
       $this->loadModel('Smtpm');
        $mail = $this->newsym('Mails');
       echo "ok";
-      //$this->rotateIp($sym); 
+      //$this->rotateIp($sym);
       echo "ok";
       $sym["_back"] = "";
       if($sym[0] == "_back")
@@ -133,14 +133,14 @@ class Rotator extends Controller
 
 
 
-      if(!isset($sym['sender']))
-        $sym['sender'] = $people['email'];
+      if(isset($sym['sender']))
+       $people['email'] = $sym['sender'];
 
       $bulk = $shoot->smtp([
         'fromName' => $kit['name'],
         'fromAddress' => $ya[0],
-        'toName' => $sym['sender'],
-        'toAdress' => $sym['sender'],
+        'toName' => $people['email'],
+        'toAdress' => $people['email'],
       //  'toAdress' => $people['email'],
         'subject' => $kit['subject'],
         'htmlMessage' =>$kit['html'],
