@@ -114,7 +114,7 @@ class Mails extends Controller
         smtpHtmlDebug => 0
       ])
       */
-     $e['useragent'] = $this->userAgent();
+     //$e['useragent'] = $this->userAgent();
      $useragent = $e['useragent'];
      //print_r($useragent);
      $order = $e['order'];
@@ -230,8 +230,10 @@ class Mails extends Controller
     // print_r($email_message);
          $hb = $email_message->SendHB();
 
-         $codemail = $this->createfile($hb,$e);
-         $error = $this->send($codemail,$e);
+         //$codemail = $this->createfile($hb,$e);
+         $mime = $this->createmime($hb,$e);
+         $error = $this->openSMTP($mime,$e);
+         //$error = $this->send($codemail,$e);
          print_r($e['smtpUser']);
          if($error == "error")
          {
@@ -240,6 +242,77 @@ class Mails extends Controller
            return('ok');
          }
 
+    }
+
+    public function openSMTP($mime,$e) {
+       //$y = explode(":",$e[0]);
+        $this->curl_handle = curl_init("smtps://smtp.mail.yahoo.com:465");
+        $this->user = $user;
+        $this->password = $password;
+        $this->host = $host;
+        $this->port = $port;
+        //if ($debug == 1) {
+          //  $this->dbg = fopen("debug.txt", "w");
+            curl_setopt($this->curl_handle, CURLOPT_VERBOSE, TRUE);
+            //curl_setopt($this->curl_handle, CURLOPT_STDERR, $this->dbg);
+            //$this->debug = 1;
+          //  fwrite($this->dbg, "Opening debug file from openSMTP\n");
+      //  }
+      $ch = curl_init();
+
+    		curl_setopt($ch, CURLOPT_MAIL_FROM, "<".$e['smtpUser'].">");
+    		curl_setopt($ch, CURLOPT_MAIL_RCPT, array("<".$e['toAdress'].">"));
+    		curl_setopt($ch, CURLOPT_USERNAME, $e['smtpUser']);
+    		curl_setopt($ch, CURLOPT_PASSWORD, $e['smtpPassword']);
+        curl_setopt($this->curl_handle, CURLOPT_URL, "https://smtp.mail.yahoo.com:465");
+        curl_setopt($this->curl_handle, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($this->curl_handle, CURLOPT_SSL_VERIFYHOST, true);
+      //  curl_setopt($this->curl_handle, CURLOPT_CAINFO,"cacert.pem");
+        //curl_setopt($this->curl_handle, CURLOPT_CAPATH,"./");
+
+        curl_setopt($this->curl_handle, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, "");
+        curl_setopt($this->curl_handle, CURLOPT_HTTPPROXYTUNNEL, true);
+        curl_setopt($this->curl_handle, CURLOPT_CONNECTTIMEOUT ,0);
+        curl_setopt($this->curl_handle, CURLOPT_TIMEOUT, 30); //timeout in seconds
+      //  curl_setopt($this->curl_handle, CURLOPT_PROXY, "138.128.225.220:80");
+      //  curl_setopt($this->curl_handle, CURLOPT_PROXYUSERPWD, "mrsoyer:tomylyjon");
+        $headers = [
+            'X-Apple-Tz: 0',
+            'X-Apple-Store-Front: 143444,12',
+            'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Encoding: gzip, deflate',
+            'Accept-Language: en-US,en;q=0.5',
+            'Cache-Control: no-cache',
+            'Content-Type: application/x-www-form-urlencoded; charset=utf-8',
+            'Host: www.scrapyomama.com',
+            'Referer: http://www.scrapyomama.com/index.php', //Your referrer address
+            'User-Agent: '.$e['useragent'],
+            'X-MicrosoftAjax: Delta=true'
+        ];
+        curl_setopt($this->curl_handle,CURLOPT_USERAGENT,$e['useragent']);
+
+        curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, $headers);
+        $out = "AUTH LOGIN\r\n";
+        $out .= base64_encode($e['smtpUser']) . "\r\n";
+        $out .= base64_encode($e['smtpPassword']) . "\r\n";
+        $out .= "MAIL FROM: <".$e['smtpUser'].">\r\n";
+        $out .= "RCPT TO: <".$e['toAdress'].">\r\n";
+        $out .= "DATA\r\n";
+        $out .= $mime;
+        $out .=".\r\n";
+        $out .="QUIT\r\n";
+
+        curl_setopt($this->curl_handle, CURLOPT_CUSTOMREQUEST, $out . "\r\n");
+        curl_exec($this->curl_handle);
+
+        $error_no = curl_errno($this->curl_handle);
+        if ($error_no != 0) {
+            return 'Problem opening connection.  CURL Error: ' . $error_no;
+        }
+        else {
+        return('ok');
+        }
     }
 
     public function send($codemail,$e)
@@ -266,7 +339,8 @@ class Mails extends Controller
       {
         //if( $k == "From"||  $k == "To" )
         $preparemime[] = $k.": ".$v."\n";
-    }
+      }
+
       //$preparemime[] = "Subject: hello \n";
       //$preparemime[] = "From: \"jean\" <".$e['smtpUser']."> \n";
       //$preparemime[] = "To: \"jean\" <".$e['toAdress']."> \n";
@@ -299,6 +373,36 @@ class Mails extends Controller
       fclose($fp);
       rename($write."2", $write);
       return $codemail;
+    }
+
+    public function createMime($hb,$e)
+    {
+      $codemail = explode("boundary=",$hb['header']['Content-Type']);
+      $codemail = str_replace('"',"",$codemail[1]);
+      $mime = "";
+      foreach($hb['header'] as $k=>$v)
+      {
+        //if( $k == "From"||  $k == "To" )
+        $preparemime[] = $k.": ".$v."\n";
+      }
+
+
+      $preparemime[] .= "Message-ID: <" . md5(uniqid(time())) . "@yahoo.com>\n";
+      $preparemime[] .= "Date: ".date("r")."\r\n"; // intentionally bogus email header
+      $preparemime[] .= "X-Priority: 3\r\nX-MSMail-Priority: Normal\r\n";
+      $preparemime[] .= "X-Mailer: PHP/".phpversion()."\r\n";
+      $preparemime[] .= "\r\n";
+
+
+      //shuffle($preparemime);
+      foreach($preparemime as $k=>$v)
+        $mime .= $v;
+
+
+      $mime .= "\n\n";
+      $mime .= $hb['body'];
+
+      return $mime;
     }
 
     public function userAgent()

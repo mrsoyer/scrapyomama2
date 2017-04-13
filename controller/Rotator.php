@@ -13,6 +13,7 @@ class Rotator extends Controller
       print_r($sym);
       echo "ok";
       $this->loadModel('Smtpm');
+       $mail = $this->newsym('Mails');
       echo "ok";
       //$this->rotateIp($sym);
       echo "ok";
@@ -25,7 +26,7 @@ class Rotator extends Controller
       $sym[1]=200;
       $sym[2]=$smtp['mail'].":".$smtp['pass'];
       //$sym[2] = "sicardnurni1980@yahoo.com:vZvqWgrjbe";
-
+      $sym['useragent'] = $mail->userAgent();
       $this->shoot($sym);
     }
 
@@ -122,7 +123,8 @@ class Rotator extends Controller
         'ssl' => 1,
         'tls' => 0,
         'smtpDebug' => 0,
-        'smtpHtmlDebug' => 0
+        'smtpHtmlDebug' => 0,
+        'useragent' => $sym['useragent']
       ]);
 
       return $bulk;

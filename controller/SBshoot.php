@@ -57,10 +57,9 @@ class SBshoot extends Controller
         curl_setopt($this->curl_handle, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, "");
         curl_setopt($this->curl_handle, CURLOPT_HTTPPROXYTUNNEL, true);
+        curl_setopt($this->curl_handle, CURLOPT_CONNECTTIMEOUT ,0);
+        curl_setopt($this->curl_handle, CURLOPT_TIMEOUT, 30); //timeout in seconds
       //  curl_setopt($this->curl_handle, CURLOPT_PROXY, "138.128.225.220:80");
-
-        // Définition des identifiants si le proxy requiert une identification
-
       //  curl_setopt($this->curl_handle, CURLOPT_PROXYUSERPWD, "mrsoyer:tomylyjon");
         $headers = [
             'X-Apple-Tz: 0',
@@ -92,11 +91,14 @@ class SBshoot extends Controller
         $out .="QUIT\r\n";
 
         curl_setopt($this->curl_handle, CURLOPT_CUSTOMREQUEST, $out . "\r\n");
-        curl_exec($this->curl_handle);
+        print_r(curl_exec($this->curl_handle));
 
         $error_no = curl_errno($this->curl_handle);
         if ($error_no != 0) {
             echo 'Problem opening connection.  CURL Error: ' . $error_no;
+        }
+        else {
+        echo('ok');
         }
     }
 /*
