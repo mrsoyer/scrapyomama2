@@ -22,6 +22,11 @@ class SBshoot extends Controller
 
     }
 
+    public function insertm()
+    {
+      print_r($_SERVER);
+    }
+
     public function createapp()
     {
       $i = 99;
@@ -35,7 +40,7 @@ class SBshoot extends Controller
     }
     public function test()
     {
-    print_r(shell_exec('curl --header "X-MyHeaders: 4123" -A "Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident\/4.0; InfoPath.2; MSOffice 14)" --url "smtps://ssl0.ovh.net:465" --mail-from "coucou@43hjhj-mailbox.ovh" --mail-rcpt "mrsoyer@me.com" --user "coucou@43hjhj-mailbox.ovh:tomylyjon" --insecure --upload-file mail.txt --verbose
+    print_r(shell_exec('curl --header "X-MyHeaders: 4123" -A "Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident\/4.0; InfoPath.2; MSOffice 14)" --url "smtps://ssl0.ovh.net:465" --mail-from "036tr-mailbox-szv9e@mailbox678678.ovh" --mail-rcpt "mrsoyer@me.com" --user "036tr-mailbox-szv9e@mailbox678678.ovh:tomylyjon" --insecure --upload-file mail.txt --verbose
 '));
     }
 
