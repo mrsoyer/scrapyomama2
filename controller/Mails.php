@@ -369,7 +369,7 @@ class Mails extends Controller
       $preparemime[] .= "Message-ID: <" . md5(uniqid(time())) . "@cloudmailin.net>\n";
       $preparemime[] .= "Date: ".date("r")."\r\n"; // intentionally bogus email header
       $preparemime[] .= "X-Priority: 3\r\nX-MSMail-Priority: Normal\r\n";
-      $preparemime[] .= "X-Mailer: ".$e['proxy']."\r\n";
+      $preparemime[] .= "X-Mailer: ".$_SERVER['SERVER_NAME']."\r\n";
 
     //  $preparemime[] .= "\r\n";
 

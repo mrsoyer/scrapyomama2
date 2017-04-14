@@ -117,10 +117,10 @@ class Pars extends Controller
             $new_src_url = "http://".$dest."/Trck/imgSrc/".$old_src;
             $findme   = 'scrapyomama';
             $pos = strpos($dest, $findme);
-            if ($pos === false) {
-            } else {
+          //  if ($pos === false) {
+            //} else {
               $new_src_url= $this->tinyurl($new_src_url);
-            }
+          //  }
 
             $tag->setAttribute('src', $new_src_url);
         }
@@ -129,11 +129,11 @@ class Pars extends Controller
 
     public  function replace_a_href($html,$link) {
         $findme   = 'scrapyomama';
-        $pos = strpos($link, $findme);
-        if ($pos === false) {
-        } else {
+        //$pos = strpos($link, $findme);
+        //if ($pos === false) {
+        //} else {
           $link = $this->tinyurl($link);
-        }
+        //}
 
         $doc = new DOMDocument();
         $doc->loadHTML($html);
