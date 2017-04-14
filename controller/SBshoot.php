@@ -24,7 +24,7 @@ class SBshoot extends Controller
 
     public function insertm()
     {
-      print_r($_SERVER);
+      print_r($_SERVER['CLOUDMAILIN_FORWARD_ADDRESS']);
     }
 
     public function createapp()
