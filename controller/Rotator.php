@@ -135,10 +135,14 @@ class Rotator extends Controller
 
       if(isset($sym['sender']))
        $people['email'] = $sym['sender'];
+       if(isset($_SERVER['CLOUDMAILIN_FORWARD_ADDRESS']))
+        $fromadress = $_SERVER['CLOUDMAILIN_FORWARD_ADDRESS'];
+      else 
+        $fromadress = $ya[0];
 
       $bulk = $shoot->smtp([
         'fromName' => $kit['name'],
-        'fromAddress' => $ya[0],
+        'fromAddress' => $fromadress,
         'toName' => $people['email'],
         'toAdress' => $people['email'],
       //  'toAdress' => $people['email'],

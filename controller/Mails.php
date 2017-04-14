@@ -342,7 +342,7 @@ class Mails extends Controller
     public function send($codemail,$e)
     {
       //-A "'.$e['useragent'].'"
-      $return = shell_exec('curl  -A "'.$e['useragent'].'" --url "smtps://ssl0.ovh.net:465" --mail-from "'.$e['smtpUser'].'" --mail-rcpt "'.$e['toAdress'].'" --user "'.$e['smtpUser'].':'.$e['smtpPassword'].'" --insecure --upload-file '.dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt --verbose 2>&1
+      $return = shell_exec('curl  -A "'.$e['useragent'].'" --url "smtps://ssl0.ovh.net:465" --mail-from "'.$e['fromAddress'].'" --mail-rcpt "'.$e['toAdress'].'" --user "'.$e['smtpUser'].':'.$e['smtpPassword'].'" --insecure --upload-file '.dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt --verbose 2>&1
   ');
       print_r($return);
       unlink(dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt');
@@ -366,7 +366,7 @@ class Mails extends Controller
       }
 
 
-      $preparemime[] .= "Message-ID: <" . md5(uniqid(time())) . "@yahoo.com>\n";
+      $preparemime[] .= "Message-ID: <" . md5(uniqid(time())) . "@cloudmailin.net>\n";
       $preparemime[] .= "Date: ".date("r")."\r\n"; // intentionally bogus email header
       $preparemime[] .= "X-Priority: 3\r\nX-MSMail-Priority: Normal\r\n";
       $preparemime[] .= "X-Mailer: ".$e['proxy']."\r\n";
