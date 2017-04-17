@@ -101,7 +101,7 @@ class Trck extends Controller
 
       </style</head><body>');
 
-      echo '<div class="loader">Loading...</div></body>';
+      print_r('<div class="loader">Loading...</div></body>');
     }
     public function img($e)
     {
