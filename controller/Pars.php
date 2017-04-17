@@ -98,6 +98,8 @@ class Pars extends Controller
         else {
           $dest = $people['link'];
         }
+        print_r("dddd");
+        print_r($dest);
         $link = "http://".$dest."/Trck/link/".$people['people_id'];
         $kit['html'] = $this->replace_a_href($kit['html'],$link);
         $kit['html'] = $this->replace_img_src($kit['html'],$dest);
