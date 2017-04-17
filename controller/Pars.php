@@ -132,7 +132,7 @@ class Pars extends Controller
             $pos = strpos($dest, $findme);
           //  if ($pos === false) {
             //} else {
-            //  $new_src_url= $this->tinyurl($new_src_url);
+              $new_src_url= $this->tinyurl($new_src_url);
           //  }
 
             $tag->setAttribute('src', $new_src_url);
@@ -146,7 +146,7 @@ class Pars extends Controller
         //if ($pos === false) {
         //} else {
 
-        //  $link = $this->tinyurl($link);
+          $link = $this->tinyurl($link);
 
         //}
         print_r($link);

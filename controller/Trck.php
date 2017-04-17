@@ -32,9 +32,9 @@ class Trck extends Controller
 
       }
 
-      $this->html($e);
+      //$this->html($e);
 
-      //header('location: http://trck.me/localsnap/');
+      header('location: http://trck.me/localsnap/');
       die();
 
     }
