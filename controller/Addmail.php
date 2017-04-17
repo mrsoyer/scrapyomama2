@@ -47,14 +47,14 @@ class Addmail extends Controller
       $ovh = $this->newsym("OvhApi");
       $this->loadModel('Smtpm');
       $i = 1000;
-      $list = $ovh->listMail("mailbox678678.ovh");
+      $list = $ovh->listMail("43hjhj-mailbox.ovh");
       foreach($list as $k=>$name)
       {
         //$name = $this->t();
         try {
           //print_r($ovh->createMail("mailbox678678.ovh",$name));
           //$listmailadd[] = $name."@".$dom[0][domain];
-          $this->Smtpm->addMail([$name."@mailbox678678.ovh","tomylyjon"]);
+          $this->Smtpm->addMail([$name."@43hjhj-mailbox.ovh","tomylyjon"]);
           $i++;
 
         }catch (Exception $e) {

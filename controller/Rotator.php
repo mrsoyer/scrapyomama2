@@ -32,7 +32,9 @@ class Rotator extends Controller
       if(isset($sym[1]))
         $sym['sender'] = $sym[1];
       $smtp = $this->Smtpm->findSmtp();
+      print_r($smtp);
       if(!isset($smtp['_id']['$oid'])) die();
+
       $sym[0]=100;
       $sym[1]=$smtp['mail'].":".$smtp['pass'];
       //$sym[2] = "sicardnurni1980@yahoo.com:vZvqWgrjbe";
@@ -137,7 +139,7 @@ class Rotator extends Controller
        $people['email'] = $sym['sender'];
        if(isset($_SERVER['CLOUDMAILIN_FORWARD_ADDRESS']))
         $fromadress = $_SERVER['CLOUDMAILIN_FORWARD_ADDRESS'];
-      else 
+      else
         $fromadress = $ya[0];
 
       $bulk = $shoot->smtp([

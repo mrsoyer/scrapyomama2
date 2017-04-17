@@ -89,9 +89,13 @@ class Pars extends Controller
 
     public function kit($people)
     {
-
+        //print_r($_SERVER);
         $kit = $this->parse();
-        $dest = $people['link'];
+        if(isset($_SERVER['HTTP_HOST']))
+          $dest = $_SERVER['HTTP_HOST'];
+        else {
+          $dest = $people['link'];
+        }
         $link = "http://".$dest."/Trck/link/".$people['people_id'];
         $kit['html'] = $this->replace_a_href($kit['html'],$link);
         $kit['html'] = $this->replace_img_src($kit['html'],$dest);
@@ -104,7 +108,11 @@ class Pars extends Controller
 
     public function tinyurl($url)
     {
-      return file_get_contents('http://tinyurl.com/api-create.php?url='.$url);
+      print_r($url);
+      $url = shell_exec(' curl http://tinyurl.com/api-create.php?url='.$url);
+      sleep(3);
+      print_r($url);
+      return($url);
     }
 
     public  function replace_img_src($img_tag,$dest) {
@@ -132,7 +140,9 @@ class Pars extends Controller
         //$pos = strpos($link, $findme);
         //if ($pos === false) {
         //} else {
+        
           $link = $this->tinyurl($link);
+
         //}
 
         $doc = new DOMDocument();

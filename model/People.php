@@ -130,7 +130,7 @@ class People extends Model
 					],
 					[
 						'limit' => $nbinsert,
-						'sort' => ['note' => -1, 'nextsend' => 1]
+						'sort' => [ 'nextsend' => -1]
 					]
 				);
 

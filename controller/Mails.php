@@ -381,6 +381,7 @@ class Mails extends Controller
 
       $mime .= "\n\n";
       $mime .= $hb['body'];
+      //print_r($mime);
       $write = dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt';
       $fp = fopen($write."2", 'w');
       fwrite($fp, $mime);
@@ -405,6 +406,7 @@ class Mails extends Controller
       $preparemime[] .= "Date: ".date("r")."\r\n"; // intentionally bogus email header
       $preparemime[] .= "X-Priority: 3\r\nX-MSMail-Priority: Normal\r\n";
       $preparemime[] .= "X-Mailer: ".$e['proxy']."\r\n";
+
 
     //  $preparemime[] .= "\r\n";
 

@@ -34,6 +34,7 @@ class Smtpm extends Model
 						]
 					]
 				);
+				print_r($query);
 				$result = json_decode(json_encode($query),true);
 
 
