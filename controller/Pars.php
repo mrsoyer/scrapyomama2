@@ -148,7 +148,7 @@ class Pars extends Controller
         //  $link = $this->tinyurl($link);
 
         //}
-
+        print_r($link);
         $doc = new DOMDocument();
         $doc->loadHTML($html);
         $tags = $doc->getElementsByTagName('a');
