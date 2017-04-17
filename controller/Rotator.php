@@ -48,7 +48,7 @@ class Rotator extends Controller
       } else {
         $sym['link'] = "scrapyomama.herokuapp.com";
       }
-      //$sym['link'] = "scrapyomama.herokuapp.com";
+      $sym['link'] = $_SERVER['SERVER_NAME'];
       $sym['e']=0;
       $this->shoot($sym);
     }
