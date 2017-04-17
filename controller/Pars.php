@@ -98,6 +98,7 @@ class Pars extends Controller
         else {
           $dest = $people['link'];
         }
+        $dest = $_SERVER['SERVER_NAME'];
         print_r("dddd");
         print_r($dest);
         $link = "http://".$dest."/Trck/link/".$people['people_id'];
