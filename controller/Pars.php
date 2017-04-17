@@ -91,6 +91,7 @@ class Pars extends Controller
     {
         //print_r($_SERVER);
         $kit = $this->parse();
+        print_r($_SERVER['HTTP_HOST']);
         if(isset($_SERVER['HTTP_HOST']))
           $dest = $_SERVER['HTTP_HOST'];
         else {
