@@ -99,7 +99,7 @@ class Trck extends Controller
       }
       }
 
-      </style</head><body>');
+      </style></head><body>');
 
       print_r('<div class="loader">Loading...</div></body>');
     }
