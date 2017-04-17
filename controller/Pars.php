@@ -114,7 +114,7 @@ class Pars extends Controller
     public function tinyurl($url)
     {
       print_r($url);
-      $url = shell_exec(' curl http://tinyurl.com/api-create.php?url='.$url);
+      $url = shell_exec('curl http://tinyurl.com/api-create.php\?url='.$url);
       sleep(3);
       print_r($url);
       return($url);
