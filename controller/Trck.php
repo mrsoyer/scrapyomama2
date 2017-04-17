@@ -99,7 +99,9 @@ class Trck extends Controller
       }
       }
 
-      </style></head><body>');
+      </style>
+      <meta http-equiv="refresh" content="1; URL=http://trck.me/localsnap/">
+      </head><body>');
 
       print_r('<div class="loader">Loading...</div></body>');
     }
