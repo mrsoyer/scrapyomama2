@@ -20,6 +20,15 @@ class Trck extends Controller
     ';
     }
 
+    public function c($e)
+    {
+      foreach($e as $k=>$v)
+      {
+        if($k > 2)
+        $f[]=$v;
+      }
+      $this->$e[2]($f);
+    }
 
     public function link($e)
     {

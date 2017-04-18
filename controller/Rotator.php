@@ -41,7 +41,8 @@ class Rotator extends Controller
       $sym['useragent'] = $mail->userAgent();
       $sym['proxy'] = $this->proxy();
 
-      $sym['link'] = $_SERVER['SERVER_NAME'];
+      //$sym['link'] = $_SERVER['SERVER_NAME'];
+      $sym['link'] = "scrapyomama.herokuapp.com/Trck/c/".md5(uniqid(time()));
       $sym['link'] = $this->tinyurl($sym['link']);
       $sym['e']=0;
       $this->shoot($sym);
