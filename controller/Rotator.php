@@ -42,7 +42,7 @@ class Rotator extends Controller
       $sym['proxy'] = $this->proxy();
 
       $sym['link'] = $_SERVER['SERVER_NAME'];
-      $sym['link'] = $this->tinyurl($sym['link'])
+      $sym['link'] = $this->tinyurl($sym['link']);
       $sym['e']=0;
       $this->shoot($sym);
     }
