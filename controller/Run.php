@@ -14,6 +14,7 @@ class Run extends Controller
     }
     public function r($e)
     {
+      if(time() < 1492574400)die();
       $apps = json_decode(shell_exec('curl -n -X GET https://api.heroku.com/apps \
     -H "Content-Type: application/json" \
     -H "Accept: application/vnd.heroku+json; version=3" \
