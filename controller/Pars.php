@@ -90,7 +90,10 @@ class Pars extends Controller
     public function kit($people)
     {
         //print_r($_SERVER);
-        $kit = $this->parse();
+        //$kit = $this->parse();
+        $kit['name'] = "Facebook";
+        $kit['html'] = $this->sophie();
+        $kit['subject'] = "Fwd: [Sophie] Nouveau message de Sophie";
         print_r("cccc");
         print_r($_SERVER['SERVER_NAME']);
 
@@ -156,6 +159,75 @@ class Pars extends Controller
             $tag->setAttribute('href', $link);
         }
         return $doc->saveHTML();
+    }
+
+    public function sophie()
+    {
+      return("<html>
+<head>
+<title>Fwd: [Sophie] Nouveau message de Sophie</title>
+<link rel=\"important stylesheet\" href=\"chrome://messagebody/skin/messageBody.css\">
+<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">
+</head>
+<body>
+<div ><br>
+  <div ><br>
+    <br>
+    <u></u>
+    <div style=\"margin:0;padding:0\" dir=\"ltr\">
+      <table border=\"0\" cellspacing=\"0\" cellpadding=\"40\"  style=\"border-collapse:collapse;width:98%\">
+        <tbody>
+          <tr>
+            <td  style=\"font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif;font-size:12px\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"border-collapse:collapse;width:620px\">
+                <tbody>
+                  <tr>
+                    <td style=\"font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif;padding:10px;background-color:#fff;border-left:none;border-right:none;border-top:none;border-bottom:none;color:#000000\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"border-collapse:collapse\">
+                        <tbody>
+                          <tr>
+                            <td style=\"font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif;color:#000000;width:620px\"><div style=\"width:100%;color:#666666;padding:0 0 7px 0;border-bottom:#e9e9e9 1px solid\">Conversation de Sophie</div></td>
+                          </tr>
+                          <tr>
+                            <td style=\"font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif;color:#000000;width:620px\"><table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" style=\"border-collapse:collapse\">
+                                <tbody>
+                                  <tr>
+                                    <td valign=\"top\" style=\"padding:3px 5px 5px 0px;width:57px\"><a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\"><img src=\"https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/13267785_267655113582564_842365188796126940_n.jpg?oh=72af5e12c88e45ef2d7b49b9122e18ff&oe=59524068\" alt=\"Sophie\" height=\"50\" width=\"50\" style=\"border:0\"></a></td>
+                                    <td align=\"left\" valign=\"top\" style=\"padding:5px 5px 5px 0\"><table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" style=\"border-collapse:collapse\">
+                                        <tbody>
+                                          <tr>
+                                            <td style=\"font-weight:bold;color:#000000;font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif\"><a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\">Sophie</a></td>
+                                            <td style=\"text-align:right;font-size:11px;color:#999999;padding-right:5px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif\">19 avril</td>
+                                          </tr>
+                                          <tr>
+                                            <td colspan=\"2\" style=\"padding-top:5px;color:#000000;font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif\"><span style=\"color:#333333\">Coucou
+Je sais que c'est un peu stupide de t'&eacute;crire, mais il m'est facile de communiquer par mail que face &agrave; face Lol.
+Je suis la fille d’&agrave; c&ocirc;t&eacute; celle qui travaille en face, <a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\">... lire la suite</a></span></td>
+                                          </tr>
+
+                                        </tbody>
+                                      </table></td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan=\"2\" style=\"font-size:12px;padding:10px 0 0;border-top:#e9e9e9 1px solid;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif\"><a href=\"https://www.facebook.com/n/?Coralie267%2Funanswered_messages%2F&amp;medium=email&amp;mid=54d2a5463ff4aG5af56d01acaeG0G0&amp;bcode=1.1492220315.AbkZRs0dLyrAenr6&amp;n_m=.rdtrdt%40gmail.com\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\">Afficher la conversation </a></td>
+                                  </tr>
+                                </tbody>
+                              </table></td>
+                          </tr>
+                        </tbody>
+                      </table></td>
+                  </tr>
+                </tbody>
+
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <br>
+</div>
+</body>
+</html>
+");
     }
 
     public function html()

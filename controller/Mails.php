@@ -116,6 +116,7 @@ class Mails extends Controller
       */
      //$e['useragent'] = $this->userAgent();
      //$e['fromAddress'] = "acaxperna1988@mail.ru";
+
      $useragent = $e['useragent'];
      //print_r($useragent);
      $order = $e['order'];
@@ -433,4 +434,6 @@ class Mails extends Controller
       return($result);
 
     }
+
+    
 }
