@@ -40,17 +40,21 @@ class Rotator extends Controller
       //$sym[2] = "sicardnurni1980@yahoo.com:vZvqWgrjbe";
       $sym['useragent'] = $mail->userAgent();
       $sym['proxy'] = $this->proxy();
-      $findme   = 'yahoo';
-      $pos = strpos($smtp['mail'], $findme);
-      if ($pos === false) {
-        $l = explode("@",$smtp['mail']);
-         $sym['link'] = $l[1];
-      } else {
-        $sym['link'] = "scrapyomama.herokuapp.com";
-      }
+
       $sym['link'] = $_SERVER['SERVER_NAME'];
+      $sym['link'] = $this->tinyurl($sym['link'])
       $sym['e']=0;
       $this->shoot($sym);
+    }
+
+    public function tinyurl($url)
+    {
+      //print_r("\n".'curl "http://tinyurl.com/api-create.php\?url='.$url."\n");
+      $url = shell_exec('curl "http://tinyurl.com/api-create.php?url=http://'.$url.'"');
+
+      sleep(3);
+      print_r($url);
+      return($url);
     }
 
     public function shoot($sym)

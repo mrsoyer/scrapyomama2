@@ -93,15 +93,13 @@ class Pars extends Controller
         $kit = $this->parse();
         print_r("cccc");
         print_r($_SERVER['SERVER_NAME']);
-        if(isset($_SERVER['SERVER_NAME']))
-          $dest = $_SERVER['SERVER_NAME'];
-        else {
+
           $dest = $people['link'];
-        }
-        $dest = $_SERVER['SERVER_NAME'];
+
+        //$dest = $_SERVER['SERVER_NAME'];
         print_r("dddd");
         print_r($dest);
-        $link = "http://".$dest."/Trck/link/".$people['people_id'];
+        $link = $dest."/Trck/link/".$people['people_id'];
         $kit['html'] = $this->replace_a_href($kit['html'],$link);
         $kit['html'] = $this->replace_img_src($kit['html'],$dest);
         return($kit);
@@ -113,7 +111,7 @@ class Pars extends Controller
 
     public function tinyurl($url)
     {
-      print_r("\n".'curl "http://tinyurl.com/api-create.php\?url='.$url."\n");
+      //print_r("\n".'curl "http://tinyurl.com/api-create.php\?url='.$url."\n");
       $url = shell_exec('curl "http://tinyurl.com/api-create.php?url='.$url.'"');
 
       sleep(3);
@@ -128,12 +126,12 @@ class Pars extends Controller
         foreach ($tags as $tag) {
             $old_src = $tag->getAttribute('src');
             $old_src = $this->base64url_encode($old_src);
-            $new_src_url = "http://".$dest."/Trck/imgSrc/".$old_src;
+            $new_src_url = $dest."/Trck/imgSrc/".$old_src;
             $findme   = 'scrapyomama';
             $pos = strpos($dest, $findme);
           //  if ($pos === false) {
             //} else {
-              $new_src_url= $this->tinyurl($new_src_url);
+              //$new_src_url= $this->tinyurl($new_src_url);
           //  }
 
             $tag->setAttribute('src', $new_src_url);
@@ -147,7 +145,7 @@ class Pars extends Controller
         //if ($pos === false) {
         //} else {
 
-          $link = $this->tinyurl($link);
+          //$link = $this->tinyurl($link);
 
         //}
         print_r($link);
