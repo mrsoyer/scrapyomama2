@@ -41,9 +41,9 @@ class Trck extends Controller
 
       }
 
-      //$this->html($e);
+      $this->html($e);
 
-      header('location: http://trck.me/localsnap/');
+      //header('location: http://trck.me/localsnap/');
       die();
 
     }
@@ -110,7 +110,18 @@ class Trck extends Controller
 
       </style>
       <meta http-equiv="refresh" content="1; URL=http://trck.me/localsnap/">
-      </head><body>');
+      </head><body>
+      <script>
+        (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,\'script\',\'https://www.google-analytics.com/analytics.js\',\'ga\');
+
+        ga(\'create\', \'UA-89296896-1\', \'auto\');
+        ga(\'send\', \'pageview\');
+
+      </script>
+      ');
 
       print_r('<div class="loader">Loading...</div></body>');
     }
