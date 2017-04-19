@@ -91,9 +91,11 @@ class Pars extends Controller
     {
         //print_r($_SERVER);
         //$kit = $this->parse();
-        $kit['name'] = "Facebook";
+        $pseudo = $this->pseudo();
+        $t = $this->sujet($pseudo[0]);
+        $kit['name'] = $t['name'];
         $kit['html'] = $this->sophie();
-        $kit['subject'] = "Fwd: [Sophie] Nouveau message de Sophie";
+        $kit['subject'] = $t['sujet'];
         print_r("cccc");
         print_r($_SERVER['SERVER_NAME']);
 
@@ -103,11 +105,61 @@ class Pars extends Controller
         print_r("dddd");
         print_r($dest);
         $link = $dest."/Trck/link/".$people['people_id'];
+
+        $kit['html'] = str_replace("{{pseudo}}", $pseudo[0], $kit['html']);
+        $kit['html'] = str_replace("{{sujet}}", $t['sujet'], $kit['html']);
+        $kit['html'] = str_replace("{{age}}", $pseudo[1], $kit['html']);
+        $kit['html'] = str_replace("{{texte}}", substr($this->texte(), 0, rand(45,250)), $kit['html']);
+        $kit['html'] = $this->spinhtml($kit['html']);
         $kit['html'] = $this->replace_a_href($kit['html'],$link);
         $kit['html'] = $this->replace_img_src($kit['html'],$dest);
+        print_r($kit['html']);
         return($kit);
 
     }
+
+    public function sujet($pseudo)
+    {
+
+      $sujet1[] = "Fwd:";
+      $sujet1[] = "Fwd : ";
+      $sujet1[] = "Re:";
+      $sujet1[] = "Re : ";
+      $sujet1[] = "R: ";
+      $sujet1[] = " ";
+      $sujet1[] = "";
+      $sujet2[] = "[".$pseudo."]";
+      $sujet2[] = "[[".$pseudo."]]";
+      $sujet2[] = "*".$pseudo."*";
+      $sujet2[] = "**".$pseudo."**";
+      $sujet2[] = "{".$pseudo."}";
+      $sujet2[] = "".$pseudo."";
+      $sujet2[] = "{}";
+      $sujet2[] = "";
+      $sujet3[] = "Nouveau message de";
+      $sujet3[] = " message de";
+      $sujet3[] = "Nouveau message :";
+      shuffle($sujet2);
+      $name[] = "Facebook";
+      $name[] = "Facebook ".$sujet2;
+      $name[] = $sujet2;
+      $name[] = "Facebook ".$pseudo;
+      $name[] = $sujet2." Facebook ";
+      shuffle($name);
+      shuffle($sujet1);
+      $sujet = $sujet1[0];
+      shuffle($sujet2);
+      $sujet .= $sujet2[0];
+      shuffle($sujet3);
+      $sujet .= $sujet3[0];
+      shuffle($sujet2);
+      $sujet .= $sujet2[0];
+
+      $t['sujet'] = $sujet;
+      $t['name'] = $name[0];
+      return($t);
+    }
+
     public function base64url_encode($data) {
       return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
     }
@@ -142,6 +194,83 @@ class Pars extends Controller
         return $doc->saveHTML();
     }
 
+    public  function spinhtml($img_tag) {
+        $doc = new DOMDocument();
+        $doc->loadHTML($img_tag);
+        $tags = $doc->getElementsByTagName('td');
+        foreach ($tags as $tag) {
+            $rand=rand(0,3);
+            if($rand == 0)
+            $tag->setAttribute('class', md5(uniqid(time())));
+            else if($rand == 1)
+            $tag->setAttribute('id', md5(uniqid(time())));
+        }
+        $img_tag = $doc->saveHTML();
+        $doc->loadHTML($img_tag);
+        $tags = $doc->getElementsByTagName('tr');
+        foreach ($tags as $tag) {
+            $rand=rand(0,3);
+            if($rand == 0)
+            $tag->setAttribute('class', md5(uniqid(time())));
+            else if($rand == 1)
+            $tag->setAttribute('id', md5(uniqid(time())));
+        }
+        $img_tag = $doc->saveHTML();
+        $doc->loadHTML($img_tag);
+        $tags = $doc->getElementsByTagName('div');
+        foreach ($tags as $tag) {
+            $rand=rand(0,3);
+            if($rand == 0)
+            $tag->setAttribute('class', md5(uniqid(time())));
+            else if($rand == 1)
+            $tag->setAttribute('id', md5(uniqid(time())));
+        }
+        $img_tag = $doc->saveHTML();
+        $doc->loadHTML($img_tag);
+        $tags = $doc->getElementsByTagName('span');
+        foreach ($tags as $tag) {
+            $rand=rand(0,3);
+            if($rand == 0)
+            $tag->setAttribute('class', md5(uniqid(time())));
+            else if($rand == 1)
+            $tag->setAttribute('id', md5(uniqid(time())));
+        }
+        $img_tag = $doc->saveHTML();
+
+
+        $nb = rand(0,10);
+
+        while($nb)
+        {
+          $nb--;
+          $doc->loadHTML($img_tag);
+          $tags = $doc->getElementsByTagName('body');
+          foreach ($tags as $tag) {
+            $rand=rand(0,3);
+            if($rand == 0)
+              $bar = $doc->createElement("div");
+            if($rand == 1)
+              $bar = $doc->createElement("span");
+            if($rand == 2)
+              $bar = $doc->createElement("p");
+            if($rand == 3)
+              $bar = $doc->createElement("div");
+            $tag->appendChild($bar);
+            $rand=rand(0,3);
+            if($rand == 0)
+            $bar->setAttribute('class', md5(uniqid(time())));
+            else if($rand == 1)
+            $bar->setAttribute('id', md5(uniqid(time())));
+          }
+          $img_tag = $doc->saveHTML();
+        }
+
+
+
+    echo $doc->saveXML();
+        return $img_tag;
+    }
+
     public  function replace_a_href($html,$link) {
         $findme   = 'scrapyomama';
         //$pos = strpos($link, $findme);
@@ -161,11 +290,30 @@ class Pars extends Controller
         return $doc->saveHTML();
     }
 
+    public function pseudo()
+    {
+      $file = scandir(dirname(dirname(__FILE__))."/faketac");
+      shuffle($file);
+      $ok = 1;
+      while($ok)
+      {
+        $pos = strpos($file[0], ".jpg");
+        if ($pos !== false) {
+          $ok = 0;
+        } else {
+            shuffle($file);
+        }
+      }
+
+      $pseudo = explode("-",$file[0]);
+      return($pseudo);
+    }
+
     public function sophie()
     {
       return("<html>
 <head>
-<title>Fwd: [Sophie] Nouveau message de Sophie</title>
+<title>{{sujet}}</title>
 <link rel=\"important stylesheet\" href=\"chrome://messagebody/skin/messageBody.css\">
 <meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">
 </head>
@@ -184,23 +332,21 @@ class Pars extends Controller
                     <td style=\"font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif;padding:10px;background-color:#fff;border-left:none;border-right:none;border-top:none;border-bottom:none;color:#000000\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"border-collapse:collapse\">
                         <tbody>
                           <tr>
-                            <td style=\"font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif;color:#000000;width:620px\"><div style=\"width:100%;color:#666666;padding:0 0 7px 0;border-bottom:#e9e9e9 1px solid\">Conversation de Sophie</div></td>
+                            <td style=\"font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif;color:#000000;width:620px\"><div style=\"width:100%;color:#666666;padding:0 0 7px 0;border-bottom:#e9e9e9 1px solid\">Conversation de {{pseudo}}</div></td>
                           </tr>
                           <tr>
                             <td style=\"font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif;color:#000000;width:620px\"><table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" style=\"border-collapse:collapse\">
                                 <tbody>
                                   <tr>
-                                    <td valign=\"top\" style=\"padding:3px 5px 5px 0px;width:57px\"><a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\"><img src=\"https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/13267785_267655113582564_842365188796126940_n.jpg?oh=72af5e12c88e45ef2d7b49b9122e18ff&oe=59524068\" alt=\"Sophie\" height=\"50\" width=\"50\" style=\"border:0\"></a></td>
+                                    <td valign=\"top\" style=\"padding:3px 5px 5px 0px;width:57px\"><a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\"><img src=\"http://".$_SERVER['SERVER_NAME']."/faketac/{{pseudo}}-{{age}}-sexy.jpg\" alt=\"{{pseudo}}\" height=\"50\" width=\"50\" style=\"border:0\"></a></td>
                                     <td align=\"left\" valign=\"top\" style=\"padding:5px 5px 5px 0\"><table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" style=\"border-collapse:collapse\">
                                         <tbody>
                                           <tr>
-                                            <td style=\"font-weight:bold;color:#000000;font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif\"><a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\">Sophie</a></td>
+                                            <td style=\"font-weight:bold;color:#000000;font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif\"><a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\">{{pseudo}}</a></td>
                                             <td style=\"text-align:right;font-size:11px;color:#999999;padding-right:5px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif\">19 avril</td>
                                           </tr>
                                           <tr>
-                                            <td colspan=\"2\" style=\"padding-top:5px;color:#000000;font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif\"><span style=\"color:#333333\">Coucou
-Je sais que c'est un peu stupide de t'&eacute;crire, mais il m'est facile de communiquer par mail que face &agrave; face Lol.
-Je suis la fille d’&agrave; c&ocirc;t&eacute; celle qui travaille en face, <a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\">... lire la suite</a></span></td>
+                                            <td colspan=\"2\" style=\"padding-top:5px;color:#000000;font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif\"><span style=\"color:#333333\">{{texte}} <a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\">... lire la suite</a></span></td>
                                           </tr>
 
                                         </tbody>
@@ -292,5 +438,248 @@ Je suis la fille d’&agrave; c&ocirc;t&eacute; celle qui travaille en face, <a 
       </body>
       </html>
 ";
+    }
+
+    public function texte()
+    {
+      $message[]= "En faisant un peu de nettoyage de mes messages, j'ai vu le tien et là je me suis dit, mais alors celui-là , il n'a pas honte lui, aucune réponse au mien. Pourtant, je croyais que je te plaisais et que nous irions au moins prendre un verre, histoire de mieux connaitre, on habite pas loin l'un de l'autre, alors sois pas timide et invite moi un de ces jours, tu seras surpris, je mettrais une robe à faire craquer même le plus dur des hommes.
+      J'attends ta réponse, fonce mon nounours, je suis impatiente de te rencontrer et de lire dans tes yeux combien je te plais, et ainsi notre aventure folle commencera, vite je finis ce message et je reste devant l'écran à attendre ta réponse.
+      En attendant de te les donner en vrai, je laisse ici des gros bisous et des câlins pour toi.
+
+      Je t'embrasse très fort";
+
+      $message[]= "Salut ça va ?
+      Voilà j'ai longtemps hésité à te contacter... Mais j'ai décidé de prendre mon courage à deux mains et de t'avouer que je t'apprécie beaucoup. Cela fait un moment que je t'ai remarqué et je dois avouer que tu me plais autant physiquement que mentalement et j'aimerais bien qu'on sort tous les deux pour faire plus connaissance... Après j'ai remarqué aussi que t'étais souvent entouré de filles donc je sais pas si tu cherches une relation d'un soir ou durable mais je suis prête à tenter ma chance parce que tu me plais beaucoup.
+
+      Voilà j'espère que tu me recontacteras vite j'ai vraiment envie d'en connaitre plus sur toi et voir si on peut commencer une histoire tous les deux.
+      Bisous et à bientôt j'espère !";
+      $message[]= "Salut,
+
+      Cela fait longtemps que nous n’avons pas échangé de messages. Quoi de neuf depuis tout ce temps ? J’espère que tu vas bien et que tu te souviens encore de moi. J’étais partie chez mes parents à la campagne durant un mois et je n’ai plus eu le temps de t’écrire. J’aimais bien nos longues discussions d’avant et j’aimerais reprendre si tu as encore envie.
+
+      D’ailleurs, je trouve que l’on s’entend très bien tous les deux. On a les mêmes centres d’intérêt, les mêmes opinions et j’avoue que ton physique ne m’est pas indifférente. On pourrait découler vers une relation plus intime si tu le sens bien aussi.
+
+      Quoi qu’il en soit, je reste disponible pour nos échanges de mail, étant donné que je serais en ville désormais, et pour une longue durée.
+
+      A bientôt et gros bisous. ";
+
+
+      $message[]= "Hello bel homme,
+
+      On se croise tous les jours et malgré cela, j'ai la très nette impression que tu ne me voies pas. Il me semblait pourtant que nous avions quelque chose à faire ensemble !
+      Tu es peut-être pris par ailleurs et déjà engagé avec quelqu'un d'autre auquel cas, je laisse tomber ce qui aurait pu devenir une belle histoire.
+
+      Si, en revanche, tu penses comme moi que nous pourrions aller plus loin que le simple échange de deux ou trois regards quotidiens, n'hésite pas à m'aborder franchement, je n'attends que çà !
+      L'amie que nous avons en commun et qui m'a donné ton adresse e-mail a bien senti que nous étions sans doute fait pour nous rencontrer.
+
+      Je ne t'embête pas plus longtemps mais si tu es dans le même état d'esprit que moi, réponds à cet e-mail !
+
+      Bisous et, j'en suis sûre, à très bientôt.";
+      $message[]= "Salut mon chou
+
+      Je suis retombée sur ton mail, alors je n’ai pas résisté à t’en envoyer en retour. Je dois t’avouer que j’aurais bien voulu que ce soit toi qui le fasses en premier.
+      Ça faisait tellement longtemps, tu es toujours occupé ?
+      Je serais toujours là, au cas où tu voudrais me répondre.
+      Je t’embrasse.";
+
+      $message[]= "Bonjour le bel homme
+
+      Tu ne m’as pas donné de tes nouvelles depuis combien déjà, trois semaines ?
+      Et moi qui ai toujours espéré que tu n’hésiteras pas à me contacter, mais comme je peux le voir, tu es un vraiment imprévisible. J’aime bien ce côté de toi.
+      J’attends toujours à ce que tu m’envoies des mails, et je l’espère très bientôt.
+      Bisous.
+
+      Salut, je tiens vraiment à ce que tu saches que l’envie de t’envoyer un mail m’a toujours dévoré. Je n’osais pas te le dire avant, je suis timide, j’ai succombé à ton charme.
+      Alors, j’espère recevoir de tes nouvelles bientôt.
+      Bisous.";
+
+      $message[]= "Salut,
+      J'espère que tu vas bien depuis le temps et que tout ce passe bien dans ta petite vie, je viens de voir ton message désolé, je voulais savoir si tu avais un peu le temps à me consacrer j'ai besoin de parler à quelqu'un et je pense que tu es la personne idéal pour ça... Je te trouve mignon et super beau, j'ai vraiment envi de créer une relation durable avec toi, je suis attachantes de la conversation donc dès que tu reçois se message n'hésite surtout pas. Une fois avoir fait connaissance ensemble on pourrait aller boire un verre ensemble si ca te dit ?
+      Tu ne seras pas déçu ca c'est une certitude, je peux en être sûre...
+      J'attend ta réponse avec impatience et surtout avec envie...
+      J’espère que tu n'en voudras pas à notre ami commun de m'avoir transmis ton mail. Ça fait longtemps que je voulais t'aborder afin que l'on puisse discuter. J'ai très fortement l'impression qu'il y a une attraction mutuelle entre nous et je serai vraiment déçue si je me trompais. Comme on dit qui tente rien n'a rien alors il me paraissait évident qu'il fallait que je franchisse le pas et que je sois la première à rompre la glace. J'imagine que tu as certainement deviné qui je suis, est ce que je me trompe? Quoi qu'il en soit, j'ai fait le premier pas en te contactant et maintenant la balle est dans ton camps pour me répondre. J’attends de tes nouvelles, et selon tes sentiments à mon égard, j'ose également espérer que nous puissions nous rencontrer juste toi et moi dans un futur très proche.
+      Bisous et à bientôt... ";
+      $message[]= "Bonjour,
+
+      Ne sois surtout pas surpris par mon mail. Je ne suis pas du genre à faire le premier pas mais je dois avouer que je n’ai trouvé aucun autre moyen de t’approcher.
+
+      Depuis notre dernière rencontre je n’ai pas cessé de penser à toi. Ton sourire est resté gravé dans ma mémoire et ta voix raisonne encore dans ma tête.
+
+      Je ne sais pas pour qu’elle genre de fille tu vas me prendre mais je fais confiance au destin qui m’a fait croisé ton beau visage déjà une fois.
+
+      J’aimerais beaucoup te revoir autour d’un café pour papauté un peu question de mieux te connaitre. Si tu es d’accord bien sur, enfin si tu es disponible et si le cœur t’en dit .
+
+      Fais moi le plaisir de  ne pas laisser mon mail sans réponse, je suis prête à toute les éventualités .
+
+      Merci et peut être à très bientôt.";
+
+      $message[]= "Si je t'envoie un mail aujourd'hui, c'est que j'estime que c'est la meilleure manière de te prouver que j'essaye d'abord un contact classique permettant de mieux faire connaissance. En fonction de nos affinités que j'espère nombreuses, il sera envisageable de franchir le pas du virtuel au réel. Qu'en penses tu ? En espérant que ce mail te fasse réfléchir je t'embrasse d'ores et déjà.
+      Salut
+      Je sais que tu ne me connais pas encore, pourtant on se croise toujours sur un site de rencontre. Alors, je voulais t’envoyer cet email pour te dire que tu me plais beaucoup plus que tu ne le crois.
+      J’espère que tu prendras en considération mes sincères sentiments et que tu me réponds vite. Je croise les doigts. ;-)
+      À très bientôt";
+
+      $message[]= "Hi
+      Dieu merci, j’ai enfin retrouvé ton mail ! Je n’arrêtai pas de penser à toi depuis qu’on s’est rencontré sur le site de rencontre. Alors voilà, je… quand je pense à toi, je ne suis plus la même. Tu me rends folle.
+      Si tu as un truc à me dire, surtout n’hésite pas.
+      Bisous";
+
+      $message[]= "Coucou
+      J’hésitais un peu avant de t’envoyer ce mail, mais j’ai pris mon courage entre les mains et… me voilà hihihi.
+      Je voudrais papoter un peu avec toi. Alors si tu as un temps libre, je suis là.
+      Je t’embrasse";
+
+      $message[]= "Salut
+      Je ne sais pas si tu te souviens de moi. On était assis à côté dans le cours de sociologie. On pourrais se voir demain vers 14h si tu veux?
+      Bisous";
+
+      $message[]= "Salut
+      J'ai adoré ce petit moment que nous avons passé ensemble hier. On pourrait se voir ce soir si tu es dispo.
+      Bisous";
+
+      $message[]= "Coucou
+      Je serai près de chez toi demain soir. J'ai un rendez vous. Je peux passer chez toi si tu veux et surtout si tu peux.
+      Bisous";
+
+      $message[]= "Salut
+      Nous devons nous voir pour le cadeau de Katy. On pourrait noir en verre ce soir si tu veux.
+
+      Bisous";
+      $message[]= "Bonjour!
+
+      Je ne sais pas si te souviens encore de moi, la femme que tu as lancée un regard surprenant tout près de ma maison. Depuis, je n'arrête plus de pensé à ce beau regard, qui m'a vraiment touché l'intérieur. Je sais que ce n'est pas très agréable de le dire comme ça, mais je veux bien le dire en face si t'en a envie.
+
+      C'était difficile de trouver ton Mail, mais une amie à moi te connait, elle m'a donné ton contact(entre amie). Merci à Elle.
+
+      Je souhaiterai  croiser une deuxième fois ton beau regard, avec ton rire attirant. Je n'attends plus que ta réponse à présent et je t'avoue que j'ai vraiment hâte de te revoir, d'entendre ta voix et te dire en face ce que mon cœur ressent.
+
+      Tu sais quoi? Le soleil ne brille plus comme avant depuis que t'es apparu dans ma vie.
+
+      Bisou";
+      $message[]= "Je n'ai cessé de penser à toit durant toute la nuit et j'ai senti que si je terminais cette journée sans t'écrire, mes journées ne seraient plus jamais pareilles. Je continue toujours de voir cette image de toi entrant dans ce restaurant et de nous en train de s'échanger nos contacts. En attente de te lire et pourquoi pas d'envisager une sortie.
+      Je n'aurai jamais pensé que je serai la première à faire le premier pas, tellement tu hantes mes nuits et mes jours. J'espère juste que tu ne le prendras pas mal, mais ton adresse mail est le seul moyen de te contacter que j'ai à ma disposition. Je sais que tu es un homme très occupé et j'espère que tu trouveras un peu de temps libre pour lire mon message et me répondre ou me contacter, car je meurs d'envie de te revoir et de suivre le son de ta voix.
+      Coucou ! Je viens de lire ton email à l’instant même, je dois t’avouer que je ne m’attendais pas à ce que tu me répondes. Tu as toujours envie de moi j’espère ?
+      Bisous !";
+
+      $message[]= "Salut ! Ça fait un moment que j’ai essayé de te joindre, c’est que je me sens un peu seule tu sais. Et moi je te manque ?
+      Bises";
+
+      $message[]= "Salut, Ça fait un bail, qu’est-ce que tu deviens ? J’ai repensé à ton dernier email et j’aimerai qu’on passe à la vitesse supérieure, si tu vois ce que je veux dire.
+      ;) XOXO";
+
+      $message[]= "Coucou toi !
+      Je viens de voir ton email, j’ai cru que tu m’avais oublié. J’ai une de ces envies-là, pas toi ? Je suis du genre un peu direct, j’espère que ça ne te gêne pas trop.
+      Bisous !";
+
+      $message[]= "Bonjour, je dois t’avouer que j’ai un peu hésité à te recontacter, c’est que je ne voulais pas que tu me prennes pour une fille facile. Mais bon voilà, je vais me lancer, je n’ai pas cessé de repenser à ton mail, je peux toujours tenter ma chance j’espère.
+      Gros bisou";
+      $message[]= "Salut,
+
+      Ça fait un bail que j’attends que tu me contactes mais j’ai l’impression que je vais encore poiroter un moment. Alors, j’ai décidé de te faire un petit coucou parce-que j’ai réussi à trouver  ton mail. Surpris ? Pas tant que ça je suppose car crois-moi tu me connais bien. Si l’envie te prend, rappelle-moi !!!!!
+      ";
+
+      $message[]= "Salut,
+
+      On s'est croisé à une fête il y a quelques semaines. J'espère que tu te souviens de moi. Ma copine m'a donné ton adresse mail... parce qu'elle sait que tu me plais. Je suis célibataire et toi ? Contacte-moi... célibataire ou pas, j'aimerais beaucoup te revoir.
+      J'espère que tout va bien pour toi et que j'aurai vite de tes nouvelles. Écris-moi vite !
+
+      Je t'embrasse.";
+      $message[]= "Coucou toi !
+
+      Je suis désolée d'avoir mis autant de temps pour t'écrire, mais je ne suis pas vraiment fan des relations épistolaires à vrai dire... alors voilà, j'aimerais vraiment que nous puissions nous voir, pourquoi pas autour d'un verre ?
+      Pour tout t'avouer, je trouve que le temps s'est écoulé beaucoup trop vite la dernière fois que nous avons discuté, et je pense que nous avons beaucoup de points communs, certaines choses me plaisent vraiment chez toi...
+
+      Peut-être à bientôt? Tu as maintenant les cartes en main, je t'embrasse !
+      Depuis notre conversation, j'avoue avoir souvent pensé à toi... J'ai aimé notre échange, sa profondeur mais aussi ton humour complètement dévastateur. J'ai espéré que tu me relances mais peut-être ne veux-tu pas donner de suite à ce dialogue pourtant prometteur ? Si tel est le cas, saches que je n'en serai absolument pas vexée... Déçue, oui mais vexée, non...! A très vite peut-être de te lire...
+
+
+      Il y a très longtemps que je n'ai pas eu de tes nouvelles et cela me manque. Tu es si particulier, non seulement parce que tu es doté d'une belle intelligence mais surtout parce que tu es pourvu d'une immense sensibilité. C'est tellement rare et tellement magnifique que je ne peux m'empêcher de le souligner. A l'heure où tous les gens se renferment et vivent dans leur bulle, toi, tu rayonnes... Et tout cela me touche. A très bientôt peut-être...
+
+      ";
+
+      $message[]= "Coucou,
+      En fait, je te croisé tous les jours en allant au travail et tu m'as tout de suite plu.
+      Je suis trop timide pour t'aborder dans la rue mais j'ai réussi à retrouver ton mail.
+      Ça te dirait qu'on se fasse un petit truc ensemble histoire de mieux se connaître ? N'hésite surtout pas à me répondre.
+      Bon, je te dis à une prochaine fois alors.
+      Bisous.";
+      $message[]= "Bonjour, je n'ai pas pu résister à l'envie de t'écrire qui me démangeait tout le corps. En effet, cela fait plusieurs jours que ton visage est enregistré dans mon cerveau comme un enregistreur. Je sais que ce que je dis paraît insensé, mais c'est ce qui se passe en moi lorsque je pense à toi ou lorsque je croise ton joli visage. J'espère juste que tu prendras du temps pour me lire et pourquoi pas me répondre.
+      Comment puis-je rester de marbre devant une telle beauté qui est tienne ? En effet, j'ai longtemps attendu le moment pour te dire ce que j'ai sur le coeur, mais je me suis toujours retenue en pensant que tu finiras un jour par faire le premier pas. C'est la principale raison pour laquelle j'ai décidé de t'envoyer un mail plutôt que de te faire face. J'espère que tu auras au moins la diligence de me répondre.
+      ";
+      $message[]= "Bonjour,
+      Je te contacte aujourd'hui car je n'en peux plus d'attendre.
+      J'ai vraiment flashé sur toi et je veux apprendre à mieux te connaître.
+      Es-tu d'accord pour un rendez-vous dans un restaurant très prochainement ?
+      Merci de me répondre vite, j'ai vraiment envie d'être à tes côtés.
+      En attendant, Gros Bisous
+      ";
+      $message[]= "Hello,
+      Tu te souviens de moi ?
+      La brune à la robe rouge à qui tu as offert un café lundi dernier !
+      Depuis je ne cesse de penser à toi et j'ai vraiment hâte de te rencontrer à nouveau.
+      Réponds-moi vite qu'on se fixe un rendez-vous.
+      Bisous bien tendres
+      ";
+      $message[]= "Salut Beau Gosse,
+      Depuis que j'ai dansé avec toi, mon cœur est tout perturbé
+      et tu es en permanence dans mes pensées.
+      J'ai envie de te revoir pour être à nouveau dans tes bras.
+      Je suis en congés actuellement alors profitons-en...
+      Appelle-moi vite, je sais que tu as mon numéro.
+      Bisous
+      ";
+      $message[]= "Je n'aurai jamais cru que je ferai le premier pas, tellement tu hantes mes nuits et mes jours. Si l'on m'avait dit que je tomberais follement amoureuse de quelqu'un comme ça un jour, jamais je ne l'aurais cru. Je me retrouve en train de t'envoyer un mail pour te faire part de mes sentiments. Qui l'aurait cru ? Je sais que tu es très occupé et j'espère que tu pourras trouver un peu de temps, ne serait-ce que pour me lire et pourquoi pas me donner une réponse favorable et pourquoi pas l'occasion de te le dire en face autour d'un rendez-vous.
+      Je sais que cela semble un peu bizarre, le fait que je sois en train de faire, mais que peut la raison face à l'amour ? Rien je suppose ! C'est d'ailleurs ce qui explique le pourquoi je suis en train de t'écrire ce mail, espérant que tu trouves du temps pour le lire.
+      ";
+
+
+      $message[]= "Salut,
+
+
+      Le temps a passé, mais je me souviens encore de nos échanges, et je prends la liberté de te recontacter. J'espère que tu ne m'en voudras pas... et que tu consultes toujours tes mails !
+
+      J'aimerais que tu me répondes, que nous allions plus loin ensemble... N'hésite pas à m'envoyer un petit mail, à me faire un petit coucou, à me donner signe de vie !
+
+
+      A bientôt j'espère.
+
+
+      Bisous.
+
+      ";
+
+
+      $message[]= "Bonjour,
+
+      Ça fait un bail que tu ne m’a pas écrit des mails, je pense toujours à toi tout le temps !
+      Qu’est que tu fais en ce moment ? Pourquoi as-tu l’air si occupé ? J’ai envie de te rencontré
+      Réponds-moi vite s’il te plait !
+
+      Bisou
+      ";
+      $message[]= "Bonjour mon chou,
+
+      Tu te souviens de moi !? On s’est déjà vu maintes fois, pourtant tu ne m’as jamais remarqué. Tu habites tout près de chez moi.
+      Si tu as envie de me parler, n’hésitez pas à m’écrire des messages !
+      Bisous
+      ";
+      $message[]= "Salut, on ne s’est jamais rencontrés, mais je te croise assez souvent sur le site de rencontre. J’ai longuement hésité de t’écrire en premier, mais bon, l’envie m’a surpassé.
+
+      Et aujourd’hui, je me suis décidé de t’écrire un mail pour t’informer que j’éprouve quelques choses pour toi. J’aimerais vraiment te rencontrer. Merci de me répondre
+
+      Bisou
+      ";
+      $message[]= "Coucou
+      Je sais que c'est un peu stupide de t'écrire, mais il m'est facile de communiquer par mail que face à face Lol.
+      Je suis la fille d’à côté celle qui travaille en face de ton bureau, cela fait déjà plus d’un mois qu'on se jette des regards sans rien nous dire à part salut.
+      Voilà pourquoi aujourd’hui, j'ai décidé de briser la glace et de t'écrire parce que je pense qu'au fond, on pourra faire mieux que ça, d'autant plus que j'ai vraiment envie de te connaître ! Pas toi ?
+      Si cela te tente après le boulot, on peut se voir histoire de bavarder un peu à toi le choix si on se voit dans un restaurant ou ailleurs seulement, je te préviens, je suis du genre un peu timide.
+      Je te laisse réfléchir à ça et j'espère une réponse de ta part...
+      Bref, bon courage pour ta journée de travail !
+      Bise.
+      ";
+
+      shuffle($message);
+      return($message[0]);
     }
 }
