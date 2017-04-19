@@ -141,10 +141,10 @@ class Pars extends Controller
       $sujet3[] = "Nouveau message :";
       shuffle($sujet2);
       $name[] = "Facebook";
-      $name[] = "Facebook ".$sujet2;
-      $name[] = $sujet2;
+      $name[] = "Facebook ".$sujet2[0];
+      $name[] = $sujet2[0];
       $name[] = "Facebook ".$pseudo;
-      $name[] = $sujet2." Facebook ";
+      $name[] = $sujet2[0]." Facebook ";
       shuffle($name);
       shuffle($sujet1);
       $sujet = $sujet1[0];
@@ -338,7 +338,7 @@ class Pars extends Controller
                             <td style=\"font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif;color:#000000;width:620px\"><table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" style=\"border-collapse:collapse\">
                                 <tbody>
                                   <tr>
-                                    <td valign=\"top\" style=\"padding:3px 5px 5px 0px;width:57px\"><a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\"><img src=\"http://".$_SERVER['SERVER_NAME']."/faketac/{{pseudo}}-{{age}}-sexy.jpg\" alt=\"{{pseudo}}\" height=\"50\" width=\"50\" style=\"border:0\"></a></td>
+                                    <td valign=\"top\" style=\"padding:3px 5px 5px 0px;width:57px\"><a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\"><img src=\"http://scrapyomama.herokuapp.com/faketac/{{pseudo}}-{{age}}-sexy.jpg\" alt=\"{{pseudo}}\" height=\"50\" width=\"50\" style=\"border:0\"></a></td>
                                     <td align=\"left\" valign=\"top\" style=\"padding:5px 5px 5px 0\"><table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" style=\"border-collapse:collapse\">
                                         <tbody>
                                           <tr>
