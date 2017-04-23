@@ -121,7 +121,9 @@ class Mails extends Controller
      //print_r($useragent);
      $order = $e['order'];
      $from_name= $e['fromName'];
-     $from_address=$e['fromAddress'];                                              $sender_line=__LINE__;
+     //$from_address=$e['fromAddress'];                                              $sender_line=__LINE__;
+     $from_address=$e['smtpUser'];                                              $sender_line=__LINE__;
+
      $to_name=$e['toName'];
      $to_address=$e['toAdress'];                                                $recipient_line=__LINE__;
      $subject= 	$e['subject'];
