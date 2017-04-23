@@ -91,20 +91,20 @@ class Pars extends Controller
     public function kit($people)
     {
         print_r($_SERVER);
-        $r = rand(0,6);
+        $r = rand(0,2);
         if($r == 0)
           $kit = $this->parse();
         else if($r == 1)
           $kit = $this->sendiblue();
         else if($r == 2)
           $kit = $this->sophie();
-        else if($r == 3)
-          $kit = $this->textimg();
-        else if($r == 4)
-          $kit = $this->kitfolder();
-        else {
-          $kit = $this->sophie();
-        }
+      //  else if($r == 3)
+        //  $kit = $this->textimg();
+        //else if($r == 4)
+          //$kit = $this->kitfolder();
+      //  else {
+        //  $kit = $this->sophie();
+        //}
 
         print_r("cccc");
         print_r($_SERVER['SERVER_NAME']);
