@@ -29,9 +29,9 @@ class Addmail extends Controller
       {
         $name = $this->t();
         try {
-          print_r($ovh->createMail("mailbox678678.ovh",$name));
+          print_r($ovh->createMail("mailin7856.ovh",$name));
           //$listmailadd[] = $name."@".$dom[0][domain];
-          $this->Smtpm->addMail([$name."@43hjhj-mailbox.ovh","tomylyjon"]);
+        //  $this->Smtpm->addMail([$name."@43hjhj-mailbox.ovh","tomylyjon"]);
           $i++;
 
         }catch (Exception $e) {
@@ -47,14 +47,14 @@ class Addmail extends Controller
       $ovh = $this->newsym("OvhApi");
       $this->loadModel('Smtpm');
       $i = 1000;
-      $list = $ovh->listMail("43hjhj-mailbox.ovh");
+      $list = $ovh->listMail("mailin7856.ovh");
       foreach($list as $k=>$name)
       {
         //$name = $this->t();
         try {
           //print_r($ovh->createMail("mailbox678678.ovh",$name));
           //$listmailadd[] = $name."@".$dom[0][domain];
-          $this->Smtpm->addMail([$name."@43hjhj-mailbox.ovh","tomylyjon"]);
+          $this->Smtpm->addMail([$name."@mailin7856.ovh","tomylyjon"]);
           $i++;
 
         }catch (Exception $e) {

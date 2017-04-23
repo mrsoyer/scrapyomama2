@@ -6,7 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
+    'AssertionError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
     'Cpdf' => $vendorDir . '/dompdf/dompdf/lib/Cpdf.php',
+    'DivisionByZeroError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php',
+    'Error' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/Error.php',
     'FontLib\\AdobeFontMetrics' => $vendorDir . '/dompdf/dompdf/lib/php-font-lib/src/FontLib/AdobeFontMetrics.php',
     'FontLib\\Autoloader' => $vendorDir . '/dompdf/dompdf/lib/php-font-lib/src/FontLib/Autoloader.php',
     'FontLib\\BinaryStream' => $vendorDir . '/dompdf/dompdf/lib/php-font-lib/src/FontLib/BinaryStream.php',
@@ -47,6 +51,7 @@ return array(
     'HTML5_Parser' => $vendorDir . '/dompdf/dompdf/lib/html5lib/Parser.php',
     'HTML5_Tokenizer' => $vendorDir . '/dompdf/dompdf/lib/html5lib/Tokenizer.php',
     'HTML5_TreeBuilder' => $vendorDir . '/dompdf/dompdf/lib/html5lib/TreeBuilder.php',
+    'ParseError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ParseError.php',
     'Svg\\DefaultStyle' => $vendorDir . '/dompdf/dompdf/lib/php-svg-lib/src/Svg/DefaultStyle.php',
     'Svg\\Document' => $vendorDir . '/dompdf/dompdf/lib/php-svg-lib/src/Svg/Document.php',
     'Svg\\Style' => $vendorDir . '/dompdf/dompdf/lib/php-svg-lib/src/Svg/Style.php',
@@ -72,4 +77,5 @@ return array(
     'Svg\\Tag\\Stop' => $vendorDir . '/dompdf/dompdf/lib/php-svg-lib/src/Svg/Tag/Stop.php',
     'Svg\\Tag\\Text' => $vendorDir . '/dompdf/dompdf/lib/php-svg-lib/src/Svg/Tag/Text.php',
     'Svg\\Tests\\StyleTest' => $vendorDir . '/dompdf/dompdf/lib/php-svg-lib/tests/Svg/StyleTest.php',
+    'TypeError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
 );

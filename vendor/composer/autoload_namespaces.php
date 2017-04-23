@@ -14,5 +14,6 @@ return array(
     'MimeMailParser' => array($vendorDir . '/messaged/php-mime-mail-parser/lib'),
     'Jenssegers\\Mongodb' => array($vendorDir . '/jenssegers/mongodb/src'),
     'Jenssegers\\Eloquent' => array($vendorDir . '/jenssegers/mongodb/src'),
+    'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
 );

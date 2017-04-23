@@ -1,0 +1,27 @@
+{
+	"name": "sendinblue/sendinblue-api-bundle",
+	"type": "symfony-bundle",
+	"description": "Official SendinBlue provided API V2 Symfony 2.x & 3.x Bundle",
+	"keywords": ["Sendinblue", "api", "Bundle"],
+	"homepage": "https://github.com/mailin-api/sendinblue-api-bundle",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "SendinBlue Developers",
+			"email": "contact@sendinblue.com",
+			"homepage": "https://www.sendinblue.com/"
+		}
+	],
+	"require": {
+		"php": ">=5.3",
+		"symfony/framework-bundle": "2.*|3.*"
+	},
+	"autoload": {
+		"psr-4": { "SendinBlue\\SendinBlueApiBundle\\": "" }
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "2.0.x-dev"
+		}
+	}
+}

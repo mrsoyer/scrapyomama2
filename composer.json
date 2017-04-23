@@ -13,7 +13,8 @@
     "php": "^5.6.0",
     "dompdf/dompdf": "^0.8.0",
     "messaged/php-mime-mail-parser": "^1.0",
-    "zbateson/mail-mime-parser": "^0.4.3"
+    "zbateson/mail-mime-parser": "^0.4.3",
+    "sendinblue/sendinblue-api-bundle": "^2.0"
   },
   "require-dev": {
 

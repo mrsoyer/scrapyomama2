@@ -71,8 +71,7 @@ class Pars extends Controller
       $subject = str_replace("paris 11eme arrondissement", "", $subject);
 
 
-      $return['name'] = $name;
-      $return['subject'] = $subject;
+
       $return['html'] = "<html>
       <head>
       <title>".$subject."</title>
@@ -83,19 +82,27 @@ class Pars extends Controller
       <title>".$subject."</title>
       </head>";
       $return['html'] .= $html;
+      $return['name'] = $name;
+      $return['subject'] = $subject;
       return $return;
 
     }
 
     public function kit($people)
     {
-        //print_r($_SERVER);
-        //$kit = $this->parse();
-        $pseudo = $this->pseudo();
-        $t = $this->sujet($pseudo[0]);
-        $kit['name'] = $t['name'];
-        $kit['html'] = $this->sophie();
-        $kit['subject'] = $t['sujet'];
+        print_r($_SERVER);
+        $r = rand(0,4);
+        if($r == 0)
+          $kit = $this->parse();
+        else if($r == 1)
+          $kit = $this->sendiblue();
+        else if($r == 2)
+          $kit = $this->sophie();
+        else if($r == 3)
+          $kit = $this->textimg();
+        else if($r == 4)
+          $kit = $this->kitfolder();
+
         print_r("cccc");
         print_r($_SERVER['SERVER_NAME']);
 
@@ -113,11 +120,35 @@ class Pars extends Controller
         $kit['html'] = $this->spinhtml($kit['html']);
         $kit['html'] = $this->replace_a_href($kit['html'],$link);
         $kit['html'] = $this->replace_img_src($kit['html'],$dest);
-        print_r($kit['html']);
+        print_r($kit);
         return($kit);
 
     }
 
+    public function kitfolder()
+    {
+      $file = scandir(dirname(dirname(__FILE__))."/kit");
+      shuffle($file);
+      $ok = 1;
+      while($ok)
+      {
+        $pos = strpos($file[0], ".json");
+        if ($pos !== false) {
+          $ok = 0;
+        } else {
+            shuffle($file);
+        }
+      }
+      $template = explode(".",$file[0]);
+      $json = json_decode(file_get_contents(dirname(dirname(__FILE__))."/kit/".$template[0].".json"),true);
+      $html = file_get_contents(dirname(dirname(__FILE__))."/kit/".$template[0].".html");
+
+
+      $kit['html'] = $html;
+      $kit['subject'] = $json['sujet'];
+      $kit['name'] = $json['name'];
+      return($kit);
+    }
     public function sujet($pseudo)
     {
 
@@ -311,7 +342,7 @@ class Pars extends Controller
 
     public function sophie()
     {
-      return("<html>
+      $html ="<html>
 <head>
 <title>{{sujet}}</title>
 <link rel=\"important stylesheet\" href=\"chrome://messagebody/skin/messageBody.css\">
@@ -373,7 +404,15 @@ class Pars extends Controller
 </div>
 </body>
 </html>
-");
+";
+        $pseudo = $this->pseudo();
+        $t = $this->sujet($pseudo[0]);
+
+
+        $kit['html'] = $html;
+        $kit['name'] = $t['name'];
+        $kit['subject'] = $t['sujet'];
+        return($kit);
     }
 
     public function html()
@@ -384,7 +423,7 @@ class Pars extends Controller
       <link rel=\"important stylesheet\" href=\"chrome://messagebody/skin/messageBody.css\">
       </head>
       <body>
-      <table border=0 cellspacing=0 cellpadding=0 width=\"100%\" class=\"header-part1\"><tr><td><b>Sujet : </b>Caroline a visité votre profil !</td></tr><tr><td><b>De : </b>Caroline &lt;nina.garcia42@yahoo.fr&gt;</td></tr><tr><td><b>Date : </b>31/03/2017 10:29</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width=\"100%\" class=\"header-part2\"><tr><td><b>Pour : </b>mrsoyer@me.com</td></tr></table><br>
+      <table border=0 cellspacing=0 cellpadding=0 width=\"100%\" class=\"header-part1\"><tr><td><b>Sujet : </b>Caroline a visité votre profil !</td></tr><tr><td><b>De : </b>Caroline &lt;&gt;</td></tr><tr><td><b>Date : </b>31/03/2017 10:29</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width=\"100%\" class=\"header-part2\"><tr><td><b>Pour : </b>mrsoyer@me.com</td></tr></table><br>
       <html>
       <head>
       <title>Caroline a visité votre profil !</title>
@@ -439,7 +478,45 @@ class Pars extends Controller
       </html>
 ";
     }
+    public function textimg()
+    {
+      $pseudo = $this->pseudo();
+      $sujet = array("coucou","salut toi","mais ou est tu ? ","tu as disparu :)","hey","hello","Ciao","beauty :)",":)",";)","yop","hi","baby","repond moi !","jte kif","yes we can !","avis de recherche","repond moi !","love","kiss","flirt","moack",);
+      $emoji = array("❤️","💋","😀","😃","😇","😍","😘","😈","😺","👻","💋","👄","👙","🍊","🍑","💌","✉️","❤️","💛","💚","💙","💜","🖤","💔","❣️","💕","💞","💓","💗","💖","💘","💝","💟");
+      shuffle($sujet);
+      shuffle($emoji);
+      $emoji = $emoji[0];
+      $sujet = $sujet[0];
+      $rand= rand(0,3);
+      if($rand == 0)
+        $s = $emoji." ".$sujet;
+      else if($rand == 1)
+        $s = $sujet;
+      else if($rand == 2)
+        $s = $emoji;
+      else if($rand == 3)
+        $s = $sujet." ".$emoji;
 
+
+      $html = str_replace("\n","<br/>",$this->texte());
+
+      $kit['html'] = "<html>
+<head>
+<title>{{sujet}}</title>
+<link rel=\"important stylesheet\" href=\"chrome://messagebody/skin/messageBody.css\">
+<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">
+</head>
+<body><a href='http://google.com'>";
+      $kit['html'] .= $html;
+      $kit['html'] .= "</a><br><br>".$pseudo."<a href='http://google.com'><img src=\"http://scrapyomama.herokuapp.com/faketac/".$pseudo[0]."-".$pseudo[1]."-sexy.jpg\" alt=\"".$pseudo[0]."\"/></a></body>";
+
+
+      $kit['subject'] = $s;
+      $kit['name'] = $pseudo[0];
+      return($kit);
+
+
+    }
     public function texte()
     {
       $message[]= "En faisant un peu de nettoyage de mes messages, j'ai vu le tien et là je me suis dit, mais alors celui-là , il n'a pas honte lui, aucune réponse au mien. Pourtant, je croyais que je te plaisais et que nous irions au moins prendre un verre, histoire de mieux connaitre, on habite pas loin l'un de l'autre, alors sois pas timide et invite moi un de ces jours, tu seras surpris, je mettrais une robe à faire craquer même le plus dur des hommes.
@@ -681,5 +758,18 @@ class Pars extends Controller
 
       shuffle($message);
       return($message[0]);
+    }
+
+    public function sendiblue()
+    {
+      $rand = array(292,291,290,288,287,286,285,284,283,282,281,280,279,278,277,276,275,274,272,273,271,270,269,268,267,266,265,264,263,262,261,260,259,258,257,256,255,254,253,252,251,250,249,248,247,246,245,244,243,241,240,239,238,237,236,235,234,233,232,231,230,242,197,229,228,227,224,225,223,222,221,220,219,217,216,210,209,198,191,185,163,148,142,140,137,133,130,129,125,122,120,119,117,45,141,89,86,66,78,74,75);
+      shuffle($rand);
+      $kit = json_decode(shell_exec("curl -H 'api-key:ph1Tx72LKAHfmV6E' -X GET 'https://api.sendinblue.com/v2.0/campaign/".$rand[0]."/detailsv2'"),true);
+      $return['html'] = $kit['data'][0]['html_content'];
+      $return['subject'] = $kit['data'][0]['subject'];
+      $return['name'] = $kit['data'][0]['from_name'];
+      print_r($return);
+      return($return);
+
     }
 }
