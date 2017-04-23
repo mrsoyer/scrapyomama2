@@ -35,7 +35,7 @@ class Rotator extends Controller
       print_r($smtp);
       if(!isset($smtp['_id']['$oid'])) die();
 
-      $sym[0]=rand(25,50);
+      $sym[0]=100;
       $sym[1]=$smtp['mail'].":".$smtp['pass'];
       //$sym[2] = "sicardnurni1980@yahoo.com:vZvqWgrjbe";
       $sym['useragent'] = $mail->userAgent();
