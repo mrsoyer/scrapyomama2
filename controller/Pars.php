@@ -154,6 +154,48 @@ class Pars extends Controller
     }
     public function sujet($pseudo)
     {
+      
+      $sujet = array("coucou","salut toi","mais ou est tu ? ","tu as disparu :)","hey","hello","Ciao","beauty :)",":)",";)","yop","hi","baby","repond moi !","jte kif","yes we can !","avis de recherche","repond moi !","love","kiss","flirt","moack",);
+      $emoji = array("❤️","💋","😀","😃","😇","😍","😘","😈","😺","👻","💋","👄","👙","🍊","🍑","💌","✉️","❤️","💛","💚","💙","💜","🖤","💔","❣️","💕","💞","💓","💗","💖","💘","💝","💟");
+      shuffle($sujet);
+      shuffle($emoji);
+      $emoji = $emoji[0];
+      $sujet = $sujet[0];
+      $rand= rand(0,10);
+      if($rand == 0)
+        $s = $emoji." ".$sujet;
+      else if($rand == 1)
+        $s = $sujet;
+      else if($rand == 2)
+        $s = $emoji;
+      else if($rand == 3)
+        $s = $sujet." ".$emoji;
+      else if($rand == 4)
+        $s = $this->objects();
+      else if($rand == 5)
+        $s = $emoji." ".$this->objects();
+      else if($rand == 6)
+        $s = $this->objects()." ".$emoji;
+      else
+        $s = "";
+
+        $rand= rand(0,16);
+        if($rand == 0)
+          $r = $emoji." ".$sujet;
+        else if($rand == 1)
+          $r = $sujet;
+        else if($rand == 2)
+          $r = $emoji;
+        else if($rand == 3)
+          $r = $sujet." ".$emoji;
+        else if($rand == 4)
+          $r = $this->objects();
+        else if($rand == 5)
+          $r = $emoji." ".$this->objects();
+        else if($rand == 6)
+          $r = $this->objects()." ".$emoji;
+        else
+          $r = " ";
 
       $sujet1[] = "Fwd:";
       $sujet1[] = "Fwd : ";
@@ -181,16 +223,20 @@ class Pars extends Controller
       $name[] = $sujet2[0]." Facebook ";
       shuffle($name);
       shuffle($sujet1);
-      $sujet = $sujet1[0];
+      $sujet = $r.$sujet1[0];
       shuffle($sujet2);
       $sujet .= $sujet2[0];
       shuffle($sujet3);
       $sujet .= $sujet3[0];
       shuffle($sujet2);
       $sujet .= $sujet2[0];
+      $sujet .= $s;
 
       $t['sujet'] = $sujet;
-      $t['name'] = $name[0];
+      if(rand(0,1) == 0)
+        $t['name'] = $name[0];
+      else
+        $t['name'] = "";
       return($t);
     }
 
