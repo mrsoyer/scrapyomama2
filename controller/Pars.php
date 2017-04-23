@@ -342,9 +342,12 @@ class Pars extends Controller
 
     public function sophie()
     {
+      $pseudo = $this->pseudo();
+      $t = $this->sujet($pseudo[0]);
+
       $html ="<html>
 <head>
-<title>{{sujet}}</title>
+<title>".$t['sujet']."</title>
 <link rel=\"important stylesheet\" href=\"chrome://messagebody/skin/messageBody.css\">
 <meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">
 </head>
@@ -363,21 +366,21 @@ class Pars extends Controller
                     <td style=\"font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif;padding:10px;background-color:#fff;border-left:none;border-right:none;border-top:none;border-bottom:none;color:#000000\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"border-collapse:collapse\">
                         <tbody>
                           <tr>
-                            <td style=\"font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif;color:#000000;width:620px\"><div style=\"width:100%;color:#666666;padding:0 0 7px 0;border-bottom:#e9e9e9 1px solid\">Conversation de {{pseudo}}</div></td>
+                            <td style=\"font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif;color:#000000;width:620px\"><div style=\"width:100%;color:#666666;padding:0 0 7px 0;border-bottom:#e9e9e9 1px solid\">Conversation de ".$pseudo[0]."</div></td>
                           </tr>
                           <tr>
                             <td style=\"font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif;color:#000000;width:620px\"><table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" style=\"border-collapse:collapse\">
                                 <tbody>
                                   <tr>
-                                    <td valign=\"top\" style=\"padding:3px 5px 5px 0px;width:57px\"><a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\"><img src=\"http://scrapyomama.herokuapp.com/faketac/{{pseudo}}-{{age}}-sexy.jpg\" alt=\"{{pseudo}}\" height=\"50\" width=\"50\" style=\"border:0\"></a></td>
+                                    <td valign=\"top\" style=\"padding:3px 5px 5px 0px;width:57px\"><a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\"><img src=\"http://scrapyomama.herokuapp.com/faketac/".$pseudo[0]."-".$pseudo[1]."-sexy.jpg\" alt=\"".$pseudo[0]."\" height=\"50\" width=\"50\" style=\"border:0\"></a></td>
                                     <td align=\"left\" valign=\"top\" style=\"padding:5px 5px 5px 0\"><table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" style=\"border-collapse:collapse\">
                                         <tbody>
                                           <tr>
-                                            <td style=\"font-weight:bold;color:#000000;font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif\"><a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\">{{pseudo}}</a></td>
+                                            <td style=\"font-weight:bold;color:#000000;font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif\"><a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\">".$pseudo[0]."</a></td>
                                             <td style=\"text-align:right;font-size:11px;color:#999999;padding-right:5px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif\">19 avril</td>
                                           </tr>
                                           <tr>
-                                            <td colspan=\"2\" style=\"padding-top:5px;color:#000000;font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif\"><span style=\"color:#333333\">{{texte}} <a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\">... lire la suite</a></span></td>
+                                            <td colspan=\"2\" style=\"padding-top:5px;color:#000000;font-size:13px;font-family:&#39;lucida grande&#39;,tahoma,verdana,arial,sans-serif\"><span style=\"color:#333333\">".substr($this->texte(), 0, rand(45,250))." <a href=\"https://www.facebook.com/miraklogan91\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\">... lire la suite</a></span></td>
                                           </tr>
 
                                         </tbody>
@@ -405,8 +408,7 @@ class Pars extends Controller
 </body>
 </html>
 ";
-        $pseudo = $this->pseudo();
-        $t = $this->sujet($pseudo[0]);
+
 
 
         $kit['html'] = $html;
@@ -496,19 +498,27 @@ class Pars extends Controller
         $s = $emoji;
       else if($rand == 3)
         $s = $sujet." ".$emoji;
+      else if($rand == 4)
+        $s = $this->objects();
+      else if($rand == 5)
+        $s = $emoji." ".$this->objects();
+      else if($rand == 6)
+        $s = $this->objects()." ".$emoji;
+
+
 
 
       $html = str_replace("\n","<br/>",$this->texte());
 
       $kit['html'] = "<html>
 <head>
-<title>{{sujet}}</title>
+<title>".$s."</title>
 <link rel=\"important stylesheet\" href=\"chrome://messagebody/skin/messageBody.css\">
 <meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">
 </head>
 <body><a href='http://google.com'>";
       $kit['html'] .= $html;
-      $kit['html'] .= "</a><br><br>".$pseudo."<a href='http://google.com'><img src=\"http://scrapyomama.herokuapp.com/faketac/".$pseudo[0]."-".$pseudo[1]."-sexy.jpg\" alt=\"".$pseudo[0]."\"/></a></body>";
+      $kit['html'] .= "</a><br><br>".$pseudo[0]."<br><br><a href='http://google.com'><img src=\"http://scrapyomama.herokuapp.com/faketac/".$pseudo[0]."-".$pseudo[1]."-sexy.jpg\" alt=\"".$pseudo[0]."\"/></a></body>";
 
 
       $kit['subject'] = $s;
@@ -517,6 +527,69 @@ class Pars extends Controller
 
 
     }
+
+    public function spin()
+  	{
+  		$intro = $this->spinnage("{Salut toi,|Hey,|Coucou,|Bonjour Jeune Homme| Hello :),|Salut Salut|Holla :)}");
+
+  		$message1 = array("{{Je voulais|J’aimerai|Je souhaiterai|Je veux|Je souhaite} me {présenter|décrire} car ça peut {potentiellement|peu être|eventuellement} {coller|aller|marcher|le faire} entre {nous|toi et moi}.|Ça peut {potentiellement|peu être|eventuellement}  {coller|aller|marcher|le faire} entre {nous|toi et moi} donc je {te répond|me présente}.|Je suis {content|ravie} que tu  {me réponde|m’envoie un message|me laisse un mail}, car l’on peu  {potentiellement|peu être|eventuellement} s’entendre|{Je voulais|J’aimerai|Je souhaiterai|Je veux|Je souhaite} me {présenter|décrire}… tu est {potentiellement|peu être|eventuellement} un {super potentiel|bon coup|etalon} ;).}","{Mon {pseudo|surnom} c'est  [[PSEUDO]], j'ai [[AGE]] ans et je suis {célibataire|libre|seule}. |Je suis {célibataire|libre|seule} et l’on m’appelle [[PSEUDO]] , j'ai [[AGE]] ans.|Je {préfère|souhaite} te {donner|filler} mon  {pseudo|surnom} {pour l’instant|pour le moment} «[[PSEUDO]]» , j'ai [[AGE]] ans et je suis depuis peux {célibataire|libre|seule}.}","{{Je n'ai plus envie de|je ne souhaite plus|Je ne veux plus}  {me prendre la tête|m’embêter|m’entêter} avec les {mecs|garçons|gas} dans une {relation|aventure|relation} {sérieuse|engagé|longue} c'est pourquoi j'ai laissé {cette annonce|ce post|ce message} et {te répond|te fait un retour|renvoie un message|te fait un retour mail|te r’envoie un mail}… |Si je {t’ai répondu|t’ai r’envoyé un mail|te laisse un message} c’est que{je n'ai plus envie de|je ne souhaite plus|je ne veux plus} {me prendre la tête|m’embêter|m’entêter} avec les {mecs|garçons|gas} et {je n'ai plus envie de|je ne souhaite plus|Je ne veux plus} {de relation|d'aventure|de relation} {sérieuse|engagé|longue}.|J’espere que tu ne cherche pas {de relation|d'aventure|de relation} {sérieuse|engagé|longue} car {je n'ai plus envie de|je ne souhaite plus|Je ne veux plus} {me prendre la tête|m’embêter|m’entêter} et c’est pour ca que je {te répond|te fait un retour|renvoie un message|te fait un retour mail|te r’envoie un mail}.}");
+
+  		$message2 = array("{{On ne se connaît pas encore|On ne c’est jamais vu} mais je {souhaiterais|aimerais} {approfondir avec toi.|te découvrir.} |{J’aimerai|Je souhaiterai} {en savoir plus sur toi|te découvrir} même {si on ne ce connais pas encore|si on ne c’est jamais vu}.|{On ne c’est jamais vu|on ne ce conais pas} et {j’aimerai|je souhaiterai}  {apprendre a te connaître|enaprendre plus sur toi}}","{{J'ai vraiment envie de|Je souhaite|J’aimerai vraiment}  {me lâcher|m’éclater|me défouler} et {de trouver|d’avoir} un {mec|garçon|ga} qui me fera enfin {prendre du plaisir|m’épanouir|prendre mon pied|jouir}. |{Serai tu|Pence tu pouvoir} me faire  {prendre du plaisir|m’épanouir|prendre mon pied|jouir}? {J’adorerai|j’aimerai vraiment} en tout cas {j'ai vraiment envie de|je souhaite|j’aimerai vraiment}  {me lâcher|m’éclater|me défouler}|{je cherche|j’aimerai trouver} un  {mec|garçon|ga} qui me ferra {prendre du plaisir|m’épanouir|prendre mon pied|jouir} et avec qui je pourrais {me lâcher|m’éclater|me défouler}.}","{{Je cherche|J’aimerai trouver} {un plan cul|un plan Q|une sexfriend} {d'un ou plusieurs soir|régulier ou pas}, tout dépend {de l’alchimie| si ça colle entre nous} lol. {Qu'en dis tu|Qu’en pence tu} ? Je te propose qu'on {en discute|chat|en parle} …|{J’aimerai|Je souhaiterai|Je veux|Je souhaite} {discuter|chater|parler} avec toi,  {qu'en dis tu|qu’en pence tu}? {Je cherche|J’aimerai trouver} {un plan|un plan |une rencontre} {d'un ou plusieurs soir|régulier ou pas}. Voyons { l’alchimie entre nous| si ça colle entre nous}…|{J’aimerai|Je souhaiterai|Je veux|Je souhaite}{un plan cul|un plan Q|une sexfriend} {d'un ou plusieurs soir|régulier ou pas}  {si une alchimie ce créer entre nous| si ça colle entre nous}.  {Qu'en dis tu|Qu’en pence tu} ? {on en discute|on chat|on en parle} …}");
+
+
+  		shuffle($message1);
+  		shuffle($message2);
+
+  		$texte[0] = $this->spinnage("{Salut toi,|Hey,|Coucou,|Bonjour Jeune Homme| Hello :),|Salut Salut|Holla :)}");
+
+  		$texte[0] .= "\n \n ".$this->spinnage($message1[0]." ".$message1[1]." ".$message1[2]."..");
+  		$texte[0] .= "\n \n ".$this->spinnage($message2[0]." ".$message2[1]." ".$message2[2]."..");
+
+  		$texte[0] .= "\n \n ".$this->spinnage("{J'adore m'exiber, si tu ve voir sur ce site ;) |Si tu ve me voir , j'aime montrer mon corp |J'adorerai que tu vienne me mater si ça te dis :) |Si ca te dis de parler ;) allez vien me voir | Si tu ve me mater je suis souvent connecter sur ce site ;) : }");
+
+  		$texte[0] .= "\n \n ".$this->spinnage("{Mes photos en pj ;)|Mes tof ci joins |Je t'ai mis des photo de moi ;)}");
+
+  		$texte[0] .= "\n \n ".$this->spinnage("{kiss|Bisous|xxx}
+  ");
+
+  		$parti1 = array();
+  $parti2 = array();
+  $parti3 = array();
+  $parti4 = array();
+  $parti5 = array();
+  $o = 0;
+
+  		if (($handle = fopen(dirname(dirname(__FILE__)).'/config/kit2.csv', "r")) !== FALSE) {
+
+
+  		    while (($data = fgetcsv($handle, 0, ";")) !== FALSE) {
+
+  		    $parti1[] = $data[0];
+  			$parti2[] = $data[1];
+  			$parti3[] = $data[2];
+  			$parti4[] = $data[3];
+  			$parti5[] = $data[4];
+
+  		        }
+  		    fclose($handle);
+
+  		    shuffle($parti1);
+  			shuffle($parti2);
+  			shuffle($parti3);
+  			shuffle($parti4);
+  			shuffle($parti5);
+
+
+  			$texte[1] = $parti1[0]."\n \n".$parti2[0]."\n \n".$parti3[0]."\n \n".$parti4[0]."\n \n".$parti5[0]."\n \n";
+
+  			shuffle($texte);
+
+  			//print_r($texte[0]);
+  			return $texte[0];
+
+  		}
+    }
+
     public function texte()
     {
       $message[]= "En faisant un peu de nettoyage de mes messages, j'ai vu le tien et là je me suis dit, mais alors celui-là , il n'a pas honte lui, aucune réponse au mien. Pourtant, je croyais que je te plaisais et que nous irions au moins prendre un verre, histoire de mieux connaitre, on habite pas loin l'un de l'autre, alors sois pas timide et invite moi un de ces jours, tu seras surpris, je mettrais une robe à faire craquer même le plus dur des hommes.
@@ -757,8 +830,56 @@ class Pars extends Controller
       ";
 
       shuffle($message);
-      return($message[0]);
+      $r=rand(0,1);
+      $texte[0] = $this->spin();
+      $texte[1] = $message[0];
+      return($texte[$r]);
     }
+
+    public function objects()
+        {
+    	    $message[] = "J’ai enfin retrouver ton mail!!";
+
+    		$message[] = "Tu comptes vraiment pas me répondre?";
+    	$message[] = "Bonjour voisin...";
+    	$message[] = "Salut toi, je t’ai enfin retrouvée…";
+    	$message[] = "Ca te dérange les filles comme moi?";
+    	$message[] = "Tu attends quoi pour me répondre?";
+    	$message[] = "Te souviens-tu de moi?";
+    	$message[] = "J’espère que tu n’en voudras pas à celui qui m’a donné ton mail…";
+    	$message[] = "J’ai enfin fini par te trouver!!";
+    	$message[] = "Tu n’es plus sur les sites de rencontres?";
+    	$message = "";
+    	$message[] = "Salut beaugosse tu es là?";
+    	$message[] = "C’est pas bien de faire attendre les femmes!";
+    	$message[] = "Jamais tu te décides à répondre toi?";
+    	$message[] = "Je dois faire quoi pour que tu me calcules?";
+    	$message[] = "Tu ne veux plus répondre?";
+
+
+    	shuffle($message);
+    	return ($message[0]);
+    	    }
+
+    public function spinnage($text){
+
+          if(!preg_match("/{/si", $text)) {
+
+          return $text;
+
+           }
+                  else {
+          preg_match_all("/\{([^{}]*)\}/si", $text, $matches);
+          $occur = count($matches[1]);
+          for ($i=0; $i<$occur; $i++)
+          {
+                  $word_spinning = explode("|",$matches[1][$i]);
+                  shuffle($word_spinning);
+                  $text = str_replace($matches[0][$i], $word_spinning[0], $text);
+          }
+  		return  $this->spinnage($text);
+  		}
+      }
 
     public function sendiblue()
     {
