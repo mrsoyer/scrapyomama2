@@ -421,6 +421,8 @@ class Mails extends Controller
 
 
       $mime .= "\n\n";
+
+      print_r($mime);
       $mime .= $hb['body'];
 
       return $mime;
