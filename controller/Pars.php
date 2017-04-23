@@ -91,7 +91,7 @@ class Pars extends Controller
     public function kit($people)
     {
         print_r($_SERVER);
-        $r = rand(0,4);
+        $r = rand(0,6);
         if($r == 0)
           $kit = $this->parse();
         else if($r == 1)
@@ -102,6 +102,9 @@ class Pars extends Controller
           $kit = $this->textimg();
         else if($r == 4)
           $kit = $this->kitfolder();
+        else {
+          $kit = $this->sophie();
+        }
 
         print_r("cccc");
         print_r($_SERVER['SERVER_NAME']);
