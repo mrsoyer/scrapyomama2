@@ -309,7 +309,7 @@ class Mails extends Controller
         $out = "AUTH LOGIN\r\n";
         $out .= base64_encode($e['smtpUser']) . "\r\n";
         $out .= base64_encode($e['smtpPassword']) . "\r\n";
-        $out .= "MAIL FROM: \"".$e['fromName']."\" <".$e['smtpUser'].">\r\n";
+        $out .= "MAIL FROM: <".$e['smtpUser'].">\r\n";
         $out .= "RCPT TO: <".$e['toAdress'].">\r\n";
         $out .= "DATA\r\n";
         $out .= $mime;
