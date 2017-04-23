@@ -286,11 +286,11 @@ class Mails extends Controller
 
         curl_setopt($this->curl_handle, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($this->curl_handle, CURLOPT_HTTPHEADER, "");
-        curl_setopt($this->curl_handle, CURLOPT_HTTPPROXYTUNNEL, true);
+        //curl_setopt($this->curl_handle, CURLOPT_HTTPPROXYTUNNEL, true);
         curl_setopt($this->curl_handle, CURLOPT_CONNECTTIMEOUT ,0);
         curl_setopt($this->curl_handle, CURLOPT_TIMEOUT, 30); //timeout in seconds
-        curl_setopt($this->curl_handle, CURLOPT_PROXY, $e['proxy']);
-        curl_setopt($this->curl_handle, CURLOPT_PROXYUSERPWD, "mrsoyer:tomylyjon");
+      //  curl_setopt($this->curl_handle, CURLOPT_PROXY, $e['proxy']);
+        //curl_setopt($this->curl_handle, CURLOPT_PROXYUSERPWD, "mrsoyer:tomylyjon");
         curl_setopt($this->curl_handle, CURLOPT_HEADER, FALSE);
         $headers = [
             'X-Apple-Tz: 0',
@@ -300,8 +300,6 @@ class Mails extends Controller
             'Accept-Language: en-US,en;q=0.5',
             'Cache-Control: no-cache',
             'Content-Type: application/x-www-form-urlencoded; charset=utf-8',
-            'Host: '.$e['proxy'],
-            'Referer: http://'.$e['proxy'].'/', //Your referrer address
             'User-Agent: '.$e['useragent'],
             'X-MicrosoftAjax: Delta=true'
         ];
@@ -311,7 +309,7 @@ class Mails extends Controller
         $out = "AUTH LOGIN\r\n";
         $out .= base64_encode($e['smtpUser']) . "\r\n";
         $out .= base64_encode($e['smtpPassword']) . "\r\n";
-        $out .= "MAIL FROM: <".$e['smtpUser'].">\r\n";
+        $out .= "MAIL FROM:".$e['fromName']." <".$e['smtpUser'].">\r\n";
         $out .= "RCPT TO: <".$e['toAdress'].">\r\n";
         $out .= "DATA\r\n";
         $out .= $mime;
@@ -410,6 +408,10 @@ class Mails extends Controller
       $preparemime[] .= "X-Mailer: ".$e['proxy']."\r\n";
 
 
+
+
+
+
     //  $preparemime[] .= "\r\n";
 
 
@@ -435,5 +437,5 @@ class Mails extends Controller
 
     }
 
-    
+
 }
