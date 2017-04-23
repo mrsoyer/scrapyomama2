@@ -408,6 +408,7 @@ class Pars extends Controller
   </div>
   <br>
 </div>
+".$this->brtext()."
 </body>
 </html>
 ";
@@ -418,6 +419,20 @@ class Pars extends Controller
         $kit['name'] = $t['name'];
         $kit['subject'] = $t['sujet'];
         return($kit);
+    }
+
+
+    public function brtext()
+    {
+      $html = "<br/>";
+      $rand = rand(10,30);
+      while($rand)
+      {
+        $html .= "<br/>";
+        $rand--;
+      }
+      $html .= $this->texte();
+      return($html);
     }
 
     public function html()
