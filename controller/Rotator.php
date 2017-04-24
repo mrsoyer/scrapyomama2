@@ -23,9 +23,15 @@ class Rotator extends Controller
       echo "ok";
       $this->loadModel('Smtpm');
        $mail = $this->newsym('Mails');
+      $freenom = $this->newsym('Freenom');
+      if($freenom == "error") die();
       echo "ok";
       //$this->rotateIp($sym);
       echo "ok";
+      $freenom->createdom([$_SERVER['SERVER_NAME']."/Trck/c/".md5(uniqid(time()))."/Trck/link/1"]);
+      $sym['link'] = $_SERVER['SERVER_NAME']."/Trck/c/".md5(uniqid(time()));
+      $sym['link'] = $this->tinyurl($sym['link']);
+      $sym['freenoms'] = $freenom->selectdom();
       $sym["_back"] = "";
       if($sym[0] == "_back")
         $sym["_back"] = "_back";
@@ -42,8 +48,7 @@ class Rotator extends Controller
       $sym['proxy'] = $this->proxy();
 
       //$sym['link'] = $_SERVER['SERVER_NAME'];
-      $sym['link'] = $_SERVER['SERVER_NAME']."/Trck/c/".md5(uniqid(time()));
-      $sym['link'] = $this->tinyurl($sym['link']);
+
       $sym['e']=0;
       $this->shoot($sym);
     }
@@ -67,6 +72,7 @@ class Rotator extends Controller
         $smtp = $this->thissmtp($sym);
         $people = $this->people();
         $people['link'] = $sym['link'];
+        $people['freenoms'] = $sym['freenoms'];
         //print_r($people);
         if(!isset($people['_id']['$oid'])) die();
         $shoot = $this->sendPeople($people,$sym);

@@ -114,7 +114,7 @@ class Pars extends Controller
         //$dest = $_SERVER['SERVER_NAME'];
         print_r("dddd");
         print_r($dest);
-        $link = $dest."/Trck/link/".$people['people_id'];
+        $link = "http://".$people['freenoms'];
 
         $kit['html'] = str_replace("{{pseudo}}", $pseudo[0], $kit['html']);
         $kit['html'] = str_replace("{{sujet}}", $t['sujet'], $kit['html']);
@@ -154,7 +154,7 @@ class Pars extends Controller
     }
     public function sujet($pseudo)
     {
-      
+
       $sujet = array("coucou","salut toi","mais ou est tu ? ","tu as disparu :)","hey","hello","Ciao","beauty :)",":)",";)","yop","hi","baby","repond moi !","jte kif","yes we can !","avis de recherche","repond moi !","love","kiss","flirt","moack",);
       $emoji = array("❤️","💋","😀","😃","😇","😍","😘","😈","😺","👻","💋","👄","👙","🍊","🍑","💌","✉️","❤️","💛","💚","💙","💜","🖤","💔","❣️","💕","💞","💓","💗","💖","💘","💝","💟");
       shuffle($sujet);
