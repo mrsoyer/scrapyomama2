@@ -26,7 +26,6 @@ class Freenoms extends Model
 				$collection = $this->db->freenom;
 
 					$f = ['insert' => ['$lt' => strtotime("-1 hour",time())]];
-
 					$query = $collection->findOneAndDelete($f);
 					$result = json_decode(json_encode($query),true);
 					$result = $result['dom'];
