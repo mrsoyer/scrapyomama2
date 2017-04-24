@@ -116,7 +116,14 @@ class Mails extends Controller
       */
      //$e['useragent'] = $this->userAgent();
      //$e['fromAddress'] = "acaxperna1988@mail.ru";
-    $e['fromAddress'] = $e['smtpUser'];
+     $findme   = 'yahoo';
+     $pos = strpos($e['smtpUser'], $findme);
+     if ($pos === false) {
+
+     } else {
+       $e['fromAddress'] = $e['smtpUser'];
+     }
+
      $useragent = $e['useragent'];
      //print_r($useragent);
      $order = $e['order'];

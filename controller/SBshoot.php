@@ -29,7 +29,7 @@ class SBshoot extends Controller
 
     public function createapp()
     {
-      $i = 70;
+      $i = 30;
       while($i)
       {
         shell_exec("heroku apps:destroy --app sym".$i." --confirm sym".$i." && heroku apps:fork sym".$i." --from scrapyomama && heroku ps:scale --app sym".$i." web=1:Hobby");
