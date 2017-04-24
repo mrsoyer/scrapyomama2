@@ -24,7 +24,7 @@ class Rotator extends Controller
       $this->loadModel('Smtpm');
        $mail = $this->newsym('Mails');
       $freenom = $this->newsym('Freenom');
-      if($freenom == "error") die();
+
       echo "ok";
       //$this->rotateIp($sym);
       echo "ok";
@@ -32,6 +32,7 @@ class Rotator extends Controller
       $sym['link'] = $_SERVER['SERVER_NAME']."/Trck/c/".md5(uniqid(time()));
       $sym['link'] = $this->tinyurl($sym['link']);
       $sym['freenoms'] = $freenom->selectdom();
+      if($sym['freenoms'] == "error") die();
       $sym["_back"] = "";
       if($sym[0] == "_back")
         $sym["_back"] = "_back";
