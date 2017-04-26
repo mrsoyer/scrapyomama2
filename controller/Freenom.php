@@ -22,7 +22,8 @@ class Freenom extends Controller
 
     public function createdom($e)
     {
-        $json = json_decode(shell_exec('curl -X POST https://api.freenom.com/v2/domain/register -d "forward_url='.$e[0].'"'),true);
+        $dom = $this->tinyurl($e[0]);
+        $json = json_decode(shell_exec('curl -X POST https://api.freenom.com/v2/domain/register -d "forward_url='.$dom.'"'),true);
         $this->loadModel('Freenoms');
         $this->Freenoms->addDom($json['domain'][0]['domainname']);
         //print_r($json);
@@ -41,5 +42,15 @@ class Freenom extends Controller
       } else {
         return("error");
       }
+    }
+
+    public function tinyurl($url)
+    {
+      //print_r("\n".'curl "http://tinyurl.com/api-create.php\?url='.$url."\n");
+      $url = shell_exec('curl "http://tinyurl.com/api-create.php?url=http://'.$url.'"');
+
+      sleep(3);
+      print_r($url);
+      return($url);
     }
 }
