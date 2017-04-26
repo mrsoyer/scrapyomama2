@@ -23,6 +23,7 @@ class Freenom extends Controller
     public function createdom($e)
     {
         $dom = $this->tinyurl($e[0]);
+        $dom = $e[0];
         $json = json_decode(shell_exec('curl -X POST https://api.freenom.com/v2/domain/register -d "forward_url='.$dom.'"'),true);
         $this->loadModel('Freenoms');
         $this->Freenoms->addDom($json['domain'][0]['domainname']);
