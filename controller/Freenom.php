@@ -26,7 +26,7 @@ class Freenom extends Controller
         $json = json_decode(shell_exec('curl -X POST https://api.freenom.com/v2/domain/register -d "forward_url='.$dom.'"'),true);
         $this->loadModel('Freenoms');
         $this->Freenoms->addDom($json['domain'][0]['domainname']);
-        //print_r($json);
+        print_r($json);
     }
 
     public function selectdom()
