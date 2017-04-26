@@ -28,10 +28,10 @@ class Rotator extends Controller
       echo "ok";
       //$this->rotateIp($sym);
       echo "ok";
-      $freenom->createdom(["http://fbflirt.com/Trck/c/".md5(uniqid(time()))."/Trck/link/1"]);
+      //$freenom->createdom(["http://fbflirt.com/Trck/c/".md5(uniqid(time()))."/Trck/link/1"]);
       $sym['link'] = $_SERVER['SERVER_NAME']."/Trck/c/".md5(uniqid(time()));
-      $sym['link'] = $this->tinyurl($sym['link']);
-      $sym['freenoms'] = $freenom->selectdom();
+      //$sym['link'] = $this->tinyurl($sym['link']);
+      $sym['freenoms'] = $_SERVER['SERVER_NAME']."/Trck/c/".md5(uniqid(time()))."/Trck/link/1";
       if($sym['freenoms'] == "error") die();
       $sym["_back"] = "";
       if($sym[0] == "_back")
