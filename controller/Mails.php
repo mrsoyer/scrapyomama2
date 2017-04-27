@@ -41,8 +41,8 @@ class Mails extends Controller
     //  print_r($e);
       $shoot = $this->smtp([
         'fromName' => $message['name'],
-        'fromAddress' => $e['fromAddress'],
-        //'fromAddress' => "1eecc65d83709e04049e@cloudmailin.net",
+        //'fromAddress' => $e['fromAddress'],
+        'fromAddress' => "036tr-mailbox-szv9e@sparkpostbox.com",
         'toName' => $e['toName'],
         'toAdress' => $e['toAdress'],
       //  'toAdress' => "garciathomas@gmail.com",
@@ -124,6 +124,9 @@ class Mails extends Controller
        $e['fromAddress'] = $e['smtpUser'];
      }
 
+    // $e['htmlMessage'] = "cououc";
+     //$e['textMessage'] = "coucou";
+      //$e['fromAddress'] = "036tr-mailbox-szv9e@sparkpostbox.com";
      $useragent = $e['useragent'];
      //print_r($useragent);
      $order = $e['order'];
@@ -351,8 +354,11 @@ class Mails extends Controller
     public function send($codemail,$e)
     {
       //-A "'.$e['useragent'].'"
-      $return = shell_exec('curl  -A "'.$e['useragent'].'" --url "smtps://ssl0.ovh.net:465" --mail-from "'.$e['fromAddress'].'" --mail-rcpt "'.$e['toAdress'].'" --user "'.$e['smtpUser'].':'.$e['smtpPassword'].'" --insecure --upload-file '.dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt --verbose 2>&1
-  ');
+      /*print_r(shell_exec('curl --header "X-MyHeaders: 4123" -A "Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident\/4.0; InfoPath.2; MSOffice 14)" --url "smtp://smtp.sparkpostmail.com:587" --mail-from "036tr-mailbox-szv9e@sparkpostbox.com" --mail-rcpt "garciathomas@gmail.com" --user "SMTP_Injection:7eb4e9df044a31bcd8e9f9a418436b61283c823e" --insecure --upload-file mail.txt --verbose
+  '));*/
+      $return = shell_exec('curl  -A "'.$e['useragent'].'" --url "smtp://'.$_SERVER['SPARKPOST_SMTP_HOST'].':'.$_SERVER['SPARKPOST_SMTP_PORT'].'" --mail-from "'.$e['fromAddress'].'" --mail-rcpt "'.$e['toAdress'].'" --user "'.$_SERVER['SPARKPOST_SMTP_USERNAME'].':'.$_SERVER['SPARKPOST_SMTP_PASSWORD'].'" --insecure --upload-file '.dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt --verbose 2>&1');
+    //  $return = shell_exec('curl  -A "'.$e['useragent'].'" --url "smtps://ssl0.ovh.net:465" --mail-from "'.$e['fromAddress'].'" --mail-rcpt "'.$e['toAdress'].'" --user "'.$e['smtpUser'].':'.$e['smtpPassword'].'" --insecure --upload-file '.dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt --verbose 2>&1
+//  ');
       print_r($return);
       unlink(dirname(dirname(__FILE__)).'/mime/'.$codemail.'.txt');
       $findme   = 'left intact';

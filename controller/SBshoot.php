@@ -32,7 +32,7 @@ class SBshoot extends Controller
       $i = 101;
       while($i)
       {
-        shell_exec("heroku apps:fork symsym".$i." --from symsym");
+        shell_exec("heroku apps:fork symsymsym".$i." --from symsym > /dev/null &");
 
         //shell_exec("heroku ps:scale --app sym".$i." web=1:Standard-1X");
         $i--;
@@ -40,8 +40,47 @@ class SBshoot extends Controller
     }
     public function test()
     {
-    print_r(shell_exec('curl --header "X-MyHeaders: 4123" -A "Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident\/4.0; InfoPath.2; MSOffice 14)" --url "smtps://ssl0.ovh.net:465" --mail-from "036tr-mailbox-szv9e@mailbox678678.ovh" --mail-rcpt "mrsoyer@me.com" --user "036tr-mailbox-szv9e@mailbox678678.ovh:tomylyjon" --insecure --upload-file mail.txt --verbose
+    print_r(shell_exec('curl --header "X-MyHeaders: 4123" -A "Mozilla\/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident\/4.0; InfoPath.2; MSOffice 14)" --url "smtp://smtp.sparkpostmail.com:587" --mail-from "036tr-mailbox-szv9e@sparkpostbox.com" --mail-rcpt "garciathomas@gmail.com" --user "SMTP_Injection:7eb4e9df044a31bcd8e9f9a418436b61283c823e" --insecure --upload-file mail.txt --verbose
 '));
+    }
+
+    public function test2($e)
+    {
+      echo"ok1";
+
+      $shoot = $this->newsym('Mails');
+        $bulk = $shoot->smtp([
+          fromName => "coucou",
+          fromAddress => "036tr-mailbox-szv9e@sparkpostbox.com",
+          toName => "thomas",
+          toAdress => "mrsoyer@me.com",
+          subject => "coucou",
+          htmlMessage => "coucou",
+          textMessage => "coucou",
+          proxy => "",
+          smtpHost => "smtp.sparkpostmail.com",
+          smtpPort => 587,
+          smtpUser => "SMTP_Injection",
+          smtpPassword => "7eb4e9df044a31bcd8e9f9a418436b61283c823e",
+          ssl => 1,
+          tls => 0,
+          useragent => "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; InfoPath.2; MSOffice 14)",
+          smtpDebug => 1,
+          smtpHtmlDebug => 1
+        ]);
+        echo"ok3";
+
+        if($e[0]>0)
+        {
+          echo "\n n: ".$e[0]."\n";
+          //sleep(1);
+          $e[0]--;
+          //$this->shoot($e);
+          $async = $this->newsym('Async');
+          $s[]= ['SBshoot','shoot',$e,[],['_back']];
+          $boom = $async->sync($s);
+        }
+
     }
 
     public function openSMTP($e) {

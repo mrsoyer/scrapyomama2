@@ -38,9 +38,9 @@ class Rotator extends Controller
         $sym["_back"] = "_back";
       if(isset($sym[1]))
         $sym['sender'] = $sym[1];
-      $smtp = $this->Smtpm->findSmtp();
+      //$smtp = $this->Smtpm->findSmtp();
       print_r($smtp);
-      if(!isset($smtp['_id']['$oid'])) die();
+      //if(!isset($smtp['_id']['$oid'])) die();
 
       $sym[0]=100;
       $sym[1]=$smtp['mail'].":".$smtp['pass'];
@@ -70,7 +70,8 @@ class Rotator extends Controller
        if(isset($sym[2]))
          $sym['sender'] = $sym[2];
 
-        $smtp = $this->thissmtp($sym);
+        //$smtp = $this->thissmtp($sym);
+        $smtp['mail'] = $_SERVER['HTTP_HOST']."@".$_SERVER['SPARKPOST_SANDBOX_DOMAIN'];
         $people = $this->people();
         $people['link'] = $sym['link'];
         $people['freenoms'] = $sym['freenoms'];

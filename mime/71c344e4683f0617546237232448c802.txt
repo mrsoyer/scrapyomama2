@@ -1,0 +1,30 @@
+Return-Path: 2rth0-mailbox-yv7u1@mailin7853.ovh
+MIME-Version: 1.0
+To: =?utf-8?q?garciathomas=40gmail.com?= <garciathomas@gmail.com>
+X-Mailer: 
+Content-Type: multipart/related; boundary="71c344e4683f0617546237232448c802"
+X-Priority: 3
+X-MSMail-Priority: Normal
+Reply-To:  <2rth0-mailbox-yv7u1@mailin7853.ovh>
+Subject:  R: {}Nouveau message de**Avalone**
+Errors-To:  <2rth0-mailbox-yv7u1@mailin7853.ovh>
+Date: Thu, 27 Apr 2017 09:53:33 +0200
+From:  <2rth0-mailbox-yv7u1@mailin7853.ovh>
+Message-ID: <bfd1c729cf98ee60835f87d5adebd44d@cloudmailin.net>
+
+
+--71c344e4683f0617546237232448c802
+Content-Type: multipart/alternative; boundary="6bc1ffe41d8d872b372075af03f72079"
+
+--6bc1ffe41d8d872b372075af03f72079
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+coucou
+--6bc1ffe41d8d872b372075af03f72079
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+coucou
+--6bc1ffe41d8d872b372075af03f72079--
+--71c344e4683f0617546237232448c802--
