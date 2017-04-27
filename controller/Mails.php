@@ -121,7 +121,7 @@ class Mails extends Controller
      if ($pos === false) {
 
      } else {
-       $e['fromAddress'] = $e['smtpUser'];
+      // $e['fromAddress'] = $e['smtpUser'];
      }
 
     // $e['htmlMessage'] = "cououc";
