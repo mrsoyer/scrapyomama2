@@ -32,7 +32,7 @@ class SBshoot extends Controller
       $i = 101;
       while($i)
       {
-        shell_exec("heroku apps:fork symsymsym".$i." --from symsym > /dev/null &");
+        shell_exec("heroku apps:fork symsymsym".$i." --from symsym ");
 
         //shell_exec("heroku ps:scale --app sym".$i." web=1:Standard-1X");
         $i--;
