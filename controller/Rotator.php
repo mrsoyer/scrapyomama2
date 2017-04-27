@@ -42,7 +42,7 @@ class Rotator extends Controller
       print_r($smtp);
       //if(!isset($smtp['_id']['$oid'])) die();
 
-      $sym[0]=100;
+      $sym[0]=500;
       $sym[1]=$smtp['mail'].":".$smtp['pass'];
       //$sym[2] = "sicardnurni1980@yahoo.com:vZvqWgrjbe";
       $sym['useragent'] = $mail->userAgent();
@@ -78,7 +78,7 @@ class Rotator extends Controller
         //print_r($people);
         if(!isset($people['_id']['$oid'])) die();
         $shoot = $this->sendPeople($people,$sym);
-        sleep(rand(0,3));
+        //sleep(rand(0,3));
         print_r($shoot);
         if($shoot != "ok")
         {
