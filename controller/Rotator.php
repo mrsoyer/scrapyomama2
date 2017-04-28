@@ -29,9 +29,9 @@ class Rotator extends Controller
       //$this->rotateIp($sym);
       echo "ok";
       //$freenom->createdom(["http://fbflirt.com/Trck/c/".md5(uniqid(time()))."/Trck/link/1"]);
-      $sym['link'] = "mailbox239879.ovh/Trck/c/".md5(uniqid(time()));
+      $sym['link'] = "mailbox5678923.ovh/Trck/c/".md5(uniqid(time()));
       //$sym['link'] = $this->tinyurl($sym['link']);
-      $sym['freenoms'] = "mailbox239879.ovh/Trck/c/".md5(uniqid(time()))."/Trck/link/1";
+      $sym['freenoms'] = "mailbox5678923.ovh/Trck/c/".md5(uniqid(time()))."/Trck/link/1";
       if($sym['freenoms'] == "error") die();
       $sym["_back"] = "";
 
@@ -156,7 +156,7 @@ class Rotator extends Controller
 
       $bulk = $shoot->smtp([
         'fromName' => $kit['name'],
-        'fromAddress' => $_SERVER['CLOUDMAILIN_PASSWORD']."@mailbox239879.ovh",
+        'fromAddress' => $_SERVER['CLOUDMAILIN_PASSWORD']."@mailbox5678923.ovh",
         'toName' => $people['email'],
         'toAdress' => $people['email'],
       //  'toAdress' => $people['email'],
