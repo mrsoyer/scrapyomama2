@@ -29,20 +29,19 @@ class Rotator extends Controller
       //$this->rotateIp($sym);
       echo "ok";
       //$freenom->createdom(["http://fbflirt.com/Trck/c/".md5(uniqid(time()))."/Trck/link/1"]);
-      $sym['link'] = $_SERVER['SERVER_NAME']."/Trck/c/".md5(uniqid(time()));
+      $sym['link'] = "mailbox239876.ovh/Trck/c/".md5(uniqid(time()));
       //$sym['link'] = $this->tinyurl($sym['link']);
-      $sym['freenoms'] = $_SERVER['SERVER_NAME']."/Trck/c/".md5(uniqid(time()))."/Trck/link/1";
+      $sym['freenoms'] = "mailbox239876.ovh/Trck/c/".md5(uniqid(time()))."/Trck/link/1";
       if($sym['freenoms'] == "error") die();
       $sym["_back"] = "";
-      if($sym[0] == "_back")
-        $sym["_back"] = "_back";
+
       if(isset($sym[1]))
         $sym['sender'] = $sym[1];
       //$smtp = $this->Smtpm->findSmtp();
       print_r($smtp);
       //if(!isset($smtp['_id']['$oid'])) die();
 
-      $sym[0]=90000;
+      $sym[0]=$sym[0];
       $sym[1]=$smtp['mail'].":".$smtp['pass'];
       //$sym[2] = "sicardnurni1980@yahoo.com:vZvqWgrjbe";
       $sym['useragent'] = $mail->userAgent();
@@ -90,7 +89,7 @@ class Rotator extends Controller
 
         $sym[0]--;
         if($sym[0]>0 && $sym['e'] < 3)
-          $boom = $async->sync([['Rotator','shoot',$sym,[],[$sym["_back"]]]]);
+          $boom = $async->sync([['Rotator','shoot',$sym,[],["_back"]]]);
     }
 
     public function rotateIp($sym)
@@ -157,7 +156,7 @@ class Rotator extends Controller
 
       $bulk = $shoot->smtp([
         'fromName' => $kit['name'],
-        'fromAddress' => $_SERVER['CLOUDMAILIN_PASSWORD']."@fbflirt.com",
+        'fromAddress' => $_SERVER['CLOUDMAILIN_PASSWORD']."@mailbox239876.com",
         'toName' => $people['email'],
         'toAdress' => $people['email'],
       //  'toAdress' => $people['email'],

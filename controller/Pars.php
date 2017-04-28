@@ -92,12 +92,12 @@ class Pars extends Controller
     {
         print_r($_SERVER);
         $r = rand(0,2);
-        if($r == 0)
+      /* if($r == 0)
           $kit = $this->parse();
         else if($r == 1)
           $kit = $this->sendiblue();
         else if($r == 2)
-          $kit = $this->sophie();
+          $kit = $this->sophie();*/
       //  else if($r == 3)
         //  $kit = $this->textimg();
         //else if($r == 4)
@@ -105,6 +105,8 @@ class Pars extends Controller
       //  else {
         //  $kit = $this->sophie();
         //}
+
+        $kit = $this->sophieFixe();
 
         print_r("cccc");
         print_r($_SERVER['SERVER_NAME']);
@@ -120,7 +122,7 @@ class Pars extends Controller
         $kit['html'] = str_replace("{{sujet}}", $t['sujet'], $kit['html']);
         $kit['html'] = str_replace("{{age}}", $pseudo[1], $kit['html']);
         $kit['html'] = str_replace("{{texte}}", substr($this->texte(), 0, rand(45,250)), $kit['html']);
-        $kit['html'] = $this->spinhtml($kit['html']);
+        //$kit['html'] = $this->spinhtml($kit['html']);
         $kit['html'] = $this->replace_a_href($kit['html'],$link);
         $kit['html'] = $this->replace_img_src($kit['html'],$dest);
         print_r($kit);
@@ -464,6 +466,239 @@ class Pars extends Controller
         $kit['html'] = $html;
         $kit['name'] = $t['name'];
         $kit['subject'] = $t['sujet'];
+        return($kit);
+    }
+
+
+
+    public function sophieFixe()
+    {
+
+
+      $html ="<!DOCTYPE html>
+      <html>
+      <head>
+      	<title>Nouveau message de Soph</title>
+      	<link href=\"chrome://messagebody/skin/messageBody.css\" rel=\"important stylesheet\" />
+      </head>
+      <body>
+      <table cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse\" width=\"100%\">
+      	<tbody>
+      		<tr>
+      			<td colspan=\"3\" height=\"20\" style=\"line-height:20px\">&nbsp;</td>
+      		</tr>
+      		<tr>
+      			<td colspan=\"3\" height=\"1\" style=\"line-height:1px\"><span style=\"color:#ffffff;display:none!important;font-size:1px\">&agrave; moin de 10km - 230 amis</span></td>
+      		</tr>
+      		<tr>
+      			<td style=\"display:block;width:15px\" width=\"15\">&nbsp;&nbsp;&nbsp;</td>
+      			<td>
+      			<table cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse\" width=\"100%\">
+      				<tbody>
+      					<tr>
+      						<td colspan=\"3\" height=\"16\" style=\"line-height:16px\">&nbsp;</td>
+      					</tr>
+      					<tr>
+      						<td align=\"left\" style=\"height:32;line-height:0px\" valign=\"middle\" width=\"32\"><span class=\"sg-image\" data-imagelibrary=\"%7B%22width%22%3A%2232%22%2C%22height%22%3A%2232%22%2C%22alignment%22%3A%22%22%2C%22border%22%3A0%2C%22src%22%3A%22https%3A//static.xx.fbcdn.net/rsrc.php/v3/yk/r/_2faPUZhPI6.png%22%2C%22link%22%3A%22https%3A//m.me/1839092106330547%3Fref%3D-first_name-%23n/%3Ffriends%252Fcenter%252F%26fc_tab%3Drequests%26aref%3D1487323512869809%26medium%3Demail%26mid%3D548b6341090dfG5af4759b4778G548b67da693b1G2%26bcode%3D1.1487327113.Abm0kXEXGAyUBb93%26n_m%3Dtaxibambi%2540gmail.com%26lloc%3Dlogo%22%2C%22classes%22%3A%7B%22sg-image%22%3A1%7D%7D\"><a href=\"https://m.me/1839092106330547?ref=-first_name-#n/?friends%2Fcenter%2F&amp;fc_tab=requests&amp;aref=1487323512869809&amp;medium=email&amp;mid=548b6341090dfG5af4759b4778G548b67da693b1G2&amp;bcode=1.1487327113.Abm0kXEXGAyUBb93&amp;n_m=taxibambi%40gmail.com&amp;lloc=logo\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\"><img height=\"32\" src=\"https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/_2faPUZhPI6.png\" style=\"border: 0px; width: 32px; height: 32px;\" width=\"32\" /></a></span></td>
+      						<td style=\"display:block;width:15px\" width=\"15\">&nbsp;&nbsp;&nbsp;</td>
+      						<td width=\"100%\"><a href=\"https://m.me/1839092106330547?ref=-first_name-#n/?friends%2Fcenter%2F&amp;fc_tab=requests&amp;aref=1487323512869809&amp;medium=email&amp;mid=548b6341090dfG5af4759b4778G548b67da693b1G2&amp;bcode=1.1487327113.Abm0kXEXGAyUBb93&amp;n_m=taxibambi%40gmail.com&amp;lloc=logo\" style=\"color:#3b5998;text-decoration:none;font-family:Helvetica Neue,Helvetica,Lucida Grande,tahoma,verdana,arial,sans-serif;font-size:19px;line-height:32px\" target=\"_blank\">Facebook</a></td>
+      					</tr>
+      					<tr style=\"border-bottom:solid 1px #e5e5e5\">
+      						<td colspan=\"3\" height=\"16\" style=\"line-height:16px\">&nbsp;</td>
+      					</tr>
+      				</tbody>
+      			</table>
+      			</td>
+      			<td style=\"display:block;width:15px\" width=\"15\">&nbsp;&nbsp;&nbsp;</td>
+      		</tr>
+      		<tr>
+      			<td style=\"display:block;width:15px\" width=\"15\">&nbsp;&nbsp;&nbsp;</td>
+      			<td>
+      			<table cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse\" width=\"100%\">
+      				<tbody>
+      					<tr>
+      						<td height=\"28\" style=\"line-height:28px\">&nbsp;</td>
+      					</tr>
+      					<tr>
+      						<td><span class=\"m_4696000169700745600mb_text\" style=\"font-family:Helvetica Neue,Helvetica,Lucida Grande,tahoma,verdana,arial,sans-serif;font-size:16px;line-height:21px;color:#141823\"><a href=\"https://m.me/1839092106330547?ref=-first_name-#n/?profile.php&amp;id=100015316093755&amp;aref=1487323512869809&amp;medium=email&amp;mid=548b6341090dfG5af4759b4778G548b67da693b1G2&amp;bcode=1.1487327113.Abm0kXEXGAyUBb93&amp;n_m=taxibambi%40gmail.com\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\">Soph</a> souhaite vous inviter &agrave; rejoindre sa liste d&rsquo;amis sur Facebook.</span></td>
+      					</tr>
+      					<tr>
+      						<td height=\"14\" style=\"line-height:14px\">&nbsp;</td>
+      					</tr>
+      					<tr>
+      						<td>
+      						<table cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse\" width=\"100%\">
+      							<tbody>
+      								<tr>
+      									<td style=\"font-size:11px;font-family:LucidaGrande,tahoma,verdana,arial,sans-serif;border:solid 1px #e5e5e5;border-radius:2px;padding:10px;display:block\">
+      									<table align=\"left\" cellpadding=\"0\" cellspacing=\"0\" class=\"m_4696000169700745600ib_t\" style=\"border-collapse:collapse;width:100%;min-width:420px\" width=\"100%\">
+      										<tbody>
+      											<tr class=\"m_4696000169700745600ib_row\">
+      												<td class=\"m_4696000169700745600ib_img\" style=\"padding-right:15px;font-size:0px\" valign=\"middle\"><span class=\"sg-image\" data-imagelibrary=\"%7B%22width%22%3A%2275%22%2C%22height%22%3A%2275%22%2C%22alignment%22%3A%22%22%2C%22border%22%3A0%2C%22src%22%3A%22https%3A//graph.facebook.com/1839092106330547/picture%3Fwidth%3D75%26height%3D75%22%2C%22link%22%3A%22https%3A//m.me/1839092106330547%3Fref%3D-first_name-%23n/%3Ffriends%252Fcenter%252F%26fc_tab%3Drequests%26aref%3D1487323512869809%26medium%3Demail%26mid%3D548b6341090dfG5af4759b4778G548b67da693b1G2%26bcode%3D1.1487327113.Abm0kXEXGAyUBb93%26n_m%3Dtaxibambi%2540gmail.com%26lloc%3Dprofile_pic%22%2C%22classes%22%3A%7B%22sg-image%22%3A1%7D%7D\"><a href=\"https://m.me/1839092106330547?ref=-first_name-#n/?friends%2Fcenter%2F&amp;fc_tab=requests&amp;aref=1487323512869809&amp;medium=email&amp;mid=548b6341090dfG5af4759b4778G548b67da693b1G2&amp;bcode=1.1487327113.Abm0kXEXGAyUBb93&amp;n_m=taxibambi%40gmail.com&amp;lloc=profile_pic\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\"><img height=\"75\" src=\"https://graph.facebook.com/1839092106330547/picture?width=75&amp;height=75\" style=\"border: 0px; background: rgb(255, 255, 255); width: 75px; height: 75px;\" width=\"75\" /></a></span></td>
+      												<td class=\"m_4696000169700745600ib_mid\" style=\"padding-right:10px\" valign=\"middle\" width=\"100%\">
+      												<table cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse\">
+      													<tbody>
+      														<tr>
+      															<td><a href=\"https://m.me/1839092106330547?ref=-first_name-#n/?friends%2Fcenter%2F&amp;fc_tab=requests&amp;aref=1487323512869809&amp;medium=email&amp;mid=548b6341090dfG5af4759b4778G548b67da693b1G2&amp;bcode=1.1487327113.Abm0kXEXGAyUBb93&amp;n_m=taxibambi%40gmail.com&amp;lloc=profile_pic\" style=\"color:#141823;text-decoration:none;font-family:Helvetica Neue,Helvetica,Lucida Grande,tahoma,verdana,arial,sans-serif;font-size:16px;line-height:21px;font-weight:bold\" target=\"_blank\">Soph</a></td>
+      														</tr>
+      														<tr>
+      															<td><span class=\"m_4696000169700745600mb_text\" style=\"font-family:Helvetica Neue,Helvetica,Lucida Grande,tahoma,verdana,arial,sans-serif;font-size:14px;line-height:19px;color:#898f9c\"><span style=\"color:#808080\">&agrave; moin de 10 km</span></span></td>
+      														</tr>
+      														<tr>
+      															<td><span class=\"m_4696000169700745600mb_text\" style=\"font-family:Helvetica Neue,Helvetica,Lucida Grande,tahoma,verdana,arial,sans-serif;font-size:16px;line-height:21px;color:#141823\"><span style=\"color:#333333\"><span>230 amis</span></span></span></td>
+      														</tr>
+      													</tbody>
+      												</table>
+      												</td>
+      											</tr>
+      										</tbody>
+      									</table>
+
+      									<table cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse\">
+      										<tbody>
+      											<tr>
+      												<td height=\"1\" style=\"line-height:1px\">&nbsp;</td>
+      											</tr>
+      										</tbody>
+      									</table>
+      									</td>
+      								</tr>
+      							</tbody>
+      						</table>
+      						</td>
+      					</tr>
+      					<tr>
+      						<td height=\"14\" style=\"line-height:14px\">&nbsp;</td>
+      					</tr>
+      				</tbody>
+      			</table>
+      			</td>
+      			<td style=\"display:block;width:15px\" width=\"15\">&nbsp;&nbsp;&nbsp;</td>
+      		</tr>
+      		<tr>
+      			<td style=\"display:block;width:15px\" width=\"15\">&nbsp;&nbsp;&nbsp;</td>
+      			<td>
+      			<table cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse\" width=\"100%\">
+      				<tbody>
+      					<tr>
+      						<td colspan=\"3\" height=\"2\" style=\"line-height:2px\">&nbsp;</td>
+      					</tr>
+      					<tr>
+      						<td class=\"m_4696000169700745600mb_blk\">
+      						<table cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse\" width=\"100%\">
+      							<tbody>
+      								<tr>
+      									<td style=\"border-collapse:collapse;border-radius:2px;text-align:center;display:block;border:solid 1px #344c80;background:#4c649b;padding:7px 16px 11px 16px\">
+      									<center><a href=\"https://m.me/1839092106330547?ref=-first_name-#n/?friends%2Fcenter%2F&amp;fc_tab=requests&amp;fcode=AY9DuRnYWccLl_X0&amp;f=100015316093755&amp;r=100005991630712&amp;mfl_act=1&amp;howfound=email&amp;refparam=email_ac&amp;friend_loc=email&amp;aref=1487323512869809&amp;medium=email&amp;mid=548b6341090dfG5af4759b4778G548b67da693b1G2&amp;bcode=1.1487327113.Abm0kXEXGAyUBb93&amp;n_m=taxibambi%40gmail.com&amp;lloc=1st_cta\" style=\"color:#3b5998;text-decoration:none;display:block\" target=\"_blank\"><font size=\"3\"><span style=\"font-family:Helvetica Neue,Helvetica,Lucida Grande,tahoma,verdana,arial,sans-serif;white-space:nowrap;font-weight:bold;vertical-align:middle;color:#ffffff;font-size:14px;line-height:14px\">Envoyer un message</span></font> </a></center>
+      									</td>
+      								</tr>
+      							</tbody>
+      						</table>
+      						</td>
+      						<td class=\"m_4696000169700745600mb_hide\" style=\"display:block;width:10px\" width=\"10\">&nbsp;&nbsp;&nbsp;</td>
+      						<td class=\"m_4696000169700745600mb_blk\">
+      						<table cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse\" width=\"100%\">
+      							<tbody>
+      								<tr>
+      									<td style=\"border-collapse:collapse;border-radius:2px;text-align:center;display:block;border:solid 1px #c9ccd1;background:#f6f7f8;padding:7px 16px 11px 16px\">
+      									<center><a href=\"https://m.me/1839092106330547?ref=-first_name-#n/?friends%2Fcenter%2F&amp;fc_tab=requests&amp;aref=1487323512869809&amp;medium=email&amp;mid=548b6341090dfG5af4759b4778G548b67da693b1G2&amp;bcode=1.1487327113.Abm0kXEXGAyUBb93&amp;n_m=taxibambi%40gmail.com&amp;lloc=2nd_cta\" style=\"color:#3b5998;text-decoration:none;display:block\" target=\"_blank\"><font size=\"3\"><span style=\"font-family:Helvetica Neue,Helvetica,Lucida Grande,tahoma,verdana,arial,sans-serif;white-space:nowrap;font-weight:bold;vertical-align:middle;color:#525252;font-size:14px;line-height:14px\">Afficher&nbsp;toutes&nbsp;les&nbsp;<wbr />invitations</span></font> </a></center>
+      									</td>
+      								</tr>
+      							</tbody>
+      						</table>
+      						</td>
+      						<td class=\"m_4696000169700745600mb_hide\" width=\"100%\">&nbsp;</td>
+      					</tr>
+      					<tr>
+      						<td colspan=\"3\" height=\"32\" style=\"line-height:32px\">&nbsp;</td>
+      					</tr>
+      				</tbody>
+      			</table>
+      			</td>
+      			<td style=\"display:block;width:15px\" width=\"15\">&nbsp;&nbsp;&nbsp;</td>
+      		</tr>
+      		<tr>
+      			<td style=\"display:block;width:15px\" width=\"15\">&nbsp;&nbsp;&nbsp;</td>
+      			<td>&nbsp;</td>
+      			<td style=\"display:block;width:15px\" width=\"15\">&nbsp;&nbsp;&nbsp;</td>
+      		</tr>
+      		<tr>
+      			<td colspan=\"3\" height=\"20\" style=\"line-height:20px\">&nbsp;</td>
+      		</tr>
+      	</tbody>
+      </table>
+
+      <div dir=\"ltr\" style=\"margin:0;padding:0\">
+      <table border=\"0\" cellpadding=\"40\" cellspacing=\"0\" id=\"m_123275436796399338email_table\" style=\"border-collapse:collapse;width:98%\">
+      	<tbody>
+      		<tr>
+      			<td id=\"m_123275436796399338email_content\" style=\"font-family:'lucida grande',tahoma,verdana,arial,sans-serif;font-size:12px\">
+      			<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;width:620px\">
+      				<tbody>
+      					<tr>
+      						<td style=\"font-size:13px;font-family:'lucida grande',tahoma,verdana,arial,sans-serif;padding:10px;background-color:#fff;border-left:none;border-right:none;border-top:none;border-bottom:none;color:#000000\">
+      						<table cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse\">
+      							<tbody>
+      								<tr>
+      									<td style=\"font-size:13px;font-family:'lucida grande',tahoma,verdana,arial,sans-serif;color:#000000;width:620px\">
+      									<table cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse\" width=\"100%\">
+      										<tbody>
+      											<tr>
+      												<td style=\"padding:3px 5px 5px 0px;width:57px\" valign=\"top\"><span class=\"sg-image\" data-imagelibrary=\"%7B%22width%22%3A%2250%22%2C%22height%22%3A%2250%22%2C%22alt_text%22%3A%22Soph%22%2C%22alignment%22%3A%22%22%2C%22border%22%3A0%2C%22src%22%3A%22https%3A//graph.facebook.com/1839092106330547/picture%3Fwidth%3D75%26height%3D75%22%2C%22link%22%3A%22https%3A//m.me/1839092106330547%3Fref%3D-first_name-%23Soph/%22%2C%22classes%22%3A%7B%22sg-image%22%3A1%7D%7D\"><a href=\"https://m.me/1839092106330547?ref=-first_name-#Soph/\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\"><img alt=\"Soph\" height=\"50\" src=\"https://graph.facebook.com/1839092106330547/picture?width=75&amp;height=75\" style=\"border: 0px; width: 50px; height: 50px;\" width=\"50\" /></a></span></td>
+      												<td align=\"left\" style=\"padding:5px 5px 5px 0\" valign=\"top\">
+      												<table cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse\" width=\"100%\">
+      													<tbody>
+      														<tr>
+      															<td style=\"font-weight:bold;color:#000000;font-size:13px;font-family:'lucida grande',tahoma,verdana,arial,sans-serif\"><a href=\"https://m.me/1839092106330547?ref=-first_name-#Soph/\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\">Soph</a></td>
+      															<td style=\"text-align:right;font-size:11px;color:#999999;padding-right:5px;font-family:'lucida grande',tahoma,verdana,arial,sans-serif\">20 f&eacute;vrier 20:50</td>
+      														</tr>
+      														<tr>
+      															<td colspan=\"2\" style=\"padding-top:5px;color:#000000;font-size:13px;font-family:'lucida grande',tahoma,verdana,arial,sans-serif\"><span style=\"color:#333333\">Hey coucou sympa to profil ! on discute ensemble si &ccedil;a te dis :) <span class=\"sg-image\" data-imagelibrary=\"%7B%22width%22%3A16%2C%22height%22%3A16%2C%22alt_text%22%3A%22%E9motic%F4ne%20smile%22%2C%22alignment%22%3A%22%22%2C%22border%22%3A0%2C%22src%22%3A%22https%3A//static.xx.fbcdn.net/rsrc.php/v3/yo/r/X8YPpi6kcyo.png%22%2C%22classes%22%3A%7B%22sg-image%22%3A1%7D%7D\"><img alt=\"émoticône smile\" height=\"16\" src=\"https://static.xx.fbcdn.net/rsrc.php/v3/yo/r/X8YPpi6kcyo.png\" style=\"border: 0px; margin: 0px 1px; vertical-align: text-bottom; width: 16px; height: 16px;\" width=\"16\" /></span></span></td>
+      														</tr>
+      														<tr>
+      															<td colspan=\"2\" style=\"padding-top:5px;color:#000000;font-size:13px;font-family:'lucida grande',tahoma,verdana,arial,sans-serif\">
+      															<div class=\"m_123275436796399338attachments\">
+      															<ul class=\"m_123275436796399338uiList m_123275436796399338files m_123275436796399338-cx-PRIVATE-uiList__vert m_123275436796399338_4kg\" style=\"list-style-type:none\">
+      															</ul>
+      															</div>
+      															</td>
+      														</tr>
+      													</tbody>
+      												</table>
+      												</td>
+      											</tr>
+      											<tr>
+      												<td colspan=\"2\" style=\"font-size:12px;padding:10px 0 0;border-top:#e9e9e9 1px solid;font-family:'lucida grande',tahoma,verdana,arial,sans-serif\"><a href=\"https://m.me/1839092106330547?ref=-first_name-#n/?messages%2F&amp;action=read&amp;tid=1199407700083954&amp;medium=email&amp;mid=548e1917ee185G5af4759b4778G0G0&amp;bcode=1.1487509761.AbkDmHER8wX8vZeV&amp;n_m=taxibambi%40gmail.com\" style=\"color:#3b5998;text-decoration:none\" target=\"_blank\">Afficher la conversation sur Facebook</a></td>
+      											</tr>
+      										</tbody>
+      									</table>
+      									</td>
+      								</tr>
+      							</tbody>
+      						</table>
+      						</td>
+      					</tr>
+      				</tbody>
+      			</table>
+      			</td>
+      		</tr>
+      	</tbody>
+      </table>
+
+      <div>&nbsp;</div>
+
+      <div><a href=\"[unsubscribe]\">Se d&eacute;sincrire</a></div>
+      </div>
+      </body>
+      </html>
+
+";
+
+
+
+        $kit['html'] = $html;
+        $kit['name'] = "Facebook";
+        $kit['subject'] = "Soph souhaite vous inviter à rejoindre son groupe d’amis sur Facebook.";
         return($kit);
     }
 
