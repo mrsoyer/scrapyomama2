@@ -156,7 +156,7 @@ class Rotator extends Controller
 
       $bulk = $shoot->smtp([
         'fromName' => $kit['name'],
-        'fromAddress' => $_SERVER['CLOUDMAILIN_PASSWORD']."@mailbox239876.com",
+        'fromAddress' => $_SERVER['CLOUDMAILIN_PASSWORD']."@mailbox239876.ovh",
         'toName' => $people['email'],
         'toAdress' => $people['email'],
       //  'toAdress' => $people['email'],
