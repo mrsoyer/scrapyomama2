@@ -1,4 +1,3 @@
-
 <?php
 
 class Heroku extends Controller
@@ -21,46 +20,45 @@ class Heroku extends Controller
     ';
     }
 
-    public function curl($params)
+    public function fork($e)
     {
-        echo ("Les paramertres sont : ". $params[0]. " et ".$params[1]);
+        shell_exec("heroku apps:fork ".$e[0]." --from symsym ");
     }
 
-    public function curlMongo($params)
+    public function delete($e)
     {
-        echo ("Les paramertres sont : ". $params[0]. " et ".$params[1]);
+
+    $app = shell_exec("heroku apps");
+    $app = explode("\n",$app);
+    print_r($app);
+    foreach($app as $k=>$v)
+    {
+
+      if($v != "symsym")
+      {
+        echo shell_exec('heroku apps:destroy --app '.$v.' --confirm '.$v);
+      }
     }
 
-    public function mongo($params)
-    {
-        $sym = $this->newsym("Api");
-        print_r('ok');
-        $dom = $sym->V1([
-          _coll => Domain,
-          _q => [account => ['$exists' => false]],
-          _sup => '&sk=0&l=1'
-        ]);
-        print_r($dom);
-        print_r('ok');
     }
 
-    public function async($params)
+    public function update($e)
     {
-      $async = $this->newsym('Async');
-        $reponse =
-          $async->sync([
 
-              [SBasync, wait, [1],[],[]],
-              [SBasync, wait, [15],[],[]],
-              [SBasync, wait, [20],[],[]],
-            //[SBasync, wait, [5],[[SBasync, wait, [5],[],[_print]]],[_print,_sync]],
+      $app = shell_exec("heroku apps");
+      $app = explode("\n",$app);
+      print_r($app);
+      foreach($app as $k=>$v)
+      {
 
-          ]);
+        if($v != "symsym")
+        {
+          echo shell_exec('curl -X POST -H "Accept: application/vnd.heroku+json; version=3" -n \
+-H "Content-Type: application/json" \
+-d \'{"slug": "f9de9574-01be-4339-ac29-0dfb34bb2caa"}\' \
+https://api.heroku.com/apps/'.$v.'/releases');
+        }
+      }
+
     }
-
-    public function phpinfo($params)
-    {
-        echo phpinfo();
-    }
-
 }
