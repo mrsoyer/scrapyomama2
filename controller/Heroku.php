@@ -17,10 +17,17 @@ class Heroku extends Controller
 //                                      ScrapYoMama    /__/    by barney.im   ||
 //____________________________________________________________________________||
 //-----------------------------------------------------------------------------*
+
+coucou
     ';
     }
 
     public function fork($e)
+    {
+        shell_exec("heroku apps:fork ".$e[0]." --from symsym ");
+    }
+
+    public function forklist($e)
     {
         shell_exec("heroku apps:fork ".$e[0]." --from symsym ");
     }
