@@ -43,6 +43,7 @@ feature
       $reponse = $this->shema($sym);
       //print_r($reponse);
       return($this->reader($reponse));
+        //coucou
       //
     }
 
